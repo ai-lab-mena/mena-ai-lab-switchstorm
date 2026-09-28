@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 
 interface GroupKPI {
@@ -22,6 +22,8 @@ interface GroupKPI {
 interface TopVideo {
   Scope: string;
   "Date Window": string;
+  Category?: string;
+  "Category Label"?: string;
   Status: string;
   Rank: string;
   "Influencer Name": string;
@@ -41,18 +43,44 @@ interface TopVideo {
   "Post Title": string;
 }
 
+interface RankedVideo {
+  Overall_Rank: number;
+  "Post URL": string;
+  "Influencer Name": string;
+  Handle: string;
+  Subsidiary: string;
+  Platform: string;
+  "Post Date": string;
+  Phase: string;
+  Category: string;
+  "Creator Group": string;
+  "Video Views": number;
+  "Engagements Total": number;
+  "Engagement Rate": number;
+  "Engagement Rate %": string;
+  Shares: number;
+  Saves: number;
+  "Thumbnail URL": string | null;
+  "Post Title": string;
+}
+
 interface CampaignData {
   run_date: string;
   campaign_kpis_by_group: GroupKPI[];
   top_performing_videos: TopVideo[];
+  all_ranked_videos?: RankedVideo[];
 }
 
-export default function Dashboard() {
+export default function SwitchStormDashboard() {
   const [data, setData] = useState<CampaignData | null>(null);
   const [loading, setLoading] = useState(true);
   const [selectedPhase, setSelectedPhase] = useState<string>("Overall");
+  const [selectedCategory, setSelectedCategory] = useState<string>("Overall");
   const [selectedPlatform, setSelectedPlatform] = useState<string>("All");
   const [activeTab, setActiveTab] = useState<"videos" | "groups">("videos");
+  const [viewMode, setViewMode] = useState<"top3" | "all">("top3");
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [visibleCount, setVisibleCount] = useState<number>(24);
   const [lastRefreshed, setLastRefreshed] = useState<string>("");
   const [brokenImages, setBrokenImages] = useState<Record<string, boolean>>({});
 
@@ -80,26 +108,13 @@ export default function Dashboard() {
 
   useEffect(() => {
     fetchData();
-    const interval = setInterval(fetchData, 30000); // 30s auto sync with pipeline
+    const interval = setInterval(fetchData, 30000);
     return () => clearInterval(interval);
   }, []);
 
   const handleImageError = (key: string) => {
     setBrokenImages((prev) => ({ ...prev, [key]: true }));
   };
-
-  if (loading && !data) {
-    return (
-      <div className="flex min-h-screen items-center justify-center bg-slate-900 text-white">
-        <div className="flex flex-col items-center gap-4 px-4 text-center">
-          <div className="h-10 w-10 animate-spin rounded-full border-4 border-blue-500 border-t-transparent"></div>
-          <p className="font-semibold tracking-wider text-slate-300">
-            Loading SwitchStorm Executive Dashboard...
-          </p>
-        </div>
-      </div>
-    );
-  }
 
   const overallKPI = data?.campaign_kpis_by_group.find(
     (g) => g["Creator Group"] === "Total MENA (All Influencers)"
@@ -112,18 +127,70 @@ export default function Dashboard() {
     return num.toLocaleString();
   };
 
-  const filteredVideos = (data?.top_performing_videos || []).filter((v) => {
-    const matchPhase = selectedPhase === "All" || v.Scope === selectedPhase;
-    const matchPlatform =
-      selectedPlatform === "All" ||
-      v.Platform.toLowerCase() === selectedPlatform.toLowerCase();
-    return matchPhase && matchPlatform;
-  });
+  // Top 3 Videos Filtered by Phase & Category
+  const filteredTop3 = useMemo(() => {
+    const list = data?.top_performing_videos || [];
+    return list.filter((v) => {
+      const matchPhase = selectedPhase === "All" || v.Scope === selectedPhase;
+      const videoCat = v.Category || "Overall";
+      const matchCat =
+        selectedCategory === "All" ||
+        videoCat === selectedCategory ||
+        (selectedCategory === "Overall" && videoCat === "Overall");
+      const matchPlatform =
+        selectedPlatform === "All" ||
+        v.Platform.toLowerCase() === selectedPlatform.toLowerCase();
+      return matchPhase && matchCat && matchPlatform;
+    });
+  }, [data, selectedPhase, selectedCategory, selectedPlatform]);
+
+  // All Videos Ranked by Views (Descending)
+  const filteredAllVideos = useMemo(() => {
+    const list = data?.all_ranked_videos || [];
+    return list.filter((v) => {
+      const matchPhase =
+        selectedPhase === "Overall" ||
+        selectedPhase === "All" ||
+        v.Phase === selectedPhase;
+
+      const matchCat =
+        selectedCategory === "Overall" ||
+        selectedCategory === "All" ||
+        v.Category === selectedCategory;
+
+      const matchPlatform =
+        selectedPlatform === "All" ||
+        v.Platform.toLowerCase() === selectedPlatform.toLowerCase();
+
+      const q = searchQuery.toLowerCase().trim();
+      const matchQuery =
+        !q ||
+        v["Influencer Name"].toLowerCase().includes(q) ||
+        (v.Handle && v.Handle.toLowerCase().includes(q)) ||
+        (v.Subsidiary && v.Subsidiary.toLowerCase().includes(q)) ||
+        (v["Post Title"] && v["Post Title"].toLowerCase().includes(q));
+
+      return matchPhase && matchCat && matchPlatform && matchQuery;
+    });
+  }, [data, selectedPhase, selectedCategory, selectedPlatform, searchQuery]);
+
+  if (loading && !data) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-slate-900 text-white">
+        <div className="flex flex-col items-center gap-4 px-4 text-center">
+          <div className="h-10 w-10 animate-spin rounded-full border-4 border-blue-500 border-t-transparent"></div>
+          <p className="font-semibold tracking-wider text-slate-300">
+            Loading SwitchStorm Campaign Dashboard...
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-slate-100 text-slate-900 pb-16">
       {/* 1. TOP BRAND HEADER */}
-      <header className="sticky top-0 z-50 border-b border-slate-800 bg-[#07132b]/95 backdrop-blur-md text-white shadow-lg">
+      <header className="sticky top-0 z-40 border-b border-slate-800 bg-[#07132b]/95 backdrop-blur-md text-white shadow-lg">
         <div className="mx-auto flex max-w-[1600px] items-center justify-between px-3 py-2.5 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2.5 sm:gap-4">
             <div className="relative h-6 w-24 sm:h-7 sm:w-32 shrink-0">
@@ -140,20 +207,20 @@ export default function Dashboard() {
             <div>
               <h1 className="text-sm sm:text-base lg:text-lg font-bold tracking-tight text-white flex items-center gap-1.5 sm:gap-2">
                 <span>SwitchStorm</span>
-                <span className="hidden xs:inline">Campaign</span>
+                <span className="hidden xs:inline">Campaign Dashboard</span>
                 <span className="rounded-full bg-blue-500/20 px-1.5 sm:px-2 py-0.5 text-[10px] sm:text-xs font-semibold text-blue-400 border border-blue-500/30">
-                  Version 1.0
+                  Live
                 </span>
               </h1>
               <p className="text-[10px] sm:text-xs text-slate-400 hidden md:block">
-                #iSwitchedtoSamsung · Executive Intelligence & Real-time Tracking
+                #iSwitchedtoSamsung · Executive Intelligence & Multi-Phase Content Tracking
               </p>
             </div>
           </div>
 
           <div className="flex items-center gap-2 sm:gap-3">
             <div className="text-right text-[10px] sm:text-xs hidden sm:block">
-              <p className="text-slate-400">Pipeline Snapshot</p>
+              <p className="text-slate-400">Snapshot</p>
               <p className="font-medium text-slate-200">
                 {data?.run_date || "Live"} • {lastRefreshed || "Synced"}
               </p>
@@ -181,11 +248,11 @@ export default function Dashboard() {
           </div>
         </div>
 
-        {/* 2. ALWAYS-VISIBLE PERMANENT TOP SUMMARY LINE (RESPONSIVE) */}
+        {/* 2. ALWAYS-VISIBLE PERMANENT TOP SUMMARY LINE */}
         <div className="border-t border-slate-800 bg-[#0a1835] px-3 py-2 sm:px-6 lg:px-8 shadow-inner">
           <div className="mx-auto max-w-[1600px]">
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 sm:gap-3 items-center">
-              {/* Metric 1: Total Reach */}
+              {/* Metric 1 */}
               <div className="flex items-center gap-2 sm:gap-2.5 bg-slate-900/40 sm:bg-transparent p-1.5 sm:p-0 rounded-lg sm:rounded-none sm:border-r sm:border-slate-800/80 sm:pr-2">
                 <div className="flex h-7 w-7 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-lg bg-blue-500/10 text-blue-400 border border-blue-500/20">
                   <svg className="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -202,7 +269,7 @@ export default function Dashboard() {
                 </div>
               </div>
 
-              {/* Metric 2: Total Views */}
+              {/* Metric 2 */}
               <div className="flex items-center gap-2 sm:gap-2.5 bg-slate-900/40 sm:bg-transparent p-1.5 sm:p-0 rounded-lg sm:rounded-none sm:border-r sm:border-slate-800/80 sm:pr-2">
                 <div className="flex h-7 w-7 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                   <svg className="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -225,7 +292,7 @@ export default function Dashboard() {
                 </div>
               </div>
 
-              {/* Metric 3: Engagements */}
+              {/* Metric 3 */}
               <div className="flex items-center gap-2 sm:gap-2.5 bg-slate-900/40 sm:bg-transparent p-1.5 sm:p-0 rounded-lg sm:rounded-none sm:border-r sm:border-slate-800/80 sm:pr-2">
                 <div className="flex h-7 w-7 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-lg bg-purple-500/10 text-purple-400 border border-purple-500/20">
                   <svg className="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -242,7 +309,7 @@ export default function Dashboard() {
                 </div>
               </div>
 
-              {/* Metric 4: Overall ER */}
+              {/* Metric 4 */}
               <div className="flex items-center gap-2 sm:gap-2.5 bg-slate-900/40 sm:bg-transparent p-1.5 sm:p-0 rounded-lg sm:rounded-none sm:border-r sm:border-slate-800/80 sm:pr-2">
                 <div className="flex h-7 w-7 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-lg bg-amber-500/10 text-amber-400 border border-amber-500/20">
                   <svg className="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -262,7 +329,7 @@ export default function Dashboard() {
                 </div>
               </div>
 
-              {/* Metric 5: Total Volume */}
+              {/* Metric 5 */}
               <div className="col-span-2 sm:col-span-2 md:col-span-4 lg:col-span-1 flex items-center gap-2 sm:gap-2.5 bg-slate-900/40 sm:bg-transparent p-1.5 sm:p-0 rounded-lg sm:rounded-none">
                 <div className="flex h-7 w-7 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-lg bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
                   <svg className="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -288,7 +355,7 @@ export default function Dashboard() {
 
       {/* 3. MAIN DASHBOARD CONTENT */}
       <main className="mx-auto max-w-[1600px] px-3 sm:px-6 lg:px-8 pt-5 sm:pt-6">
-        {/* Navigation Tabs & Filters */}
+        {/* Navigation Tabs */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 sm:gap-4 border-b border-slate-200 pb-3 sm:pb-4 mb-5 sm:mb-6">
           <div className="flex flex-wrap gap-2">
             <button
@@ -300,15 +367,10 @@ export default function Dashboard() {
               }`}
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              Top Performing Videos (All Thumbnails)
+              Top Performing Content
             </button>
             <button
               onClick={() => setActiveTab("groups")}
@@ -319,12 +381,7 @@ export default function Dashboard() {
               }`}
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
               </svg>
               Creator Groups & KPI Breakdown
             </button>
@@ -332,8 +389,36 @@ export default function Dashboard() {
 
           {activeTab === "videos" && (
             <div className="flex flex-wrap items-center gap-2">
-              {/* Phase Filter Buttons */}
-              <div className="flex items-center rounded-lg bg-white p-1 border border-slate-200 shadow-sm text-xs w-full sm:w-auto overflow-x-auto">
+              {/* VIEW MODE TOGGLE (TOP 3 vs ALL VIDEOS) */}
+              <div className="flex items-center rounded-lg bg-slate-200/80 p-0.5 text-xs font-bold shadow-inner">
+                <button
+                  onClick={() => setViewMode("top3")}
+                  className={`flex items-center gap-1 rounded-md px-3 py-1.5 transition-all ${
+                    viewMode === "top3"
+                      ? "bg-white text-[#034EA2] shadow-xs"
+                      : "text-slate-600 hover:text-slate-900"
+                  }`}
+                >
+                  <span>★</span>
+                  <span>Top 3 Showcase</span>
+                </button>
+                <button
+                  onClick={() => setViewMode("all")}
+                  className={`flex items-center gap-1 rounded-md px-3 py-1.5 transition-all ${
+                    viewMode === "all"
+                      ? "bg-[#034EA2] text-white shadow-xs"
+                      : "text-slate-600 hover:text-slate-900"
+                  }`}
+                >
+                  <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                  <span>View All Ranked ({data?.all_ranked_videos?.length || 680})</span>
+                </button>
+              </div>
+
+              {/* Phase Filter */}
+              <div className="flex items-center rounded-lg bg-white p-1 border border-slate-200 shadow-sm text-xs">
                 {["Overall", "Phase 1", "Phase 2", "Phase 3"].map((phase) => (
                   <button
                     key={phase}
@@ -353,7 +438,7 @@ export default function Dashboard() {
               <select
                 value={selectedPlatform}
                 onChange={(e) => setSelectedPlatform(e.target.value)}
-                className="rounded-lg border border-slate-200 bg-white px-2.5 sm:px-3 py-1.5 text-xs font-semibold text-slate-700 shadow-sm outline-none focus:border-blue-500 w-full sm:w-auto"
+                className="rounded-lg border border-slate-200 bg-white px-2.5 sm:px-3 py-1.5 text-xs font-semibold text-slate-700 shadow-sm outline-none focus:border-blue-500"
               >
                 <option value="All">All Platforms</option>
                 <option value="TikTok">TikTok</option>
@@ -364,32 +449,108 @@ export default function Dashboard() {
           )}
         </div>
 
-        {/* TAB 1: TOP PERFORMING VIDEOS GALLERY (RESPONSIVE GRID WITH REAL THUMBNAILS) */}
+        {/* TAB 1: TOP PERFORMING CONTENT */}
         {activeTab === "videos" && (
           <div>
+            {/* SUB-CATEGORY SWITCHER (FOR TOP 3 AND ALL VIDEOS) */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-xs font-bold text-slate-500 uppercase tracking-wider mr-1">
+                  Creator Category:
+                </span>
+                <button
+                  onClick={() => setSelectedCategory("Overall")}
+                  className={`rounded-lg px-3 py-1.5 text-xs font-bold transition-all ${
+                    selectedCategory === "Overall"
+                      ? "bg-[#034EA2] text-white shadow-xs"
+                      : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                  }`}
+                >
+                  All Creators (Overall)
+                </button>
+                <button
+                  onClick={() => setSelectedCategory("Lifestyle")}
+                  className={`rounded-lg px-3 py-1.5 text-xs font-bold transition-all flex items-center gap-1.5 ${
+                    selectedCategory === "Lifestyle"
+                      ? "bg-purple-700 text-white shadow-xs"
+                      : "bg-purple-50 text-purple-700 hover:bg-purple-100 border border-purple-200"
+                  }`}
+                >
+                  <span>Lifestyle (CC, GT, GC)</span>
+                </button>
+                <button
+                  onClick={() => setSelectedCategory("Tech / Crossover")}
+                  className={`rounded-lg px-3 py-1.5 text-xs font-bold transition-all flex items-center gap-1.5 ${
+                    selectedCategory === "Tech / Crossover"
+                      ? "bg-cyan-700 text-white shadow-xs"
+                      : "bg-cyan-50 text-cyan-800 hover:bg-cyan-100 border border-cyan-200"
+                  }`}
+                >
+                  <span>Techies & Crossovers</span>
+                </button>
+              </div>
+
+              {/* Search box if in "All Videos" mode */}
+              {viewMode === "all" && (
+                <div className="relative w-full sm:w-72">
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Search creator, handle, sub..."
+                    className="w-full rounded-lg border border-slate-200 bg-slate-50 pl-8 pr-3 py-1.5 text-xs text-slate-800 outline-none focus:border-blue-500 focus:bg-white transition-all"
+                  />
+                  <svg className="absolute left-2.5 top-2 h-3.5 w-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                  {searchQuery && (
+                    <button
+                      onClick={() => setSearchQuery("")}
+                      className="absolute right-2.5 top-1.5 text-slate-400 hover:text-slate-600 text-xs"
+                    >
+                      ✕
+                    </button>
+                  )}
+                </div>
+              )}
+            </div>
+
+            {/* SECTION HEADING */}
             <div className="mb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
               <div>
                 <h2 className="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
-                  <span>Top Performing Content</span>
+                  <span>
+                    {viewMode === "top3" ? "Top 3 Showcase" : "Complete Video Ranking"}
+                  </span>
+                  <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-100 text-[#034EA2]">
+                    {selectedCategory === "Overall"
+                      ? "All Creators"
+                      : selectedCategory === "Lifestyle"
+                      ? "Lifestyle (CC, GT, GC)"
+                      : "Techies & Crossovers"}
+                  </span>
                   <span className="text-xs font-normal text-slate-500">
-                    ({filteredVideos.length} videos ranked by Unified Views)
+                    ({viewMode === "top3" ? filteredTop3.length : filteredAllVideos.length} videos)
                   </span>
                 </h2>
                 <p className="text-xs text-slate-500">
                   {selectedPhase === "Overall" && "Entire Campaign Window (Sep 07 – Sep 28)"}
                   {selectedPhase === "Phase 1" && "Phase 1: Launch Phase (Sep 07 – Sep 10)"}
                   {selectedPhase === "Phase 2" && "Phase 2: Momentum Phase (Sep 11 – Sep 20)"}
-                  {selectedPhase === "Phase 3" && "Phase 3: Active Phase (Sep 21 – Sep 28 · Ongoing)"}
+                  {selectedPhase === "Phase 3" && "Phase 3: Active Ongoing Phase (Sep 21 – Sep 28)"}
+                  {" • Sorted by Unified Views (Most to Least)"}
                 </p>
               </div>
             </div>
 
+            {/* VIDEO CARDS GRID */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-6">
-              {filteredVideos.map((video, idx) => {
-                const isRank1 = video.Rank === "#1";
-                const isRank2 = video.Rank === "#2";
-                const isRank3 = video.Rank === "#3";
-                const cardKey = `${video.Scope}-${video.Rank}-${video["Post URL"]}-${idx}`;
+              {(viewMode === "top3" ? filteredTop3 : filteredAllVideos.slice(0, visibleCount)).map((video, idx) => {
+                const rankNum = "Overall_Rank" in video ? video.Overall_Rank : parseInt(video.Rank.replace("#", "") || `${idx + 1}`);
+                const isRank1 = rankNum === 1;
+                const isRank2 = rankNum === 2;
+                const isRank3 = rankNum === 3;
+                const cardKey = `${video["Post URL"]}-${idx}`;
                 const hasValidThumb =
                   video["Thumbnail URL"] &&
                   !brokenImages[cardKey] &&
@@ -401,7 +562,7 @@ export default function Dashboard() {
                     key={cardKey}
                     className="group relative flex flex-col overflow-hidden rounded-xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-blue-400 transition-all duration-300"
                   >
-                    {/* Media Header / Real Thumbnail Display */}
+                    {/* Media Thumbnail */}
                     <div className="relative aspect-[16/11] sm:aspect-[4/3] w-full bg-slate-950 overflow-hidden flex items-center justify-center">
                       {hasValidThumb ? (
                         <img
@@ -434,20 +595,8 @@ export default function Dashboard() {
                           <span className="text-xs font-semibold text-slate-200">
                             {video["Influencer Name"]}
                           </span>
-                          <span className="text-[10px] text-slate-400">
-                            {video.Platform} • {video.Subsidiary}
-                          </span>
                         </div>
                       )}
-
-                      {/* Play Hover Overlay */}
-                      <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <div className="h-12 w-12 rounded-full bg-white/90 text-slate-900 flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
-                          <svg className="h-6 w-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z" />
-                          </svg>
-                        </div>
-                      </div>
 
                       {/* Rank Badge */}
                       <div
@@ -458,18 +607,18 @@ export default function Dashboard() {
                             ? "bg-slate-200 text-slate-800 border-2 border-white ring-2 ring-slate-300"
                             : isRank3
                             ? "bg-amber-700 text-white border-2 border-white ring-2 ring-amber-700/50"
-                            : "bg-slate-900/80 text-white"
+                            : "bg-slate-900/85 text-white"
                         }`}
                       >
-                        {video.Rank}
+                        #{rankNum}
                       </div>
 
-                      {/* Scope/Phase Badge */}
+                      {/* Platform / Scope Badge */}
                       <div className="absolute top-2.5 right-2.5 rounded-md bg-slate-900/85 px-2 py-0.5 text-[10px] font-semibold text-slate-200 backdrop-blur-sm border border-slate-700 z-10">
-                        {video.Scope}
+                        {"Scope" in video ? video.Scope : video.Phase}
                       </div>
 
-                      {/* Bottom Views Overlay on Thumbnail */}
+                      {/* Views & ER Overlay */}
                       <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-2.5 sm:p-3 flex justify-between items-end text-white z-10">
                         <div>
                           <span className="text-[9px] sm:text-[10px] uppercase font-bold text-slate-300 block">
@@ -493,7 +642,6 @@ export default function Dashboard() {
                     {/* Card Body */}
                     <div className="p-3.5 sm:p-4 flex flex-col flex-1 justify-between bg-white">
                       <div>
-                        {/* Tags */}
                         <div className="flex flex-wrap items-center gap-1.5 mb-2">
                           <span className="rounded bg-blue-50 px-2 py-0.5 text-[10px] font-bold text-blue-700 border border-blue-200">
                             {video.Subsidiary}
@@ -506,7 +654,6 @@ export default function Dashboard() {
                           </span>
                         </div>
 
-                        {/* Creator Info */}
                         <h3 className="text-sm sm:text-base font-bold text-slate-900 leading-snug line-clamp-1">
                           {video["Influencer Name"]}
                         </h3>
@@ -521,7 +668,7 @@ export default function Dashboard() {
                         )}
                       </div>
 
-                      {/* Stats & Actions */}
+                      {/* Stats & Link */}
                       <div className="pt-2.5 border-t border-slate-100 mt-1">
                         <div className="grid grid-cols-2 gap-2 text-[11px] sm:text-xs mb-2.5 text-slate-600">
                           <div>
@@ -544,12 +691,7 @@ export default function Dashboard() {
                         >
                           View Original Post
                           <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                            />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                           </svg>
                         </a>
                       </div>
@@ -558,10 +700,22 @@ export default function Dashboard() {
                 );
               })}
             </div>
+
+            {/* Load More Button for "All Videos" mode */}
+            {viewMode === "all" && visibleCount < filteredAllVideos.length && (
+              <div className="mt-8 flex justify-center">
+                <button
+                  onClick={() => setVisibleCount((prev) => prev + 24)}
+                  className="rounded-xl bg-[#034EA2] hover:bg-blue-600 text-white font-bold text-xs sm:text-sm px-6 py-3 shadow-md hover:shadow-lg transition-all"
+                >
+                  Load More Videos ({filteredAllVideos.length - visibleCount} remaining)
+                </button>
+              </div>
+            )}
           </div>
         )}
 
-        {/* TAB 2: CREATOR GROUPS & PERFORMANCE BREAKDOWN (RESPONSIVE TABLE & CARDS) */}
+        {/* TAB 2: CREATOR GROUPS & PERFORMANCE BREAKDOWN */}
         {activeTab === "groups" && (
           <div className="space-y-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
@@ -575,7 +729,7 @@ export default function Dashboard() {
               </div>
             </div>
 
-            {/* Comprehensive Table with horizontal scroll on mobile */}
+            {/* Comprehensive Table */}
             <div className="overflow-hidden rounded-xl bg-white border border-slate-200 shadow-sm">
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs text-slate-700 min-w-[700px]">
