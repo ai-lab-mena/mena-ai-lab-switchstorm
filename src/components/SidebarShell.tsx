@@ -180,50 +180,6 @@ export default function SidebarShell({ children }: { children: React.ReactNode }
               </Link>
             </nav>
           </div>
-
-          {/* Upcoming AI Lab Initiatives */}
-          <div>
-            {!isCollapsed && (
-              <span className="text-[10px] uppercase font-bold tracking-wider text-slate-500 px-3 block mb-2">
-                Lab Roadmap
-              </span>
-            )}
-            <div className="space-y-1">
-              <div
-                className="flex items-center justify-between px-3 py-2 rounded-lg text-xs text-slate-400 hover:text-slate-300 transition-colors"
-                title="Creator ROI Predictor (In Development)"
-              >
-                <div className="flex items-center gap-3 min-w-0">
-                  <svg className="h-5 w-5 shrink-0 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                  </svg>
-                  {!isCollapsed && <span className="truncate">Creator ROI Predictor</span>}
-                </div>
-                {!isCollapsed && (
-                  <span className="rounded bg-slate-800 px-1.5 py-0.2 text-[8px] font-medium text-slate-400">
-                    Soon
-                  </span>
-                )}
-              </div>
-
-              <div
-                className="flex items-center justify-between px-3 py-2 rounded-lg text-xs text-slate-400 hover:text-slate-300 transition-colors"
-                title="MENA Market Radar (In Development)"
-              >
-                <div className="flex items-center gap-3 min-w-0">
-                  <svg className="h-5 w-5 shrink-0 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  {!isCollapsed && <span className="truncate">MENA Market Radar</span>}
-                </div>
-                {!isCollapsed && (
-                  <span className="rounded bg-slate-800 px-1.5 py-0.2 text-[8px] font-medium text-slate-400">
-                    Soon
-                  </span>
-                )}
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Footer Area */}

@@ -74,10 +74,10 @@ export default function HomePortal() {
             <div className="flex flex-row md:flex-col gap-3 shrink-0">
               <div className="rounded-xl bg-white/10 backdrop-blur-md p-3.5 border border-white/10 text-center sm:text-left">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-blue-300 block">
-                  Active Projects
+                  Active Project
                 </span>
-                <span className="text-xl sm:text-2xl font-black text-white">1 Live</span>
-                <span className="text-[10px] text-slate-300 block">3 In Roadmap</span>
+                <span className="text-xl sm:text-2xl font-black text-white">SwitchStorm</span>
+                <span className="text-[10px] text-slate-300 block">Production Live</span>
               </div>
               <div className="rounded-xl bg-white/10 backdrop-blur-md p-3.5 border border-white/10 text-center sm:text-left">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-300 block">
@@ -175,96 +175,6 @@ export default function HomePortal() {
                   </Link>
                   <span className="text-[10px] text-slate-400 mt-2 text-center">Direct Route: /switchstorm</span>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* LAB ROADMAP / FUTURE INITIATIVES */}
-        <div>
-          <div className="mb-4">
-            <h2 className="text-lg sm:text-xl font-bold text-slate-900">
-              Upcoming AI Lab Projects & Capabilities
-            </h2>
-            <p className="text-xs text-slate-500">Scheduled modules expanding the Samsung MENA marketing technology suite.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {/* Project 1 */}
-            <div className="rounded-xl bg-white p-5 border border-slate-200/90 shadow-xs flex flex-col justify-between hover:border-blue-300 transition-colors">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-50 text-[#034EA2]">
-                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                    </svg>
-                  </div>
-                  <span className="rounded bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-600">
-                    Phase 2 Roadmap
-                  </span>
-                </div>
-                <h4 className="text-base font-bold text-slate-900 mb-1.5">
-                  Creator Performance & ROI Predictor
-                </h4>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Machine learning model estimating post views, engagement lift, and audience conversion affinity before influencer contracting.
-                </p>
-              </div>
-              <div className="pt-4 border-t border-slate-100 mt-4 flex items-center justify-between text-[11px] text-slate-400">
-                <span>Machine Learning</span>
-                <span className="font-semibold text-slate-500">Coming Soon</span>
-              </div>
-            </div>
-
-            {/* Project 2 */}
-            <div className="rounded-xl bg-white p-5 border border-slate-200/90 shadow-xs flex flex-col justify-between hover:border-blue-300 transition-colors">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-cyan-50 text-cyan-700">
-                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <span className="rounded bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-600">
-                    Phase 2 Roadmap
-                  </span>
-                </div>
-                <h4 className="text-base font-bold text-slate-900 mb-1.5">
-                  MENA Social Sentiment & Competitive Radar
-                </h4>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Real-time sentiment and market voice tracking comparing Galaxy devices against competing flagships across GCC and Levant.
-                </p>
-              </div>
-              <div className="pt-4 border-t border-slate-100 mt-4 flex items-center justify-between text-[11px] text-slate-400">
-                <span>NLP Intelligence</span>
-                <span className="font-semibold text-slate-500">Coming Soon</span>
-              </div>
-            </div>
-
-            {/* Project 3 */}
-            <div className="rounded-xl bg-white p-5 border border-slate-200/90 shadow-xs flex flex-col justify-between hover:border-blue-300 transition-colors">
-              <div>
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-purple-50 text-purple-700">
-                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
-                    </svg>
-                  </div>
-                  <span className="rounded bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-600">
-                    Phase 3 Roadmap
-                  </span>
-                </div>
-                <h4 className="text-base font-bold text-slate-900 mb-1.5">
-                  Creative Video Hook Evaluator
-                </h4>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Computer vision analyzing video thumbnails, opening hooks, and visual retention cues to optimize content guidelines.
-                </p>
-              </div>
-              <div className="pt-4 border-t border-slate-100 mt-4 flex items-center justify-between text-[11px] text-slate-400">
-                <span>Computer Vision</span>
-                <span className="font-semibold text-slate-500">Coming Soon</span>
               </div>
             </div>
           </div>
