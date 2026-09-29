@@ -19,40 +19,18 @@ interface GroupKPI {
   "Avg Post ER %": string;
 }
 
-interface TopVideo {
-  Scope: string;
-  "Date Window": string;
-  Category?: string;
-  "Category Label"?: string;
-  Status: string;
-  Rank: string;
-  "Influencer Name": string;
-  Handle: string;
-  "Creator Group": string;
-  Subsidiary: string;
-  Platform: string;
-  "Post Date": string;
-  "Video Views": number;
-  "Engagements Total": number;
-  "Engagement Rate": number;
-  "Engagement Rate %": string;
-  Shares: number;
-  Saves: number;
-  "Post URL": string;
-  "Thumbnail URL": string | null;
-  "Post Title": string;
-}
-
 interface RankedVideo {
-  Overall_Rank: number;
+  Overall_Rank?: number;
+  Rank?: string;
+  Scope?: string;
   "Post URL": string;
   "Influencer Name": string;
   Handle: string;
   Subsidiary: string;
   Platform: string;
   "Post Date": string;
-  Phase: string;
-  Category: string;
+  Phase?: string;
+  Category?: string;
   "Creator Group": string;
   "Video Views": number;
   "Engagements Total": number;
@@ -67,7 +45,7 @@ interface RankedVideo {
 interface CampaignData {
   run_date: string;
   campaign_kpis_by_group: GroupKPI[];
-  top_performing_videos: TopVideo[];
+  top_performing_videos: RankedVideo[];
   all_ranked_videos?: RankedVideo[];
 }
 
@@ -127,22 +105,40 @@ export default function SwitchStormDashboard() {
     return num.toLocaleString();
   };
 
-  // Top 3 Videos Filtered by Phase & Category
-  const filteredTop3 = useMemo(() => {
-    const list = data?.top_performing_videos || [];
-    return list.filter((v) => {
-      const matchPhase = selectedPhase === "All" || v.Scope === selectedPhase;
-      const videoCat = v.Category || "Overall";
-      const matchCat =
-        selectedCategory === "All" ||
-        videoCat === selectedCategory ||
-        (selectedCategory === "Overall" && videoCat === "Overall");
-      const matchPlatform =
-        selectedPlatform === "All" ||
-        v.Platform.toLowerCase() === selectedPlatform.toLowerCase();
-      return matchPhase && matchCat && matchPlatform;
-    });
-  }, [data, selectedPhase, selectedCategory, selectedPlatform]);
+  // Dynamic Top 3 selector for any category and platform
+  const getTop3ForCategory = (categoryKey: string) => {
+    const list = data?.all_ranked_videos || [];
+    return list
+      .filter((v) => {
+        const matchPhase =
+          selectedPhase === "Overall" ||
+          selectedPhase === "All" ||
+          v.Phase === selectedPhase;
+
+        const matchCat =
+          categoryKey === "Overall" ? true : v.Category === categoryKey;
+
+        const matchPlatform =
+          selectedPlatform === "All" ||
+          v.Platform.toLowerCase() === selectedPlatform.toLowerCase();
+
+        return matchPhase && matchCat && matchPlatform;
+      })
+      .slice(0, 3);
+  };
+
+  const top3Overall = useMemo(
+    () => getTop3ForCategory("Overall"),
+    [data, selectedPhase, selectedPlatform]
+  );
+  const top3Lifestyle = useMemo(
+    () => getTop3ForCategory("Lifestyle"),
+    [data, selectedPhase, selectedPlatform]
+  );
+  const top3Techies = useMemo(
+    () => getTop3ForCategory("Tech / Crossover"),
+    [data, selectedPhase, selectedPlatform]
+  );
 
   // All Videos Ranked by Views (Descending)
   const filteredAllVideos = useMemo(() => {
@@ -186,6 +182,167 @@ export default function SwitchStormDashboard() {
       </div>
     );
   }
+
+  // Reusable Video Card Component
+  const renderVideoCard = (video: RankedVideo, rankNumber: number, sectionPrefix: string) => {
+    const isRank1 = rankNumber === 1;
+    const isRank2 = rankNumber === 2;
+    const isRank3 = rankNumber === 3;
+    const cardKey = `${sectionPrefix}-${video["Post URL"]}-${rankNumber}`;
+    const hasValidThumb =
+      video["Thumbnail URL"] &&
+      !brokenImages[cardKey] &&
+      typeof video["Thumbnail URL"] === "string" &&
+      video["Thumbnail URL"].length > 3;
+
+    return (
+      <div
+        key={cardKey}
+        className="group relative flex flex-col overflow-hidden rounded-xl bg-white border border-slate-200/90 shadow-xs hover:shadow-xl hover:border-blue-400 transition-all duration-300"
+      >
+        {/* Media Thumbnail */}
+        <div className="relative aspect-[16/11] sm:aspect-[4/3] w-full bg-slate-950 overflow-hidden flex items-center justify-center">
+          {hasValidThumb ? (
+            <img
+              src={video["Thumbnail URL"]!}
+              alt={video["Influencer Name"]}
+              referrerPolicy="no-referrer"
+              loading="lazy"
+              onError={() => handleImageError(cardKey)}
+              className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          ) : (
+            <div className="flex flex-col items-center justify-center p-6 text-center text-slate-400 bg-gradient-to-br from-slate-900 to-slate-800 w-full h-full">
+              <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-slate-800 text-blue-400 mb-2 border border-slate-700 shadow-inner">
+                {video.Platform === "Instagram" && (
+                  <svg className="h-6 w-6 sm:h-7 sm:w-7" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                  </svg>
+                )}
+                {video.Platform === "TikTok" && (
+                  <svg className="h-6 w-6 sm:h-7 sm:w-7" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 003 15.68 6.34 6.34 0 009.34 22a6.34 6.34 0 006.33-6.33V9.22a8.16 8.16 0 004.8 1.57V7.33a4.85 4.85 0 01-.88-.64z" />
+                  </svg>
+                )}
+                {video.Platform === "YouTube" && (
+                  <svg className="h-6 w-6 sm:h-7 sm:w-7" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                  </svg>
+                )}
+              </div>
+              <span className="text-xs font-semibold text-slate-200">
+                {video["Influencer Name"]}
+              </span>
+            </div>
+          )}
+
+          {/* Hover Play Icon */}
+          <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <div className="h-11 w-11 rounded-full bg-white/95 text-slate-900 flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+              <svg className="h-5 w-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
+
+          {/* Rank Badge */}
+          <div
+            className={`absolute top-2.5 left-2.5 flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full font-bold text-xs shadow-md z-10 ${
+              isRank1
+                ? "bg-amber-400 text-slate-900 border-2 border-white ring-2 ring-amber-400/50"
+                : isRank2
+                ? "bg-slate-200 text-slate-800 border-2 border-white ring-2 ring-slate-300"
+                : isRank3
+                ? "bg-amber-700 text-white border-2 border-white ring-2 ring-amber-700/50"
+                : "bg-slate-900/85 text-white"
+            }`}
+          >
+            #{rankNumber}
+          </div>
+
+          {/* Platform Tag */}
+          <div className="absolute top-2.5 right-2.5 rounded-md bg-slate-900/85 px-2 py-0.5 text-[10px] font-semibold text-slate-200 backdrop-blur-sm border border-slate-700 z-10">
+            {video.Platform}
+          </div>
+
+          {/* Overlay Views & ER */}
+          <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-2.5 sm:p-3 flex justify-between items-end text-white z-10">
+            <div>
+              <span className="text-[9px] sm:text-[10px] uppercase font-bold text-slate-300 block">
+                Unified Views
+              </span>
+              <p className="text-base sm:text-lg font-bold tracking-tight text-white drop-shadow">
+                {formatNumber(video["Video Views"])}
+              </p>
+            </div>
+            <div className="text-right">
+              <span className="text-[9px] sm:text-[10px] uppercase font-bold text-slate-300 block">
+                ER %
+              </span>
+              <p className="text-xs sm:text-sm font-bold text-emerald-400 drop-shadow">
+                {video["Engagement Rate %"]}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Card Body */}
+        <div className="p-3.5 sm:p-4 flex flex-col flex-1 justify-between bg-white">
+          <div>
+            <div className="flex flex-wrap items-center gap-1.5 mb-2">
+              <span className="rounded bg-blue-50 px-2 py-0.5 text-[10px] font-bold text-blue-700 border border-blue-200">
+                {video.Subsidiary}
+              </span>
+              <span className="rounded bg-slate-100 px-2 py-0.5 text-[10px] font-medium text-slate-700 border border-slate-200">
+                {video["Creator Group"]}
+              </span>
+            </div>
+
+            <h3 className="text-sm sm:text-base font-bold text-slate-900 leading-snug line-clamp-1">
+              {video["Influencer Name"]}
+            </h3>
+            {video.Handle && (
+              <p className="text-[11px] sm:text-xs text-slate-500 mb-1.5">@{video.Handle}</p>
+            )}
+
+            {video["Post Title"] && (
+              <p className="text-[11px] sm:text-xs text-slate-600 line-clamp-2 italic mb-2.5">
+                "{video["Post Title"]}"
+              </p>
+            )}
+          </div>
+
+          {/* Stats & Link */}
+          <div className="pt-2.5 border-t border-slate-100 mt-1">
+            <div className="grid grid-cols-2 gap-2 text-[11px] sm:text-xs mb-2.5 text-slate-600">
+              <div>
+                <span className="text-slate-400 text-[9px] sm:text-[10px] block">Engagements</span>
+                <span className="font-semibold text-slate-800">
+                  {formatNumber(video["Engagements Total"])}
+                </span>
+              </div>
+              <div>
+                <span className="text-slate-400 text-[9px] sm:text-[10px] block">Published Date</span>
+                <span className="font-semibold text-slate-800">{video["Post Date"]}</span>
+              </div>
+            </div>
+
+            <a
+              href={video["Post URL"]}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-1.5 w-full rounded-lg bg-slate-50 hover:bg-[#034EA2] hover:text-white px-3 py-2 text-xs font-semibold text-slate-800 transition-colors border border-slate-200 shadow-xs"
+            >
+              View Original Post
+              <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className="min-h-screen bg-slate-100 text-slate-900 pb-16">
@@ -452,7 +609,7 @@ export default function SwitchStormDashboard() {
         {/* TAB 1: TOP PERFORMING CONTENT */}
         {activeTab === "videos" && (
           <div>
-            {/* SUB-CATEGORY SWITCHER (FOR TOP 3 AND ALL VIDEOS) */}
+            {/* CATEGORY SWITCHER PILLS */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs">
               <div className="flex flex-wrap items-center gap-2">
                 <span className="text-xs font-bold text-slate-500 uppercase tracking-wider mr-1">
@@ -466,7 +623,7 @@ export default function SwitchStormDashboard() {
                       : "bg-slate-100 text-slate-700 hover:bg-slate-200"
                   }`}
                 >
-                  All Creators (Overall)
+                  All Categories ({viewMode === "top3" ? "Show All 3" : "Overall"})
                 </button>
                 <button
                   onClick={() => setSelectedCategory("Lifestyle")}
@@ -476,7 +633,7 @@ export default function SwitchStormDashboard() {
                       : "bg-purple-50 text-purple-700 hover:bg-purple-100 border border-purple-200"
                   }`}
                 >
-                  <span>Lifestyle (CC, GT, GC)</span>
+                  <span>Lifestyle Only (CC, GT, GC)</span>
                 </button>
                 <button
                   onClick={() => setSelectedCategory("Tech / Crossover")}
@@ -486,7 +643,7 @@ export default function SwitchStormDashboard() {
                       : "bg-cyan-50 text-cyan-800 hover:bg-cyan-100 border border-cyan-200"
                   }`}
                 >
-                  <span>Techies & Crossovers</span>
+                  <span>Techies & Crossovers Only</span>
                 </button>
               </div>
 
@@ -515,201 +672,178 @@ export default function SwitchStormDashboard() {
               )}
             </div>
 
-            {/* SECTION HEADING */}
-            <div className="mb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-              <div>
-                <h2 className="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
-                  <span>
-                    {viewMode === "top3" ? "Top 3 Showcase" : "Complete Video Ranking"}
-                  </span>
-                  <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-100 text-[#034EA2]">
-                    {selectedCategory === "Overall"
-                      ? "All Creators"
-                      : selectedCategory === "Lifestyle"
-                      ? "Lifestyle (CC, GT, GC)"
-                      : "Techies & Crossovers"}
-                  </span>
-                  <span className="text-xs font-normal text-slate-500">
-                    ({viewMode === "top3" ? filteredTop3.length : filteredAllVideos.length} videos)
-                  </span>
-                </h2>
-                <p className="text-xs text-slate-500">
-                  {selectedPhase === "Overall" && "Entire Campaign Window (Sep 07 – Sep 28)"}
-                  {selectedPhase === "Phase 1" && "Phase 1: Launch Phase (Sep 07 – Sep 10)"}
-                  {selectedPhase === "Phase 2" && "Phase 2: Momentum Phase (Sep 11 – Sep 20)"}
-                  {selectedPhase === "Phase 3" && "Phase 3: Active Ongoing Phase (Sep 21 – Sep 28)"}
-                  {" • Sorted by Unified Views (Most to Least)"}
-                </p>
-              </div>
-            </div>
-
-            {/* VIDEO CARDS GRID */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-6">
-              {(viewMode === "top3" ? filteredTop3 : filteredAllVideos.slice(0, visibleCount)).map((video, idx) => {
-                const rankNum = "Overall_Rank" in video ? video.Overall_Rank : parseInt(video.Rank.replace("#", "") || `${idx + 1}`);
-                const isRank1 = rankNum === 1;
-                const isRank2 = rankNum === 2;
-                const isRank3 = rankNum === 3;
-                const cardKey = `${video["Post URL"]}-${idx}`;
-                const hasValidThumb =
-                  video["Thumbnail URL"] &&
-                  !brokenImages[cardKey] &&
-                  typeof video["Thumbnail URL"] === "string" &&
-                  video["Thumbnail URL"].length > 3;
-
-                return (
-                  <div
-                    key={cardKey}
-                    className="group relative flex flex-col overflow-hidden rounded-xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-blue-400 transition-all duration-300"
-                  >
-                    {/* Media Thumbnail */}
-                    <div className="relative aspect-[16/11] sm:aspect-[4/3] w-full bg-slate-950 overflow-hidden flex items-center justify-center">
-                      {hasValidThumb ? (
-                        <img
-                          src={video["Thumbnail URL"]!}
-                          alt={video["Influencer Name"]}
-                          referrerPolicy="no-referrer"
-                          loading="lazy"
-                          onError={() => handleImageError(cardKey)}
-                          className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
-                      ) : (
-                        <div className="flex flex-col items-center justify-center p-6 text-center text-slate-400 bg-gradient-to-br from-slate-900 to-slate-800 w-full h-full">
-                          <div className="flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-slate-800 text-blue-400 mb-2 border border-slate-700 shadow-inner">
-                            {video.Platform === "Instagram" && (
-                              <svg className="h-6 w-6 sm:h-7 sm:w-7" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                              </svg>
-                            )}
-                            {video.Platform === "TikTok" && (
-                              <svg className="h-6 w-6 sm:h-7 sm:w-7" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 003 15.68 6.34 6.34 0 009.34 22a6.34 6.34 0 006.33-6.33V9.22a8.16 8.16 0 004.8 1.57V7.33a4.85 4.85 0 01-.88-.64z" />
-                              </svg>
-                            )}
-                            {video.Platform === "YouTube" && (
-                              <svg className="h-6 w-6 sm:h-7 sm:w-7" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                              </svg>
-                            )}
-                          </div>
-                          <span className="text-xs font-semibold text-slate-200">
-                            {video["Influencer Name"]}
-                          </span>
-                        </div>
-                      )}
-
-                      {/* Rank Badge */}
-                      <div
-                        className={`absolute top-2.5 left-2.5 flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full font-bold text-xs shadow-md z-10 ${
-                          isRank1
-                            ? "bg-amber-400 text-slate-900 border-2 border-white ring-2 ring-amber-400/50"
-                            : isRank2
-                            ? "bg-slate-200 text-slate-800 border-2 border-white ring-2 ring-slate-300"
-                            : isRank3
-                            ? "bg-amber-700 text-white border-2 border-white ring-2 ring-amber-700/50"
-                            : "bg-slate-900/85 text-white"
-                        }`}
-                      >
-                        #{rankNum}
-                      </div>
-
-                      {/* Platform / Scope Badge */}
-                      <div className="absolute top-2.5 right-2.5 rounded-md bg-slate-900/85 px-2 py-0.5 text-[10px] font-semibold text-slate-200 backdrop-blur-sm border border-slate-700 z-10">
-                        {"Scope" in video ? video.Scope : video.Phase}
-                      </div>
-
-                      {/* Views & ER Overlay */}
-                      <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-2.5 sm:p-3 flex justify-between items-end text-white z-10">
-                        <div>
-                          <span className="text-[9px] sm:text-[10px] uppercase font-bold text-slate-300 block">
-                            Unified Views
-                          </span>
-                          <p className="text-base sm:text-xl font-bold tracking-tight text-white drop-shadow">
-                            {formatNumber(video["Video Views"])}
-                          </p>
-                        </div>
-                        <div className="text-right">
-                          <span className="text-[9px] sm:text-[10px] uppercase font-bold text-slate-300 block">
-                            ER %
-                          </span>
-                          <p className="text-sm sm:text-base font-bold text-emerald-400 drop-shadow">
-                            {video["Engagement Rate %"]}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Card Body */}
-                    <div className="p-3.5 sm:p-4 flex flex-col flex-1 justify-between bg-white">
+            {/* MODE A: TOP 3 SHOWCASE (STACKED TOP 3 SECTIONS) */}
+            {viewMode === "top3" ? (
+              <div className="space-y-10">
+                {/* 1. OVERALL TOP 3 SECTION */}
+                {(selectedCategory === "Overall" || selectedCategory === "All") && (
+                  <div>
+                    <div className="mb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1 pb-2 border-b border-slate-200">
                       <div>
-                        <div className="flex flex-wrap items-center gap-1.5 mb-2">
-                          <span className="rounded bg-blue-50 px-2 py-0.5 text-[10px] font-bold text-blue-700 border border-blue-200">
-                            {video.Subsidiary}
+                        <h3 className="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
+                          <span className="flex h-6 w-6 items-center justify-center rounded-md bg-amber-400 text-slate-900 text-xs shadow-xs">
+                            🏆
                           </span>
-                          <span className="rounded bg-slate-100 px-2 py-0.5 text-[10px] font-medium text-slate-700 border border-slate-200">
-                            {video["Creator Group"]}
+                          <span>
+                            Top 3 Content {selectedPlatform !== "All" ? `on ${selectedPlatform}` : "Across All Platforms"}
                           </span>
-                          <span className="rounded bg-slate-100 px-2 py-0.5 text-[10px] font-medium text-slate-600">
-                            {video.Platform}
+                          <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-100 text-[#034EA2]">
+                            Overall MENA (All Creators)
                           </span>
-                        </div>
-
-                        <h3 className="text-sm sm:text-base font-bold text-slate-900 leading-snug line-clamp-1">
-                          {video["Influencer Name"]}
                         </h3>
-                        {video.Handle && (
-                          <p className="text-[11px] sm:text-xs text-slate-500 mb-1.5">@{video.Handle}</p>
-                        )}
-
-                        {video["Post Title"] && (
-                          <p className="text-[11px] sm:text-xs text-slate-600 line-clamp-2 italic mb-2.5">
-                            "{video["Post Title"]}"
-                          </p>
-                        )}
-                      </div>
-
-                      {/* Stats & Link */}
-                      <div className="pt-2.5 border-t border-slate-100 mt-1">
-                        <div className="grid grid-cols-2 gap-2 text-[11px] sm:text-xs mb-2.5 text-slate-600">
-                          <div>
-                            <span className="text-slate-400 text-[9px] sm:text-[10px] block">Engagements</span>
-                            <span className="font-semibold text-slate-800">
-                              {formatNumber(video["Engagements Total"])}
-                            </span>
-                          </div>
-                          <div>
-                            <span className="text-slate-400 text-[9px] sm:text-[10px] block">Published Date</span>
-                            <span className="font-semibold text-slate-800">{video["Post Date"]}</span>
-                          </div>
-                        </div>
-
-                        <a
-                          href={video["Post URL"]}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-1.5 w-full rounded-lg bg-slate-50 hover:bg-[#034EA2] hover:text-white px-3 py-2 text-xs font-semibold text-slate-800 transition-colors border border-slate-200 shadow-xs"
-                        >
-                          View Original Post
-                          <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                          </svg>
-                        </a>
+                        <p className="text-xs text-slate-500">
+                          {selectedPhase === "Overall"
+                            ? "Entire Campaign Window (Sep 07 – Sep 28)"
+                            : `${selectedPhase} Timeline`}{" "}
+                          • Highest unified video views
+                        </p>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
-            </div>
 
-            {/* Load More Button for "All Videos" mode */}
-            {viewMode === "all" && visibleCount < filteredAllVideos.length && (
-              <div className="mt-8 flex justify-center">
-                <button
-                  onClick={() => setVisibleCount((prev) => prev + 24)}
-                  className="rounded-xl bg-[#034EA2] hover:bg-blue-600 text-white font-bold text-xs sm:text-sm px-6 py-3 shadow-md hover:shadow-lg transition-all"
-                >
-                  Load More Videos ({filteredAllVideos.length - visibleCount} remaining)
-                </button>
+                    {top3Overall.length > 0 ? (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                        {top3Overall.map((video, idx) =>
+                          renderVideoCard(video, idx + 1, "ov")
+                        )}
+                      </div>
+                    ) : (
+                      <div className="rounded-xl bg-white p-8 text-center border border-slate-200 text-slate-500 text-xs">
+                        No videos found matching the selected platform and phase.
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* 2. LIFESTYLE INFLUENCERS TOP 3 (CC, GT, GC) */}
+                {(selectedCategory === "Overall" || selectedCategory === "Lifestyle") && (
+                  <div>
+                    <div className="mb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1 pb-2 border-b border-slate-200">
+                      <div>
+                        <h3 className="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
+                          <span className="flex h-6 w-6 items-center justify-center rounded-md bg-purple-600 text-white text-xs shadow-xs">
+                            🎨
+                          </span>
+                          <span>
+                            Top 3 Lifestyle Creators {selectedPlatform !== "All" ? `on ${selectedPlatform}` : ""}
+                          </span>
+                          <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-purple-100 text-purple-700">
+                            Content Creators, Galaxy Team, Galaxy Circle
+                          </span>
+                        </h3>
+                        <p className="text-xs text-slate-500">
+                          {selectedPhase === "Overall"
+                            ? "Entire Campaign Window (Sep 07 – Sep 28)"
+                            : `${selectedPhase} Timeline`}{" "}
+                          • Lifestyle influencer performance
+                        </p>
+                      </div>
+                    </div>
+
+                    {top3Lifestyle.length > 0 ? (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                        {top3Lifestyle.map((video, idx) =>
+                          renderVideoCard(video, idx + 1, "ls")
+                        )}
+                      </div>
+                    ) : (
+                      <div className="rounded-xl bg-white p-8 text-center border border-slate-200 text-slate-500 text-xs">
+                        No lifestyle videos found on {selectedPlatform} for {selectedPhase}.
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* 3. TECHIES & CROSSOVERS TOP 3 */}
+                {(selectedCategory === "Overall" || selectedCategory === "Tech / Crossover") && (
+                  <div>
+                    <div className="mb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1 pb-2 border-b border-slate-200">
+                      <div>
+                        <h3 className="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
+                          <span className="flex h-6 w-6 items-center justify-center rounded-md bg-cyan-600 text-white text-xs shadow-xs">
+                            ⚡
+                          </span>
+                          <span>
+                            Top 3 Tech & Crossover Creators {selectedPlatform !== "All" ? `on ${selectedPlatform}` : ""}
+                          </span>
+                          <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-cyan-100 text-cyan-800">
+                            Tech Influencers & Crossovers
+                          </span>
+                        </h3>
+                        <p className="text-xs text-slate-500">
+                          {selectedPhase === "Overall"
+                            ? "Entire Campaign Window (Sep 07 – Sep 28)"
+                            : `${selectedPhase} Timeline`}{" "}
+                          • Tech & spec comparison content
+                        </p>
+                      </div>
+                    </div>
+
+                    {top3Techies.length > 0 ? (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                        {top3Techies.map((video, idx) =>
+                          renderVideoCard(video, idx + 1, "tc")
+                        )}
+                      </div>
+                    ) : (
+                      <div className="rounded-xl bg-white p-8 text-center border border-slate-200 text-slate-500 text-xs">
+                        No techie videos found on {selectedPlatform} for {selectedPhase}.
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            ) : (
+              /* MODE B: VIEW ALL VIDEOS (RANKED MOST TO LEAST VIEWED) */
+              <div>
+                <div className="mb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                  <div>
+                    <h2 className="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
+                      <span>Complete Video Ranking</span>
+                      <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-100 text-[#034EA2]">
+                        {selectedCategory === "Overall"
+                          ? "All Categories"
+                          : selectedCategory === "Lifestyle"
+                          ? "Lifestyle (CC, GT, GC)"
+                          : "Techies & Crossovers"}
+                      </span>
+                      <span className="text-xs font-normal text-slate-500">
+                        ({filteredAllVideos.length} videos ranked from most to least viewed)
+                      </span>
+                    </h2>
+                    <p className="text-xs text-slate-500">
+                      {selectedPhase === "Overall" && "Entire Campaign Window (Sep 07 – Sep 28)"}
+                      {selectedPhase === "Phase 1" && "Phase 1: Launch Phase (Sep 07 – Sep 10)"}
+                      {selectedPhase === "Phase 2" && "Phase 2: Momentum Phase (Sep 11 – Sep 20)"}
+                      {selectedPhase === "Phase 3" && "Phase 3: Active Ongoing Phase (Sep 21 – Sep 28)"}
+                      {selectedPlatform !== "All" && ` • Filtered by ${selectedPlatform}`}
+                    </p>
+                  </div>
+                </div>
+
+                {filteredAllVideos.length > 0 ? (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-6">
+                    {filteredAllVideos.slice(0, visibleCount).map((video, idx) => {
+                      const rankNum = video.Overall_Rank || idx + 1;
+                      return renderVideoCard(video, rankNum, "all");
+                    })}
+                  </div>
+                ) : (
+                  <div className="rounded-xl bg-white p-12 text-center border border-slate-200 text-slate-500 text-xs">
+                    No videos found matching your filters and search query.
+                  </div>
+                )}
+
+                {/* Load More Button */}
+                {visibleCount < filteredAllVideos.length && (
+                  <div className="mt-8 flex justify-center">
+                    <button
+                      onClick={() => setVisibleCount((prev) => prev + 24)}
+                      className="rounded-xl bg-[#034EA2] hover:bg-blue-600 text-white font-bold text-xs sm:text-sm px-6 py-3 shadow-md hover:shadow-lg transition-all"
+                    >
+                      Load More Videos ({filteredAllVideos.length - visibleCount} remaining)
+                    </button>
+                  </div>
+                )}
               </div>
             )}
           </div>
