@@ -56,7 +56,7 @@ export default function SwitchStormDashboard() {
   const [selectedCategory, setSelectedCategory] = useState<string>("Overall");
   const [selectedPlatform, setSelectedPlatform] = useState<string>("All");
   const [activeTab, setActiveTab] = useState<"groups" | "videos">("groups");
-  const [viewMode, setViewMode] = useState<"top3" | "all">("top3");
+  const [viewMode, setViewMode] = useState<"top10" | "all">("top10");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [visibleCount, setVisibleCount] = useState<number>(24);
   const [lastRefreshed, setLastRefreshed] = useState<string>("");
@@ -105,8 +105,8 @@ export default function SwitchStormDashboard() {
     return num.toLocaleString();
   };
 
-  // Dynamic Top 3 selector for any category and platform
-  const getTop3ForCategory = (categoryKey: string) => {
+  // Dynamic Top 10 selector for any category and platform
+  const getTop10ForCategory = (categoryKey: string) => {
     const list = data?.all_ranked_videos || [];
     return list
       .filter((v) => {
@@ -124,19 +124,19 @@ export default function SwitchStormDashboard() {
 
         return matchPhase && matchCat && matchPlatform;
       })
-      .slice(0, 3);
+      .slice(0, 10);
   };
 
-  const top3Overall = useMemo(
-    () => getTop3ForCategory("Overall"),
+  const top10Overall = useMemo(
+    () => getTop10ForCategory("Overall"),
     [data, selectedPhase, selectedPlatform]
   );
-  const top3Lifestyle = useMemo(
-    () => getTop3ForCategory("Lifestyle"),
+  const top10Lifestyle = useMemo(
+    () => getTop10ForCategory("Lifestyle"),
     [data, selectedPhase, selectedPlatform]
   );
-  const top3Techies = useMemo(
-    () => getTop3ForCategory("Tech / Crossover"),
+  const top10Techies = useMemo(
+    () => getTop10ForCategory("Tech / Crossover"),
     [data, selectedPhase, selectedPlatform]
   );
 
@@ -189,11 +189,24 @@ export default function SwitchStormDashboard() {
     const isRank2 = rankNumber === 2;
     const isRank3 = rankNumber === 3;
     const cardKey = `${sectionPrefix}-${video["Post URL"]}-${rankNumber}`;
+    
+    // Dynamic fallback for Instagram & YouTube if not explicitly provided
+    let thumbUrl = video["Thumbnail URL"];
+    if (!thumbUrl || thumbUrl.length < 4) {
+      if (video.Platform === "Instagram" && video["Post URL"]) {
+        const m = video["Post URL"].match(/instagram\.com\/(?:p|reel)\/([^/?#]+)/);
+        if (m) thumbUrl = `https://www.instagram.com/p/${m[1]}/media/?size=l`;
+      } else if (video.Platform === "YouTube" && video["Post URL"]) {
+        const m = video["Post URL"].match(/(?:v=|youtu\.be\/)([A-Za-z0-9_-]{11})/);
+        if (m) thumbUrl = `https://img.youtube.com/vi/${m[1]}/hqdefault.jpg`;
+      }
+    }
+
     const hasValidThumb =
-      video["Thumbnail URL"] &&
+      thumbUrl &&
       !brokenImages[cardKey] &&
-      typeof video["Thumbnail URL"] === "string" &&
-      video["Thumbnail URL"].length > 3;
+      typeof thumbUrl === "string" &&
+      thumbUrl.length > 3;
 
     return (
       <div
@@ -204,7 +217,7 @@ export default function SwitchStormDashboard() {
         <div className="relative aspect-[16/11] sm:aspect-[4/3] w-full bg-slate-950 overflow-hidden flex items-center justify-center">
           {hasValidThumb ? (
             <img
-              src={video["Thumbnail URL"]!}
+              src={thumbUrl!}
               alt={video["Influencer Name"]}
               referrerPolicy="no-referrer"
               loading="lazy"
@@ -546,18 +559,18 @@ export default function SwitchStormDashboard() {
 
           {activeTab === "videos" && (
             <div className="flex flex-wrap items-center gap-2">
-              {/* VIEW MODE TOGGLE (TOP 3 vs ALL VIDEOS) */}
+              {/* VIEW MODE TOGGLE (TOP 10 vs ALL VIDEOS) */}
               <div className="flex items-center rounded-lg bg-slate-200/80 p-0.5 text-xs font-bold shadow-inner">
                 <button
-                  onClick={() => setViewMode("top3")}
+                  onClick={() => setViewMode("top10")}
                   className={`flex items-center gap-1 rounded-md px-3 py-1.5 transition-all ${
-                    viewMode === "top3"
+                    viewMode === "top10"
                       ? "bg-white text-[#034EA2] shadow-xs"
                       : "text-slate-600 hover:text-slate-900"
                   }`}
                 >
                   <span>★</span>
-                  <span>Top 3 Showcase</span>
+                  <span>Top 10 Showcase</span>
                 </button>
                 <button
                   onClick={() => setViewMode("all")}
@@ -570,7 +583,7 @@ export default function SwitchStormDashboard() {
                   <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                   </svg>
-                  <span>View All Ranked ({data?.all_ranked_videos?.length || 680})</span>
+                  <span>View All Ranked ({data?.all_ranked_videos?.length || 887})</span>
                 </button>
               </div>
 
@@ -623,7 +636,7 @@ export default function SwitchStormDashboard() {
                       : "bg-slate-100 text-slate-700 hover:bg-slate-200"
                   }`}
                 >
-                  All Categories ({viewMode === "top3" ? "Show All 3" : "Overall"})
+                  All Categories ({viewMode === "top10" ? "Show All Categories" : "Overall"})
                 </button>
                 <button
                   onClick={() => setSelectedCategory("Lifestyle")}
@@ -672,10 +685,10 @@ export default function SwitchStormDashboard() {
               )}
             </div>
 
-            {/* MODE A: TOP 3 SHOWCASE (STACKED TOP 3 SECTIONS) */}
-            {viewMode === "top3" ? (
+            {/* MODE A: TOP 10 SHOWCASE (STACKED TOP 10 SECTIONS) */}
+            {viewMode === "top10" ? (
               <div className="space-y-10">
-                {/* 1. OVERALL TOP 3 SECTION */}
+                {/* 1. OVERALL TOP 10 SECTION */}
                 {(selectedCategory === "Overall" || selectedCategory === "All") && (
                   <div>
                     <div className="mb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1 pb-2 border-b border-slate-200">
@@ -685,7 +698,7 @@ export default function SwitchStormDashboard() {
                             🏆
                           </span>
                           <span>
-                            Top 3 Content {selectedPlatform !== "All" ? `on ${selectedPlatform}` : "Across All Platforms"}
+                            Top 10 Content {selectedPlatform !== "All" ? `on ${selectedPlatform}` : "Across All Platforms"}
                           </span>
                           <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-100 text-[#034EA2]">
                             Overall MENA (All Creators)
@@ -700,9 +713,9 @@ export default function SwitchStormDashboard() {
                       </div>
                     </div>
 
-                    {top3Overall.length > 0 ? (
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                        {top3Overall.map((video, idx) =>
+                    {top10Overall.length > 0 ? (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                        {top10Overall.map((video, idx) =>
                           renderVideoCard(video, idx + 1, "ov")
                         )}
                       </div>
@@ -714,7 +727,7 @@ export default function SwitchStormDashboard() {
                   </div>
                 )}
 
-                {/* 2. LIFESTYLE INFLUENCERS TOP 3 (CC, GT, GC) */}
+                {/* 2. LIFESTYLE INFLUENCERS TOP 10 (CC, GT, GC) */}
                 {(selectedCategory === "Overall" || selectedCategory === "Lifestyle") && (
                   <div>
                     <div className="mb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1 pb-2 border-b border-slate-200">
@@ -724,7 +737,7 @@ export default function SwitchStormDashboard() {
                             🎨
                           </span>
                           <span>
-                            Top 3 Lifestyle Creators {selectedPlatform !== "All" ? `on ${selectedPlatform}` : ""}
+                            Top 10 Lifestyle Creators {selectedPlatform !== "All" ? `on ${selectedPlatform}` : ""}
                           </span>
                           <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-purple-100 text-purple-700">
                             Content Creators, Galaxy Team, Galaxy Circle
@@ -739,9 +752,9 @@ export default function SwitchStormDashboard() {
                       </div>
                     </div>
 
-                    {top3Lifestyle.length > 0 ? (
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                        {top3Lifestyle.map((video, idx) =>
+                    {top10Lifestyle.length > 0 ? (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                        {top10Lifestyle.map((video, idx) =>
                           renderVideoCard(video, idx + 1, "ls")
                         )}
                       </div>
@@ -753,7 +766,7 @@ export default function SwitchStormDashboard() {
                   </div>
                 )}
 
-                {/* 3. TECHIES & CROSSOVERS TOP 3 */}
+                {/* 3. TECHIES & CROSSOVERS TOP 10 */}
                 {(selectedCategory === "Overall" || selectedCategory === "Tech / Crossover") && (
                   <div>
                     <div className="mb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1 pb-2 border-b border-slate-200">
@@ -763,7 +776,7 @@ export default function SwitchStormDashboard() {
                             ⚡
                           </span>
                           <span>
-                            Top 3 Tech & Crossover Creators {selectedPlatform !== "All" ? `on ${selectedPlatform}` : ""}
+                            Top 10 Tech & Crossover Creators {selectedPlatform !== "All" ? `on ${selectedPlatform}` : ""}
                           </span>
                           <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-cyan-100 text-cyan-800">
                             Tech Influencers & Crossovers
@@ -778,9 +791,9 @@ export default function SwitchStormDashboard() {
                       </div>
                     </div>
 
-                    {top3Techies.length > 0 ? (
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                        {top3Techies.map((video, idx) =>
+                    {top10Techies.length > 0 ? (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                        {top10Techies.map((video, idx) =>
                           renderVideoCard(video, idx + 1, "tc")
                         )}
                       </div>
