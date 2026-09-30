@@ -1,18 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-
-export interface SubsidiaryInfo {
-  code: string;
-  name: string;
-  countries: string;
-  flag: string;
-  x: number;
-  y: number;
-  views: number;
-  posts: number;
-  influencers: number;
-}
+import { REAL_MENA_PINS, REAL_WORLD_COUNTRIES, PinInfo } from "./menaGeoData";
 
 interface SubsidiaryMapProps {
   selectedSubsidiary: string;
@@ -24,68 +13,6 @@ interface SubsidiaryMapProps {
   totalViews: number;
   totalPosts: number;
 }
-
-const PIN_CONFIG: Record<
-  string,
-  { name: string; countries: string; flag: string; x: number; y: number }
-> = {
-  SEMAG: {
-    name: "Samsung Maghreb",
-    countries: "Morocco, Tunisia, Algeria, Libya",
-    flag: "🇲🇦",
-    x: 105,
-    y: 215,
-  },
-  SEEG: {
-    name: "Samsung Egypt",
-    countries: "Egypt",
-    flag: "🇪🇬",
-    x: 420,
-    y: 235,
-  },
-  SETK: {
-    name: "Samsung Turkey",
-    countries: "Turkey",
-    flag: "🇹🇷",
-    x: 475,
-    y: 105,
-  },
-  SELV: {
-    name: "Samsung Levant",
-    countries: "Jordan, Lebanon, Iraq, Syria",
-    flag: "🇯🇴",
-    x: 508,
-    y: 180,
-  },
-  SEIL: {
-    name: "Samsung Israel",
-    countries: "Israel",
-    flag: "🇮🇱",
-    x: 475,
-    y: 206,
-  },
-  SESAR: {
-    name: "Samsung Saudi Arabia",
-    countries: "Kingdom of Saudi Arabia",
-    flag: "🇸🇦",
-    x: 565,
-    y: 265,
-  },
-  SGE: {
-    name: "Samsung Gulf Electronics",
-    countries: "UAE, Qatar, Kuwait, Oman, Bahrain, Yemen",
-    flag: "🇦🇪",
-    x: 660,
-    y: 255,
-  },
-  SEPAK: {
-    name: "Samsung Pakistan",
-    countries: "Pakistan",
-    flag: "🇵🇰",
-    x: 810,
-    y: 205,
-  },
-};
 
 export default function SubsidiaryMap({
   selectedSubsidiary,
@@ -103,8 +30,13 @@ export default function SubsidiaryMap({
     return val.toString();
   };
 
-  const activeInfo = selectedSubsidiary !== "All" ? PIN_CONFIG[selectedSubsidiary] : null;
-  const activeStats = selectedSubsidiary !== "All" ? subsidiaryStats[selectedSubsidiary] : null;
+  const activeInfo: PinInfo | null =
+    selectedSubsidiary !== "All" ? REAL_MENA_PINS[selectedSubsidiary] || null : null;
+  const activeStats =
+    selectedSubsidiary !== "All" ? subsidiaryStats[selectedSubsidiary] || null : null;
+
+  // SGE (Dubai HQ) coordinates for connecting network hub lines
+  const hqPin = REAL_MENA_PINS["SGE"];
 
   return (
     <div className="mb-6 rounded-2xl bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 border border-slate-800 text-white shadow-xl overflow-hidden transition-all duration-300">
@@ -113,7 +45,12 @@ export default function SubsidiaryMap({
         <div className="flex items-center gap-3">
           <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 shadow-inner">
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
             </svg>
           </div>
           <div>
@@ -122,11 +59,11 @@ export default function SubsidiaryMap({
                 Geographic Subsidiary Territory Filter
               </h3>
               <span className="hidden sm:inline-block rounded-full bg-blue-500/20 px-2 py-0.5 text-[10px] font-bold text-blue-300 border border-blue-400/20">
-                MENA Region
+                Real World Geographic Map
               </span>
             </div>
             <p className="text-xs text-slate-400">
-              Click any pin on the map or select a territory tag below to isolate performance.
+              Click any pin or real country territory on the map to isolate performance by market.
             </p>
           </div>
         </div>
@@ -153,16 +90,16 @@ export default function SubsidiaryMap({
         </div>
       </div>
 
-      {/* 2. Interactive SVG Map Canvas */}
+      {/* 2. Real World Geographic Map Canvas */}
       {isExpanded && (
-        <div className="relative w-full bg-[#0a1120] overflow-hidden select-none border-b border-slate-800/80">
-          {/* Subtle Grid Pattern Overlay */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b0f_1px,transparent_1px),linear-gradient(to_bottom,#1e293b0f_1px,transparent_1px)] bg-[size:32px_32px]" />
+        <div className="relative w-full bg-[#070d17] overflow-hidden select-none border-b border-slate-800/80">
+          {/* Subtle Latitude / Longitude Coordinate Grid */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b14_1px,transparent_1px),linear-gradient(to_bottom,#1e293b14_1px,transparent_1px)] bg-[size:42px_42px]" />
 
           <svg
-            viewBox="0 0 920 380"
-            className="w-full h-auto max-h-[340px] sm:max-h-[380px] drop-shadow-md"
-            style={{ minHeight: "260px" }}
+            viewBox="0 0 940 420"
+            className="w-full h-auto max-h-[380px] sm:max-h-[440px] drop-shadow-md"
+            style={{ minHeight: "270px" }}
           >
             <defs>
               {/* Radial Gradients for Active Pins */}
@@ -177,88 +114,107 @@ export default function SubsidiaryMap({
                 <stop offset="100%" stopColor="#b45309" stopOpacity="0" />
               </radialGradient>
 
-              {/* Linear Gradient for Sea / Land */}
-              <linearGradient id="landGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#1e293b" />
-                <stop offset="100%" stopColor="#0f172a" />
-              </linearGradient>
-              <linearGradient id="activeLandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#1e3a8a" />
-                <stop offset="100%" stopColor="#172554" />
-              </linearGradient>
+              {/* Glowing highlight filters */}
+              <filter id="glowEffect" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
             </defs>
 
-            {/* Stylized MENA Geographic Regions & Landmasses */}
-            <g id="landmasses" opacity="0.85">
-              {/* Maghreb & North Africa (Morocco to Libya) */}
-              <path
-                d="M 50 170 Q 110 160 180 180 Q 240 170 300 200 L 380 210 L 370 290 Q 260 300 160 280 Q 90 270 50 250 Z"
-                fill="url(#landGrad)"
-                stroke="#334155"
-                strokeWidth="1.2"
-              />
+            {/* A. Real Geographic Countries (Rendered from Natural Earth Data) */}
+            <g id="real-countries">
+              {REAL_WORLD_COUNTRIES.map((c) => {
+                const isSubCountry = c.sub !== null;
+                const isSelectedSub = c.sub && selectedSubsidiary === c.sub;
+                const isHoveredSub = c.sub && hoveredSub === c.sub;
 
-              {/* Egypt */}
-              <path
-                d="M 380 210 Q 430 205 450 220 L 455 295 L 370 295 Z"
-                fill="url(#landGrad)"
-                stroke="#334155"
-                strokeWidth="1.2"
-              />
+                let fillColor = "#0f172a"; // background non-MENA country
+                let strokeColor = "#1e293b";
+                let strokeWidth = "0.7";
+                let opacity = "0.7";
 
-              {/* Turkey (Anatolia) */}
-              <path
-                d="M 420 85 Q 480 75 550 90 L 545 140 Q 470 145 425 125 Z"
-                fill="url(#landGrad)"
-                stroke="#334155"
-                strokeWidth="1.2"
-              />
+                if (isSubCountry) {
+                  fillColor = "#1e293b"; // MENA subsidiary country
+                  strokeColor = "#334155";
+                  strokeWidth = "0.9";
+                  opacity = "0.95";
+                }
 
-              {/* Levant (Syria, Lebanon, Jordan, Iraq) */}
-              <path
-                d="M 460 145 Q 510 140 560 160 L 590 205 L 530 225 L 465 210 Z"
-                fill="url(#landGrad)"
-                stroke="#334155"
-                strokeWidth="1.2"
-              />
+                if (isHoveredSub) {
+                  fillColor = "#1e3a8a"; // hover state
+                  strokeColor = "#38bdf8";
+                  strokeWidth = "1.4";
+                  opacity = "1";
+                }
 
-              {/* Arabian Peninsula (Saudi Arabia, UAE, Oman, Yemen) */}
-              <path
-                d="M 490 230 Q 560 215 630 235 L 700 255 Q 720 295 680 340 Q 580 360 510 330 Q 470 290 490 230 Z"
-                fill="url(#landGrad)"
-                stroke="#334155"
-                strokeWidth="1.2"
-              />
+                if (isSelectedSub) {
+                  fillColor = "#034EA2"; // Samsung Royal Blue for active subsidiary!
+                  strokeColor = "#fbbf24"; // Gold active border!
+                  strokeWidth = "1.8";
+                  opacity = "1";
+                }
 
-              {/* Pakistan & Indus Valley */}
-              <path
-                d="M 760 150 Q 820 135 850 170 L 845 270 Q 800 290 770 260 L 755 200 Z"
-                fill="url(#landGrad)"
-                stroke="#334155"
-                strokeWidth="1.2"
-              />
+                return (
+                  <path
+                    key={c.name}
+                    d={c.d}
+                    fill={fillColor}
+                    stroke={strokeColor}
+                    strokeWidth={strokeWidth}
+                    opacity={opacity}
+                    className="transition-all duration-300 cursor-pointer"
+                    onClick={() => {
+                      if (c.sub) {
+                        onSelectSubsidiary(selectedSubsidiary === c.sub ? "All" : c.sub);
+                      }
+                    }}
+                    onMouseEnter={() => {
+                      if (c.sub) setHoveredSub(c.sub);
+                    }}
+                    onMouseLeave={() => {
+                      if (c.sub) setHoveredSub(null);
+                    }}
+                  >
+                    <title>
+                      {c.name} {c.sub ? `(${c.sub})` : ""}
+                    </title>
+                  </path>
+                );
+              })}
             </g>
 
-            {/* Water Body Identifiers */}
-            <g opacity="0.4" className="text-[9px] uppercase tracking-widest font-mono fill-slate-500">
-              <text x="260" y="145">Mediterranean Sea</text>
-              <text x="475" y="285">Red Sea</text>
-              <text x="635" y="230">Arabian Gulf</text>
-              <text x="730" y="340">Arabian Sea</text>
+            {/* B. Geographic Water Bodies & Seas */}
+            <g opacity="0.45" className="text-[9px] uppercase tracking-widest font-mono fill-slate-400 select-none pointer-events-none">
+              <text x="310" y="145">Mediterranean Sea</text>
+              <text x="495" y="275">Red Sea</text>
+              <text x="635" y="235">Arabian Gulf</text>
+              <text x="710" y="360">Arabian Sea</text>
+              <text x="470" y="55">Black Sea</text>
+              <text x="615" y="80">Caspian Sea</text>
             </g>
 
-            {/* Connecting Hub Arcs from SGE (Dubai HQ) to Regional Subsidiaries */}
-            <g stroke="#38bdf8" strokeWidth="0.8" opacity="0.25" strokeDasharray="3,3" fill="none">
-              <path d="M 660 255 Q 600 220 565 265" /> {/* SGE -> SESAR */}
-              <path d="M 660 255 Q 560 160 508 180" /> {/* SGE -> SELV */}
-              <path d="M 660 255 Q 540 180 420 235" /> {/* SGE -> SEEG */}
-              <path d="M 660 255 Q 550 120 475 105" /> {/* SGE -> SETK */}
-              <path d="M 660 255 Q 730 200 810 205" /> {/* SGE -> SEPAK */}
-              <path d="M 660 255 Q 380 120 105 215" /> {/* SGE -> SEMAG */}
-            </g>
+            {/* C. Samsung Network Connecting Lines (From Dubai HQ to Regional Subsidiaries) */}
+            {hqPin && (
+              <g stroke="#38bdf8" strokeWidth="0.8" opacity="0.25" strokeDasharray="3,3" fill="none">
+                {Object.entries(REAL_MENA_PINS).map(([code, pin]) => {
+                  if (code === "SGE") return null;
+                  const isHighlighted = selectedSubsidiary === code || hoveredSub === code;
+                  return (
+                    <path
+                      key={`line-${code}`}
+                      d={`M ${hqPin.x} ${hqPin.y} Q ${(hqPin.x + pin.x) / 2} ${(hqPin.y + pin.y) / 2 - 35} ${pin.x} ${pin.y}`}
+                      stroke={isHighlighted ? "#fbbf24" : "#38bdf8"}
+                      strokeWidth={isHighlighted ? "1.6" : "0.8"}
+                      opacity={isHighlighted ? "0.8" : "0.25"}
+                      className="transition-all duration-300"
+                    />
+                  );
+                })}
+              </g>
+            )}
 
-            {/* Interactive Subsidiary Pins */}
-            {Object.entries(PIN_CONFIG).map(([code, pin]) => {
+            {/* D. Interactive Glowing Subsidiary Pins at Exact Capital / Major City Lat/Long */}
+            {Object.entries(REAL_MENA_PINS).map(([code, pin]) => {
               const isSelected = selectedSubsidiary === code;
               const isHovered = hoveredSub === code;
               const stats = subsidiaryStats[code] || { views: 0, posts: 0, influencers: 0 };
@@ -277,43 +233,46 @@ export default function SubsidiaryMap({
                     <circle
                       cx={pin.x}
                       cy={pin.y}
-                      r={isSelected ? "32" : "24"}
+                      r={isSelected ? "32" : "22"}
                       fill={isSelected ? "url(#goldPulse)" : "url(#pulseGlow)"}
                       className="animate-pulse"
                     />
                   )}
 
-                  {/* Pulsing center dot */}
+                  {/* Pin Dot on Exact Coordinates */}
                   <circle
                     cx={pin.x}
                     cy={pin.y}
-                    r={isSelected ? "8" : "5"}
+                    r={isSelected ? "7" : "4.5"}
                     fill={isSelected ? "#fbbf24" : "#38bdf8"}
                     stroke="#ffffff"
-                    strokeWidth="2"
+                    strokeWidth="1.8"
                     className="drop-shadow-md"
                   />
 
-                  {/* Pin Floating Badge */}
-                  <g transform={`translate(${pin.x - 36}, ${pin.y - 34})`}>
+                  {/* Floating Pill Badge */}
+                  <g transform={`translate(${pin.x - 38}, ${pin.y - 32})`}>
                     <rect
-                      width="72"
-                      height="24"
-                      rx="12"
+                      width="76"
+                      height="23"
+                      rx="11.5"
                       fill={isSelected ? "#034EA2" : isHovered ? "#1e293b" : "#0f172a"}
                       stroke={isSelected ? "#fbbf24" : isHovered ? "#38bdf8" : "#334155"}
                       strokeWidth={isSelected ? "2" : "1"}
                       className="transition-colors duration-200 drop-shadow-lg"
                     />
                     <text
-                      x="36"
-                      y="16"
+                      x="38"
+                      y="15.5"
                       textAnchor="middle"
                       className={`text-[11px] font-bold tracking-tight select-none ${
                         isSelected ? "fill-white font-extrabold" : "fill-slate-200"
                       }`}
                     >
-                      {code} <tspan className="text-[9px] font-semibold text-amber-300 fill-amber-300">{viewText}</tspan>
+                      {code}{" "}
+                      <tspan className="text-[9.5px] font-semibold text-amber-300 fill-amber-300">
+                        {viewText}
+                      </tspan>
                     </text>
                   </g>
                 </g>
@@ -322,25 +281,26 @@ export default function SubsidiaryMap({
           </svg>
 
           {/* Interactive Live Tooltip (Overlay when hovering over a pin) */}
-          {hoveredSub && PIN_CONFIG[hoveredSub] && (
+          {hoveredSub && REAL_MENA_PINS[hoveredSub] && (
             <div
               className="absolute pointer-events-none z-30 transition-all duration-200 bg-slate-900/95 backdrop-blur-md border border-blue-400/50 rounded-xl p-3 shadow-2xl text-xs max-w-xs"
               style={{
-                left: `${Math.min(Math.max(PIN_CONFIG[hoveredSub].x / 9.2 - 8, 4), 65)}%`,
-                top: `${Math.min(Math.max(PIN_CONFIG[hoveredSub].y / 3.8 - 25, 5), 55)}%`,
+                left: `${Math.min(Math.max(REAL_MENA_PINS[hoveredSub].x / 9.4 - 8, 4), 65)}%`,
+                top: `${Math.min(Math.max(REAL_MENA_PINS[hoveredSub].y / 4.2 - 25, 5), 55)}%`,
               }}
             >
               <div className="flex items-center justify-between gap-2 border-b border-slate-700/60 pb-1.5 mb-2">
                 <div className="flex items-center gap-1.5 font-bold text-white text-sm">
-                  <span>{PIN_CONFIG[hoveredSub].flag}</span>
+                  <span>{REAL_MENA_PINS[hoveredSub].flag}</span>
                   <span>{hoveredSub}</span>
                   <span className="text-xs font-normal text-slate-300">
-                    ({PIN_CONFIG[hoveredSub].name})
+                    ({REAL_MENA_PINS[hoveredSub].name})
                   </span>
                 </div>
               </div>
               <p className="text-[11px] text-slate-300 mb-2 leading-relaxed">
-                <strong className="text-slate-400">Territory:</strong> {PIN_CONFIG[hoveredSub].countries}
+                <strong className="text-slate-400">Territory:</strong>{" "}
+                {REAL_MENA_PINS[hoveredSub].countries}
               </p>
               <div className="grid grid-cols-3 gap-2 bg-slate-950/70 p-2 rounded-lg border border-slate-800 text-center">
                 <div>
@@ -391,7 +351,7 @@ export default function SubsidiaryMap({
         </button>
 
         {/* Individual Subsidiary Tags */}
-        {Object.entries(PIN_CONFIG).map(([code, pin]) => {
+        {Object.entries(REAL_MENA_PINS).map(([code, pin]) => {
           const isSelected = selectedSubsidiary === code;
           const stats = subsidiaryStats[code];
           const viewText = stats ? formatViews(stats.views) : "0";
@@ -408,7 +368,11 @@ export default function SubsidiaryMap({
             >
               <span>{pin.flag}</span>
               <span>{code}</span>
-              <span className={`text-[10px] ${isSelected ? "text-slate-900 font-bold" : "text-amber-400/90"}`}>
+              <span
+                className={`text-[10px] ${
+                  isSelected ? "text-slate-900 font-bold" : "text-amber-400/90"
+                }`}
+              >
                 {viewText}
               </span>
             </button>
@@ -418,7 +382,9 @@ export default function SubsidiaryMap({
         {/* Undefined Tag */}
         {subsidiaryStats["Undefined"] && (
           <button
-            onClick={() => onSelectSubsidiary(selectedSubsidiary === "Undefined" ? "All" : "Undefined")}
+            onClick={() =>
+              onSelectSubsidiary(selectedSubsidiary === "Undefined" ? "All" : "Undefined")
+            }
             className={`flex items-center gap-1 rounded-lg px-2.5 py-1.5 text-xs font-medium transition-all ${
               selectedSubsidiary === "Undefined"
                 ? "bg-slate-700 text-white font-bold ring-2 ring-slate-400"
@@ -438,7 +404,9 @@ export default function SubsidiaryMap({
             <span>Active Territory Filter:</span>
             <strong className="text-white font-bold text-sm flex items-center gap-1.5">
               <span>{activeInfo.flag}</span>
-              <span>{selectedSubsidiary} ({activeInfo.name})</span>
+              <span>
+                {selectedSubsidiary} ({activeInfo.name})
+              </span>
             </strong>
             <span className="hidden sm:inline text-slate-400">•</span>
             <span className="hidden sm:inline text-slate-300">{activeInfo.countries}</span>
