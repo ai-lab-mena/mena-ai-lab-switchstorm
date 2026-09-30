@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
+import SubsidiaryMap from "./SubsidiaryMap";
 
 interface GroupKPI {
   Category: string;
@@ -55,6 +56,7 @@ export default function SwitchStormDashboard() {
   const [selectedPhase, setSelectedPhase] = useState<string>("Overall");
   const [selectedCategory, setSelectedCategory] = useState<string>("Overall");
   const [selectedPlatform, setSelectedPlatform] = useState<string>("All");
+  const [selectedSubsidiary, setSelectedSubsidiary] = useState<string>("All");
   const [activeTab, setActiveTab] = useState<"groups" | "videos">("groups");
   const [viewMode, setViewMode] = useState<"top10" | "all">("top10");
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -105,7 +107,38 @@ export default function SwitchStormDashboard() {
     return num.toLocaleString();
   };
 
-  // Dynamic Top 10 selector for any category and platform
+  // Subsidiary Stats Computation
+  const subsidiaryStats = useMemo(() => {
+    const list = data?.all_ranked_videos || [];
+    const stats: Record<
+      string,
+      { views: number; posts: number; influencers: number; name: string }
+    > = {};
+
+    list.forEach((v) => {
+      const s = v.Subsidiary || "Undefined";
+      if (!stats[s]) {
+        stats[s] = { views: 0, posts: 0, influencers: 0, name: s };
+      }
+      stats[s].views += v["Video Views"] || 0;
+      stats[s].posts += 1;
+    });
+
+    const creatorsPerSub: Record<string, Set<string>> = {};
+    list.forEach((v) => {
+      const s = v.Subsidiary || "Undefined";
+      if (!creatorsPerSub[s]) creatorsPerSub[s] = new Set();
+      if (v["Influencer Name"]) creatorsPerSub[s].add(v["Influencer Name"]);
+    });
+
+    Object.keys(stats).forEach((s) => {
+      stats[s].influencers = creatorsPerSub[s]?.size || 0;
+    });
+
+    return stats;
+  }, [data]);
+
+  // Dynamic Top 10 selector for any category, platform, and subsidiary
   const getTop10ForCategory = (categoryKey: string) => {
     const list = data?.all_ranked_videos || [];
     return list
@@ -122,22 +155,27 @@ export default function SwitchStormDashboard() {
           selectedPlatform === "All" ||
           v.Platform.toLowerCase() === selectedPlatform.toLowerCase();
 
-        return matchPhase && matchCat && matchPlatform;
+        const matchSubsidiary =
+          selectedSubsidiary === "All" ||
+          (v.Subsidiary &&
+            v.Subsidiary.toUpperCase() === selectedSubsidiary.toUpperCase());
+
+        return matchPhase && matchCat && matchPlatform && matchSubsidiary;
       })
       .slice(0, 10);
   };
 
   const top10Overall = useMemo(
     () => getTop10ForCategory("Overall"),
-    [data, selectedPhase, selectedPlatform]
+    [data, selectedPhase, selectedPlatform, selectedSubsidiary]
   );
   const top10Lifestyle = useMemo(
     () => getTop10ForCategory("Lifestyle"),
-    [data, selectedPhase, selectedPlatform]
+    [data, selectedPhase, selectedPlatform, selectedSubsidiary]
   );
   const top10Techies = useMemo(
     () => getTop10ForCategory("Tech / Crossover"),
-    [data, selectedPhase, selectedPlatform]
+    [data, selectedPhase, selectedPlatform, selectedSubsidiary]
   );
 
   // All Videos Ranked by Views (Descending)
@@ -158,6 +196,11 @@ export default function SwitchStormDashboard() {
         selectedPlatform === "All" ||
         v.Platform.toLowerCase() === selectedPlatform.toLowerCase();
 
+      const matchSubsidiary =
+        selectedSubsidiary === "All" ||
+        (v.Subsidiary &&
+          v.Subsidiary.toUpperCase() === selectedSubsidiary.toUpperCase());
+
       const q = searchQuery.toLowerCase().trim();
       const matchQuery =
         !q ||
@@ -166,9 +209,9 @@ export default function SwitchStormDashboard() {
         (v.Subsidiary && v.Subsidiary.toLowerCase().includes(q)) ||
         (v["Post Title"] && v["Post Title"].toLowerCase().includes(q));
 
-      return matchPhase && matchCat && matchPlatform && matchQuery;
+      return matchPhase && matchCat && matchPlatform && matchSubsidiary && matchQuery;
     });
-  }, [data, selectedPhase, selectedCategory, selectedPlatform, searchQuery]);
+  }, [data, selectedPhase, selectedCategory, selectedPlatform, selectedSubsidiary, searchQuery]);
 
   if (loading && !data) {
     return (
@@ -536,6 +579,15 @@ export default function SwitchStormDashboard() {
 
       {/* 3. MAIN DASHBOARD CONTENT */}
       <main className="mx-auto max-w-[1600px] px-3 sm:px-6 lg:px-8 pt-5 sm:pt-6">
+        {/* Geographic Subsidiary Map Filter */}
+        <SubsidiaryMap
+          selectedSubsidiary={selectedSubsidiary}
+          onSelectSubsidiary={setSelectedSubsidiary}
+          subsidiaryStats={subsidiaryStats}
+          totalViews={overallKPI?.["Total Views"] || 201762791}
+          totalPosts={overallKPI?.["Total Posts"] || 1340}
+        />
+
         {/* Navigation Tabs */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 sm:gap-4 border-b border-slate-200 pb-3 sm:pb-4 mb-5 sm:mb-6">
           <div className="flex flex-wrap gap-2">
@@ -709,10 +761,11 @@ export default function SwitchStormDashboard() {
                             🏆
                           </span>
                           <span>
-                            Top 10 Content {selectedPlatform !== "All" ? `on ${selectedPlatform}` : "Across All Platforms"}
+                            Top 10 Content {selectedPlatform !== "All" ? `on ${selectedPlatform}` : ""}{" "}
+                            {selectedSubsidiary !== "All" ? `in ${selectedSubsidiary}` : "Across All Platforms"}
                           </span>
                           <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-100 text-[#034EA2]">
-                            Overall MENA (All Creators)
+                            {selectedSubsidiary !== "All" ? `${selectedSubsidiary} Market` : "Overall MENA (All Creators)"}
                           </span>
                         </h3>
                         <p className="text-xs text-slate-500">
