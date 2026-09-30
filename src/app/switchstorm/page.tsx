@@ -55,7 +55,7 @@ export default function SwitchStormDashboard() {
   const [selectedPhase, setSelectedPhase] = useState<string>("Overall");
   const [selectedCategory, setSelectedCategory] = useState<string>("Overall");
   const [selectedPlatform, setSelectedPlatform] = useState<string>("All");
-  const [activeTab, setActiveTab] = useState<"videos" | "groups">("videos");
+  const [activeTab, setActiveTab] = useState<"groups" | "videos">("groups");
   const [viewMode, setViewMode] = useState<"top3" | "all">("top3");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [visibleCount, setVisibleCount] = useState<number>(24);
@@ -516,6 +516,19 @@ export default function SwitchStormDashboard() {
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 sm:gap-4 border-b border-slate-200 pb-3 sm:pb-4 mb-5 sm:mb-6">
           <div className="flex flex-wrap gap-2">
             <button
+              onClick={() => setActiveTab("groups")}
+              className={`flex items-center gap-1.5 sm:gap-2 rounded-lg px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold transition-all ${
+                activeTab === "groups"
+                  ? "bg-[#034EA2] text-white shadow-sm"
+                  : "bg-white text-slate-600 hover:bg-slate-200 hover:text-slate-900 border border-slate-200"
+              }`}
+            >
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+              Creator Groups & KPI Breakdown
+            </button>
+            <button
               onClick={() => setActiveTab("videos")}
               className={`flex items-center gap-1.5 sm:gap-2 rounded-lg px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold transition-all ${
                 activeTab === "videos"
@@ -528,19 +541,6 @@ export default function SwitchStormDashboard() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               Top Performing Content
-            </button>
-            <button
-              onClick={() => setActiveTab("groups")}
-              className={`flex items-center gap-1.5 sm:gap-2 rounded-lg px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold transition-all ${
-                activeTab === "groups"
-                  ? "bg-[#034EA2] text-white shadow-sm"
-                  : "bg-white text-slate-600 hover:bg-slate-200 hover:text-slate-900 border border-slate-200"
-              }`}
-            >
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-              </svg>
-              Creator Groups & KPI Breakdown
             </button>
           </div>
 
