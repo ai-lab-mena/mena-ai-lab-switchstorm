@@ -190,7 +190,7 @@ export default function SwitchStormDashboard() {
     const isRank3 = rankNumber === 3;
     const cardKey = `${sectionPrefix}-${video["Post URL"]}-${rankNumber}`;
     
-    // Dynamic fallback for Instagram & YouTube if not explicitly provided
+    // Dynamic fallback for Instagram, YouTube, and TikTok
     let thumbUrl = video["Thumbnail URL"];
     if (!thumbUrl || thumbUrl.length < 4) {
       if (video.Platform === "Instagram" && video["Post URL"]) {
@@ -199,6 +199,8 @@ export default function SwitchStormDashboard() {
       } else if (video.Platform === "YouTube" && video["Post URL"]) {
         const m = video["Post URL"].match(/(?:v=|youtu\.be\/)([A-Za-z0-9_-]{11})/);
         if (m) thumbUrl = `https://img.youtube.com/vi/${m[1]}/hqdefault.jpg`;
+      } else if (video.Platform === "TikTok" && video["Post URL"]) {
+        thumbUrl = `/api/thumbnail?url=${encodeURIComponent(video["Post URL"])}`;
       }
     }
 
