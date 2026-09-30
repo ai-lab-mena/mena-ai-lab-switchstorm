@@ -68,27 +68,31 @@ export default function SidebarShell({ children }: { children: React.ReactNode }
         } ${isMobileOpen ? "translate-x-0 w-72" : "-translate-x-full lg:translate-x-0"}`}
       >
         {/* Brand Header */}
-        <div className="p-4 border-b border-slate-800/80 flex items-center justify-between shrink-0 h-16">
-          <Link href="/" onClick={() => setIsMobileOpen(false)} className="flex items-center gap-3 overflow-hidden">
-            <div className="relative h-6 w-24 shrink-0">
-              <Image
-                src="/images/samsung_logo_white.png"
-                alt="Samsung Logo"
-                fill
-                priority
-                sizes="96px"
-                className="object-contain object-left"
-              />
-            </div>
-            {!isCollapsed && (
+        <div
+          className={`p-4 border-b border-slate-800/80 flex items-center shrink-0 h-16 transition-all ${
+            isCollapsed ? "justify-center" : "justify-between"
+          }`}
+        >
+          {!isCollapsed && (
+            <Link href="/" onClick={() => setIsMobileOpen(false)} className="flex items-center gap-3 overflow-hidden">
+              <div className="relative h-6 w-24 shrink-0">
+                <Image
+                  src="/images/samsung_logo_white.png"
+                  alt="Samsung Logo"
+                  fill
+                  priority
+                  sizes="96px"
+                  className="object-contain object-left"
+                />
+              </div>
               <div className="flex flex-col">
                 <span className="text-[10px] font-bold text-blue-400 uppercase tracking-widest leading-none">
                   AI Lab MENA
                 </span>
                 <span className="text-[9px] text-slate-400 font-medium">Marketing Intel</span>
               </div>
-            )}
-          </Link>
+            </Link>
+          )}
 
           {/* Desktop Collapse Toggle */}
           <button
