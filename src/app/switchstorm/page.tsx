@@ -190,17 +190,26 @@ export default function SwitchStormDashboard() {
     const isRank3 = rankNumber === 3;
     const cardKey = `${sectionPrefix}-${video["Post URL"]}-${rankNumber}`;
     
-    // Dynamic fallback for Instagram, YouTube, and TikTok
+    // Determine the optimal thumbnail URL
     let thumbUrl = video["Thumbnail URL"];
-    if (!thumbUrl || thumbUrl.length < 4) {
-      if (video.Platform === "Instagram" && video["Post URL"]) {
-        const m = video["Post URL"].match(/instagram\.com\/(?:p|reel)\/([^/?#]+)/);
-        if (m) thumbUrl = `https://www.instagram.com/p/${m[1]}/media/?size=l`;
-      } else if (video.Platform === "YouTube" && video["Post URL"]) {
-        const m = video["Post URL"].match(/(?:v=|youtu\.be\/)([A-Za-z0-9_-]{11})/);
-        if (m) thumbUrl = `https://img.youtube.com/vi/${m[1]}/hqdefault.jpg`;
-      } else if (video.Platform === "TikTok" && video["Post URL"]) {
-        thumbUrl = `/api/thumbnail?url=${encodeURIComponent(video["Post URL"])}`;
+
+    if (video.Platform === "YouTube" && video["Post URL"]) {
+      // YouTube allows direct cross-origin embedding from its public CDN
+      const m = video["Post URL"].match(/(?:v=|youtu\.be\/)([A-Za-z0-9_-]{11})/);
+      if (m) thumbUrl = `https://img.youtube.com/vi/${m[1]}/hqdefault.jpg`;
+    } else if (
+      video.Platform === "Instagram" ||
+      video.Platform === "TikTok" ||
+      (thumbUrl &&
+        (thumbUrl.includes("instagram.com") ||
+          thumbUrl.includes("tiktokcdn") ||
+          thumbUrl.includes("fbcdn.net")))
+    ) {
+      // Meta (Instagram) and TikTok block direct browser hotlinking via CORP (Cross-Origin-Resource-Policy: same-origin)
+      // or expiring tokens. We route them through our server-side API to stream the image bytes cleanly.
+      const target = video["Post URL"] || thumbUrl;
+      if (target) {
+        thumbUrl = `/api/thumbnail?url=${encodeURIComponent(target)}`;
       }
     }
 
