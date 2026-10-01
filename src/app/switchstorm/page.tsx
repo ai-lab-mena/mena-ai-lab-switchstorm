@@ -4,6 +4,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import SubsidiaryMap from "./SubsidiaryMap";
+import DataIngestionPanel from "./DataIngestionPanel";
 
 interface GroupKPI {
   Category: string;
@@ -59,6 +60,7 @@ export default function SwitchStormDashboard() {
   const [selectedPlatform, setSelectedPlatform] = useState<string>("All");
   const [selectedSubsidiary, setSelectedSubsidiary] = useState<string>("All");
   const [activeTab, setActiveTab] = useState<"groups" | "videos">("groups");
+  const [showIngestion, setShowIngestion] = useState<boolean>(false);
   const [viewMode, setViewMode] = useState<"top10" | "all">("top10");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [visibleCount, setVisibleCount] = useState<number>(24);
@@ -450,16 +452,20 @@ export default function SwitchStormDashboard() {
                 {data?.run_date || "Live"} • {lastRefreshed || "Synced"}
               </p>
             </div>
-            <Link
-              href="/switchstorm/upload"
-              className="flex items-center gap-1 sm:gap-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 px-2.5 py-1.5 text-[11px] sm:text-xs font-semibold text-slate-200 hover:text-white border border-slate-700 transition-all shadow-xs"
-              title="Open SwitchStorm Data Ingestion Sub-Page"
+            <button
+              onClick={() => setShowIngestion(!showIngestion)}
+              className={`flex items-center gap-1 sm:gap-1.5 rounded-lg px-2.5 py-1.5 text-[11px] sm:text-xs font-semibold transition-all shadow-xs cursor-pointer ${
+                showIngestion
+                  ? "bg-purple-600 text-white shadow-purple-500/20"
+                  : "bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white border border-slate-700"
+              }`}
+              title={showIngestion ? "Hide Data Ingestion Panel" : "Show Data Ingestion Panel"}
             >
               <svg className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
               </svg>
-              <span>Upload Portal</span>
-            </Link>
+              <span>{showIngestion ? "Hide Ingestion ▲" : "Data Ingestion ▼"}</span>
+            </button>
             <button
               onClick={fetchData}
               disabled={loading}
@@ -629,6 +635,22 @@ export default function SwitchStormDashboard() {
               </svg>
               Top Performing Content
             </button>
+
+            {/* Small Collapse Button to Show / Hide Data Ingestion */}
+            <button
+              onClick={() => setShowIngestion(!showIngestion)}
+              className={`flex items-center gap-1.5 sm:gap-2 rounded-lg px-3 sm:px-3.5 py-2 text-xs sm:text-sm font-semibold transition-all border cursor-pointer ${
+                showIngestion
+                  ? "bg-purple-600 text-white border-purple-500 shadow-md shadow-purple-500/20"
+                  : "bg-white text-slate-700 hover:bg-slate-100 hover:text-slate-900 border-slate-300 shadow-2xs"
+              }`}
+              title={showIngestion ? "Hide Data Ingestion Panel" : "Show Data Ingestion Panel"}
+            >
+              <svg className={`h-4 w-4 ${showIngestion ? "text-white" : "text-purple-600"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+              </svg>
+              <span>{showIngestion ? "Hide Ingestion ▲" : "Data Ingestion ▼"}</span>
+            </button>
           </div>
 
           {activeTab === "videos" && (
@@ -692,6 +714,13 @@ export default function SwitchStormDashboard() {
             </div>
           )}
         </div>
+
+        {/* COLLAPSIBLE DATA INGESTION PANEL (EXPANDS ON TOGGLE) */}
+        {showIngestion && (
+          <div className="mb-6 animate-fadeIn">
+            <DataIngestionPanel />
+          </div>
+        )}
 
         {/* TAB 1: TOP PERFORMING CONTENT */}
         {activeTab === "videos" && (
