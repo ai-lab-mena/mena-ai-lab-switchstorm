@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import SubsidiaryMap from "./SubsidiaryMap";
 
 interface GroupKPI {
@@ -449,6 +450,16 @@ export default function SwitchStormDashboard() {
                 {data?.run_date || "Live"} • {lastRefreshed || "Synced"}
               </p>
             </div>
+            <Link
+              href="/switchstorm/upload"
+              className="flex items-center gap-1 sm:gap-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 px-2.5 py-1.5 text-[11px] sm:text-xs font-semibold text-slate-200 hover:text-white border border-slate-700 transition-all shadow-xs"
+              title="Upload new Traackr Excel files"
+            >
+              <svg className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+              </svg>
+              <span>Upload</span>
+            </Link>
             <button
               onClick={fetchData}
               disabled={loading}

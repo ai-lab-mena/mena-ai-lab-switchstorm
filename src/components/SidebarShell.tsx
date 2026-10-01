@@ -182,6 +182,34 @@ export default function SidebarShell({ children }: { children: React.ReactNode }
                   </span>
                 )}
               </Link>
+
+              {/* Data Ingestion Link */}
+              <Link
+                href="/switchstorm/upload"
+                onClick={() => setIsMobileOpen(false)}
+                className={`group flex items-center justify-between px-3 py-2 rounded-lg text-xs font-semibold transition-all ${
+                  pathname === "/switchstorm/upload"
+                    ? "bg-[#034EA2] text-white shadow-md border border-blue-400/30"
+                    : "text-slate-400 hover:bg-slate-800 hover:text-white"
+                }`}
+                title="Data Ingestion Portal"
+              >
+                <div className="flex items-center gap-3 min-w-0">
+                  <div className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-md ${
+                    pathname === "/switchstorm/upload" ? "bg-blue-500 text-white" : "bg-slate-800 text-slate-400 group-hover:bg-slate-700"
+                  }`}>
+                    <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                    </svg>
+                  </div>
+                  {!isCollapsed && (
+                    <div className="truncate">
+                      <span className="block font-medium truncate">Data Ingestion</span>
+                      <span className="text-[10px] text-slate-500 block font-normal">Upload Excel Files</span>
+                    </div>
+                  )}
+                </div>
+              </Link>
             </nav>
           </div>
         </div>
