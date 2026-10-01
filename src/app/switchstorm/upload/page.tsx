@@ -9,8 +9,8 @@ export default function UploadPage() {
   const [isPinVerified, setIsPinVerified] = useState(false);
   const [pinError, setPinError] = useState("");
 
-  const [minaFile, setMinaFile] = useState<File | null>(null);
-  const [sachaFile, setSachaFile] = useState<File | null>(null);
+  const [techFile, setTechFile] = useState<File | null>(null);
+  const [lifestyleFile, setLifestyleFile] = useState<File | null>(null);
 
   const [localDirHandle, setLocalDirHandle] = useState<any>(null);
   const [localDirName, setLocalDirName] = useState<string>("");
@@ -81,7 +81,7 @@ export default function UploadPage() {
   // 5. Submit Upload
   const handleUploadSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!minaFile && !sachaFile) {
+    if (!techFile && !lifestyleFile) {
       alert("Please select at least one file to upload.");
       return;
     }
@@ -92,8 +92,8 @@ export default function UploadPage() {
     try {
       const formData = new FormData();
       formData.append("pin", pin);
-      if (minaFile) formData.append("minaFile", minaFile);
-      if (sachaFile) formData.append("sachaFile", sachaFile);
+      if (techFile) formData.append("techFile", techFile);
+      if (lifestyleFile) formData.append("lifestyleFile", lifestyleFile);
 
       const res = await fetch("/api/upload", {
         method: "POST",
@@ -107,15 +107,15 @@ export default function UploadPage() {
       }
 
       setUploadResult(data);
-      setUploadStatus("Files uploaded and validated successfully!");
+      setUploadStatus("Deliverables uploaded and validated successfully!");
 
       // Save locally if directory handle is available
       if (localDirHandle) {
-        if (minaFile) {
-          await saveToLocalFolder(minaFile, "traackr-export-samsung___-switching_-posts.xlsx");
+        if (techFile) {
+          await saveToLocalFolder(techFile, "traackr-export-samsung___-switching_-posts.xlsx");
         }
-        if (sachaFile) {
-          await saveToLocalFolder(sachaFile, "traackr-export-samsung___-switch_sto-posts.xlsx");
+        if (lifestyleFile) {
+          await saveToLocalFolder(lifestyleFile, "traackr-export-samsung___-switch_sto-posts.xlsx");
         }
       }
     } catch (err: any) {
@@ -146,7 +146,7 @@ export default function UploadPage() {
               SwitchStorm Data Ingestion Portal
             </h1>
             <p className="text-[11px] text-slate-400">
-              Upload Traackr exports to update campaign intelligence
+              Upload Traackr exports to refresh campaign intelligence
             </p>
           </div>
         </div>
@@ -200,21 +200,21 @@ export default function UploadPage() {
           <form onSubmit={handleUploadSubmit} className="space-y-6">
             {/* Step 1: File Upload Zones */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              {/* File A: Mina (Tech & Crossovers) */}
+              {/* Stream A: Tech & Crossover Posts */}
               <div className="rounded-2xl bg-slate-900 border border-slate-800 p-5 shadow-lg flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-3">
                     <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider bg-cyan-950/60 px-2.5 py-1 rounded-md border border-cyan-500/20">
-                      Stream A • Techies
+                      Stream A • Tech & Crossover
                     </span>
-                    {minaFile && (
+                    {techFile && (
                       <span className="text-[11px] text-emerald-400 font-semibold flex items-center gap-1">
-                        ✓ Selected ({(minaFile.size / 1024).toFixed(0)} KB)
+                        ✓ Selected ({(techFile.size / 1024).toFixed(0)} KB)
                       </span>
                     )}
                   </div>
                   <h3 className="text-sm font-bold text-white mb-1">
-                    Tech & Crossover Export (Mina)
+                    Tech & Crossover Export
                   </h3>
                   <p className="text-xs text-slate-400 mb-4">
                     Expected: <code className="text-slate-300">traackr-export-samsung___-switching_-posts.xlsx</code>
@@ -225,7 +225,7 @@ export default function UploadPage() {
                   <input
                     type="file"
                     accept=".xlsx, .xls"
-                    onChange={(e) => e.target.files && setMinaFile(e.target.files[0])}
+                    onChange={(e) => e.target.files && setTechFile(e.target.files[0])}
                     className="absolute inset-0 opacity-0 cursor-pointer"
                   />
                   <div className="flex flex-col items-center">
@@ -233,28 +233,28 @@ export default function UploadPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                     </svg>
                     <span className="text-xs font-semibold text-slate-200">
-                      {minaFile ? minaFile.name : "Click or drag Mina Excel file here"}
+                      {techFile ? techFile.name : "Click or drag Tech & Crossover Excel file here"}
                     </span>
                     <span className="text-[10px] text-slate-500 mt-0.5">XLSX spreadsheet up to 5MB</span>
                   </div>
                 </div>
               </div>
 
-              {/* File B: Sacha (Lifestyle) */}
+              {/* Stream B: Lifestyle Posts */}
               <div className="rounded-2xl bg-slate-900 border border-slate-800 p-5 shadow-lg flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-3">
                     <span className="text-xs font-bold text-purple-400 uppercase tracking-wider bg-purple-950/60 px-2.5 py-1 rounded-md border border-purple-500/20">
                       Stream B • Lifestyle
                     </span>
-                    {sachaFile && (
+                    {lifestyleFile && (
                       <span className="text-[11px] text-emerald-400 font-semibold flex items-center gap-1">
-                        ✓ Selected ({(sachaFile.size / 1024).toFixed(0)} KB)
+                        ✓ Selected ({(lifestyleFile.size / 1024).toFixed(0)} KB)
                       </span>
                     )}
                   </div>
                   <h3 className="text-sm font-bold text-white mb-1">
-                    Lifestyle Export (Sacha)
+                    Lifestyle & Team Galaxy Export
                   </h3>
                   <p className="text-xs text-slate-400 mb-4">
                     Expected: <code className="text-slate-300">traackr-export-samsung___-switch_sto-posts.xlsx</code>
@@ -265,7 +265,7 @@ export default function UploadPage() {
                   <input
                     type="file"
                     accept=".xlsx, .xls"
-                    onChange={(e) => e.target.files && setSachaFile(e.target.files[0])}
+                    onChange={(e) => e.target.files && setLifestyleFile(e.target.files[0])}
                     className="absolute inset-0 opacity-0 cursor-pointer"
                   />
                   <div className="flex flex-col items-center">
@@ -273,7 +273,7 @@ export default function UploadPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                     </svg>
                     <span className="text-xs font-semibold text-slate-200">
-                      {sachaFile ? sachaFile.name : "Click or drag Sacha Excel file here"}
+                      {lifestyleFile ? lifestyleFile.name : "Click or drag Lifestyle Excel file here"}
                     </span>
                     <span className="text-[10px] text-slate-500 mt-0.5">XLSX spreadsheet up to 5MB</span>
                   </div>
@@ -292,11 +292,11 @@ export default function UploadPage() {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-white">
-                      Local Folder / Desktop Auto-Sync
+                      Local Desktop / Folder Auto-Sync
                     </h4>
                     <p className="text-xs text-slate-400">
                       {localDirName
-                        ? `Linked Folder: ${localDirName} (Files will be written directly)`
+                        ? `Linked Local Directory: ${localDirName} (Files will be written directly)`
                         : "Connect your Desktop or local project folder so uploads save directly to your computer."}
                     </p>
                   </div>
@@ -312,12 +312,12 @@ export default function UploadPage() {
                   </button>
 
                   {/* Fallback download buttons if user wants quick direct save */}
-                  {(minaFile || sachaFile) && !localDirName && (
+                  {(techFile || lifestyleFile) && !localDirName && (
                     <button
                       type="button"
                       onClick={() => {
-                        if (minaFile) triggerBrowserDownload(minaFile, minaFile.name);
-                        if (sachaFile) triggerBrowserDownload(sachaFile, sachaFile.name);
+                        if (techFile) triggerBrowserDownload(techFile, techFile.name);
+                        if (lifestyleFile) triggerBrowserDownload(lifestyleFile, lifestyleFile.name);
                       }}
                       className="rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white font-semibold text-xs px-3 py-2 border border-slate-700 transition-all cursor-pointer"
                     >
@@ -336,9 +336,9 @@ export default function UploadPage() {
 
               <button
                 type="submit"
-                disabled={isUploading || (!minaFile && !sachaFile)}
+                disabled={isUploading || (!techFile && !lifestyleFile)}
                 className={`rounded-xl px-6 py-3 text-sm font-bold transition-all shadow-lg cursor-pointer ${
-                  isUploading || (!minaFile && !sachaFile)
+                  isUploading || (!techFile && !lifestyleFile)
                     ? "bg-slate-800 text-slate-500 cursor-not-allowed"
                     : "bg-[#034EA2] hover:bg-blue-600 text-white shadow-blue-500/25"
                 }`}
@@ -358,24 +358,24 @@ export default function UploadPage() {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-                  {uploadResult.summary?.mina && (
+                  {uploadResult.summary?.tech && (
                     <div className="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800">
                       <div className="font-bold text-cyan-400 mb-1">
-                        Techies File: {uploadResult.summary.mina.fileName}
+                        {uploadResult.summary.tech.stream}: {uploadResult.summary.tech.fileName}
                       </div>
                       <div className="text-slate-300">
-                        {uploadResult.summary.mina.rowCount.toLocaleString()} rows • {uploadResult.summary.mina.columns} columns ({uploadResult.summary.mina.sizeKB} KB)
+                        {uploadResult.summary.tech.rowCount.toLocaleString()} rows • {uploadResult.summary.tech.columns} columns ({uploadResult.summary.tech.sizeKB} KB)
                       </div>
                     </div>
                   )}
 
-                  {uploadResult.summary?.sacha && (
+                  {uploadResult.summary?.lifestyle && (
                     <div className="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800">
                       <div className="font-bold text-purple-400 mb-1">
-                        Lifestyle File: {uploadResult.summary.sacha.fileName}
+                        {uploadResult.summary.lifestyle.stream}: {uploadResult.summary.lifestyle.fileName}
                       </div>
                       <div className="text-slate-300">
-                        {uploadResult.summary.sacha.rowCount.toLocaleString()} rows • {uploadResult.summary.sacha.columns} columns ({uploadResult.summary.sacha.sizeKB} KB)
+                        {uploadResult.summary.lifestyle.rowCount.toLocaleString()} rows • {uploadResult.summary.lifestyle.columns} columns ({uploadResult.summary.lifestyle.sizeKB} KB)
                       </div>
                     </div>
                   )}
