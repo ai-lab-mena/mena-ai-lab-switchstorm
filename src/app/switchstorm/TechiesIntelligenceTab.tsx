@@ -1,6 +1,11 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
+import {
+  STATIC_TECHIES_DEVICE_SUMMARY,
+  STATIC_TECHIES_INFLUENCER_MATRIX,
+  STATIC_TECHIES_TARGETS_SUMMARY,
+} from "./techiesData";
 
 export interface DeviceSummary {
   Device: string;
@@ -61,6 +66,21 @@ export default function TechiesIntelligenceTab({
   const [selectedDevice, setSelectedDevice] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState<string>("");
 
+  const resolvedDevices =
+    deviceSummary && deviceSummary.length > 0
+      ? deviceSummary
+      : STATIC_TECHIES_DEVICE_SUMMARY;
+
+  const resolvedCreators =
+    influencerMatrix && influencerMatrix.length > 0
+      ? influencerMatrix
+      : STATIC_TECHIES_INFLUENCER_MATRIX;
+
+  const resolvedTargets =
+    targetsVsActual && targetsVsActual.length > 0
+      ? targetsVsActual
+      : STATIC_TECHIES_TARGETS_SUMMARY;
+
   const formatNumber = (val: number | undefined) => {
     if (!val) return "0";
     return val.toLocaleString();
@@ -75,33 +95,33 @@ export default function TechiesIntelligenceTab({
 
   // Filtered Creators Matrix
   const filteredCreators = useMemo(() => {
-    return influencerMatrix.filter((c) => {
+    return resolvedCreators.filter((c) => {
       const matchSub =
         selectedSubsidiary === "All" ||
-        (c.Subsidiary && c.Subsidiary.toUpperCase() === selectedSubsidiary.toUpperCase());
+        (c.Subsidiary && String(c.Subsidiary).toUpperCase() === selectedSubsidiary.toUpperCase());
 
       const matchDev =
         selectedDevice === "All" ||
-        c.Device.toLowerCase() === selectedDevice.toLowerCase();
+        String(c.Device).toLowerCase() === selectedDevice.toLowerCase();
 
       const q = searchQuery.toLowerCase().trim();
       const matchQuery =
         !q ||
-        c.Name.toLowerCase().includes(q) ||
-        c.Handle.toLowerCase().includes(q) ||
-        c.Subsidiary.toLowerCase().includes(q);
+        String(c.Name).toLowerCase().includes(q) ||
+        String(c.Handle).toLowerCase().includes(q) ||
+        String(c.Subsidiary).toLowerCase().includes(q);
 
       return matchSub && matchDev && matchQuery;
     });
-  }, [influencerMatrix, selectedSubsidiary, selectedDevice, searchQuery]);
+  }, [resolvedCreators, selectedSubsidiary, selectedDevice, searchQuery]);
 
   // Filtered Targets
   const filteredTargets = useMemo(() => {
-    if (selectedSubsidiary === "All") return targetsVsActual;
-    return targetsVsActual.filter(
+    if (selectedSubsidiary === "All") return resolvedTargets;
+    return resolvedTargets.filter(
       (t) => t.Subsidiary.toUpperCase() === selectedSubsidiary.toUpperCase()
     );
-  }, [targetsVsActual, selectedSubsidiary]);
+  }, [resolvedTargets, selectedSubsidiary]);
 
   return (
     <div className="space-y-8 animate-fadeIn">

@@ -1,6 +1,12 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
+import {
+  STATIC_LIFESTYLE_WEEKLY_PACING,
+  STATIC_LIFESTYLE_SUBSIDIARY_TARGETS,
+  STATIC_LIFESTYLE_CREATOR_MATRIX,
+  STATIC_LIFESTYLE_TIER_SCORECARD,
+} from "./lifestyleData";
 
 export interface TierScorecard {
   Tier: string;
@@ -74,6 +80,26 @@ export default function LifestyleIntelligenceTab({
 }: LifestyleIntelligenceTabProps) {
   const [searchQuery, setSearchQuery] = useState<string>("");
 
+  const resolvedTiers =
+    tierScorecard && tierScorecard.length > 0
+      ? tierScorecard
+      : STATIC_LIFESTYLE_TIER_SCORECARD;
+
+  const resolvedPacing =
+    weeklyPacing && weeklyPacing.length > 0
+      ? weeklyPacing
+      : STATIC_LIFESTYLE_WEEKLY_PACING;
+
+  const resolvedTargets =
+    subsidiaryTargets && subsidiaryTargets.length > 0
+      ? subsidiaryTargets
+      : STATIC_LIFESTYLE_SUBSIDIARY_TARGETS;
+
+  const resolvedCreators =
+    creatorMatrix && creatorMatrix.length > 0
+      ? creatorMatrix
+      : STATIC_LIFESTYLE_CREATOR_MATRIX;
+
   const formatShort = (val: number | undefined) => {
     if (!val) return "0";
     if (val >= 1_000_000) return `${(val / 1_000_000).toFixed(1)}M`;
@@ -83,31 +109,31 @@ export default function LifestyleIntelligenceTab({
 
   // Filtered Creators Matrix
   const filteredCreators = useMemo(() => {
-    return creatorMatrix.filter((c) => {
+    return resolvedCreators.filter((c) => {
       const matchSub =
         selectedSubsidiary === "All" ||
-        (c.Subsidiary && c.Subsidiary.toUpperCase() === selectedSubsidiary.toUpperCase());
+        (c.Subsidiary && String(c.Subsidiary).toUpperCase() === selectedSubsidiary.toUpperCase());
 
       const q = searchQuery.toLowerCase().trim();
       const matchQuery =
         !q ||
-        c.Name.toLowerCase().includes(q) ||
-        c.Handle.toLowerCase().includes(q) ||
-        c.Subsidiary.toLowerCase().includes(q);
+        String(c.Name).toLowerCase().includes(q) ||
+        String(c.Handle).toLowerCase().includes(q) ||
+        String(c.Subsidiary).toLowerCase().includes(q);
 
       return matchSub && matchQuery;
     });
-  }, [creatorMatrix, selectedSubsidiary, searchQuery]);
+  }, [resolvedCreators, selectedSubsidiary, searchQuery]);
 
   // Filtered Targets
   const filteredTargets = useMemo(() => {
-    if (selectedSubsidiary === "All") return subsidiaryTargets;
-    return subsidiaryTargets.filter((t) => {
+    if (selectedSubsidiary === "All") return resolvedTargets;
+    return resolvedTargets.filter((t) => {
       const cleanSub = t.Subsidiary.toUpperCase();
       const targetSub = selectedSubsidiary.toUpperCase();
       return cleanSub === targetSub || cleanSub.includes(targetSub);
     });
-  }, [subsidiaryTargets, selectedSubsidiary]);
+  }, [resolvedTargets, selectedSubsidiary]);
 
   return (
     <div className="space-y-8 animate-fadeIn">
