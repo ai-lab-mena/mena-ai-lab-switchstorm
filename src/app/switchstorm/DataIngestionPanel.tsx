@@ -7,6 +7,8 @@ export default function DataIngestionPanel() {
   const [isPinVerified, setIsPinVerified] = useState(false);
   const [pinError, setPinError] = useState("");
 
+  const [isCollapsed, setIsCollapsed] = useState(false);
+
   const [lifestyleFile, setLifestyleFile] = useState<File | null>(null); // Stream A
   const [techFile, setTechFile] = useState<File | null>(null); // Stream B
 
@@ -125,48 +127,76 @@ export default function DataIngestionPanel() {
   };
 
   return (
-    <div className="rounded-2xl bg-slate-900 border border-slate-800 text-slate-100 p-5 sm:p-7 shadow-xl mb-8">
+    <div className="rounded-2xl bg-slate-900 border border-slate-800 text-slate-100 p-4 sm:p-6 shadow-xl mb-6 transition-all duration-300">
       {/* Header Info */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-4 mb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-3 mb-4">
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20 shadow-inner">
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20 shadow-inner">
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
             </svg>
           </div>
           <div>
-            <h3 className="text-base font-bold text-white tracking-tight flex items-center gap-2">
+            <h3 className="text-sm sm:text-base font-bold text-white tracking-tight flex items-center gap-2">
               <span>SwitchStorm Data Ingestion Portal</span>
               <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[10px] font-bold text-emerald-300 border border-emerald-500/30">
                 Sub-Page
               </span>
             </h3>
             <p className="text-xs text-slate-400">
-              Directly upload Traackr export spreadsheets to update campaign figures and sync to your local computer.
+              Upload Traackr exports to refresh campaign figures and sync to your local Desktop.
             </p>
           </div>
         </div>
 
-        {isPinVerified && (
-          <div className="flex items-center gap-2 text-xs text-emerald-400 font-semibold bg-emerald-950/60 px-3 py-1.5 rounded-lg border border-emerald-500/20">
-            <span>●</span>
-            <span>Authorized Session Active</span>
-          </div>
-        )}
+        {/* Header Right Actions & Small Collapse Button */}
+        <div className="flex items-center gap-2 self-start sm:self-auto">
+          {isPinVerified && (
+            <div className="hidden sm:flex items-center gap-1.5 text-xs text-emerald-400 font-semibold bg-emerald-950/60 px-2.5 py-1 rounded-lg border border-emerald-500/20">
+              <span>●</span>
+              <span>Active</span>
+            </div>
+          )}
+
+          {/* Small Collapse Button */}
+          <button
+            type="button"
+            onClick={() => setIsCollapsed(!isCollapsed)}
+            className="flex items-center gap-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white px-2.5 py-1.5 text-xs font-semibold border border-slate-700 transition-all cursor-pointer shadow-xs"
+            title={isCollapsed ? "Expand Data Ingestion" : "Collapse Data Ingestion"}
+          >
+            <span>{isCollapsed ? "Show Uploader ▼" : "Hide Uploader ▲"}</span>
+          </button>
+        </div>
       </div>
 
-      {!isPinVerified ? (
+      {isCollapsed ? (
+        /* Collapsed Minimal Strip */
+        <div className="p-3 bg-slate-950/50 rounded-xl border border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+          <span className="flex items-center gap-2">
+            <span className="h-2 w-2 rounded-full bg-purple-400 animate-pulse"></span>
+            <span>Uploader collapsed. Stream A (Lifestyle) and Stream B (Techies) ready to ingest.</span>
+          </span>
+          <button
+            type="button"
+            onClick={() => setIsCollapsed(false)}
+            className="text-xs text-blue-400 hover:text-blue-300 font-semibold underline cursor-pointer ml-2"
+          >
+            Expand Uploader
+          </button>
+        </div>
+      ) : !isPinVerified ? (
         /* Security Gate */
-        <div className="max-w-md mx-auto my-6 bg-slate-950/70 border border-slate-800 rounded-2xl p-6 shadow-xl text-center">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-3 mx-auto">
+        <div className="max-w-md mx-auto my-4 bg-slate-950/70 border border-slate-800 rounded-2xl p-5 shadow-xl text-center">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-2.5 mx-auto">
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
             </svg>
           </div>
-          <h4 className="text-sm font-bold text-white mb-1">
+          <h4 className="text-sm font-bold text-white mb-0.5">
             Campaign Ingestion Security
           </h4>
-          <p className="text-xs text-slate-400 mb-4">
+          <p className="text-xs text-slate-400 mb-3">
             Enter the authorized campaign PIN to access the spreadsheet uploader.
           </p>
 
@@ -191,11 +221,11 @@ export default function DataIngestionPanel() {
         </div>
       ) : (
         /* Upload Form */
-        <form onSubmit={handleUploadSubmit} className="space-y-6">
+        <form onSubmit={handleUploadSubmit} className="space-y-5">
           {/* Stream A & Stream B Upload Zones */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* STREAM A: Lifestyle & Team Galaxy */}
-            <div className="rounded-xl bg-slate-950/70 border border-purple-500/20 p-4 sm:p-5 shadow-sm flex flex-col justify-between">
+            <div className="rounded-xl bg-slate-950/70 border border-purple-500/20 p-4 shadow-sm flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-[11px] font-bold text-purple-300 uppercase tracking-wider bg-purple-950/80 px-2.5 py-0.5 rounded-md border border-purple-500/30">
@@ -235,7 +265,7 @@ export default function DataIngestionPanel() {
             </div>
 
             {/* STREAM B: Tech & Crossover */}
-            <div className="rounded-xl bg-slate-950/70 border border-cyan-500/20 p-4 sm:p-5 shadow-sm flex flex-col justify-between">
+            <div className="rounded-xl bg-slate-950/70 border border-cyan-500/20 p-4 shadow-sm flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-[11px] font-bold text-cyan-300 uppercase tracking-wider bg-cyan-950/80 px-2.5 py-0.5 rounded-md border border-cyan-500/30">
@@ -276,10 +306,10 @@ export default function DataIngestionPanel() {
           </div>
 
           {/* Local Folder / Desktop Auto-Sync */}
-          <div className="rounded-xl bg-gradient-to-r from-blue-950/40 via-slate-950 to-slate-950 border border-blue-500/20 p-4">
+          <div className="rounded-xl bg-gradient-to-r from-blue-950/40 via-slate-950 to-slate-950 border border-blue-500/20 p-3.5">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div className="flex items-center gap-3">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blue-500/20 text-blue-400 border border-blue-500/30">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-blue-500/20 text-blue-400 border border-blue-500/30">
                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
                   </svg>
