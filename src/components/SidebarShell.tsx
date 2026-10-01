@@ -185,9 +185,13 @@ export default function SidebarShell({ children }: { children: React.ReactNode }
 
               {/* Data Ingestion Link */}
               <Link
-                href="/switchstorm?tab=upload"
+                href="/switchstorm/upload"
                 onClick={() => setIsMobileOpen(false)}
-                className="group flex items-center justify-between px-3 py-2 rounded-lg text-xs font-semibold transition-all text-slate-400 hover:bg-slate-800 hover:text-white"
+                className={`group flex items-center justify-between px-3 py-2 rounded-lg text-xs font-semibold transition-all ${
+                  pathname === "/switchstorm/upload"
+                    ? "bg-[#034EA2] text-white shadow-md border border-blue-400/30"
+                    : "text-slate-400 hover:bg-slate-800 hover:text-white"
+                }`}
                 title="Data Ingestion Sub-Page"
               >
                 <div className="flex items-center gap-3 min-w-0">
