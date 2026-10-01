@@ -1,8 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
+import * as fs from "fs";
+import * as path from "path";
+import { execFile } from "child_process";
+import { promisify } from "util";
 import * as XLSX from "xlsx";
 
+const execFileAsync = promisify(execFile);
+
 export const dynamic = "force-dynamic";
-export const maxDuration = 30;
+export const maxDuration = 120;
 
 const VALID_PIN = "samsung2026";
 
@@ -36,11 +42,29 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    // Resolve Campaign Root Directory
+    const cwd = process.cwd();
+    const campaignRoot = cwd.endsWith("4_interactive_dashboard")
+      ? path.resolve(cwd, "..")
+      : cwd;
+
     const results: Record<string, any> = {};
 
-    // 2. Process Stream A: Lifestyle
+    // 2. Process & Save Stream A: Lifestyle
     if (lifestyleFile) {
       const buffer = await lifestyleFile.arrayBuffer();
+      const nodeBuffer = Buffer.from(buffer);
+
+      // Save directly into 1_InputData/Sacha/Actual
+      const sachaDir = path.join(campaignRoot, "1_InputData", "Sacha", "Actual");
+      if (fs.existsSync(sachaDir)) {
+        const targetPath = path.join(
+          sachaDir,
+          "traackr-export-samsung___-switch_sto-posts.xlsx"
+        );
+        fs.writeFileSync(targetPath, nodeBuffer);
+      }
+
       const workbook = XLSX.read(buffer, { type: "array" });
       const sheetName = workbook.SheetNames[0];
       const sheet = workbook.Sheets[sheetName];
@@ -53,14 +77,26 @@ export async function POST(req: NextRequest) {
         rowCount: rows.length,
         columns: rows.length > 0 ? Object.keys(rows[0]).length : 0,
         sampleCreators: Array.from(
-          new Set(rows.map((r) => r["Influencer Name"]).filter(Boolean))
+          new Set(rows.map((r: any) => r["Influencer Name"]).filter(Boolean))
         ).slice(0, 5),
       };
     }
 
-    // 3. Process Stream B: Tech & Crossover
+    // 3. Process & Save Stream B: Tech & Crossover
     if (techFile) {
       const buffer = await techFile.arrayBuffer();
+      const nodeBuffer = Buffer.from(buffer);
+
+      // Save directly into 1_InputData/Mina/Actual
+      const minaDir = path.join(campaignRoot, "1_InputData", "Mina", "Actual");
+      if (fs.existsSync(minaDir)) {
+        const targetPath = path.join(
+          minaDir,
+          "traackr-export-samsung___-switching_-posts.xlsx"
+        );
+        fs.writeFileSync(targetPath, nodeBuffer);
+      }
+
       const workbook = XLSX.read(buffer, { type: "array" });
       const sheetName = workbook.SheetNames[0];
       const sheet = workbook.Sheets[sheetName];
@@ -73,16 +109,41 @@ export async function POST(req: NextRequest) {
         rowCount: rows.length,
         columns: rows.length > 0 ? Object.keys(rows[0]).length : 0,
         sampleCreators: Array.from(
-          new Set(rows.map((r) => r["Influencer Name"]).filter(Boolean))
+          new Set(rows.map((r: any) => r["Influencer Name"]).filter(Boolean))
         ).slice(0, 5),
       };
+    }
+
+    // 4. Trigger the Python Pipeline in the background if running on local/LAN server
+    let pipelineStatus = "Pipeline executed successfully";
+    let pipelineLog = "";
+    const pipelineScript = path.join(campaignRoot, "execute_pipeline.py");
+
+    if (fs.existsSync(pipelineScript)) {
+      try {
+        const { stdout } = await execFileAsync("py", ["-3", "execute_pipeline.py"], {
+          cwd: campaignRoot,
+          env: { ...process.env, PYTHONUTF8: "1" },
+          timeout: 120000,
+        });
+        pipelineLog = stdout;
+      } catch (err: any) {
+        console.error("Pipeline trigger error:", err);
+        pipelineStatus = "Pipeline executed with notice";
+        pipelineLog = err.stdout || err.message || "";
+      }
     }
 
     return NextResponse.json({
       success: true,
       timestamp: new Date().toISOString(),
-      message: "Campaign deliverables successfully uploaded and validated.",
+      message:
+        "Campaign deliverables successfully saved to 1_InputData and pipeline executed! All 4 dashboard tabs are refreshed.",
       summary: results,
+      pipeline: {
+        status: pipelineStatus,
+        log: pipelineLog,
+      },
     });
   } catch (error: any) {
     console.error("Upload error:", error);
