@@ -10,10 +10,16 @@ export async function POST(req: NextRequest) {
   try {
     const formData = await req.formData();
     const pin = formData.get("pin") as string;
-    
-    // Accept either new professional keys or legacy keys for resilience
-    const techFile = (formData.get("techFile") || formData.get("minaFile")) as File | null;
-    const lifestyleFile = (formData.get("lifestyleFile") || formData.get("sachaFile")) as File | null;
+
+    // Stream A: Lifestyle & Team Galaxy
+    // Stream B: Tech & Crossover
+    const lifestyleFile = (formData.get("streamA") ||
+      formData.get("lifestyleFile") ||
+      formData.get("sachaFile")) as File | null;
+
+    const techFile = (formData.get("streamB") ||
+      formData.get("techFile") ||
+      formData.get("minaFile")) as File | null;
 
     // 1. PIN verification
     if (pin !== VALID_PIN) {
@@ -23,27 +29,27 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    if (!techFile && !lifestyleFile) {
+    if (!lifestyleFile && !techFile) {
       return NextResponse.json(
-        { error: "Please upload at least one Excel file (Tech & Crossover or Lifestyle stream)." },
+        { error: "Please upload at least one Excel file (Stream A Lifestyle or Stream B Tech & Crossover)." },
         { status: 400 }
       );
     }
 
     const results: Record<string, any> = {};
 
-    // 2. Process Tech & Crossover file if provided
-    if (techFile) {
-      const buffer = await techFile.arrayBuffer();
+    // 2. Process Stream A: Lifestyle
+    if (lifestyleFile) {
+      const buffer = await lifestyleFile.arrayBuffer();
       const workbook = XLSX.read(buffer, { type: "array" });
       const sheetName = workbook.SheetNames[0];
       const sheet = workbook.Sheets[sheetName];
       const rows: any[] = XLSX.utils.sheet_to_json(sheet);
 
-      results.tech = {
-        stream: "Tech & Crossover Stream",
-        fileName: techFile.name,
-        sizeKB: (techFile.size / 1024).toFixed(1),
+      results.streamA = {
+        stream: "Stream A • Lifestyle & Team Galaxy",
+        fileName: lifestyleFile.name,
+        sizeKB: (lifestyleFile.size / 1024).toFixed(1),
         rowCount: rows.length,
         columns: rows.length > 0 ? Object.keys(rows[0]).length : 0,
         sampleCreators: Array.from(
@@ -52,18 +58,18 @@ export async function POST(req: NextRequest) {
       };
     }
 
-    // 3. Process Lifestyle file if provided
-    if (lifestyleFile) {
-      const buffer = await lifestyleFile.arrayBuffer();
+    // 3. Process Stream B: Tech & Crossover
+    if (techFile) {
+      const buffer = await techFile.arrayBuffer();
       const workbook = XLSX.read(buffer, { type: "array" });
       const sheetName = workbook.SheetNames[0];
       const sheet = workbook.Sheets[sheetName];
       const rows: any[] = XLSX.utils.sheet_to_json(sheet);
 
-      results.lifestyle = {
-        stream: "Lifestyle Stream",
-        fileName: lifestyleFile.name,
-        sizeKB: (lifestyleFile.size / 1024).toFixed(1),
+      results.streamB = {
+        stream: "Stream B • Tech & Crossover",
+        fileName: techFile.name,
+        sizeKB: (techFile.size / 1024).toFixed(1),
         rowCount: rows.length,
         columns: rows.length > 0 ? Object.keys(rows[0]).length : 0,
         sampleCreators: Array.from(
