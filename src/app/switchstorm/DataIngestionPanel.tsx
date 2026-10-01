@@ -12,12 +12,13 @@ export default function DataIngestionPanel() {
 
   const [isUploading, setIsUploading] = useState<boolean>(false);
   const [uploadStatus, setUploadStatus] = useState<string>("");
+  const [uploadError, setUploadError] = useState<string>("");
   const [uploadResult, setUploadResult] = useState<any>(null);
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
 
   const handleVerifyPin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (pin === "samsung2026") {
+    if (pin.trim().toLowerCase() === "samsung2026") {
       setIsAuthorized(true);
       setPinError("");
     } else {
@@ -28,12 +29,13 @@ export default function DataIngestionPanel() {
   const handleUploadSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!lifestyleFile && !techFile) {
-      alert("Please select at least one file to upload.");
+      setUploadError("Please select at least one file to upload (Stream A Lifestyle or Stream B Tech).");
       return;
     }
 
     setIsUploading(true);
     setUploadStatus("Uploading files & executing campaign pipeline on backend...");
+    setUploadError("");
     setUploadResult(null);
 
     const formData = new FormData();
@@ -49,15 +51,18 @@ export default function DataIngestionPanel() {
 
       const contentType = res.headers.get("content-type") || "";
       if (!contentType.includes("application/json")) {
-        const text = await res.text();
-        throw new Error(
-          "Corporate proxy blocked external upload or returned non-JSON. Run the dashboard locally on LAN IP (e.g. http://111.101.35.171:3000) to upload directly without proxy interference."
+        setUploadError(
+          "Corporate proxy blocked external upload. Please access via the local Samsung LAN IP (http://111.101.35.171:3000/switchstorm/upload) to upload directly without proxy interference."
         );
+        setUploadStatus("");
+        return;
       }
 
       const data = await res.json();
       if (!res.ok) {
-        throw new Error(data.error || "Upload failed");
+        setUploadError(data.error || "Upload failed. Please check the selected files.");
+        setUploadStatus("");
+        return;
       }
 
       setUploadResult(data);
@@ -66,7 +71,8 @@ export default function DataIngestionPanel() {
       setTechFile(null);
     } catch (err: any) {
       console.error(err);
-      setUploadStatus(`Error: ${err.message}`);
+      setUploadError(err.message || "An unexpected error occurred during upload.");
+      setUploadStatus("");
     } finally {
       setIsUploading(false);
     }
@@ -224,6 +230,17 @@ export default function DataIngestionPanel() {
                   </div>
                 </div>
               </div>
+
+              {/* Error Notice Box */}
+              {uploadError && (
+                <div className="rounded-xl bg-rose-950/40 border border-rose-500/40 p-3.5 text-xs text-rose-300 flex items-start gap-2.5 animate-fadeIn">
+                  <span className="text-rose-400 font-bold text-sm">⚠️</span>
+                  <div>
+                    <span className="font-bold text-white block">Upload Notice:</span>
+                    <span>{uploadError}</span>
+                  </div>
+                </div>
+              )}
 
               {/* Action Row */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2 border-t border-slate-800">

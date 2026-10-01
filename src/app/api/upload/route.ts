@@ -8,14 +8,22 @@ import * as XLSX from "xlsx";
 const execFileAsync = promisify(execFile);
 
 export const dynamic = "force-dynamic";
-export const maxDuration = 120;
+export const maxDuration = 180;
 
 const VALID_PIN = "samsung2026";
 
 export async function POST(req: NextRequest) {
   try {
     const formData = await req.formData();
-    const pin = formData.get("pin") as string;
+    const pin = (formData.get("pin") as string) || "";
+
+    // 1. PIN verification (trimmed)
+    if (pin.trim().toLowerCase() !== VALID_PIN) {
+      return NextResponse.json(
+        { error: "Invalid Access PIN. Please enter the authorized campaign PIN (samsung2026)." },
+        { status: 401 }
+      );
+    }
 
     // Stream A: Lifestyle & Team Galaxy
     // Stream B: Tech & Crossover
@@ -27,14 +35,6 @@ export async function POST(req: NextRequest) {
       formData.get("techFile") ||
       formData.get("minaFile")) as File | null;
 
-    // 1. PIN verification
-    if (pin !== VALID_PIN) {
-      return NextResponse.json(
-        { error: "Invalid Access PIN. Please enter the authorized campaign PIN." },
-        { status: 401 }
-      );
-    }
-
     if (!lifestyleFile && !techFile) {
       return NextResponse.json(
         { error: "Please upload at least one Excel file (Stream A Lifestyle or Stream B Tech & Crossover)." },
@@ -42,16 +42,16 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Resolve Campaign Root Directory
-    const cwd = process.cwd();
-    const campaignRoot = cwd.endsWith("4_interactive_dashboard")
-      ? path.resolve(cwd, "..")
-      : cwd;
+    // Resolve Campaign Root Directory reliably
+    let campaignRoot = process.cwd();
+    if (!fs.existsSync(path.join(campaignRoot, "1_InputData"))) {
+      campaignRoot = path.resolve(campaignRoot, "..");
+    }
 
     const results: Record<string, any> = {};
 
     // 2. Process & Save Stream A: Lifestyle
-    if (lifestyleFile) {
+    if (lifestyleFile && lifestyleFile.size > 0) {
       const buffer = await lifestyleFile.arrayBuffer();
       const nodeBuffer = Buffer.from(buffer);
 
@@ -62,28 +62,46 @@ export async function POST(req: NextRequest) {
           sachaDir,
           "traackr-export-samsung___-switch_sto-posts.xlsx"
         );
-        fs.writeFileSync(targetPath, nodeBuffer);
+        try {
+          fs.writeFileSync(targetPath, nodeBuffer);
+        } catch (writeErr: any) {
+          if (writeErr.code === "EBUSY" || writeErr.code === "EPERM") {
+            return NextResponse.json(
+              {
+                error: `File is locked: '${path.basename(
+                  targetPath
+                )}' is open in Microsoft Excel. Please close Excel and try again.`,
+              },
+              { status: 409 }
+            );
+          }
+          throw writeErr;
+        }
       }
 
-      const workbook = XLSX.read(buffer, { type: "array" });
-      const sheetName = workbook.SheetNames[0];
-      const sheet = workbook.Sheets[sheetName];
-      const rows: any[] = XLSX.utils.sheet_to_json(sheet);
+      try {
+        const workbook = XLSX.read(buffer, { type: "array" });
+        const sheetName = workbook.SheetNames[0];
+        const sheet = workbook.Sheets[sheetName];
+        const rows: any[] = XLSX.utils.sheet_to_json(sheet);
 
-      results.streamA = {
-        stream: "Stream A • Lifestyle & Team Galaxy",
-        fileName: lifestyleFile.name,
-        sizeKB: (lifestyleFile.size / 1024).toFixed(1),
-        rowCount: rows.length,
-        columns: rows.length > 0 ? Object.keys(rows[0]).length : 0,
-        sampleCreators: Array.from(
-          new Set(rows.map((r: any) => r["Influencer Name"]).filter(Boolean))
-        ).slice(0, 5),
-      };
+        results.streamA = {
+          stream: "Stream A • Lifestyle & Team Galaxy",
+          fileName: lifestyleFile.name,
+          sizeKB: (lifestyleFile.size / 1024).toFixed(1),
+          rowCount: rows.length,
+          columns: rows.length > 0 ? Object.keys(rows[0]).length : 0,
+          sampleCreators: Array.from(
+            new Set(rows.map((r: any) => r["Influencer Name"]).filter(Boolean))
+          ).slice(0, 5),
+        };
+      } catch (xlsxErr) {
+        console.warn("XLSX preview parsing notice:", xlsxErr);
+      }
     }
 
     // 3. Process & Save Stream B: Tech & Crossover
-    if (techFile) {
+    if (techFile && techFile.size > 0) {
       const buffer = await techFile.arrayBuffer();
       const nodeBuffer = Buffer.from(buffer);
 
@@ -94,24 +112,42 @@ export async function POST(req: NextRequest) {
           minaDir,
           "traackr-export-samsung___-switching_-posts.xlsx"
         );
-        fs.writeFileSync(targetPath, nodeBuffer);
+        try {
+          fs.writeFileSync(targetPath, nodeBuffer);
+        } catch (writeErr: any) {
+          if (writeErr.code === "EBUSY" || writeErr.code === "EPERM") {
+            return NextResponse.json(
+              {
+                error: `File is locked: '${path.basename(
+                  targetPath
+                )}' is open in Microsoft Excel. Please close Excel and try again.`,
+              },
+              { status: 409 }
+            );
+          }
+          throw writeErr;
+        }
       }
 
-      const workbook = XLSX.read(buffer, { type: "array" });
-      const sheetName = workbook.SheetNames[0];
-      const sheet = workbook.Sheets[sheetName];
-      const rows: any[] = XLSX.utils.sheet_to_json(sheet);
+      try {
+        const workbook = XLSX.read(buffer, { type: "array" });
+        const sheetName = workbook.SheetNames[0];
+        const sheet = workbook.Sheets[sheetName];
+        const rows: any[] = XLSX.utils.sheet_to_json(sheet);
 
-      results.streamB = {
-        stream: "Stream B • Tech & Crossover",
-        fileName: techFile.name,
-        sizeKB: (techFile.size / 1024).toFixed(1),
-        rowCount: rows.length,
-        columns: rows.length > 0 ? Object.keys(rows[0]).length : 0,
-        sampleCreators: Array.from(
-          new Set(rows.map((r: any) => r["Influencer Name"]).filter(Boolean))
-        ).slice(0, 5),
-      };
+        results.streamB = {
+          stream: "Stream B • Tech & Crossover",
+          fileName: techFile.name,
+          sizeKB: (techFile.size / 1024).toFixed(1),
+          rowCount: rows.length,
+          columns: rows.length > 0 ? Object.keys(rows[0]).length : 0,
+          sampleCreators: Array.from(
+            new Set(rows.map((r: any) => r["Influencer Name"]).filter(Boolean))
+          ).slice(0, 5),
+        };
+      } catch (xlsxErr) {
+        console.warn("XLSX preview parsing notice:", xlsxErr);
+      }
     }
 
     // 4. Trigger the Python Pipeline in the background if running on local/LAN server
@@ -124,13 +160,14 @@ export async function POST(req: NextRequest) {
         const { stdout } = await execFileAsync("py", ["-3", "execute_pipeline.py"], {
           cwd: campaignRoot,
           env: { ...process.env, PYTHONUTF8: "1" },
-          timeout: 120000,
+          timeout: 180000,
+          windowsHide: true,
         });
         pipelineLog = stdout;
       } catch (err: any) {
         console.error("Pipeline trigger error:", err);
         pipelineStatus = "Pipeline executed with notice";
-        pipelineLog = err.stdout || err.message || "";
+        pipelineLog = err.stdout || err.stderr || err.message || "";
       }
     }
 
@@ -146,7 +183,7 @@ export async function POST(req: NextRequest) {
       },
     });
   } catch (error: any) {
-    console.error("Upload error:", error);
+    console.error("Upload handler error:", error);
     return NextResponse.json(
       { error: "Failed to process uploaded files: " + (error.message || String(error)) },
       { status: 500 }
