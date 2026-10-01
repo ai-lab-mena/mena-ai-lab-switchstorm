@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 export default function SidebarShell({ children }: { children: React.ReactNode }) {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isSwitchStormExpanded, setIsSwitchStormExpanded] = useState(true);
   const pathname = usePathname();
 
   const isSwitchStorm = pathname.startsWith("/switchstorm");
@@ -150,66 +151,90 @@ export default function SidebarShell({ children }: { children: React.ReactNode }
               </div>
             )}
             <nav className="space-y-1">
-              {/* SwitchStorm Dashboard Link */}
-              <Link
-                href="/switchstorm"
-                onClick={() => setIsMobileOpen(false)}
-                className={`group flex items-center justify-between px-3 py-2.5 rounded-lg text-xs font-semibold transition-all ${
-                  isSwitchStorm
-                    ? "bg-[#034EA2] text-white shadow-md border border-blue-400/30"
-                    : "text-slate-300 hover:bg-slate-800 hover:text-white"
-                }`}
-                title="SwitchStorm Dashboard"
-              >
-                <div className="flex items-center gap-3 min-w-0">
-                  <div className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-md ${
-                    isSwitchStorm ? "bg-blue-500 text-white" : "bg-slate-800 text-blue-400 group-hover:bg-slate-700"
-                  }`}>
-                    <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
+              {/* SwitchStorm Dashboard with Dropdown Chevron */}
+              <div className="flex items-center justify-between">
+                <Link
+                  href="/switchstorm"
+                  onClick={() => setIsMobileOpen(false)}
+                  className={`flex-1 group flex items-center justify-between px-3 py-2.5 rounded-lg text-xs font-semibold transition-all ${
+                    isSwitchStorm && pathname !== "/switchstorm/upload"
+                      ? "bg-[#034EA2] text-white shadow-md border border-blue-400/30"
+                      : "text-slate-300 hover:bg-slate-800 hover:text-white"
+                  }`}
+                  title="SwitchStorm Dashboard"
+                >
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-md ${
+                      isSwitchStorm ? "bg-blue-500 text-white" : "bg-slate-800 text-blue-400 group-hover:bg-slate-700"
+                    }`}>
+                      <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                    {!isCollapsed && (
+                      <div className="truncate">
+                        <span className="block font-bold truncate">SwitchStorm</span>
+                        <span className="text-[10px] text-slate-400 block font-normal">Campaign Analytics</span>
+                      </div>
+                    )}
                   </div>
                   {!isCollapsed && (
-                    <div className="truncate">
-                      <span className="block font-bold truncate">SwitchStorm</span>
-                      <span className="text-[10px] text-slate-400 block font-normal">Campaign Analytics</span>
-                    </div>
+                    <span className="rounded bg-emerald-500/20 px-1.5 py-0.5 text-[9px] font-bold text-emerald-300 border border-emerald-500/30">
+                      Live
+                    </span>
                   )}
-                </div>
-                {!isCollapsed && (
-                  <span className="rounded bg-emerald-500/20 px-1.5 py-0.5 text-[9px] font-bold text-emerald-300 border border-emerald-500/30">
-                    Live
-                  </span>
-                )}
-              </Link>
+                </Link>
 
-              {/* Data Ingestion Link */}
-              <Link
-                href="/switchstorm/upload"
-                onClick={() => setIsMobileOpen(false)}
-                className={`group flex items-center justify-between px-3 py-2 rounded-lg text-xs font-semibold transition-all ${
-                  pathname === "/switchstorm/upload"
-                    ? "bg-[#034EA2] text-white shadow-md border border-blue-400/30"
-                    : "text-slate-400 hover:bg-slate-800 hover:text-white"
-                }`}
-                title="Data Ingestion Sub-Page"
-              >
-                <div className="flex items-center gap-3 min-w-0">
-                  <div className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-md ${
-                    pathname === "/switchstorm/upload" ? "bg-blue-500 text-white" : "bg-slate-800 text-slate-400 group-hover:bg-slate-700"
-                  }`}>
-                    <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                {/* Dropdown Button to Show/Hide Data Ingestion Subpage */}
+                {!isCollapsed && (
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsSwitchStormExpanded(!isSwitchStormExpanded);
+                    }}
+                    className="p-1.5 ml-1 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
+                    title={isSwitchStormExpanded ? "Hide Data Ingestion Sub-Page" : "Show Data Ingestion Sub-Page"}
+                  >
+                    <svg
+                      className={`h-3.5 w-3.5 transform transition-transform duration-200 ${
+                        isSwitchStormExpanded ? "rotate-180" : ""
+                      }`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                )}
+              </div>
+
+              {/* Collapsible Sub-Page: Data Ingestion */}
+              {isSwitchStormExpanded && (
+                <div className="pl-6 pt-1">
+                  <Link
+                    href="/switchstorm/upload"
+                    onClick={() => setIsMobileOpen(false)}
+                    className={`group flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-semibold transition-all ${
+                      pathname === "/switchstorm/upload"
+                        ? "bg-[#034EA2] text-white shadow-md border border-blue-400/30"
+                        : "text-slate-400 hover:bg-slate-800 hover:text-white"
+                    }`}
+                    title="Data Ingestion Sub-Page"
+                  >
+                    <svg className="h-3.5 w-3.5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
                     </svg>
-                  </div>
-                  {!isCollapsed && (
-                    <div className="truncate">
-                      <span className="block font-medium truncate">Data Ingestion</span>
-                      <span className="text-[10px] text-slate-500 block font-normal">Upload Excel Files</span>
-                    </div>
-                  )}
+                    {!isCollapsed && (
+                      <div className="truncate">
+                        <span className="block font-medium truncate">Data Ingestion</span>
+                        <span className="text-[9.5px] text-slate-500 block font-normal">Upload Excel Files</span>
+                      </div>
+                    )}
+                  </Link>
                 </div>
-              </Link>
+              )}
             </nav>
           </div>
         </div>
