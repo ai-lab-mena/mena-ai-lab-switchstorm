@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SubsidiaryMap from "./SubsidiaryMap";
 import TechiesIntelligenceTab from "./TechiesIntelligenceTab";
+import LifestyleIntelligenceTab from "./LifestyleIntelligenceTab";
 
 interface GroupKPI {
   Category: string;
@@ -53,6 +54,10 @@ interface CampaignData {
   techies_device_summary?: any[];
   techies_influencer_matrix?: any[];
   techies_targets_vs_actual?: any[];
+  lifestyle_weekly_pacing?: any[];
+  lifestyle_subsidiary_targets?: any[];
+  lifestyle_creator_matrix?: any[];
+  lifestyle_tier_scorecard?: any[];
 }
 
 export default function SwitchStormDashboard() {
@@ -62,7 +67,7 @@ export default function SwitchStormDashboard() {
   const [selectedCategory, setSelectedCategory] = useState<string>("Overall");
   const [selectedPlatform, setSelectedPlatform] = useState<string>("All");
   const [selectedSubsidiary, setSelectedSubsidiary] = useState<string>("All");
-  const [activeTab, setActiveTab] = useState<"groups" | "videos" | "techies">("groups");
+  const [activeTab, setActiveTab] = useState<"groups" | "videos" | "techies" | "lifestyle">("groups");
   const [viewMode, setViewMode] = useState<"top10" | "all">("top10");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [visibleCount, setVisibleCount] = useState<number>(24);
@@ -638,6 +643,21 @@ export default function SwitchStormDashboard() {
               </svg>
               Techies Targets & Devices
             </button>
+
+            {/* TAB 4: Lifestyle Targets & Delivery */}
+            <button
+              onClick={() => setActiveTab("lifestyle")}
+              className={`flex items-center gap-1.5 sm:gap-2 rounded-lg px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold transition-all ${
+                activeTab === "lifestyle"
+                  ? "bg-[#034EA2] text-white shadow-sm"
+                  : "bg-white text-slate-600 hover:bg-slate-200 hover:text-slate-900 border border-slate-200"
+              }`}
+            >
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+              </svg>
+              Lifestyle Targets & Creators
+            </button>
           </div>
 
           {activeTab === "videos" && (
@@ -708,6 +728,18 @@ export default function SwitchStormDashboard() {
             deviceSummary={data?.techies_device_summary || []}
             influencerMatrix={data?.techies_influencer_matrix || []}
             targetsVsActual={data?.techies_targets_vs_actual || []}
+            selectedSubsidiary={selectedSubsidiary}
+            onSelectSubsidiary={setSelectedSubsidiary}
+          />
+        )}
+
+        {/* TAB 4: LIFESTYLE TARGETS & DELIVERABLES INTELLIGENCE */}
+        {activeTab === "lifestyle" && (
+          <LifestyleIntelligenceTab
+            tierScorecard={data?.lifestyle_tier_scorecard || []}
+            weeklyPacing={data?.lifestyle_weekly_pacing || []}
+            subsidiaryTargets={data?.lifestyle_subsidiary_targets || []}
+            creatorMatrix={data?.lifestyle_creator_matrix || []}
             selectedSubsidiary={selectedSubsidiary}
             onSelectSubsidiary={setSelectedSubsidiary}
           />
