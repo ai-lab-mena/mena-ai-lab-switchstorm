@@ -19,8 +19,8 @@ export async function middleware(req: NextRequest) {
   const token = req.cookies.get(AUTH_COOKIE_NAME)?.value;
   const user = token ? await verifySessionToken(token) : null;
 
-  // 3. Login page logic
-  if (pathname === "/login" || pathname === "/api/auth/login") {
+  // 3. Auth routes logic
+  if (pathname === "/login" || pathname.startsWith("/api/auth/")) {
     // If already logged in, redirect away from /login to dashboard
     if (user && pathname === "/login") {
       return NextResponse.redirect(new URL("/switchstorm", req.url));
