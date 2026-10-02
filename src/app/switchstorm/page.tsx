@@ -137,18 +137,18 @@ export default function SwitchStormExecutiveHub() {
                 />
               </div>
               <span className="rounded-full bg-blue-500/20 px-3 py-0.5 text-xs font-bold text-blue-400 border border-blue-500/30">
-                SwitchStorm Intelligence Hub
+                SwitchStorm Intelligence
               </span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-              Samsung MENA Regional Command Center
+              Samsung MENA Regional Overview
             </h1>
-            <p className="text-xs sm:text-sm text-slate-400 mt-1 max-w-2xl">
-              Cross-platform performance analytics, subsidiary targets, device allocations, and content showcase.
+            <p className="text-xs sm:text-sm text-slate-400 mt-1 max-w-2xl leading-relaxed">
+              Performance metrics, subsidiary targets, device seeding distribution, and content leaderboards.
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2.5">
             {lastRefreshed && (
               <span className="text-[11px] text-slate-400 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700 font-mono">
                 Updated: {lastRefreshed}
@@ -156,9 +156,12 @@ export default function SwitchStormExecutiveHub() {
             )}
             <Link
               href="/switchstorm/upload"
-              className="inline-flex items-center gap-1.5 rounded-xl bg-[#034EA2] hover:bg-blue-600 text-white px-4 py-2 text-xs font-bold shadow-md transition-all cursor-pointer"
+              className="inline-flex items-center gap-1.5 rounded-xl bg-[#034EA2] hover:bg-blue-600 text-white px-4 py-2 text-xs font-semibold shadow-xs transition-all cursor-pointer"
             >
-              <span>📤 Upload Data</span>
+              <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+              </svg>
+              <span>Data Ingestion</span>
             </Link>
           </div>
         </div>
@@ -167,27 +170,27 @@ export default function SwitchStormExecutiveHub() {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mt-6 pt-6 border-t border-slate-800/80">
           <div className="bg-slate-900/60 p-3 rounded-xl border border-slate-800">
             <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Creators</span>
-            <div className="text-lg font-black text-white mt-0.5">297</div>
+            <div className="text-lg font-black text-white mt-0.5 tabular-nums">297</div>
           </div>
           <div className="bg-slate-900/60 p-3 rounded-xl border border-slate-800">
-            <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Total Posts</span>
-            <div className="text-lg font-black text-white mt-0.5">1,340</div>
+            <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Deliverables</span>
+            <div className="text-lg font-black text-white mt-0.5 tabular-nums">1,340</div>
           </div>
           <div className="bg-slate-900/60 p-3 rounded-xl border border-slate-800">
             <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Potential Reach</span>
-            <div className="text-lg font-black text-blue-400 mt-0.5">512.8M</div>
+            <div className="text-lg font-black text-blue-400 mt-0.5 tabular-nums">512.8M</div>
           </div>
           <div className="bg-slate-900/60 p-3 rounded-xl border border-slate-800">
             <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Unified Views</span>
-            <div className="text-lg font-black text-emerald-400 mt-0.5">201.8M</div>
+            <div className="text-lg font-black text-emerald-400 mt-0.5 tabular-nums">201.8M</div>
           </div>
           <div className="bg-slate-900/60 p-3 rounded-xl border border-slate-800">
             <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Engagements</span>
-            <div className="text-lg font-black text-purple-400 mt-0.5">4.96M</div>
+            <div className="text-lg font-black text-purple-400 mt-0.5 tabular-nums">4.96M</div>
           </div>
           <div className="bg-slate-900/60 p-3 rounded-xl border border-slate-800">
             <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Overall ER</span>
-            <div className="text-lg font-black text-amber-400 mt-0.5">2.46%</div>
+            <div className="text-lg font-black text-amber-400 mt-0.5 tabular-nums">2.46%</div>
           </div>
         </div>
       </div>
@@ -197,10 +200,14 @@ export default function SwitchStormExecutiveHub() {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
           <div>
             <h2 className="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
-              <span>🗺️</span>
-              <span>Interactive MENA Subsidiary Map</span>
+              <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-[#034EA2]/10 text-[#034EA2] border border-[#034EA2]/20">
+                <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                </svg>
+              </span>
+              <span>Regional Market Distribution</span>
             </h2>
-            <p className="text-xs text-slate-500">
+            <p className="text-xs text-slate-500 mt-0.5">
               Click any market pin or territory to focus regional performance and pre-filter all sub-pages.
             </p>
           </div>
@@ -208,7 +215,7 @@ export default function SwitchStormExecutiveHub() {
           {selectedSubsidiary !== "All" && (
             <button
               onClick={() => setSelectedSubsidiary("All")}
-              className="text-xs font-bold text-[#034EA2] hover:underline flex items-center gap-1 cursor-pointer"
+              className="text-xs font-semibold text-[#034EA2] hover:underline flex items-center gap-1 cursor-pointer bg-blue-50 px-2.5 py-1 rounded-md border border-blue-200"
             >
               <span>✕ Clear Filter ({selectedSubsidiary})</span>
             </button>
@@ -224,16 +231,20 @@ export default function SwitchStormExecutiveHub() {
         />
       </div>
 
-      {/* 3. SUB-PAGE NAVIGATION PORTAL CARDS (REQUESTED CORE FEATURE) */}
+      {/* 3. SUB-PAGE NAVIGATION PORTAL CARDS */}
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <div>
             <h2 className="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
-              <span>⚡</span>
-              <span>Explore Campaign Intelligence Modules</span>
+              <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-slate-100 text-slate-700 border border-slate-200">
+                <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                </svg>
+              </span>
+              <span>Campaign Intelligence Modules</span>
             </h2>
-            <p className="text-xs text-slate-500">
-              Select a specialized intelligence module below.
+            <p className="text-xs text-slate-500 mt-0.5">
+              Select a specialized intelligence module to review deep-dive metrics.
               {selectedSubsidiary !== "All" && (
                 <span className="text-[#034EA2] font-semibold ml-1">
                   (Pre-filtered for {selectedSubsidiary} market)
@@ -248,46 +259,50 @@ export default function SwitchStormExecutiveHub() {
           {/* Card 1: Creator Groups & Regional KPIs */}
           <Link
             href={`/switchstorm/kpis${activeSubParam}`}
-            className="group relative flex flex-col justify-between rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-xl hover:border-blue-400 transition-all duration-300"
+            className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-6 shadow-2xs hover:shadow-lg hover:border-[#034EA2]/50 hover:-translate-y-1 transition-all duration-200"
           >
             <div>
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-[#034EA2] border border-blue-200 shadow-xs group-hover:scale-110 transition-transform">
-                  <span className="text-xl">📊</span>
+              <div className="flex items-center justify-between mb-3.5">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-[#034EA2] border border-blue-200/70 shadow-2xs group-hover:scale-105 transition-transform">
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
                 </div>
-                <span className="text-[11px] font-bold text-blue-700 bg-blue-100/60 px-2.5 py-1 rounded-full">
-                  KPI Breakdown
+                <span className="text-[10px] font-bold text-blue-700 bg-blue-100/70 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                  Performance Matrix
                 </span>
               </div>
               <h3 className="text-base font-bold text-slate-900 group-hover:text-[#034EA2] transition-colors">
                 Creator Groups & KPIs
               </h3>
               <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                Comprehensive performance matrix across Tech, Crossover, Lifestyle, and Advocate tiers.
+                Consolidated performance metrics across Tech, Crossover, Lifestyle, and Advocate tiers with cross-platform ER.
               </p>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#034EA2]">
+            <div className="mt-5 pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#034EA2]">
               <span>Explore Group KPIs</span>
-              <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+              <span className="transform group-hover:translate-x-1 transition-transform text-sm">→</span>
             </div>
           </Link>
 
           {/* Card 2: Top Performing Content Showcase */}
           <Link
             href={`/switchstorm/content${activeSubParam}`}
-            className="group relative flex flex-col justify-between rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-xl hover:border-amber-400 transition-all duration-300"
+            className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-6 shadow-2xs hover:shadow-lg hover:border-amber-400/60 hover:-translate-y-1 transition-all duration-200"
           >
             <div>
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-50 text-amber-700 border border-amber-200 shadow-xs group-hover:scale-110 transition-transform">
-                  <span className="text-xl">🎬</span>
+              <div className="flex items-center justify-between mb-3.5">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-50 text-amber-700 border border-amber-200/70 shadow-2xs group-hover:scale-105 transition-transform">
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
                 </div>
-                <span className="text-[11px] font-bold text-amber-700 bg-amber-100/60 px-2.5 py-1 rounded-full">
+                <span className="text-[10px] font-bold text-amber-800 bg-amber-100/70 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                   784 Videos Ranked
                 </span>
               </div>
-              <h3 className="text-base font-bold text-slate-900 group-hover:text-amber-600 transition-colors">
+              <h3 className="text-base font-bold text-slate-900 group-hover:text-amber-700 transition-colors">
                 Top Performing Content
               </h3>
               <p className="text-xs text-slate-500 mt-1 leading-relaxed">
@@ -295,79 +310,85 @@ export default function SwitchStormExecutiveHub() {
               </p>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-amber-600">
+            <div className="mt-5 pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-amber-700">
               <span>View Video Showcase</span>
-              <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+              <span className="transform group-hover:translate-x-1 transition-transform text-sm">→</span>
             </div>
           </Link>
 
           {/* Card 3: Techies Targets & Devices */}
           <Link
             href={`/switchstorm/techies${activeSubParam}`}
-            className="group relative flex flex-col justify-between rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-xl hover:border-cyan-400 transition-all duration-300"
+            className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-6 shadow-2xs hover:shadow-lg hover:border-cyan-400/60 hover:-translate-y-1 transition-all duration-200"
           >
             <div>
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-50 text-cyan-800 border border-cyan-200 shadow-xs group-hover:scale-110 transition-transform">
-                  <span className="text-xl">📱</span>
+              <div className="flex items-center justify-between mb-3.5">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-50 text-cyan-800 border border-cyan-200/70 shadow-2xs group-hover:scale-105 transition-transform">
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
                 </div>
-                <span className="text-[11px] font-bold text-cyan-800 bg-cyan-100/60 px-2.5 py-1 rounded-full">
-                  Hardware Tracking
+                <span className="text-[10px] font-bold text-cyan-800 bg-cyan-100/70 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                  Hardware Seeding
                 </span>
               </div>
-              <h3 className="text-base font-bold text-slate-900 group-hover:text-cyan-700 transition-colors">
-                Techies Targets & Devices
+              <h3 className="text-base font-bold text-slate-900 group-hover:text-cyan-800 transition-colors">
+                Tech Deliverables & Devices
               </h3>
               <p className="text-xs text-slate-500 mt-1 leading-relaxed">
                 Galaxy S26 Ultra vs. Z Fold8 hardware scorecards, target vs. actual pacing, and 77 tech reviewers matrix.
               </p>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-cyan-700">
-              <span>Open Hardware Intelligence</span>
-              <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+            <div className="mt-5 pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-cyan-800">
+              <span>Open Hardware Tracking</span>
+              <span className="transform group-hover:translate-x-1 transition-transform text-sm">→</span>
             </div>
           </Link>
 
           {/* Card 4: Lifestyle Targets & Creators */}
           <Link
             href={`/switchstorm/lifestyle${activeSubParam}`}
-            className="group relative flex flex-col justify-between rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-xl hover:border-purple-400 transition-all duration-300"
+            className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-6 shadow-2xs hover:shadow-lg hover:border-purple-400/60 hover:-translate-y-1 transition-all duration-200"
           >
             <div>
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-purple-50 text-purple-700 border border-purple-200 shadow-xs group-hover:scale-110 transition-transform">
-                  <span className="text-xl">⭐</span>
+              <div className="flex items-center justify-between mb-3.5">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-purple-50 text-purple-700 border border-purple-200/70 shadow-2xs group-hover:scale-105 transition-transform">
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
                 </div>
-                <span className="text-[11px] font-bold text-purple-700 bg-purple-100/60 px-2.5 py-1 rounded-full">
+                <span className="text-[10px] font-bold text-purple-800 bg-purple-100/70 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                   220 Creators
                 </span>
               </div>
               <h3 className="text-base font-bold text-slate-900 group-hover:text-purple-700 transition-colors">
-                Lifestyle Targets & Creators
+                Lifestyle Deliverables
               </h3>
               <p className="text-xs text-slate-500 mt-1 leading-relaxed">
                 Weekly flighting pacing (Weeks 1 to 4), Team Galaxy vs. Content Creators fulfillment, and 220 creator phase links.
               </p>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-purple-700">
-              <span>Open Lifestyle Intelligence</span>
-              <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+            <div className="mt-5 pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-purple-700">
+              <span>Open Lifestyle Tracking</span>
+              <span className="transform group-hover:translate-x-1 transition-transform text-sm">→</span>
             </div>
           </Link>
 
           {/* Card 5: Data Ingestion Portal */}
           <Link
             href="/switchstorm/upload"
-            className="group relative flex flex-col justify-between rounded-3xl border border-slate-800 bg-slate-900 text-white p-6 shadow-sm hover:shadow-xl hover:border-blue-500 transition-all duration-300"
+            className="group relative flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-950 text-white p-6 shadow-2xs hover:shadow-lg hover:border-blue-500/70 hover:-translate-y-1 transition-all duration-200"
           >
             <div>
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-500/20 text-blue-400 border border-blue-500/30 shadow-xs group-hover:scale-110 transition-transform">
-                  <span className="text-xl">📤</span>
+              <div className="flex items-center justify-between mb-3.5">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 shadow-2xs group-hover:scale-105 transition-transform">
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                  </svg>
                 </div>
-                <span className="text-[11px] font-bold text-blue-300 bg-blue-500/20 px-2.5 py-1 rounded-full border border-blue-500/30">
+                <span className="text-[10px] font-bold text-blue-300 bg-blue-500/10 px-2.5 py-0.5 rounded-full border border-blue-500/20 uppercase tracking-wider">
                   Data Pipeline
                 </span>
               </div>
@@ -375,13 +396,13 @@ export default function SwitchStormExecutiveHub() {
                 Campaign Data Ingestion
               </h3>
               <p className="text-xs text-slate-400 mt-1 leading-relaxed">
-                Upload raw Traackr deliverables to update 1_InputData and auto-trigger the backend data pipeline.
+                Upload raw Traackr deliverables to update input sources and auto-trigger the analytical data model.
               </p>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs font-bold text-blue-400">
+            <div className="mt-5 pt-3.5 border-t border-slate-800 flex items-center justify-between text-xs font-bold text-blue-400">
               <span>Launch Ingestion Portal</span>
-              <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+              <span className="transform group-hover:translate-x-1 transition-transform text-sm">→</span>
             </div>
           </Link>
         </div>

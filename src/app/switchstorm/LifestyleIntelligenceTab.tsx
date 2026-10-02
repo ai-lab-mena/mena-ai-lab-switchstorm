@@ -142,8 +142,10 @@ export default function LifestyleIntelligenceTab({
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
           <div>
             <h3 className="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
-              <span className="flex h-6 w-6 items-center justify-center rounded-md bg-purple-600 text-white text-xs shadow-xs">
-                ⭐
+              <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-purple-600/10 text-purple-700 border border-purple-600/20">
+                <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                </svg>
               </span>
               <span>Lifestyle Tier Target vs. Actual Delivery</span>
             </h3>
@@ -224,7 +226,11 @@ export default function LifestyleIntelligenceTab({
       {/* 2. WEEKLY PACING TIMELINE (WEEKS 1 - 4) */}
       <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
         <h4 className="text-sm font-bold text-slate-900 mb-1 flex items-center gap-2">
-          <span>📅</span>
+          <span className="flex h-5 w-5 items-center justify-center rounded bg-slate-100 text-slate-700 text-xs">
+            <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </span>
           <span>Weekly Flighting & Rollout Schedule (Weeks 1 – 4)</span>
         </h4>
         <p className="text-xs text-slate-500 mb-4">
@@ -279,8 +285,10 @@ export default function LifestyleIntelligenceTab({
         <div className="p-4 sm:p-5 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-50/50">
           <div>
             <h3 className="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-2">
-              <span className="flex h-5 w-5 items-center justify-center rounded-md bg-emerald-600 text-white text-[10px]">
-                🎯
+              <span className="flex h-5 w-5 items-center justify-center rounded bg-emerald-100 text-emerald-800 text-xs">
+                <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
               </span>
               <span>Lifestyle Subsidiary Progress (Target vs. Actual)</span>
             </h3>
@@ -292,7 +300,7 @@ export default function LifestyleIntelligenceTab({
           {selectedSubsidiary !== "All" && (
             <button
               onClick={() => onSelectSubsidiary("All")}
-              className="text-xs text-[#034EA2] hover:underline font-semibold"
+              className="text-xs text-[#034EA2] hover:underline font-semibold cursor-pointer"
             >
               Clear Territory Filter ({selectedSubsidiary})
             </button>
@@ -325,18 +333,18 @@ export default function LifestyleIntelligenceTab({
                       <span className="text-slate-600 font-medium">{row.Market}</span>
                     </div>
                   </td>
-                  <td className="px-3 py-3 text-center font-bold text-slate-800">
+                  <td className="px-3 py-3 text-center font-bold text-slate-800 tabular-nums">
                     {row.Plan}
                   </td>
-                  <td className="px-3 py-3 text-center font-extrabold text-emerald-700">
+                  <td className="px-3 py-3 text-center font-extrabold text-emerald-700 tabular-nums">
                     {row.Live}
                   </td>
-                  <td className="px-3 py-3 text-center font-bold text-amber-600">
+                  <td className="px-3 py-3 text-center font-bold text-amber-600 tabular-nums">
                     {row.Pending}
                   </td>
                   <td className="px-3 py-3 text-center">
                     <span
-                      className={`inline-block font-extrabold px-2 py-0.5 rounded text-[11px] ${
+                      className={`inline-block font-extrabold px-2 py-0.5 rounded text-[11px] tabular-nums ${
                         parseFloat(row.Completion_Rate) >= 90
                           ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
                           : parseFloat(row.Completion_Rate) >= 70
@@ -347,13 +355,13 @@ export default function LifestyleIntelligenceTab({
                       {row.Completion_Rate}
                     </span>
                   </td>
-                  <td className="px-3 py-3 text-center text-slate-600">
+                  <td className="px-3 py-3 text-center text-slate-600 tabular-nums">
                     {row.TeamGalaxy.Live} / {row.TeamGalaxy.Plan}
                   </td>
-                  <td className="px-3 py-3 text-center text-slate-600">
+                  <td className="px-3 py-3 text-center text-slate-600 tabular-nums">
                     {row.ContentCreators.Live} / {row.ContentCreators.Plan}
                   </td>
-                  <td className="px-3 py-3 text-center text-slate-600">
+                  <td className="px-3 py-3 text-center text-slate-600 tabular-nums">
                     {row.GalaxyCircle.Live} / {row.GalaxyCircle.Plan}
                   </td>
                   <td className="px-3 py-3 text-center">
@@ -381,8 +389,10 @@ export default function LifestyleIntelligenceTab({
         <div className="p-4 sm:p-5 border-b border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-3 bg-slate-50/50">
           <div>
             <h3 className="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-2">
-              <span className="flex h-5 w-5 items-center justify-center rounded-md bg-purple-600 text-white text-[10px]">
-                🔗
+              <span className="flex h-5 w-5 items-center justify-center rounded bg-purple-100 text-purple-700 text-xs">
+                <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                </svg>
               </span>
               <span>Lifestyle Creators Deliverable Matrix & Phase Post Links</span>
             </h3>
@@ -434,12 +444,12 @@ export default function LifestyleIntelligenceTab({
                   </td>
 
                   {/* Total Posts */}
-                  <td className="px-3 py-3 text-center font-semibold text-slate-700">
+                  <td className="px-3 py-3 text-center font-semibold text-slate-700 tabular-nums">
                     {c.Total_Posts} Posts
                   </td>
 
                   {/* Total Views */}
-                  <td className="px-3 py-3 text-right font-extrabold text-slate-900">
+                  <td className="px-3 py-3 text-right font-extrabold text-slate-900 tabular-nums">
                     {c.Total_Views.toLocaleString()}
                   </td>
 
@@ -450,11 +460,12 @@ export default function LifestyleIntelligenceTab({
                         href={c.Phase_1.URL}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-1 rounded bg-blue-50 hover:bg-blue-100 text-[#034EA2] px-2 py-1 text-[11px] font-bold border border-blue-200 transition-colors shadow-2xs"
+                        className="inline-flex items-center gap-1 rounded-md bg-blue-50 hover:bg-blue-100 text-[#034EA2] px-2.5 py-1 text-[11px] font-semibold border border-blue-200/80 transition-colors shadow-2xs group/p"
                         title={`${c.Phase_1.Platform} • ${c.Phase_1.Views.toLocaleString()} views`}
                       >
-                        <span>🔗 P1</span>
-                        <span className="text-[9px] text-blue-600">({formatShort(c.Phase_1.Views)})</span>
+                        <span>Phase 1</span>
+                        <span className="text-[10px] text-blue-600 font-normal">({formatShort(c.Phase_1.Views)})</span>
+                        <span className="text-[9px] transform group-hover/p:translate-x-0.5 transition-transform">↗</span>
                       </a>
                     ) : (
                       <span className="text-slate-300 font-mono">—</span>
@@ -468,11 +479,12 @@ export default function LifestyleIntelligenceTab({
                         href={c.Phase_2.URL}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-1 rounded bg-purple-50 hover:bg-purple-100 text-purple-700 px-2 py-1 text-[11px] font-bold border border-purple-200 transition-colors shadow-2xs"
+                        className="inline-flex items-center gap-1 rounded-md bg-purple-50 hover:bg-purple-100 text-purple-700 px-2.5 py-1 text-[11px] font-semibold border border-purple-200/80 transition-colors shadow-2xs group/p"
                         title={`${c.Phase_2.Platform} • ${c.Phase_2.Views.toLocaleString()} views`}
                       >
-                        <span>🔗 P2</span>
-                        <span className="text-[9px] text-purple-600">({formatShort(c.Phase_2.Views)})</span>
+                        <span>Phase 2</span>
+                        <span className="text-[10px] text-purple-600 font-normal">({formatShort(c.Phase_2.Views)})</span>
+                        <span className="text-[9px] transform group-hover/p:translate-x-0.5 transition-transform">↗</span>
                       </a>
                     ) : (
                       <span className="text-slate-300 font-mono">—</span>
@@ -486,11 +498,12 @@ export default function LifestyleIntelligenceTab({
                         href={c.Phase_3.URL}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-1 rounded bg-pink-50 hover:bg-pink-100 text-pink-700 px-2 py-1 text-[11px] font-bold border border-pink-200 transition-colors shadow-2xs"
+                        className="inline-flex items-center gap-1 rounded-md bg-pink-50 hover:bg-pink-100 text-pink-700 px-2.5 py-1 text-[11px] font-semibold border border-pink-200/80 transition-colors shadow-2xs group/p"
                         title={`${c.Phase_3.Platform} • ${c.Phase_3.Views.toLocaleString()} views`}
                       >
-                        <span>🔗 P3</span>
-                        <span className="text-[9px] text-pink-600">({formatShort(c.Phase_3.Views)})</span>
+                        <span>Phase 3</span>
+                        <span className="text-[10px] text-pink-600 font-normal">({formatShort(c.Phase_3.Views)})</span>
+                        <span className="text-[9px] transform group-hover/p:translate-x-0.5 transition-transform">↗</span>
                       </a>
                     ) : (
                       <span className="text-slate-300 font-mono">—</span>

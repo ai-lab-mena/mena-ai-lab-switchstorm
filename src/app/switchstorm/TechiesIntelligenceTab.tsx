@@ -130,8 +130,10 @@ export default function TechiesIntelligenceTab({
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
           <div>
             <h3 className="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2">
-              <span className="flex h-6 w-6 items-center justify-center rounded-md bg-cyan-600 text-white text-xs shadow-xs">
-                📱
+              <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-cyan-600/10 text-cyan-700 border border-cyan-600/20">
+                <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
               </span>
               <span>Techies Device Allocation & Performance Breakdown</span>
             </h3>
@@ -232,8 +234,10 @@ export default function TechiesIntelligenceTab({
         <div className="p-4 sm:p-5 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-50/50">
           <div>
             <h3 className="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-2">
-              <span className="flex h-5 w-5 items-center justify-center rounded-md bg-emerald-600 text-white text-[10px]">
-                🎯
+              <span className="flex h-5 w-5 items-center justify-center rounded bg-emerald-100 text-emerald-800 text-xs">
+                <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
               </span>
               <span>Techies Target vs. Actual Campaign Progress</span>
             </h3>
@@ -357,8 +361,10 @@ export default function TechiesIntelligenceTab({
         <div className="p-4 sm:p-5 border-b border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-3 bg-slate-50/50">
           <div>
             <h3 className="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-2">
-              <span className="flex h-5 w-5 items-center justify-center rounded-md bg-purple-600 text-white text-[10px]">
-                🔗
+              <span className="flex h-5 w-5 items-center justify-center rounded bg-blue-100 text-[#034EA2] text-xs">
+                <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                </svg>
               </span>
               <span>Tech Creators Deliverable Matrix & Phase Post Links</span>
             </h3>
@@ -425,7 +431,7 @@ export default function TechiesIntelligenceTab({
                   </td>
 
                   {/* Total Views */}
-                  <td className="px-3 py-3 text-right font-extrabold text-slate-900">
+                  <td className="px-3 py-3 text-right font-extrabold text-slate-900 tabular-nums">
                     {c.Total_Views.toLocaleString()}
                   </td>
 
@@ -436,11 +442,12 @@ export default function TechiesIntelligenceTab({
                         href={c.Phase_1.URL}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-1 rounded bg-blue-50 hover:bg-blue-100 text-[#034EA2] px-2 py-1 text-[11px] font-bold border border-blue-200 transition-colors shadow-2xs"
+                        className="inline-flex items-center gap-1 rounded-md bg-blue-50 hover:bg-blue-100 text-[#034EA2] px-2.5 py-1 text-[11px] font-semibold border border-blue-200/80 transition-colors shadow-2xs group/p"
                         title={`${c.Phase_1.Platform} • ${c.Phase_1.Views.toLocaleString()} views`}
                       >
-                        <span>🔗 P1</span>
-                        <span className="text-[9px] text-blue-600">({formatShort(c.Phase_1.Views)})</span>
+                        <span>Phase 1</span>
+                        <span className="text-[10px] text-blue-600 font-normal">({formatShort(c.Phase_1.Views)})</span>
+                        <span className="text-[9px] transform group-hover/p:translate-x-0.5 transition-transform">↗</span>
                       </a>
                     ) : (
                       <span className="text-slate-300 font-mono">—</span>
@@ -454,11 +461,12 @@ export default function TechiesIntelligenceTab({
                         href={c.Phase_2.URL}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-1 rounded bg-indigo-50 hover:bg-indigo-100 text-indigo-700 px-2 py-1 text-[11px] font-bold border border-indigo-200 transition-colors shadow-2xs"
+                        className="inline-flex items-center gap-1 rounded-md bg-indigo-50 hover:bg-indigo-100 text-indigo-700 px-2.5 py-1 text-[11px] font-semibold border border-indigo-200/80 transition-colors shadow-2xs group/p"
                         title={`${c.Phase_2.Platform} • ${c.Phase_2.Views.toLocaleString()} views`}
                       >
-                        <span>🔗 P2</span>
-                        <span className="text-[9px] text-indigo-600">({formatShort(c.Phase_2.Views)})</span>
+                        <span>Phase 2</span>
+                        <span className="text-[10px] text-indigo-600 font-normal">({formatShort(c.Phase_2.Views)})</span>
+                        <span className="text-[9px] transform group-hover/p:translate-x-0.5 transition-transform">↗</span>
                       </a>
                     ) : (
                       <span className="text-slate-300 font-mono">—</span>
@@ -472,11 +480,12 @@ export default function TechiesIntelligenceTab({
                         href={c.Phase_3.URL}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-1 rounded bg-purple-50 hover:bg-purple-100 text-purple-700 px-2 py-1 text-[11px] font-bold border border-purple-200 transition-colors shadow-2xs"
+                        className="inline-flex items-center gap-1 rounded-md bg-purple-50 hover:bg-purple-100 text-purple-700 px-2.5 py-1 text-[11px] font-semibold border border-purple-200/80 transition-colors shadow-2xs group/p"
                         title={`${c.Phase_3.Platform} • ${c.Phase_3.Views.toLocaleString()} views`}
                       >
-                        <span>🔗 P3</span>
-                        <span className="text-[9px] text-purple-600">({formatShort(c.Phase_3.Views)})</span>
+                        <span>Phase 3</span>
+                        <span className="text-[10px] text-purple-600 font-normal">({formatShort(c.Phase_3.Views)})</span>
+                        <span className="text-[9px] transform group-hover/p:translate-x-0.5 transition-transform">↗</span>
                       </a>
                     ) : (
                       <span className="text-slate-300 font-mono">—</span>
