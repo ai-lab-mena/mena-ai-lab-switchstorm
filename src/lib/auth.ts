@@ -38,18 +38,48 @@ async function getCryptoKey() {
   );
 }
 
+function bufferToBase64Url(bytes: Uint8Array): string {
+  if (typeof Buffer !== "undefined") {
+    return Buffer.from(bytes).toString("base64url");
+  }
+  let binary = "";
+  for (let i = 0; i < bytes.byteLength; i++) {
+    binary += String.fromCharCode(bytes[i]);
+  }
+  return btoa(binary).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+
+function base64UrlToBuffer(str: string): Uint8Array {
+  if (typeof Buffer !== "undefined") {
+    return new Uint8Array(Buffer.from(str, "base64url"));
+  }
+  let base64 = str.replace(/-/g, "+").replace(/_/g, "/");
+  while (base64.length % 4) base64 += "=";
+  const binary = atob(base64);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) {
+    bytes[i] = binary.charCodeAt(i);
+  }
+  return bytes;
+}
+
 // Create a signed session token
 export async function createSessionToken(user: User): Promise<string> {
-  const payload = JSON.stringify({
+  const payloadStr = JSON.stringify({
     ...user,
     exp: Date.now() + 30 * 24 * 60 * 60 * 1000, // 30 days
   });
   const enc = new TextEncoder();
+  const payloadBytes = enc.encode(payloadStr);
   const key = await getCryptoKey();
-  const signature = await crypto.subtle.sign("HMAC", key, enc.encode(payload));
+  const signature = await crypto.subtle.sign(
+    "HMAC",
+    key,
+    payloadBytes as unknown as BufferSource
+  );
 
-  const b64Payload = btoa(unescape(encodeURIComponent(payload)));
-  const b64Sig = btoa(String.fromCharCode(...new Uint8Array(signature)));
+  const b64Payload = bufferToBase64Url(payloadBytes);
+  const b64Sig = bufferToBase64Url(new Uint8Array(signature));
 
   return `${b64Payload}.${b64Sig}`;
 }
@@ -60,22 +90,23 @@ export async function verifySessionToken(token: string): Promise<User | null> {
     const [b64Payload, b64Sig] = token.split(".");
     if (!b64Payload || !b64Sig) return null;
 
-    const payloadStr = decodeURIComponent(escape(atob(b64Payload)));
+    const payloadBytes = base64UrlToBuffer(b64Payload);
+    const dec = new TextDecoder();
+    const payloadStr = dec.decode(payloadBytes);
     const payload = JSON.parse(payloadStr);
 
     if (payload.exp && Date.now() > payload.exp) {
       return null; // Expired
     }
 
-    const enc = new TextEncoder();
     const key = await getCryptoKey();
-    const sigBytes = Uint8Array.from(atob(b64Sig), (c) => c.charCodeAt(0));
+    const sigBytes = base64UrlToBuffer(b64Sig);
 
     const isValid = await crypto.subtle.verify(
       "HMAC",
       key,
-      sigBytes,
-      enc.encode(payloadStr)
+      sigBytes as unknown as BufferSource,
+      payloadBytes as unknown as BufferSource
     );
 
     if (!isValid) return null;
