@@ -70,8 +70,11 @@ function LoginForm() {
         <h1 className="text-xl sm:text-2xl font-black tracking-tight text-white">
           Marketing AI Lab
         </h1>
-        <p className="text-xs text-slate-400 mt-1 font-medium">
-          SwitchStorm Executive Intelligence Platform
+        <p className="text-xs text-blue-400 mt-1 font-semibold uppercase tracking-wider">
+          Marketing Intelligence Hub
+        </p>
+        <p className="text-[11px] text-slate-400 mt-0.5 font-normal">
+          Samsung Electronics MENA
         </p>
       </div>
 

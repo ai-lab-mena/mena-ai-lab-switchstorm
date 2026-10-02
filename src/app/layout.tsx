@@ -3,8 +3,8 @@ import "./globals.css";
 import SidebarShell from "@/components/SidebarShell";
 
 export const metadata: Metadata = {
-  title: "Samsung MENA | Marketing AI Lab",
-  description: "Enterprise Marketing AI Platform & Analytics for Samsung MENA",
+  title: "Samsung MENA | Marketing Intelligence Hub",
+  description: "Enterprise Marketing AI Platform & Regional Analytics for Samsung MENA",
 };
 
 export default function RootLayout({
