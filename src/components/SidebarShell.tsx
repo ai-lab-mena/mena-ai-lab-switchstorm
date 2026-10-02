@@ -11,8 +11,23 @@ export default function SidebarShell({ children }: { children: React.ReactNode }
   const [isSwitchStormExpanded, setIsSwitchStormExpanded] = useState(true);
   const pathname = usePathname();
 
+  // If on login page, render clean viewport without sidebar
+  if (pathname === "/login") {
+    return <main className="min-h-screen bg-slate-950">{children}</main>;
+  }
+
   const isSwitchStorm = pathname.startsWith("/switchstorm");
   const isHome = pathname === "/";
+
+  const handleLogout = async () => {
+    try {
+      await fetch("/api/auth/logout", { method: "POST" });
+    } catch (e) {
+      console.error(e);
+    } finally {
+      window.location.href = "/login";
+    }
+  };
 
   return (
     <div className="min-h-screen bg-slate-100 flex flex-col lg:flex-row text-slate-900">
@@ -239,15 +254,41 @@ export default function SidebarShell({ children }: { children: React.ReactNode }
           </div>
         </div>
 
-        {/* Footer Area */}
+        {/* Footer Area with Sign Out */}
         <div className="p-3 border-t border-slate-800/80 bg-[#061025] shrink-0">
           {!isCollapsed ? (
-            <div className="flex items-center justify-between text-[11px] text-slate-400 px-2 py-1">
-              <span className="truncate">Samsung MENA DX</span>
-              <span className="font-semibold text-blue-400">2026</span>
+            <div className="space-y-2">
+              <div className="flex items-center justify-between text-[11px] text-slate-400 px-1">
+                <div className="flex items-center gap-1.5 truncate">
+                  <span className="h-2 w-2 rounded-full bg-emerald-400 inline-block shrink-0" />
+                  <span className="font-semibold text-slate-200 truncate">aeye</span>
+                  <span className="text-[10px] text-slate-500 font-mono">admin</span>
+                </div>
+                <button
+                  onClick={handleLogout}
+                  className="text-[10px] text-rose-400 hover:text-rose-300 font-semibold px-2 py-0.5 rounded-md hover:bg-rose-950/40 border border-rose-500/20 transition-all cursor-pointer"
+                  title="Sign out of platform"
+                >
+                  Sign Out
+                </button>
+              </div>
+              <div className="flex items-center justify-between text-[10px] text-slate-500 px-1 pt-1 border-t border-slate-800/60">
+                <span>Samsung MENA DX</span>
+                <span className="font-semibold text-blue-400">2026</span>
+              </div>
             </div>
           ) : (
-            <div className="flex justify-center text-[10px] text-slate-500 font-bold">DX</div>
+            <div className="flex flex-col items-center gap-2">
+              <button
+                onClick={handleLogout}
+                className="p-1.5 text-slate-400 hover:text-rose-400 rounded-lg hover:bg-slate-800 transition-colors"
+                title="Sign Out"
+              >
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                </svg>
+              </button>
+            </div>
           )}
         </div>
       </aside>
