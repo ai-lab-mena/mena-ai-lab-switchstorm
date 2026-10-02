@@ -3,26 +3,26 @@ export const STATIC_TECHIES_DEVICE_SUMMARY = [
   {
     "Device": "Galaxy S26 Ultra",
     "Creators_Count": 30,
-    "Total_Posts": 235,
-    "Total_Views": 9692266,
-    "Total_Engagements": 485825,
-    "ER_Percent": "5.01%"
+    "Total_Posts": 272,
+    "Total_Views": 11752618,
+    "Total_Engagements": 579904,
+    "ER_Percent": "4.93%"
   },
   {
     "Device": "Galaxy Z Fold8",
     "Creators_Count": 34,
-    "Total_Posts": 308,
-    "Total_Views": 2827467,
-    "Total_Engagements": 166326,
-    "ER_Percent": "5.88%"
+    "Total_Posts": 351,
+    "Total_Views": 3265333,
+    "Total_Engagements": 203530,
+    "ER_Percent": "6.23%"
   },
   {
     "Device": "Galaxy Z Fold8 Ultra",
     "Creators_Count": 13,
-    "Total_Posts": 90,
-    "Total_Views": 560872,
-    "Total_Engagements": 62792,
-    "ER_Percent": "11.20%"
+    "Total_Posts": 97,
+    "Total_Views": 592485,
+    "Total_Engagements": 70116,
+    "ER_Percent": "11.83%"
   }
 ];
 export const STATIC_TECHIES_INFLUENCER_MATRIX = [
@@ -33,27 +33,27 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Device": "Galaxy S26 Ultra",
     "Tier": "Hero",
     "Total_Posts": 16,
-    "Total_Views": 4554477,
+    "Total_Views": 5556706,
     "Phase_1": {
       "URL": "http://facebook.com/682206191918210/posts/1657081459119670",
       "Platform": "Facebook",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 604
+      "Engagements": 629
     },
     "Phase_2": {
       "URL": "http://tiktok.com/@bilalmunir1995/video/7685344928528108820",
       "Platform": "TikTok",
       "Date": "2026-09-14",
-      "Views": 540500,
-      "Engagements": 13883
+      "Views": 1500000,
+      "Engagements": 28133
     },
     "Phase_3": {
       "URL": "http://facebook.com/682206191918210/posts/1669183217909494",
       "Platform": "Facebook",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 782
+      "Engagements": 833
     }
   },
   {
@@ -62,53 +62,59 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Subsidiary": "SEEG",
     "Device": "Galaxy S26 Ultra",
     "Tier": "Hero",
-    "Total_Posts": 18,
-    "Total_Views": 1222933,
+    "Total_Posts": 23,
+    "Total_Views": 1815899,
     "Phase_1": {
       "URL": "http://facebook.com/114175334601926/posts/1120780737296836",
       "Platform": "Facebook",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 4021
+      "Engagements": 4471
     },
     "Phase_2": {
       "URL": "http://facebook.com/114175334601926/posts/1130191403022436",
       "Platform": "Facebook",
       "Date": "2026-09-18",
       "Views": 0,
-      "Engagements": 458
+      "Engagements": 530
     },
     "Phase_3": {
-      "URL": "http://facebook.com/114175334601926/posts/1135582105816699",
+      "URL": "http://facebook.com/114175334601926/posts/1139517028756540",
       "Platform": "Facebook",
-      "Date": "2026-09-24",
+      "Date": "2026-09-28",
       "Views": 0,
-      "Engagements": 243
+      "Engagements": 759
     }
   },
   {
-    "Name": "\u0637\u0627\u0631\u0642 \u0639\u0627\u062f\u0644",
-    "Handle": "tarekadel.tech",
+    "Name": "\u0637\u0627\u0647\u0631 (Taher Galal El-Din)",
+    "Handle": "\u0645\u0633\u062a\u0631 \u0637\u0627\u0647\u0631 mr.taher",
     "Subsidiary": "SEEG",
     "Device": "Galaxy S26 Ultra",
     "Tier": "Macro",
-    "Total_Posts": 19,
-    "Total_Views": 605413,
+    "Total_Posts": 17,
+    "Total_Views": 722690,
     "Phase_1": {
-      "URL": "http://instagram.com/p/Dc_egjeMVWH",
-      "Platform": "Instagram",
+      "URL": "http://youtube.com/watch?v=JD6vKoaTPDM",
+      "Platform": "YouTube",
       "Date": "2026-09-07",
-      "Views": 0,
-      "Engagements": 395
+      "Views": 2000,
+      "Engagements": 86
     },
     "Phase_2": {
-      "URL": "http://instagram.com/p/DdTlMzPMDMb",
-      "Platform": "Instagram",
+      "URL": "http://youtube.com/watch?v=SeSIloyjg-g",
+      "Platform": "YouTube",
       "Date": "2026-09-15",
-      "Views": 0,
-      "Engagements": 260
+      "Views": 2184,
+      "Engagements": 73
     },
-    "Phase_3": null
+    "Phase_3": {
+      "URL": "http://youtube.com/watch?v=2gGOQW7tZyM",
+      "Platform": "YouTube",
+      "Date": "2026-09-27",
+      "Views": 1606,
+      "Engagements": 56
+    }
   },
   {
     "Name": "Samet Jankovic (Jankovicsamet)",
@@ -117,75 +123,51 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Device": "Galaxy Z Fold8",
     "Tier": "Macro",
     "Total_Posts": 6,
-    "Total_Views": 600840,
+    "Total_Views": 647573,
     "Phase_1": {
       "URL": "http://instagram.com/p/DdHI0_WoUYr",
       "Platform": "Instagram",
       "Date": "2026-09-10",
       "Views": 0,
-      "Engagements": 2096
+      "Engagements": 2147
     },
     "Phase_2": {
       "URL": "http://instagram.com/p/DdV9zecIaKN",
       "Platform": "Instagram",
       "Date": "2026-09-16",
       "Views": 0,
-      "Engagements": 1355
+      "Engagements": 1457
     },
     "Phase_3": null
   },
   {
-    "Name": "\u0637\u0627\u0647\u0631 (Taher Galal El-Din)",
-    "Handle": "\u0645\u0633\u062a\u0631 \u0637\u0627\u0647\u0631 mr.taher",
+    "Name": "\u0637\u0627\u0631\u0642 \u0639\u0627\u062f\u0644",
+    "Handle": "tarekadel.tech",
     "Subsidiary": "SEEG",
     "Device": "Galaxy S26 Ultra",
     "Tier": "Macro",
-    "Total_Posts": 14,
-    "Total_Views": 579341,
+    "Total_Posts": 22,
+    "Total_Views": 642853,
     "Phase_1": {
-      "URL": "http://youtube.com/watch?v=JD6vKoaTPDM",
-      "Platform": "YouTube",
-      "Date": "2026-09-07",
-      "Views": 1990,
-      "Engagements": 85
-    },
-    "Phase_2": {
-      "URL": "http://youtube.com/watch?v=SeSIloyjg-g",
-      "Platform": "YouTube",
-      "Date": "2026-09-15",
-      "Views": 2148,
-      "Engagements": 69
-    },
-    "Phase_3": null
-  },
-  {
-    "Name": "Mobizil",
-    "Handle": "mobizil.com",
-    "Subsidiary": "SEEG",
-    "Device": "Galaxy S26 Ultra",
-    "Tier": "Macro",
-    "Total_Posts": 9,
-    "Total_Views": 532872,
-    "Phase_1": {
-      "URL": "http://instagram.com/p/Dc_Y4WbMrp3",
+      "URL": "http://instagram.com/p/Dc_egjeMVWH",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 3329
+      "Engagements": 397
     },
     "Phase_2": {
-      "URL": "http://tiktok.com/@mobizil.com/video/7685038998712093970",
-      "Platform": "TikTok",
-      "Date": "2026-09-13",
-      "Views": 46322,
-      "Engagements": 2888
+      "URL": "http://instagram.com/p/DdTlMzPMDMb",
+      "Platform": "Instagram",
+      "Date": "2026-09-15",
+      "Views": 0,
+      "Engagements": 270
     },
     "Phase_3": {
-      "URL": "http://tiktok.com/@mobizil.com/video/7688396073756282119",
-      "Platform": "TikTok",
-      "Date": "2026-09-22",
-      "Views": 45809,
-      "Engagements": 2575
+      "URL": "http://instagram.com/p/DdybhAJMAZY",
+      "Platform": "Instagram",
+      "Date": "2026-09-27",
+      "Views": 0,
+      "Engagements": 204
     }
   },
   {
@@ -194,22 +176,22 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Subsidiary": "SEMAG",
     "Device": "Galaxy S26 Ultra",
     "Tier": "Macro",
-    "Total_Posts": 4,
-    "Total_Views": 530278,
+    "Total_Posts": 6,
+    "Total_Views": 635213,
     "Phase_1": null,
     "Phase_2": {
       "URL": "http://instagram.com/p/DdR51Uas-tA",
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 22676
+      "Engagements": 24596
     },
     "Phase_3": {
-      "URL": "http://instagram.com/p/Ddj5wS9sJER",
+      "URL": "http://instagram.com/p/Dd15kptshzf",
       "Platform": "Instagram",
-      "Date": "2026-09-21",
+      "Date": "2026-09-28",
       "Views": 0,
-      "Engagements": 23830
+      "Engagements": 4561
     }
   },
   {
@@ -218,23 +200,29 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Subsidiary": "SGE",
     "Device": "Galaxy Z Fold8",
     "Tier": "Macro",
-    "Total_Posts": 5,
-    "Total_Views": 502600,
+    "Total_Posts": 7,
+    "Total_Views": 542300,
     "Phase_1": {
       "URL": "http://facebook.com/101627781622194/posts/1702797001846985",
       "Platform": "Facebook",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 534
+      "Engagements": 538
     },
     "Phase_2": {
       "URL": "http://facebook.com/101627781622194/posts/1706989274761091",
       "Platform": "Facebook",
       "Date": "2026-09-11",
       "Views": 0,
-      "Engagements": 521
+      "Engagements": 524
     },
-    "Phase_3": null
+    "Phase_3": {
+      "URL": "http://facebook.com/101627781622194/posts/1722391653220853",
+      "Platform": "Facebook",
+      "Date": "2026-09-26",
+      "Views": 0,
+      "Engagements": 366
+    }
   },
   {
     "Name": "\u0645\u062d\u0645\u0648\u062f \u0637\u0627\u0631\u0642 (Mahmoud Tarek)",
@@ -242,23 +230,89 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Subsidiary": "SGE",
     "Device": "Galaxy Z Fold8",
     "Tier": "Macro",
-    "Total_Posts": 8,
-    "Total_Views": 441930,
+    "Total_Posts": 13,
+    "Total_Views": 526232,
     "Phase_1": {
       "URL": "http://tiktok.com/@mahmoudtarikk/video/7682812785553722645",
       "Platform": "TikTok",
       "Date": "2026-09-07",
-      "Views": 20462,
-      "Engagements": 1252
+      "Views": 21403,
+      "Engagements": 1308
     },
     "Phase_2": {
       "URL": "http://youtube.com/watch?v=vBz-3w6PNRU",
       "Platform": "YouTube",
       "Date": "2026-09-11",
-      "Views": 62493,
-      "Engagements": 1151
+      "Views": 63244,
+      "Engagements": 1168
     },
-    "Phase_3": null
+    "Phase_3": {
+      "URL": "http://tiktok.com/@mahmoudtarikk/video/7689473518664158465",
+      "Platform": "TikTok",
+      "Date": "2026-09-25",
+      "Views": 12371,
+      "Engagements": 528
+    }
+  },
+  {
+    "Name": "Mobizil",
+    "Handle": "mobizil.com",
+    "Subsidiary": "SEEG",
+    "Device": "Galaxy S26 Ultra",
+    "Tier": "Macro",
+    "Total_Posts": 8,
+    "Total_Views": 489435,
+    "Phase_1": {
+      "URL": "http://instagram.com/p/Dc_Y4WbMrp3",
+      "Platform": "Instagram",
+      "Date": "2026-09-07",
+      "Views": 0,
+      "Engagements": 3443
+    },
+    "Phase_2": {
+      "URL": "http://tiktok.com/@mobizil.com/video/7685038998712093970",
+      "Platform": "TikTok",
+      "Date": "2026-09-13",
+      "Views": 51743,
+      "Engagements": 3220
+    },
+    "Phase_3": {
+      "URL": "http://tiktok.com/@mobizil.com/video/7688396073756282119",
+      "Platform": "TikTok",
+      "Date": "2026-09-22",
+      "Views": 70265,
+      "Engagements": 3764
+    }
+  },
+  {
+    "Name": "Furkan Karaca",
+    "Handle": "furkanlaraca",
+    "Subsidiary": "SETK",
+    "Device": "Galaxy Z Fold8",
+    "Tier": "Macro",
+    "Total_Posts": 9,
+    "Total_Views": 459478,
+    "Phase_1": {
+      "URL": "http://facebook.com/110254018804250/posts/928656940300329",
+      "Platform": "Facebook",
+      "Date": "2026-09-08",
+      "Views": 0,
+      "Engagements": 75
+    },
+    "Phase_2": {
+      "URL": "http://facebook.com/110254018804250/posts/936538632845493",
+      "Platform": "Facebook",
+      "Date": "2026-09-17",
+      "Views": 0,
+      "Engagements": 61
+    },
+    "Phase_3": {
+      "URL": "http://instagram.com/p/Dd1N3-ZoFuX",
+      "Platform": "Instagram",
+      "Date": "2026-09-28",
+      "Views": 0,
+      "Engagements": 419
+    }
   },
   {
     "Name": "\u0623\u062d\u0645\u062f \u0642\u0648\u064a\u062f\u0631 (Ahmed Qwaider)",
@@ -266,47 +320,29 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Subsidiary": "SEEG",
     "Device": "Galaxy S26 Ultra",
     "Tier": "Macro",
-    "Total_Posts": 16,
-    "Total_Views": 396704,
+    "Total_Posts": 20,
+    "Total_Views": 435926,
     "Phase_1": {
       "URL": "http://youtube.com/watch?v=0DpCLD3CwiE",
       "Platform": "YouTube",
       "Date": "2026-09-07",
-      "Views": 1315,
+      "Views": 1321,
       "Engagements": 16
     },
     "Phase_2": {
       "URL": "http://youtube.com/watch?v=EfX50WUTJzI",
       "Platform": "YouTube",
       "Date": "2026-09-15",
-      "Views": 1562,
+      "Views": 1566,
       "Engagements": 27
     },
-    "Phase_3": null
-  },
-  {
-    "Name": "\u0645\u0647\u0627 \u0628\u0644\u0648\u0642",
-    "Handle": "mhablg",
-    "Subsidiary": "SGE",
-    "Device": "Galaxy Z Fold8",
-    "Tier": "Macro",
-    "Total_Posts": 9,
-    "Total_Views": 318477,
-    "Phase_1": {
-      "URL": "http://tiktok.com/@mhablg/video/7683010383245856020",
-      "Platform": "TikTok",
-      "Date": "2026-09-08",
-      "Views": 298100,
-      "Engagements": 8231
-    },
-    "Phase_2": {
-      "URL": "http://tiktok.com/@mhablg/video/7684298592282086677",
-      "Platform": "TikTok",
-      "Date": "2026-09-11",
-      "Views": 17884,
-      "Engagements": 832
-    },
-    "Phase_3": null
+    "Phase_3": {
+      "URL": "http://youtube.com/watch?v=Qm5Q4_XU1gI",
+      "Platform": "YouTube",
+      "Date": "2026-09-27",
+      "Views": 1626,
+      "Engagements": 49
+    }
   },
   {
     "Name": "Ameer Dagha",
@@ -315,57 +351,57 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Device": "Galaxy S26 Ultra",
     "Tier": "Macro",
     "Total_Posts": 13,
-    "Total_Views": 308587,
+    "Total_Views": 354968,
     "Phase_1": {
       "URL": "http://youtube.com/watch?v=8D_OJk1fnec",
       "Platform": "YouTube",
       "Date": "2026-09-07",
-      "Views": 34881,
-      "Engagements": 981
+      "Views": 36684,
+      "Engagements": 996
     },
     "Phase_2": {
       "URL": "http://youtube.com/watch?v=zMizu7drUpA",
       "Platform": "YouTube",
       "Date": "2026-09-14",
-      "Views": 16947,
-      "Engagements": 588
+      "Views": 17179,
+      "Engagements": 594
     },
     "Phase_3": {
       "URL": "http://tiktok.com/@reviews_pk/video/7687945768807730440",
       "Platform": "TikTok",
       "Date": "2026-09-21",
-      "Views": 44500,
-      "Engagements": 2240
+      "Views": 62498,
+      "Engagements": 3026
     }
   },
   {
-    "Name": "Furkan Karaca",
-    "Handle": "furkan karaca",
-    "Subsidiary": "SETK",
+    "Name": "\u0645\u0647\u0627 \u0628\u0644\u0648\u0642",
+    "Handle": "mhablg",
+    "Subsidiary": "SGE",
     "Device": "Galaxy Z Fold8",
     "Tier": "Macro",
-    "Total_Posts": 7,
-    "Total_Views": 279658,
+    "Total_Posts": 12,
+    "Total_Views": 346604,
     "Phase_1": {
-      "URL": "http://facebook.com/110254018804250/posts/928656940300329",
-      "Platform": "Facebook",
+      "URL": "http://tiktok.com/@mhablg/video/7683010383245856020",
+      "Platform": "TikTok",
       "Date": "2026-09-08",
-      "Views": 0,
-      "Engagements": 67
+      "Views": 309600,
+      "Engagements": 8537
     },
     "Phase_2": {
-      "URL": "http://facebook.com/110254018804250/posts/936538632845493",
-      "Platform": "Facebook",
-      "Date": "2026-09-17",
-      "Views": 0,
-      "Engagements": 59
+      "URL": "http://tiktok.com/@mhablg/video/7684298592282086677",
+      "Platform": "TikTok",
+      "Date": "2026-09-11",
+      "Views": 19300,
+      "Engagements": 880
     },
     "Phase_3": {
-      "URL": "http://youtube.com/watch?v=Oz6PDTmAxzc",
-      "Platform": "YouTube",
-      "Date": "2026-09-21",
-      "Views": 104649,
-      "Engagements": 1310
+      "URL": "http://tiktok.com/@mhablg/video/7689528767223549185",
+      "Platform": "TikTok",
+      "Date": "2026-09-25",
+      "Views": 15200,
+      "Engagements": 571
     }
   },
   {
@@ -375,27 +411,117 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Device": "Galaxy S26 Ultra",
     "Tier": "Macro",
     "Total_Posts": 12,
-    "Total_Views": 187033,
+    "Total_Views": 194549,
     "Phase_1": {
       "URL": "http://youtube.com/watch?v=USSxWSaMlp0",
       "Platform": "YouTube",
       "Date": "2026-09-07",
-      "Views": 65910,
-      "Engagements": 1802
+      "Views": 66387,
+      "Engagements": 1817
     },
     "Phase_2": {
       "URL": "http://youtube.com/watch?v=6i_K0w2yTBI",
       "Platform": "YouTube",
       "Date": "2026-09-14",
-      "Views": 13663,
-      "Engagements": 565
+      "Views": 13962,
+      "Engagements": 572
     },
     "Phase_3": {
       "URL": "http://instagram.com/p/DdjBF17iJfw",
       "Platform": "Instagram",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 481
+      "Engagements": 509
+    }
+  },
+  {
+    "Name": "\u062a\u0627\u0645\u0631 \u0639\u0627\u062f\u0644",
+    "Handle": "tameradel_official",
+    "Subsidiary": "SEEG",
+    "Device": "Galaxy S26 Ultra",
+    "Tier": "Macro",
+    "Total_Posts": 19,
+    "Total_Views": 191245,
+    "Phase_1": {
+      "URL": "http://youtube.com/watch?v=_sI4XcNdTUQ",
+      "Platform": "YouTube",
+      "Date": "2026-09-07",
+      "Views": 748,
+      "Engagements": 30
+    },
+    "Phase_2": {
+      "URL": "http://tiktok.com/@tameradel_official/video/7684733129269038344",
+      "Platform": "TikTok",
+      "Date": "2026-09-12",
+      "Views": 47200,
+      "Engagements": 2743
+    },
+    "Phase_3": {
+      "URL": "http://tiktok.com/@tameradel_official/video/7689887585375751431",
+      "Platform": "TikTok",
+      "Date": "2026-09-26",
+      "Views": 12700,
+      "Engagements": 237
+    }
+  },
+  {
+    "Name": "shyl.nmi",
+    "Handle": "shyl.nmi",
+    "Subsidiary": "SEMAG",
+    "Device": "Galaxy S26 Ultra",
+    "Tier": "Macro",
+    "Total_Posts": 6,
+    "Total_Views": 170759,
+    "Phase_1": {
+      "URL": "http://instagram.com/p/Dc_x7GYtMtP",
+      "Platform": "Instagram",
+      "Date": "2026-09-07",
+      "Views": 0,
+      "Engagements": 4425
+    },
+    "Phase_2": {
+      "URL": "http://instagram.com/p/DdXExmcMmxL",
+      "Platform": "Instagram",
+      "Date": "2026-09-16",
+      "Views": 0,
+      "Engagements": 8441
+    },
+    "Phase_3": {
+      "URL": "http://instagram.com/p/Ddr2D0otlrF",
+      "Platform": "Instagram",
+      "Date": "2026-09-24",
+      "Views": 0,
+      "Engagements": 3967
+    }
+  },
+  {
+    "Name": "Sherief Abd Elrahman Mohamed",
+    "Handle": "abo omar",
+    "Subsidiary": "SEEG",
+    "Device": "Galaxy S26 Ultra",
+    "Tier": "Macro",
+    "Total_Posts": 11,
+    "Total_Views": 155060,
+    "Phase_1": {
+      "URL": "http://instagram.com/p/Dc_ZJVEIBit",
+      "Platform": "Instagram",
+      "Date": "2026-09-07",
+      "Views": 0,
+      "Engagements": 471
+    },
+    "Phase_2": {
+      "URL": "http://youtube.com/watch?v=xok6PcZ5Tps",
+      "Platform": "YouTube",
+      "Date": "2026-09-13",
+      "Views": 3183,
+      "Engagements": 126
+    },
+    "Phase_3": {
+      "URL": "http://youtube.com/watch?v=SP4Eluq_PgI",
+      "Platform": "YouTube",
+      "Date": "2026-09-27",
+      "Views": 4437,
+      "Engagements": 235
     }
   },
   {
@@ -405,46 +531,16 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Device": "Galaxy Z Fold8 Ultra",
     "Tier": "Macro",
     "Total_Posts": 6,
-    "Total_Views": 148256,
+    "Total_Views": 155054,
     "Phase_1": {
       "URL": "http://tiktok.com/@garinialon/video/7683172407628041492",
       "Platform": "TikTok",
       "Date": "2026-09-08",
-      "Views": 31790,
-      "Engagements": 1182
+      "Views": 33900,
+      "Engagements": 1273
     },
     "Phase_2": null,
     "Phase_3": null
-  },
-  {
-    "Name": "shyl.nmi",
-    "Handle": "shyl.nmi",
-    "Subsidiary": "SEMAG",
-    "Device": "Galaxy S26 Ultra",
-    "Tier": "Macro",
-    "Total_Posts": 5,
-    "Total_Views": 147047,
-    "Phase_1": {
-      "URL": "http://instagram.com/p/Dc_x7GYtMtP",
-      "Platform": "Instagram",
-      "Date": "2026-09-07",
-      "Views": 0,
-      "Engagements": 4378
-    },
-    "Phase_2": {
-      "URL": "http://instagram.com/p/DdXExmcMmxL",
-      "Platform": "Instagram",
-      "Date": "2026-09-16",
-      "Views": 0,
-      "Engagements": 8101
-    },
-    "Phase_3": {
-      "URL": "http://instagram.com/p/Ddr2D0otlrF",
-      "Platform": "Instagram",
-      "Date": "2026-09-24",
-      "Views": 0,
-      "Engagements": 3014
-    }
   },
   {
     "Name": "Tariq Al Jasser",
@@ -453,13 +549,13 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Device": "Galaxy Z Fold8 Ultra",
     "Tier": "Macro",
     "Total_Posts": 16,
-    "Total_Views": 139761,
+    "Total_Views": 140409,
     "Phase_1": {
       "URL": "http://instagram.com/p/Dc_GpYeOHN9",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 28
+      "Engagements": 29
     },
     "Phase_2": null,
     "Phase_3": {
@@ -467,56 +563,8 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 89
+      "Engagements": 171
     }
-  },
-  {
-    "Name": "\u062a\u0627\u0645\u0631 \u0639\u0627\u062f\u0644",
-    "Handle": "tameradel_official",
-    "Subsidiary": "SEEG",
-    "Device": "Galaxy S26 Ultra",
-    "Tier": "Macro",
-    "Total_Posts": 11,
-    "Total_Views": 138476,
-    "Phase_1": {
-      "URL": "http://youtube.com/watch?v=_sI4XcNdTUQ",
-      "Platform": "YouTube",
-      "Date": "2026-09-07",
-      "Views": 713,
-      "Engagements": 29
-    },
-    "Phase_2": {
-      "URL": "http://tiktok.com/@tameradel_official/video/7684733129269038344",
-      "Platform": "TikTok",
-      "Date": "2026-09-12",
-      "Views": 41463,
-      "Engagements": 2414
-    },
-    "Phase_3": null
-  },
-  {
-    "Name": "Sherief Abd Elrahman Mohamed",
-    "Handle": "abo omar",
-    "Subsidiary": "SEEG",
-    "Device": "Galaxy S26 Ultra",
-    "Tier": "Macro",
-    "Total_Posts": 9,
-    "Total_Views": 125988,
-    "Phase_1": {
-      "URL": "http://instagram.com/p/Dc_ZJVEIBit",
-      "Platform": "Instagram",
-      "Date": "2026-09-07",
-      "Views": 0,
-      "Engagements": 461
-    },
-    "Phase_2": {
-      "URL": "http://youtube.com/watch?v=xok6PcZ5Tps",
-      "Platform": "YouTube",
-      "Date": "2026-09-13",
-      "Views": 2988,
-      "Engagements": 119
-    },
-    "Phase_3": null
   },
   {
     "Name": "\u062e\u0644\u064a\u0644 \u0627\u0644\u0634\u0631\u064a\u0641",
@@ -525,14 +573,14 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Device": "Galaxy S26 Ultra",
     "Tier": "Macro",
     "Total_Posts": 4,
-    "Total_Views": 124700,
+    "Total_Views": 138519,
     "Phase_1": null,
     "Phase_2": {
       "URL": "http://tiktok.com/@khalil.alsharif/video/7687350251371482384",
       "Platform": "TikTok",
       "Date": "2026-09-19",
-      "Views": 105300,
-      "Engagements": 6337
+      "Views": 116798,
+      "Engagements": 6867
     },
     "Phase_3": {
       "URL": "http://instagram.com/p/DdpXptdjPRi",
@@ -549,20 +597,20 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Device": "Galaxy Z Fold8",
     "Tier": "Macro",
     "Total_Posts": 18,
-    "Total_Views": 122367,
+    "Total_Views": 135068,
     "Phase_1": {
       "URL": "http://instagram.com/p/DdBPUGHxhB_",
       "Platform": "Instagram",
       "Date": "2026-09-08",
       "Views": 0,
-      "Engagements": 224
+      "Engagements": 225
     },
     "Phase_2": {
       "URL": "http://tiktok.com/@bro..anas/video/7687203234586578184",
       "Platform": "TikTok",
       "Date": "2026-09-19",
-      "Views": 10114,
-      "Engagements": 263
+      "Views": 13049,
+      "Engagements": 316
     },
     "Phase_3": null
   },
@@ -572,21 +620,21 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Subsidiary": "SELV",
     "Device": "Galaxy S26 Ultra",
     "Tier": "Macro",
-    "Total_Posts": 6,
-    "Total_Views": 115154,
+    "Total_Posts": 7,
+    "Total_Views": 122448,
     "Phase_1": {
       "URL": "http://instagram.com/p/Dc-4SL7Nx3J",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 2283
+      "Engagements": 2376
     },
     "Phase_2": {
       "URL": "http://facebook.com/564081877127715/posts/1536622471838746",
       "Platform": "Facebook",
       "Date": "2026-09-15",
       "Views": 0,
-      "Engagements": 307
+      "Engagements": 312
     },
     "Phase_3": null
   },
@@ -596,23 +644,29 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Subsidiary": "SGE",
     "Device": "Galaxy Z Fold8",
     "Tier": "Hero",
-    "Total_Posts": 6,
-    "Total_Views": 100751,
+    "Total_Posts": 8,
+    "Total_Views": 101366,
     "Phase_1": {
       "URL": "http://instagram.com/p/Dc_q91bN_Cr",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 725
+      "Engagements": 726
     },
     "Phase_2": {
       "URL": "http://tiktok.com/@ali_abdelwahab7/video/7684352285811461397",
       "Platform": "TikTok",
       "Date": "2026-09-11",
-      "Views": 5751,
-      "Engagements": 166
+      "Views": 6366,
+      "Engagements": 178
     },
-    "Phase_3": null
+    "Phase_3": {
+      "URL": "http://instagram.com/p/DdvjlOOscEm",
+      "Platform": "Instagram",
+      "Date": "2026-09-26",
+      "Views": 0,
+      "Engagements": 318
+    }
   },
   {
     "Name": "Sagi Shmaryahu",
@@ -621,14 +675,38 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Device": "Galaxy Z Fold8",
     "Tier": "Macro ",
     "Total_Posts": 4,
-    "Total_Views": 85249,
+    "Total_Views": 88531,
     "Phase_1": null,
     "Phase_2": {
       "URL": "http://tiktok.com/@sagishmaryahu/video/7684161183041064199",
       "Platform": "TikTok",
       "Date": "2026-09-11",
-      "Views": 47949,
-      "Engagements": 1241
+      "Views": 50631,
+      "Engagements": 1305
+    },
+    "Phase_3": null
+  },
+  {
+    "Name": "\u0635\u0627\u0644\u062d \u0627\u0644\u0646\u0645\u0631",
+    "Handle": "xk_sal7",
+    "Subsidiary": "SESAR",
+    "Device": "Galaxy Z Fold8",
+    "Tier": "Macro",
+    "Total_Posts": 37,
+    "Total_Views": 84007,
+    "Phase_1": {
+      "URL": "http://youtube.com/watch?v=a9asOhqr-vI",
+      "Platform": "YouTube",
+      "Date": "2026-09-07",
+      "Views": 1148,
+      "Engagements": 20
+    },
+    "Phase_2": {
+      "URL": "http://tiktok.com/@xk_sal7/video/7687316041428471058",
+      "Platform": "TikTok",
+      "Date": "2026-09-19",
+      "Views": 5301,
+      "Engagements": 239
     },
     "Phase_3": null
   },
@@ -639,52 +717,28 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Device": "Galaxy S26 Ultra",
     "Tier": "Macro",
     "Total_Posts": 9,
-    "Total_Views": 80047,
+    "Total_Views": 82455,
     "Phase_1": {
       "URL": "http://youtube.com/watch?v=LUbTbXffz7A",
       "Platform": "YouTube",
       "Date": "2026-09-07",
-      "Views": 268,
-      "Engagements": 5
+      "Views": 273,
+      "Engagements": 7
     },
     "Phase_2": {
       "URL": "http://youtube.com/watch?v=eCKNNZ6hJT0",
       "Platform": "YouTube",
       "Date": "2026-09-14",
-      "Views": 192,
+      "Views": 198,
       "Engagements": 9
     },
     "Phase_3": {
       "URL": "http://youtube.com/watch?v=pSska1J_Dhg",
       "Platform": "YouTube",
       "Date": "2026-09-21",
-      "Views": 157,
+      "Views": 169,
       "Engagements": 5
     }
-  },
-  {
-    "Name": "\u0635\u0627\u0644\u062d \u0627\u0644\u0646\u0645\u0631",
-    "Handle": "xk_sal7",
-    "Subsidiary": "SESAR",
-    "Device": "Galaxy Z Fold8",
-    "Tier": "Macro",
-    "Total_Posts": 36,
-    "Total_Views": 78942,
-    "Phase_1": {
-      "URL": "http://youtube.com/watch?v=a9asOhqr-vI",
-      "Platform": "YouTube",
-      "Date": "2026-09-07",
-      "Views": 1141,
-      "Engagements": 20
-    },
-    "Phase_2": {
-      "URL": "http://tiktok.com/@xk_sal7/video/7687316041428471058",
-      "Platform": "TikTok",
-      "Date": "2026-09-19",
-      "Views": 4031,
-      "Engagements": 186
-    },
-    "Phase_3": null
   },
   {
     "Name": "Ibrahim Al-Rashidan",
@@ -693,12 +747,12 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Device": "Galaxy Z Fold8 Ultra",
     "Tier": "Macro",
     "Total_Posts": 13,
-    "Total_Views": 75395,
+    "Total_Views": 80365,
     "Phase_1": {
       "URL": "http://youtube.com/watch?v=VSBScXFX5AQ",
       "Platform": "YouTube",
       "Date": "2026-09-07",
-      "Views": 624,
+      "Views": 638,
       "Engagements": 13
     },
     "Phase_2": {
@@ -706,7 +760,7 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-19",
       "Views": 0,
-      "Engagements": 144
+      "Engagements": 154
     },
     "Phase_3": null
   },
@@ -717,20 +771,20 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Device": "Galaxy Z Fold8 Ultra",
     "Tier": "Macro",
     "Total_Posts": 5,
-    "Total_Views": 73900,
+    "Total_Views": 79100,
     "Phase_1": {
       "URL": "http://tiktok.com/@yahav_trosman/video/7682731766825733394",
       "Platform": "TikTok",
       "Date": "2026-09-07",
-      "Views": 14700,
-      "Engagements": 468
+      "Views": 15600,
+      "Engagements": 501
     },
     "Phase_2": {
       "URL": "http://tiktok.com/@yahav_trosman/video/7685713570750909703",
       "Platform": "TikTok",
       "Date": "2026-09-15",
-      "Views": 59200,
-      "Engagements": 1747
+      "Views": 63500,
+      "Engagements": 1888
     },
     "Phase_3": null
   },
@@ -740,14 +794,14 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Subsidiary": "SETK",
     "Device": "Galaxy Z Fold8",
     "Tier": "Macro",
-    "Total_Posts": 13,
-    "Total_Views": 63028,
+    "Total_Posts": 15,
+    "Total_Views": 74093,
     "Phase_1": {
       "URL": "http://instagram.com/p/Dc_YsTYogfm",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 571
+      "Engagements": 580
     },
     "Phase_2": {
       "URL": "http://instagram.com/p/DdZDftVoiYr",
@@ -756,7 +810,13 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Views": 0,
       "Engagements": 409
     },
-    "Phase_3": null
+    "Phase_3": {
+      "URL": "http://instagram.com/p/DdtulQNIXdb",
+      "Platform": "Instagram",
+      "Date": "2026-09-25",
+      "Views": 0,
+      "Engagements": 167
+    }
   },
   {
     "Name": "Lizzy | Personal brand & content tips",
@@ -765,27 +825,27 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Device": "Galaxy Z Fold8 Ultra",
     "Tier": "Macro",
     "Total_Posts": 4,
-    "Total_Views": 62376,
+    "Total_Views": 71281,
     "Phase_1": {
       "URL": "http://tiktok.com/@lizzy.hendel/video/7682862112493948178",
       "Platform": "TikTok",
       "Date": "2026-09-07",
-      "Views": 45080,
-      "Engagements": 3587
+      "Views": 52062,
+      "Engagements": 4137
     },
     "Phase_2": {
       "URL": "http://tiktok.com/@lizzy.hendel/video/7685496281178901768",
       "Platform": "TikTok",
       "Date": "2026-09-14",
-      "Views": 17296,
-      "Engagements": 1359
+      "Views": 19219,
+      "Engagements": 1498
     },
     "Phase_3": {
       "URL": "http://instagram.com/p/Ddj3LytAA0I",
       "Platform": "Instagram",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 1469
+      "Engagements": 1603
     }
   },
   {
@@ -794,14 +854,14 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Subsidiary": "SGE",
     "Device": "Galaxy Z Fold8",
     "Tier": "Macro",
-    "Total_Posts": 20,
-    "Total_Views": 52106,
+    "Total_Posts": 22,
+    "Total_Views": 54188,
     "Phase_1": {
       "URL": "http://instagram.com/p/Dc_SaDNuh9W",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 1655
+      "Engagements": 1700
     },
     "Phase_2": {
       "URL": "http://facebook.com/309735206042656/posts/1640603930960921",
@@ -810,7 +870,13 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Views": 0,
       "Engagements": 43
     },
-    "Phase_3": null
+    "Phase_3": {
+      "URL": "http://instagram.com/p/DdvtDRruulg",
+      "Platform": "Instagram",
+      "Date": "2026-09-26",
+      "Views": 0,
+      "Engagements": 1357
+    }
   },
   {
     "Name": "\u0633\u0639\u0648\u062f\u064a \u0623\u0646\u062f\u0631\u0648\u064a\u062f",
@@ -819,20 +885,20 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Device": "Galaxy Z Fold8 Ultra",
     "Tier": "Macro",
     "Total_Posts": 12,
-    "Total_Views": 49505,
+    "Total_Views": 51370,
     "Phase_1": {
       "URL": "http://tiktok.com/@saudiandroid/video/7683167961200512277",
       "Platform": "TikTok",
       "Date": "2026-09-08",
-      "Views": 1355,
-      "Engagements": 50
+      "Views": 1454,
+      "Engagements": 51
     },
     "Phase_2": {
       "URL": "http://tiktok.com/@saudiandroid/video/7686950650973932820",
       "Platform": "TikTok",
       "Date": "2026-09-18",
-      "Views": 2404,
-      "Engagements": 111
+      "Views": 3726,
+      "Engagements": 157
     },
     "Phase_3": null
   },
@@ -843,13 +909,13 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Device": "Galaxy Z Fold8",
     "Tier": "Macro",
     "Total_Posts": 8,
-    "Total_Views": 47367,
+    "Total_Views": 47796,
     "Phase_1": {
       "URL": "http://instagram.com/p/Dc-81Cgt1XZ",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 195
+      "Engagements": 197
     },
     "Phase_2": {
       "URL": "http://instagram.com/p/Ddex0BktrKm",
@@ -861,26 +927,56 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Phase_3": null
   },
   {
+    "Name": "\u0645\u0627\u062c\u062f \u0627\u0644\u062f\u062e\u064a\u0651\u0644",
+    "Handle": "\u202b\u0645\u0627\u062c\u062f \u0627\u0644\u062f\u062e\u064a\u0644 (\u0645\u0627\u062c\u062f \u0623\u0646\u062f\u0631\u0648\u064a\u062f)\u202c\u200e",
+    "Subsidiary": "SESAR",
+    "Device": "Galaxy Z Fold8",
+    "Tier": "Macro",
+    "Total_Posts": 19,
+    "Total_Views": 41621,
+    "Phase_1": {
+      "URL": "http://instagram.com/p/Dc_DbDmtvgq",
+      "Platform": "Instagram",
+      "Date": "2026-09-07",
+      "Views": 0,
+      "Engagements": 17
+    },
+    "Phase_2": {
+      "URL": "http://youtube.com/watch?v=fyGzRBS32DU",
+      "Platform": "YouTube",
+      "Date": "2026-09-20",
+      "Views": 891,
+      "Engagements": 42
+    },
+    "Phase_3": {
+      "URL": "http://tiktok.com/@majedandroid/video/7689452026652314901",
+      "Platform": "TikTok",
+      "Date": "2026-09-25",
+      "Views": 10100,
+      "Engagements": 209
+    }
+  },
+  {
     "Name": "Total Tech Media",
     "Handle": "\u0627\u0644\u062a\u0643\u0646\u0648\u0644\u0648\u062c\u064a\u0627 \u0627\u0644\u0634\u0627\u0645\u0644\u0629",
     "Subsidiary": "SESAR",
     "Device": "Galaxy Z Fold8",
     "Tier": "Macro",
     "Total_Posts": 23,
-    "Total_Views": 32594,
+    "Total_Views": 36289,
     "Phase_1": {
       "URL": "http://youtube.com/watch?v=F9lGC8Crw5E",
       "Platform": "YouTube",
       "Date": "2026-09-07",
-      "Views": 21085,
-      "Engagements": 65
+      "Views": 21105,
+      "Engagements": 66
     },
     "Phase_2": {
       "URL": "http://youtube.com/watch?v=aqfMe5vk3mQ",
       "Platform": "YouTube",
       "Date": "2026-09-13",
-      "Views": 3377,
-      "Engagements": 56
+      "Views": 4585,
+      "Engagements": 69
     },
     "Phase_3": null
   },
@@ -891,12 +987,12 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Device": "Galaxy S26 Ultra",
     "Tier": "Macro",
     "Total_Posts": 10,
-    "Total_Views": 31324,
+    "Total_Views": 31447,
     "Phase_1": {
       "URL": "http://youtube.com/watch?v=hwAeSJ7GC8s",
       "Platform": "YouTube",
       "Date": "2026-09-07",
-      "Views": 9031,
+      "Views": 9036,
       "Engagements": 118
     },
     "Phase_2": {
@@ -911,8 +1007,32 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Platform": "Facebook",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 3
+      "Engagements": 4
     }
+  },
+  {
+    "Name": "\u0627\u0644\u062a\u0642\u0646\u064a\u0629 \u0628\u0644\u0627 \u062d\u062f\u0648\u062f",
+    "Handle": "\u0627\u0644\u062a\u0642\u0646\u064a\u0629 \u0628\u0644\u0627 \u062d\u062f\u0648\u062f",
+    "Subsidiary": "SESAR",
+    "Device": "Galaxy Z Fold8",
+    "Tier": "Macro",
+    "Total_Posts": 25,
+    "Total_Views": 31321,
+    "Phase_1": {
+      "URL": "http://youtube.com/watch?v=PvxnecDWFXM",
+      "Platform": "YouTube",
+      "Date": "2026-09-07",
+      "Views": 3100,
+      "Engagements": 112
+    },
+    "Phase_2": {
+      "URL": "http://youtube.com/watch?v=hKheSn4HXzs",
+      "Platform": "YouTube",
+      "Date": "2026-09-20",
+      "Views": 2153,
+      "Engagements": 68
+    },
+    "Phase_3": null
   },
   {
     "Name": "Erdi Ozuag",
@@ -921,62 +1041,14 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Device": "Galaxy Z Fold8",
     "Tier": "Micro",
     "Total_Posts": 3,
-    "Total_Views": 29573,
+    "Total_Views": 30193,
     "Phase_1": null,
     "Phase_2": {
       "URL": "http://youtube.com/watch?v=NWi2U5Aaixc",
       "Platform": "YouTube",
       "Date": "2026-09-15",
-      "Views": 29573,
-      "Engagements": 758
-    },
-    "Phase_3": null
-  },
-  {
-    "Name": "\u0627\u0644\u062a\u0642\u0646\u064a\u0629 \u0628\u0644\u0627 \u062d\u062f\u0648\u062f",
-    "Handle": "\u0627\u0644\u062a\u0642\u0646\u064a\u0629 \u0628\u0644\u0627 \u062d\u062f\u0648\u062f",
-    "Subsidiary": "SESAR",
-    "Device": "Galaxy Z Fold8",
-    "Tier": "Macro",
-    "Total_Posts": 24,
-    "Total_Views": 29429,
-    "Phase_1": {
-      "URL": "http://youtube.com/watch?v=PvxnecDWFXM",
-      "Platform": "YouTube",
-      "Date": "2026-09-07",
-      "Views": 3075,
-      "Engagements": 111
-    },
-    "Phase_2": {
-      "URL": "http://youtube.com/watch?v=hKheSn4HXzs",
-      "Platform": "YouTube",
-      "Date": "2026-09-20",
-      "Views": 2003,
-      "Engagements": 65
-    },
-    "Phase_3": null
-  },
-  {
-    "Name": "\u0645\u0627\u062c\u062f \u0627\u0644\u062f\u062e\u064a\u0651\u0644",
-    "Handle": "\u202b\u0645\u0627\u062c\u062f \u0627\u0644\u062f\u062e\u064a\u0644 (\u0645\u0627\u062c\u062f \u0623\u0646\u062f\u0631\u0648\u064a\u062f)\u202c\u200e",
-    "Subsidiary": "SESAR",
-    "Device": "Galaxy Z Fold8",
-    "Tier": "Macro",
-    "Total_Posts": 18,
-    "Total_Views": 26495,
-    "Phase_1": {
-      "URL": "http://instagram.com/p/Dc_DbDmtvgq",
-      "Platform": "Instagram",
-      "Date": "2026-09-07",
-      "Views": 0,
-      "Engagements": 16
-    },
-    "Phase_2": {
-      "URL": "http://youtube.com/watch?v=fyGzRBS32DU",
-      "Platform": "YouTube",
-      "Date": "2026-09-20",
-      "Views": 679,
-      "Engagements": 26
+      "Views": 30193,
+      "Engagements": 770
     },
     "Phase_3": null
   },
@@ -987,21 +1059,21 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Device": "Galaxy Z Fold8 Ultra",
     "Tier": "Macro",
     "Total_Posts": 3,
-    "Total_Views": 8885,
+    "Total_Views": 11749,
     "Phase_1": {
       "URL": "http://instagram.com/p/DdB4WpxyHrW",
       "Platform": "Instagram",
       "Date": "2026-09-08",
       "Views": 0,
-      "Engagements": 302
+      "Engagements": 308
     },
     "Phase_2": null,
     "Phase_3": {
       "URL": "http://tiktok.com/@seckinayazlar/video/7688066215624985889",
       "Platform": "TikTok",
       "Date": "2026-09-21",
-      "Views": 8885,
-      "Engagements": 235
+      "Views": 11749,
+      "Engagements": 296
     }
   },
   {
@@ -1010,28 +1082,28 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Subsidiary": "SGE",
     "Device": "Galaxy Z Fold8",
     "Tier": "Macro",
-    "Total_Posts": 18,
-    "Total_Views": 8144,
+    "Total_Posts": 22,
+    "Total_Views": 8571,
     "Phase_1": {
       "URL": "http://youtube.com/watch?v=rfCLq6bmGk4",
       "Platform": "YouTube",
       "Date": "2026-09-09",
-      "Views": 2891,
+      "Views": 2925,
       "Engagements": 86
     },
     "Phase_2": {
       "URL": "http://tiktok.com/@tableeforone/video/7684317784360127764",
       "Platform": "TikTok",
       "Date": "2026-09-11",
-      "Views": 855,
+      "Views": 951,
       "Engagements": 24
     },
     "Phase_3": {
-      "URL": "http://instagram.com/p/DdrDdCADMur",
+      "URL": "http://instagram.com/p/Ddvnp2IotP8",
       "Platform": "Instagram",
-      "Date": "2026-09-24",
+      "Date": "2026-09-26",
       "Views": 0,
-      "Engagements": 0
+      "Engagements": 406
     }
   },
   {
@@ -1041,13 +1113,13 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Device": "Galaxy S26 Ultra",
     "Tier": "Macro",
     "Total_Posts": 8,
-    "Total_Views": 7183,
+    "Total_Views": 7212,
     "Phase_1": {
       "URL": "http://youtube.com/watch?v=2xjvDx7NeSg",
       "Platform": "YouTube",
       "Date": "2026-09-07",
-      "Views": 7183,
-      "Engagements": 431
+      "Views": 7212,
+      "Engagements": 432
     },
     "Phase_2": {
       "URL": "http://facebook.com/101444181515308/posts/1507740451374580",
@@ -1071,13 +1143,13 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Device": "Galaxy Z Fold8",
     "Tier": "Macro",
     "Total_Posts": 12,
-    "Total_Views": 4933,
+    "Total_Views": 5034,
     "Phase_1": {
       "URL": "http://instagram.com/p/Dc_sRk3M8i0",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 783
+      "Engagements": 804
     },
     "Phase_2": {
       "URL": "http://instagram.com/p/DdUMw19DGMS",
@@ -1089,19 +1161,49 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Phase_3": null
   },
   {
+    "Name": "Mohamed Saieed",
+    "Handle": "moh.saieed",
+    "Subsidiary": "SGE",
+    "Device": "Galaxy Z Fold8",
+    "Tier": "Hero",
+    "Total_Posts": 12,
+    "Total_Views": 3283,
+    "Phase_1": {
+      "URL": "http://youtube.com/watch?v=GUa3DBVrIII",
+      "Platform": "YouTube",
+      "Date": "2026-09-07",
+      "Views": 1244,
+      "Engagements": 14
+    },
+    "Phase_2": {
+      "URL": "http://instagram.com/p/DdPK2HTo8XW",
+      "Platform": "Instagram",
+      "Date": "2026-09-13",
+      "Views": 0,
+      "Engagements": 2671
+    },
+    "Phase_3": {
+      "URL": "http://youtube.com/watch?v=Z5XdDhks8Gg",
+      "Platform": "YouTube",
+      "Date": "2026-09-26",
+      "Views": 2039,
+      "Engagements": 45
+    }
+  },
+  {
     "Name": "Ben Keysar",
     "Handle": "benkeysar",
     "Subsidiary": "SEIL",
     "Device": "Galaxy Z Fold8 Ultra",
     "Tier": "Macro",
     "Total_Posts": 3,
-    "Total_Views": 2794,
+    "Total_Views": 3157,
     "Phase_1": {
       "URL": "http://tiktok.com/@benkeysar/video/7682768215650438407",
       "Platform": "TikTok",
       "Date": "2026-09-07",
-      "Views": 2794,
-      "Engagements": 134
+      "Views": 3157,
+      "Engagements": 147
     },
     "Phase_2": null,
     "Phase_3": null
@@ -1112,17 +1214,23 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Subsidiary": "SEMAG",
     "Device": "Galaxy S26 Ultra",
     "Tier": "Macro",
-    "Total_Posts": 5,
-    "Total_Views": 2557,
+    "Total_Posts": 7,
+    "Total_Views": 2883,
     "Phase_1": null,
     "Phase_2": {
       "URL": "http://facebook.com/105380491918981/posts/1115979127609153",
       "Platform": "Facebook",
       "Date": "2026-09-18",
       "Views": 0,
-      "Engagements": 605
+      "Engagements": 620
     },
-    "Phase_3": null
+    "Phase_3": {
+      "URL": "http://facebook.com/105380491918981/posts/1125161336690932",
+      "Platform": "Facebook",
+      "Date": "2026-09-28",
+      "Views": 0,
+      "Engagements": 76
+    }
   },
   {
     "Name": "\u0645\u0646\u0627\u0631 \u0627\u0644\u062d\u064a\u062f\u064a",
@@ -1131,20 +1239,20 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Device": "Galaxy S26 Ultra",
     "Tier": "Macro",
     "Total_Posts": 5,
-    "Total_Views": 2152,
+    "Total_Views": 2351,
     "Phase_1": {
       "URL": "http://tiktok.com/@manar.el.haidi/video/7683279027724881160",
       "Platform": "TikTok",
       "Date": "2026-09-08",
-      "Views": 352,
-      "Engagements": 22
+      "Views": 360,
+      "Engagements": 23
     },
     "Phase_2": {
       "URL": "http://youtube.com/watch?v=oL6fKSEVyUo",
       "Platform": "YouTube",
       "Date": "2026-09-20",
-      "Views": 1293,
-      "Engagements": 15
+      "Views": 1312,
+      "Engagements": 16
     },
     "Phase_3": null
   },
@@ -1154,47 +1262,29 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Subsidiary": "SGE",
     "Device": "Galaxy Z Fold8",
     "Tier": "Macro",
-    "Total_Posts": 10,
-    "Total_Views": 1357,
+    "Total_Posts": 11,
+    "Total_Views": 1392,
     "Phase_1": {
       "URL": "http://instagram.com/p/Dc_gyvVNfJ0",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 3720
+      "Engagements": 3711
     },
     "Phase_2": {
       "URL": "http://instagram.com/p/DdJmzF4thY9",
       "Platform": "Instagram",
       "Date": "2026-09-11",
       "Views": 0,
-      "Engagements": 3592
+      "Engagements": 3600
     },
-    "Phase_3": null
-  },
-  {
-    "Name": "Mohamed Saieed",
-    "Handle": "moh.saieed",
-    "Subsidiary": "SGE",
-    "Device": "Galaxy Z Fold8",
-    "Tier": "Hero",
-    "Total_Posts": 10,
-    "Total_Views": 1238,
-    "Phase_1": {
-      "URL": "http://youtube.com/watch?v=GUa3DBVrIII",
-      "Platform": "YouTube",
-      "Date": "2026-09-07",
-      "Views": 1238,
-      "Engagements": 14
-    },
-    "Phase_2": {
-      "URL": "http://instagram.com/p/DdPK2HTo8XW",
+    "Phase_3": {
+      "URL": "http://instagram.com/p/Dd1d8fhNWaA",
       "Platform": "Instagram",
-      "Date": "2026-09-13",
+      "Date": "2026-09-28",
       "Views": 0,
-      "Engagements": 2749
-    },
-    "Phase_3": null
+      "Engagements": 4988
+    }
   },
   {
     "Name": "Dalia Kokash",
@@ -1202,23 +1292,29 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Subsidiary": "SGE",
     "Device": "Galaxy Z Fold8",
     "Tier": "Macro ",
-    "Total_Posts": 11,
-    "Total_Views": 389,
+    "Total_Posts": 14,
+    "Total_Views": 393,
     "Phase_1": {
       "URL": "http://instagram.com/p/DdB5hXNsmzZ",
       "Platform": "Instagram",
       "Date": "2026-09-08",
       "Views": 0,
-      "Engagements": 66
+      "Engagements": 173
     },
     "Phase_2": {
       "URL": "http://instagram.com/p/DdRkqeSohor",
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 60
+      "Engagements": 157
     },
-    "Phase_3": null
+    "Phase_3": {
+      "URL": "http://instagram.com/p/Ddy71g4pQgY",
+      "Platform": "Instagram",
+      "Date": "2026-09-27",
+      "Views": 0,
+      "Engagements": 103
+    }
   },
   {
     "Name": "Achraf Tarik Loukili",
@@ -1234,7 +1330,7 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-18",
       "Views": 0,
-      "Engagements": 234
+      "Engagements": 244
     },
     "Phase_3": null
   },
@@ -1244,7 +1340,7 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Subsidiary": "SEMAG",
     "Device": "Galaxy S26 Ultra",
     "Tier": "Macro",
-    "Total_Posts": 4,
+    "Total_Posts": 6,
     "Total_Views": 0,
     "Phase_1": {
       "URL": "http://instagram.com/p/DdHotuNoYvz",
@@ -1268,7 +1364,7 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Subsidiary": "SELV",
     "Device": "Galaxy Z Fold8",
     "Tier": "Macro",
-    "Total_Posts": 1,
+    "Total_Posts": 2,
     "Total_Views": 0,
     "Phase_1": null,
     "Phase_2": {
@@ -1276,9 +1372,15 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-12",
       "Views": 0,
-      "Engagements": 1089
+      "Engagements": 1160
     },
-    "Phase_3": null
+    "Phase_3": {
+      "URL": "http://instagram.com/p/Ddtg4fho9kY",
+      "Platform": "Instagram",
+      "Date": "2026-09-25",
+      "Views": 0,
+      "Engagements": 1305
+    }
   },
   {
     "Name": "Ekin Kollama (Taaisback)",
@@ -1293,7 +1395,7 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-09",
       "Views": 0,
-      "Engagements": 3172
+      "Engagements": 3210
     },
     "Phase_2": null,
     "Phase_3": {
@@ -1301,7 +1403,7 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 2237
+      "Engagements": 2366
     }
   },
   {
@@ -1334,7 +1436,7 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Subsidiary": "SESAR",
     "Device": "Galaxy S26 Ultra",
     "Tier": "Macro",
-    "Total_Posts": 6,
+    "Total_Posts": 9,
     "Total_Views": 0,
     "Phase_1": {
       "URL": "http://instagram.com/p/Dc-8f5IqwVl",
@@ -1351,11 +1453,11 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Engagements": 32
     },
     "Phase_3": {
-      "URL": "http://instagram.com/p/DdmCNUGCxKb",
+      "URL": "http://instagram.com/p/DdyYGmEiqjQ",
       "Platform": "Instagram",
-      "Date": "2026-09-22",
+      "Date": "2026-09-27",
       "Views": 0,
-      "Engagements": 0
+      "Engagements": 30
     }
   },
   {
@@ -1364,14 +1466,14 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Subsidiary": "SETK",
     "Device": "Galaxy Z Fold8 Ultra",
     "Tier": "Micro",
-    "Total_Posts": 5,
+    "Total_Posts": 7,
     "Total_Views": 0,
     "Phase_1": {
       "URL": "http://instagram.com/p/Dc_bmo4KGLD",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 1843
+      "Engagements": 1891
     },
     "Phase_2": {
       "URL": "http://instagram.com/p/DdY3loJCiKF",
@@ -1381,11 +1483,11 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Engagements": 0
     },
     "Phase_3": {
-      "URL": "http://instagram.com/p/DdjK3cZqWHN",
+      "URL": "http://instagram.com/p/Ddtks-xqzhJ",
       "Platform": "Instagram",
-      "Date": "2026-09-21",
+      "Date": "2026-09-25",
       "Views": 0,
-      "Engagements": 936
+      "Engagements": 1901
     }
   },
   {
@@ -1394,7 +1496,7 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Subsidiary": "SEIL",
     "Device": "Galaxy Z Fold8",
     "Tier": "Macro",
-    "Total_Posts": 1,
+    "Total_Posts": 2,
     "Total_Views": 0,
     "Phase_1": null,
     "Phase_2": {
@@ -1402,9 +1504,15 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-16",
       "Views": 0,
-      "Engagements": 166
+      "Engagements": 168
     },
-    "Phase_3": null
+    "Phase_3": {
+      "URL": "http://instagram.com/p/Dd0y7gtBxOv",
+      "Platform": "Instagram",
+      "Date": "2026-09-28",
+      "Views": 0,
+      "Engagements": 76
+    }
   },
   {
     "Name": "Kharedari",
@@ -1420,14 +1528,14 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 237
+      "Engagements": 240
     },
     "Phase_3": {
       "URL": "http://instagram.com/p/DdiHFOvMP5h",
       "Platform": "Instagram",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 427
+      "Engagements": 436
     }
   },
   {
@@ -1436,14 +1544,14 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Subsidiary": "SETK",
     "Device": "Galaxy Z Fold8 Ultra",
     "Tier": "Hero",
-    "Total_Posts": 4,
+    "Total_Posts": 7,
     "Total_Views": 0,
     "Phase_1": {
       "URL": "http://facebook.com/442035919330498/posts/1580617720181133",
       "Platform": "Facebook",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 239
+      "Engagements": 280
     },
     "Phase_2": null,
     "Phase_3": null
@@ -1454,7 +1562,7 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Subsidiary": "SETK",
     "Device": "Galaxy Z Fold8",
     "Tier": "Hero",
-    "Total_Posts": 1,
+    "Total_Posts": 3,
     "Total_Views": 0,
     "Phase_1": null,
     "Phase_2": {
@@ -1462,9 +1570,15 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 4031
+      "Engagements": 4103
     },
-    "Phase_3": null
+    "Phase_3": {
+      "URL": "http://instagram.com/p/Ddty2xMiIQF",
+      "Platform": "Instagram",
+      "Date": "2026-09-25",
+      "Views": 0,
+      "Engagements": 2520
+    }
   },
   {
     "Name": "Nazire Yenisey",
@@ -1472,17 +1586,23 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Subsidiary": "SETK",
     "Device": "Galaxy Z Fold8",
     "Tier": "Macro",
-    "Total_Posts": 1,
+    "Total_Posts": 2,
     "Total_Views": 0,
     "Phase_1": {
       "URL": "http://instagram.com/p/Dc_ZFVpuSQE",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 616
+      "Engagements": 623
     },
     "Phase_2": null,
-    "Phase_3": null
+    "Phase_3": {
+      "URL": "http://instagram.com/p/DdrYATCuhUT",
+      "Platform": "Instagram",
+      "Date": "2026-09-24",
+      "Views": 0,
+      "Engagements": 215
+    }
   },
   {
     "Name": "Raime Alseirhy",
@@ -1490,28 +1610,28 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Subsidiary": "SESAR",
     "Device": "Galaxy Z Fold8",
     "Tier": "Macro",
-    "Total_Posts": 15,
+    "Total_Posts": 19,
     "Total_Views": 0,
     "Phase_1": {
       "URL": "http://instagram.com/p/Dc_PHJSt--a",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 290
+      "Engagements": 293
     },
     "Phase_2": {
       "URL": "http://instagram.com/p/DdJYOhhNFwA",
       "Platform": "Instagram",
       "Date": "2026-09-11",
       "Views": 0,
-      "Engagements": 762
+      "Engagements": 768
     },
     "Phase_3": {
       "URL": "http://instagram.com/p/DdqWG-5NoLW",
       "Platform": "Instagram",
       "Date": "2026-09-24",
       "Views": 0,
-      "Engagements": 145
+      "Engagements": 181
     }
   },
   {
@@ -1520,7 +1640,7 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Subsidiary": "SGE",
     "Device": "Galaxy Z Fold8",
     "Tier": "Macro",
-    "Total_Posts": 2,
+    "Total_Posts": 3,
     "Total_Views": 0,
     "Phase_1": {
       "URL": "http://instagram.com/p/DdHFDtgpgf6",
@@ -1536,7 +1656,13 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Views": 0,
       "Engagements": 10
     },
-    "Phase_3": null
+    "Phase_3": {
+      "URL": "http://instagram.com/p/DdvkgDmjgeV",
+      "Platform": "Instagram",
+      "Date": "2026-09-26",
+      "Views": 0,
+      "Engagements": 0
+    }
   },
   {
     "Name": "Selman Bozkir",
@@ -1551,14 +1677,14 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 406
+      "Engagements": 412
     },
     "Phase_2": {
       "URL": "http://instagram.com/p/DdT-ffxMheJ",
       "Platform": "Instagram",
       "Date": "2026-09-15",
       "Views": 0,
-      "Engagements": 532
+      "Engagements": 553
     },
     "Phase_3": null
   },
@@ -1568,23 +1694,29 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Subsidiary": "SETK",
     "Device": "Galaxy Z Fold8",
     "Tier": "Macro",
-    "Total_Posts": 2,
+    "Total_Posts": 3,
     "Total_Views": 0,
     "Phase_1": {
       "URL": "http://instagram.com/p/DdB8Tfph_E_",
       "Platform": "Instagram",
       "Date": "2026-09-08",
       "Views": 0,
-      "Engagements": 1441
+      "Engagements": 1477
     },
     "Phase_2": {
       "URL": "http://instagram.com/p/DdT_ihCJLA4",
       "Platform": "Instagram",
       "Date": "2026-09-15",
       "Views": 0,
-      "Engagements": 2479
+      "Engagements": 2621
     },
-    "Phase_3": null
+    "Phase_3": {
+      "URL": "http://instagram.com/p/Dd0l6y5tZAi",
+      "Platform": "Instagram",
+      "Date": "2026-09-28",
+      "Views": 0,
+      "Engagements": 1812
+    }
   },
   {
     "Name": "Tech Craze",
@@ -1613,7 +1745,7 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 814
+      "Engagements": 867
     }
   },
   {
@@ -1629,7 +1761,7 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-09",
       "Views": 0,
-      "Engagements": 4357
+      "Engagements": 4385
     },
     "Phase_2": null,
     "Phase_3": null
@@ -1647,7 +1779,7 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Platform": "Facebook",
       "Date": "2026-09-08",
       "Views": 0,
-      "Engagements": 11
+      "Engagements": 12
     },
     "Phase_2": {
       "URL": "http://facebook.com/107975753891306/posts/1806817588118486",
@@ -1671,14 +1803,14 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Platform": "Facebook",
       "Date": "2026-09-08",
       "Views": 0,
-      "Engagements": 1842
+      "Engagements": 1891
     },
     "Phase_2": {
       "URL": "http://instagram.com/p/DdPIrBwuQmz",
       "Platform": "Instagram",
       "Date": "2026-09-13",
       "Views": 0,
-      "Engagements": 1039
+      "Engagements": 1086
     },
     "Phase_3": null
   },
@@ -1688,14 +1820,14 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Subsidiary": "SELV",
     "Device": "Galaxy Z Fold8 Ultra",
     "Tier": "Macro",
-    "Total_Posts": 8,
+    "Total_Posts": 10,
     "Total_Views": 0,
     "Phase_1": {
       "URL": "http://facebook.com/1736480446451262/posts/1483980923751342",
       "Platform": "Facebook",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 252
+      "Engagements": 253
     },
     "Phase_2": null,
     "Phase_3": null
@@ -1713,14 +1845,14 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 989
+      "Engagements": 995
     },
     "Phase_2": {
       "URL": "http://instagram.com/p/DdSBBV5x5nn",
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 1268
+      "Engagements": 1303
     },
     "Phase_3": null
   },
@@ -1730,7 +1862,7 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Subsidiary": "SEMAG",
     "Device": "Galaxy S26 Ultra",
     "Tier": "Macro",
-    "Total_Posts": 3,
+    "Total_Posts": 4,
     "Total_Views": 0,
     "Phase_1": null,
     "Phase_2": {
@@ -1738,7 +1870,7 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-17",
       "Views": 0,
-      "Engagements": 1430
+      "Engagements": 1543
     },
     "Phase_3": null
   },
@@ -1760,21 +1892,21 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Subsidiary": "SELV",
     "Device": "Galaxy S26 Ultra",
     "Tier": "Macro",
-    "Total_Posts": 5,
+    "Total_Posts": 6,
     "Total_Views": 0,
     "Phase_1": {
       "URL": "http://facebook.com/353006258387489/posts/1587786322719520",
       "Platform": "Facebook",
       "Date": "2026-09-10",
       "Views": 0,
-      "Engagements": 51
+      "Engagements": 77
     },
     "Phase_2": {
       "URL": "http://facebook.com/353006258387489/posts/1591859145645571",
       "Platform": "Facebook",
       "Date": "2026-09-15",
       "Views": 0,
-      "Engagements": 89
+      "Engagements": 123
     },
     "Phase_3": null
   },
@@ -1784,21 +1916,21 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Subsidiary": "SESAR",
     "Device": "Galaxy Z Fold8",
     "Tier": "Macro",
-    "Total_Posts": 5,
+    "Total_Posts": 6,
     "Total_Views": 0,
     "Phase_1": {
       "URL": "http://instagram.com/p/Dc-mqNtxpt-",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 112
+      "Engagements": 115
     },
     "Phase_2": {
       "URL": "http://instagram.com/p/DdeiBRMickm",
       "Platform": "Instagram",
       "Date": "2026-09-19",
       "Views": 0,
-      "Engagements": 153
+      "Engagements": 162
     },
     "Phase_3": null
   },
@@ -1817,7 +1949,7 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-23",
       "Views": 0,
-      "Engagements": 747
+      "Engagements": 754
     }
   },
   {
@@ -1845,21 +1977,21 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Platform": "Facebook",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 360
+      "Engagements": 361
     },
     "Phase_2": {
       "URL": "http://instagram.com/p/DdRYQRZNDAX",
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 5029
+      "Engagements": 5047
     },
     "Phase_3": {
       "URL": "http://facebook.com/1008479109189140/posts/1532476412239246",
       "Platform": "Facebook",
       "Date": "2026-09-23",
       "Views": 0,
-      "Engagements": 23
+      "Engagements": 41
     }
   }
 ];
