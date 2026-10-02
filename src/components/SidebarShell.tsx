@@ -291,22 +291,6 @@ export default function SidebarShell({ children }: { children: React.ReactNode }
                     </svg>
                     {!isCollapsed && <span>Lifestyle Targets</span>}
                   </Link>
-
-                  <Link
-                    href="/switchstorm/upload"
-                    onClick={() => setIsMobileOpen(false)}
-                    className={`group flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-                      pathname === "/switchstorm/upload"
-                        ? "bg-[#034EA2] text-white shadow-xs border border-blue-400/30"
-                        : "text-slate-400 hover:bg-slate-800 hover:text-white"
-                    }`}
-                    title="Data Ingestion Portal"
-                  >
-                    <svg className="h-3.5 w-3.5 shrink-0 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-                    </svg>
-                    {!isCollapsed && <span>Data Ingestion</span>}
-                  </Link>
                 </div>
               )}
             </nav>

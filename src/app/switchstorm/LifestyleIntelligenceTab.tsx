@@ -52,7 +52,7 @@ export interface PhasePost {
 export interface LifestyleCreator {
   Name: string;
   Handle: string;
-  Subsidiary: string;
+  Subsidiary: string | number;
   Total_Posts: number;
   Total_Views: number;
   Total_Engagements: number;

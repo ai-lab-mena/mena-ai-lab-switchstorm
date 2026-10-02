@@ -154,15 +154,6 @@ export default function SwitchStormExecutiveHub() {
                 Updated: {lastRefreshed}
               </span>
             )}
-            <Link
-              href="/switchstorm/upload"
-              className="inline-flex items-center gap-1.5 rounded-xl bg-[#034EA2] hover:bg-blue-600 text-white px-4 py-2 text-xs font-semibold shadow-xs transition-all cursor-pointer"
-            >
-              <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-              </svg>
-              <span>Data Ingestion</span>
-            </Link>
           </div>
         </div>
 
@@ -170,27 +161,39 @@ export default function SwitchStormExecutiveHub() {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mt-6 pt-6 border-t border-slate-800/80">
           <div className="bg-slate-900/60 p-3 rounded-xl border border-slate-800">
             <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Creators</span>
-            <div className="text-lg font-black text-white mt-0.5 tabular-nums">297</div>
+            <div className="text-lg font-black text-white mt-0.5 tabular-nums">
+              {overallKPI ? overallKPI["Total Influencers"] : "319"}
+            </div>
           </div>
           <div className="bg-slate-900/60 p-3 rounded-xl border border-slate-800">
             <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Deliverables</span>
-            <div className="text-lg font-black text-white mt-0.5 tabular-nums">1,340</div>
+            <div className="text-lg font-black text-white mt-0.5 tabular-nums">
+              {overallKPI ? overallKPI["Total Posts"].toLocaleString() : "1,605"}
+            </div>
           </div>
           <div className="bg-slate-900/60 p-3 rounded-xl border border-slate-800">
             <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Potential Reach</span>
-            <div className="text-lg font-black text-blue-400 mt-0.5 tabular-nums">512.8M</div>
+            <div className="text-lg font-black text-blue-400 mt-0.5 tabular-nums">
+              {overallKPI ? formatNumber(overallKPI["Total Potential Reach"]) : "624.2M"}
+            </div>
           </div>
           <div className="bg-slate-900/60 p-3 rounded-xl border border-slate-800">
             <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Unified Views</span>
-            <div className="text-lg font-black text-emerald-400 mt-0.5 tabular-nums">201.8M</div>
+            <div className="text-lg font-black text-emerald-400 mt-0.5 tabular-nums">
+              {overallKPI ? formatNumber(overallKPI["Total Views"]) : "236.7M"}
+            </div>
           </div>
           <div className="bg-slate-900/60 p-3 rounded-xl border border-slate-800">
             <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Engagements</span>
-            <div className="text-lg font-black text-purple-400 mt-0.5 tabular-nums">4.96M</div>
+            <div className="text-lg font-black text-purple-400 mt-0.5 tabular-nums">
+              {overallKPI ? formatNumber(overallKPI["Total Engagements"]) : "5.72M"}
+            </div>
           </div>
           <div className="bg-slate-900/60 p-3 rounded-xl border border-slate-800">
             <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Overall ER</span>
-            <div className="text-lg font-black text-amber-400 mt-0.5 tabular-nums">2.46%</div>
+            <div className="text-lg font-black text-amber-400 mt-0.5 tabular-nums">
+              {overallKPI ? overallKPI["Overall ER (Eng / Views) %"] : "2.42%"}
+            </div>
           </div>
         </div>
       </div>
@@ -254,8 +257,8 @@ export default function SwitchStormExecutiveHub() {
           </div>
         </div>
 
-        {/* 5 Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {/* 4 Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {/* Card 1: Creator Groups & Regional KPIs */}
           <Link
             href={`/switchstorm/kpis${activeSubParam}`}
@@ -299,7 +302,7 @@ export default function SwitchStormExecutiveHub() {
                   </svg>
                 </div>
                 <span className="text-[10px] font-bold text-amber-800 bg-amber-100/70 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
-                  784 Videos Ranked
+                  Top Videos
                 </span>
               </div>
               <h3 className="text-base font-bold text-slate-900 group-hover:text-amber-700 transition-colors">
@@ -372,36 +375,6 @@ export default function SwitchStormExecutiveHub() {
 
             <div className="mt-5 pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-purple-700">
               <span>Open Lifestyle Tracking</span>
-              <span className="transform group-hover:translate-x-1 transition-transform text-sm">→</span>
-            </div>
-          </Link>
-
-          {/* Card 5: Data Ingestion Portal */}
-          <Link
-            href="/switchstorm/upload"
-            className="group relative flex flex-col justify-between rounded-2xl border border-slate-800 bg-slate-950 text-white p-6 shadow-2xs hover:shadow-lg hover:border-blue-500/70 hover:-translate-y-1 transition-all duration-200"
-          >
-            <div>
-              <div className="flex items-center justify-between mb-3.5">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 shadow-2xs group-hover:scale-105 transition-transform">
-                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-                  </svg>
-                </div>
-                <span className="text-[10px] font-bold text-blue-300 bg-blue-500/10 px-2.5 py-0.5 rounded-full border border-blue-500/20 uppercase tracking-wider">
-                  Data Pipeline
-                </span>
-              </div>
-              <h3 className="text-base font-bold text-white group-hover:text-blue-400 transition-colors">
-                Campaign Data Ingestion
-              </h3>
-              <p className="text-xs text-slate-400 mt-1 leading-relaxed">
-                Upload raw Traackr deliverables to update input sources and auto-trigger the analytical data model.
-              </p>
-            </div>
-
-            <div className="mt-5 pt-3.5 border-t border-slate-800 flex items-center justify-between text-xs font-bold text-blue-400">
-              <span>Launch Ingestion Portal</span>
               <span className="transform group-hover:translate-x-1 transition-transform text-sm">→</span>
             </div>
           </Link>
