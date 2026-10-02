@@ -225,28 +225,77 @@ export default function SidebarShell({ children }: { children: React.ReactNode }
                 )}
               </div>
 
-              {/* Collapsible Sub-Page: Data Ingestion */}
+              {/* Collapsible Sub-Pages */}
               {isSwitchStormExpanded && (
-                <div className="pl-6 pt-1">
+                <div className="pl-6 pt-1 space-y-1">
+                  <Link
+                    href="/switchstorm/kpis"
+                    onClick={() => setIsMobileOpen(false)}
+                    className={`group flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                      pathname === "/switchstorm/kpis"
+                        ? "bg-[#034EA2] text-white shadow-md border border-blue-400/30"
+                        : "text-slate-400 hover:bg-slate-800 hover:text-white"
+                    }`}
+                    title="Creator Groups & KPIs"
+                  >
+                    <span className="text-xs">📊</span>
+                    {!isCollapsed && <span>Groups & KPIs</span>}
+                  </Link>
+
+                  <Link
+                    href="/switchstorm/content"
+                    onClick={() => setIsMobileOpen(false)}
+                    className={`group flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                      pathname === "/switchstorm/content"
+                        ? "bg-[#034EA2] text-white shadow-md border border-blue-400/30"
+                        : "text-slate-400 hover:bg-slate-800 hover:text-white"
+                    }`}
+                    title="Content Showcase"
+                  >
+                    <span className="text-xs">🎬</span>
+                    {!isCollapsed && <span>Content Showcase</span>}
+                  </Link>
+
+                  <Link
+                    href="/switchstorm/techies"
+                    onClick={() => setIsMobileOpen(false)}
+                    className={`group flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                      pathname === "/switchstorm/techies"
+                        ? "bg-[#034EA2] text-white shadow-md border border-blue-400/30"
+                        : "text-slate-400 hover:bg-slate-800 hover:text-white"
+                    }`}
+                    title="Techies Targets & Devices"
+                  >
+                    <span className="text-xs">📱</span>
+                    {!isCollapsed && <span>Techies Targets</span>}
+                  </Link>
+
+                  <Link
+                    href="/switchstorm/lifestyle"
+                    onClick={() => setIsMobileOpen(false)}
+                    className={`group flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
+                      pathname === "/switchstorm/lifestyle"
+                        ? "bg-[#034EA2] text-white shadow-md border border-blue-400/30"
+                        : "text-slate-400 hover:bg-slate-800 hover:text-white"
+                    }`}
+                    title="Lifestyle Targets & Creators"
+                  >
+                    <span className="text-xs">⭐</span>
+                    {!isCollapsed && <span>Lifestyle Targets</span>}
+                  </Link>
+
                   <Link
                     href="/switchstorm/upload"
                     onClick={() => setIsMobileOpen(false)}
-                    className={`group flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-semibold transition-all ${
+                    className={`group flex items-center gap-2.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                       pathname === "/switchstorm/upload"
                         ? "bg-[#034EA2] text-white shadow-md border border-blue-400/30"
                         : "text-slate-400 hover:bg-slate-800 hover:text-white"
                     }`}
-                    title="Data Ingestion Sub-Page"
+                    title="Data Ingestion Portal"
                   >
-                    <svg className="h-3.5 w-3.5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-                    </svg>
-                    {!isCollapsed && (
-                      <div className="truncate">
-                        <span className="block font-medium truncate">Data Ingestion</span>
-                        <span className="text-[9.5px] text-slate-500 block font-normal">Upload Excel Files</span>
-                      </div>
-                    )}
+                    <span className="text-xs">📤</span>
+                    {!isCollapsed && <span>Data Ingestion</span>}
                   </Link>
                 </div>
               )}
