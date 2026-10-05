@@ -4,6 +4,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import SubsidiaryMap from "./SubsidiaryMap";
+import PlatformShowcaseModal from "./PlatformShowcaseModal";
 
 interface GroupKPI {
   Category: string;
@@ -47,6 +48,7 @@ export default function SwitchStormExecutiveHub() {
   const [loading, setLoading] = useState(true);
   const [selectedSubsidiary, setSelectedSubsidiary] = useState<string>("All");
   const [lastRefreshed, setLastRefreshed] = useState<string>("");
+  const [isPlatformModalOpen, setIsPlatformModalOpen] = useState<boolean>(false);
 
   const fetchData = async () => {
     setLoading(true);
@@ -154,6 +156,17 @@ export default function SwitchStormExecutiveHub() {
           </div>
 
           <div className="flex flex-wrap items-center gap-2.5">
+            <button
+              onClick={() => setIsPlatformModalOpen(true)}
+              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-black px-3.5 py-1.5 text-xs shadow-md transition-all cursor-pointer"
+              title="Open Executive Announcement Email for ai-lab-mena.com"
+            >
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <span>Share Platform Briefing</span>
+            </button>
+
             {lastRefreshed && (
               <span className="text-[11px] text-slate-400 bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700 font-mono">
                 Updated: {lastRefreshed}
@@ -385,6 +398,12 @@ export default function SwitchStormExecutiveHub() {
           </Link>
         </div>
       </div>
+
+      {/* Platform Executive Showcase Email Modal */}
+      <PlatformShowcaseModal
+        isOpen={isPlatformModalOpen}
+        onClose={() => setIsPlatformModalOpen(false)}
+      />
     </div>
   );
 }
