@@ -172,6 +172,7 @@ export default function TechiesIntelligenceTab({
             const isS26 = dev.Device.includes("S26");
             const isFoldUltra = dev.Device.includes("Ultra") && !isS26;
             const isFold8 = !isS26 && !isFoldUltra;
+            const isSelected = selectedDevice === dev.Device;
 
             return (
               <div
@@ -180,15 +181,17 @@ export default function TechiesIntelligenceTab({
                   setSelectedDevice(selectedDevice === dev.Device ? "All" : dev.Device)
                 }
                 className={`rounded-2xl p-5 border transition-all duration-200 cursor-pointer shadow-xs hover:shadow-md ${
-                  selectedDevice === dev.Device
-                    ? "bg-gradient-to-br from-cyan-900 to-slate-900 text-white border-cyan-400 ring-2 ring-cyan-400/30"
+                  isSelected
+                    ? "bg-gradient-to-br from-cyan-950 via-slate-900 to-slate-950 text-white border-cyan-400 ring-2 ring-cyan-400/40 shadow-lg"
                     : "bg-white border-slate-200 hover:border-cyan-300"
                 }`}
               >
                 <div className="flex items-center justify-between mb-3">
                   <span
                     className={`rounded-md px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider ${
-                      isS26
+                      isSelected
+                        ? "bg-cyan-500/20 text-cyan-200 border border-cyan-400/40"
+                        : isS26
                         ? "bg-blue-500/10 text-blue-600 border border-blue-500/20"
                         : isFoldUltra
                         ? "bg-amber-500/10 text-amber-600 border border-amber-500/20"
@@ -197,32 +200,64 @@ export default function TechiesIntelligenceTab({
                   >
                     {dev.Device}
                   </span>
-                  <span className="text-xs font-semibold text-slate-400">
+                  <span className={`text-xs font-semibold ${isSelected ? "text-cyan-200" : "text-slate-400"}`}>
                     {dev.Creators_Count} Creators
                   </span>
                 </div>
 
                 <div className="mb-3">
-                  <div className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 group-hover:text-cyan-600">
+                  <div
+                    className={`text-2xl sm:text-3xl font-extrabold tracking-tight ${
+                      isSelected ? "text-white" : "text-slate-900 group-hover:text-cyan-600"
+                    }`}
+                  >
                     {formatShort(dev.Total_Views)}
                   </div>
-                  <div className="text-xs text-slate-500 font-medium">
+                  <div
+                    className={`text-xs font-medium ${
+                      isSelected ? "text-slate-300" : "text-slate-500"
+                    }`}
+                  >
                     {dev.Total_Views.toLocaleString()} Total Views
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-2 pt-3 border-t border-slate-100 text-xs">
+                <div
+                  className={`grid grid-cols-2 gap-2 pt-3 border-t text-xs ${
+                    isSelected ? "border-slate-800" : "border-slate-100"
+                  }`}
+                >
                   <div>
-                    <span className="text-slate-400 block text-[10px] uppercase font-bold">
+                    <span
+                      className={`block text-[10px] uppercase font-bold ${
+                        isSelected ? "text-slate-400" : "text-slate-400"
+                      }`}
+                    >
                       Deliverables
                     </span>
-                    <span className="font-bold text-slate-800">{dev.Total_Posts} Posts</span>
+                    <span
+                      className={`font-bold ${
+                        isSelected ? "text-white" : "text-slate-800"
+                      }`}
+                    >
+                      {dev.Total_Posts} Posts
+                    </span>
                   </div>
                   <div>
-                    <span className="text-slate-400 block text-[10px] uppercase font-bold">
+                    <span
+                      className={`block text-[10px] uppercase font-bold ${
+                        isSelected ? "text-slate-400" : "text-slate-400"
+                      }`}
+                    >
                       Avg Post ER
                     </span>
-                    <span className="font-bold text-emerald-600">{dev.ER_Percent}</span>
+                    <span
+                      className={`font-bold ${
+                        isSelected ? "text-emerald-400" : "text-emerald-600"
+                      }`}
+                    >
+                      {dev.ER_Percent}
+                    </span>
                   </div>
                 </div>
               </div>
