@@ -8,12 +8,12 @@ export const STATIC_LIFESTYLE_WEEKLY_PACING = [
     "TeamGalaxy": {
       "Plan": 70,
       "Live": 67,
-      "Pending": 3
+      "Pending": 6
     },
     "ContentCreators": {
       "Plan": 107,
       "Live": 107,
-      "Pending": 0
+      "Pending": 1
     },
     "GalaxyCircle": {
       "Plan": 20,
@@ -39,38 +39,38 @@ export const STATIC_LIFESTYLE_WEEKLY_PACING = [
     },
     "GalaxyCircle": {
       "Plan": 20,
-      "Live": 15,
-      "Pending": 5
+      "Live": 8,
+      "Pending": 12
     },
     "Completion_Rate": "94.0%"
   },
   {
     "Week": "Week 3",
     "Total_Plan": 142,
-    "Total_Live": 131,
-    "Total_Pending": 11,
+    "Total_Live": 132,
+    "Total_Pending": 12,
     "TeamGalaxy": {
       "Plan": 21,
-      "Live": 17,
-      "Pending": 4
+      "Live": 16,
+      "Pending": 5
     },
     "ContentCreators": {
       "Plan": 101,
-      "Live": 97,
-      "Pending": 4
+      "Live": 98,
+      "Pending": 3
     },
     "GalaxyCircle": {
       "Plan": 20,
-      "Live": 15,
-      "Pending": 5
+      "Live": 18,
+      "Pending": 4
     },
-    "Completion_Rate": "92.0%"
+    "Completion_Rate": "93.0%"
   },
   {
     "Week": "Week 4",
-    "Total_Plan": 123,
-    "Total_Live": 57,
-    "Total_Pending": 66,
+    "Total_Plan": 136,
+    "Total_Live": 63,
+    "Total_Pending": 73,
     "TeamGalaxy": {
       "Plan": 19,
       "Live": 10,
@@ -78,38 +78,60 @@ export const STATIC_LIFESTYLE_WEEKLY_PACING = [
     },
     "ContentCreators": {
       "Plan": 102,
-      "Live": 46,
-      "Pending": 56
+      "Live": 52,
+      "Pending": 50
     },
     "GalaxyCircle": {
-      "Plan": 0,
+      "Plan": 13,
       "Live": 0,
       "Pending": 0
     },
     "Completion_Rate": "46.0%"
+  },
+  {
+    "Week": "Week 5",
+    "Total_Plan": 114,
+    "Total_Live": 0,
+    "Total_Pending": 0,
+    "TeamGalaxy": {
+      "Plan": 33,
+      "Live": 0,
+      "Pending": 0
+    },
+    "ContentCreators": {
+      "Plan": 68,
+      "Live": 0,
+      "Pending": 0
+    },
+    "GalaxyCircle": {
+      "Plan": 13,
+      "Live": 0,
+      "Pending": 0
+    },
+    "Completion_Rate": "0.0%"
   }
 ];
 export const STATIC_LIFESTYLE_SUBSIDIARY_TARGETS = [
   {
     "Subsidiary": "SEPAK",
     "Market": "Pakistan",
-    "Plan": 129,
+    "Plan": 161,
     "Live": 114,
     "Pending": 15,
     "TeamGalaxy": {
-      "Plan": 37,
-      "Live": 29
+      "Plan": 47,
+      "Live": 28
     },
     "ContentCreators": {
-      "Plan": 92,
-      "Live": 85
+      "Plan": 114,
+      "Live": 86
     },
     "GalaxyCircle": {
       "Plan": 0,
       "Live": 0
     },
-    "Completion_Rate": "88.4%",
-    "Status": "On Track"
+    "Completion_Rate": "70.8%",
+    "Status": "Action Required"
   },
   {
     "Subsidiary": "SETK",
@@ -133,114 +155,114 @@ export const STATIC_LIFESTYLE_SUBSIDIARY_TARGETS = [
     "Status": "On Track"
   },
   {
+    "Subsidiary": "SESAR",
+    "Market": "Saudi Arabia",
+    "Plan": 111,
+    "Live": 43,
+    "Pending": 48,
+    "TeamGalaxy": {
+      "Plan": 21,
+      "Live": 10
+    },
+    "ContentCreators": {
+      "Plan": 50,
+      "Live": 10
+    },
+    "GalaxyCircle": {
+      "Plan": 40,
+      "Live": 23
+    },
+    "Completion_Rate": "38.7%",
+    "Status": "Action Required"
+  },
+  {
     "Subsidiary": "SGE",
     "Market": "Gulf (UAE, QA, KW, OM, BH)",
-    "Plan": 86,
-    "Live": 82,
-    "Pending": 4,
+    "Plan": 106,
+    "Live": 83,
+    "Pending": 10,
     "TeamGalaxy": {
       "Plan": 4,
       "Live": 3
     },
     "ContentCreators": {
-      "Plan": 51,
+      "Plan": 57,
       "Live": 51
     },
     "GalaxyCircle": {
-      "Plan": 31,
-      "Live": 28
-    },
-    "Completion_Rate": "95.3%",
-    "Status": "On Track"
-  },
-  {
-    "Subsidiary": "SESAR",
-    "Market": "Saudi Arabia",
-    "Plan": 83,
-    "Live": 36,
-    "Pending": 47,
-    "TeamGalaxy": {
-      "Plan": 10,
-      "Live": 10
-    },
-    "ContentCreators": {
       "Plan": 45,
-      "Live": 5
+      "Live": 29
     },
-    "GalaxyCircle": {
-      "Plan": 28,
-      "Live": 21
-    },
-    "Completion_Rate": "43.4%",
+    "Completion_Rate": "78.3%",
     "Status": "Action Required"
-  },
-  {
-    "Subsidiary": "SELV",
-    "Market": "Levant (JO, LB, IQ)",
-    "Plan": 50,
-    "Live": 50,
-    "Pending": 0,
-    "TeamGalaxy": {
-      "Plan": 10,
-      "Live": 10
-    },
-    "ContentCreators": {
-      "Plan": 40,
-      "Live": 39
-    },
-    "GalaxyCircle": {
-      "Plan": 0,
-      "Live": 0
-    },
-    "Completion_Rate": "100.0%",
-    "Status": "Completed"
   },
   {
     "Subsidiary": "SEEG",
     "Market": "Egypt",
-    "Plan": 50,
+    "Plan": 70,
     "Live": 50,
     "Pending": 0,
     "TeamGalaxy": {
-      "Plan": 10,
+      "Plan": 15,
       "Live": 10
     },
     "ContentCreators": {
-      "Plan": 40,
+      "Plan": 55,
       "Live": 40
     },
     "GalaxyCircle": {
       "Plan": 0,
       "Live": 0
     },
-    "Completion_Rate": "100.0%",
+    "Completion_Rate": "71.4%",
     "Status": "Completed"
   },
   {
-    "Subsidiary": "SEMAG",
-    "Market": "Maghreb (Morocco, Algeria, Tunisia)",
-    "Plan": 24,
-    "Live": 22,
-    "Pending": 2,
+    "Subsidiary": "SELV",
+    "Market": "Levant (JO, LB, IQ)",
+    "Plan": 60,
+    "Live": 50,
+    "Pending": 0,
     "TeamGalaxy": {
-      "Plan": 14,
-      "Live": 12
+      "Plan": 10,
+      "Live": 10
     },
     "ContentCreators": {
-      "Plan": 10,
-      "Live": 8
+      "Plan": 50,
+      "Live": 39
     },
     "GalaxyCircle": {
       "Plan": 0,
       "Live": 0
     },
-    "Completion_Rate": "91.7%",
-    "Status": "On Track"
+    "Completion_Rate": "83.3%",
+    "Status": "Completed"
+  },
+  {
+    "Subsidiary": "SEMAG",
+    "Market": "Maghreb (Morocco, Algeria, Tunisia)",
+    "Plan": 36,
+    "Live": 21,
+    "Pending": 3,
+    "TeamGalaxy": {
+      "Plan": 21,
+      "Live": 12
+    },
+    "ContentCreators": {
+      "Plan": 15,
+      "Live": 9
+    },
+    "GalaxyCircle": {
+      "Plan": 0,
+      "Live": 0
+    },
+    "Completion_Rate": "58.3%",
+    "Status": "Action Required"
   },
   {
     "Subsidiary": "SEIL",
     "Market": "Israel",
-    "Plan": 19,
+    "Plan": 24,
     "Live": 19,
     "Pending": 0,
     "TeamGalaxy": {
@@ -248,14 +270,14 @@ export const STATIC_LIFESTYLE_SUBSIDIARY_TARGETS = [
       "Live": 2
     },
     "ContentCreators": {
-      "Plan": 17,
+      "Plan": 22,
       "Live": 17
     },
     "GalaxyCircle": {
       "Plan": 0,
       "Live": 0
     },
-    "Completion_Rate": "100.0%",
+    "Completion_Rate": "79.2%",
     "Status": "Completed"
   },
   {
@@ -6213,26 +6235,26 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
 export const STATIC_LIFESTYLE_TIER_SCORECARD = [
   {
     "Tier": "Team Galaxy",
-    "Target_Plan": 122,
-    "Live_Delivered": 105,
-    "Pending": 17,
-    "Completion_Rate": "86.1%",
+    "Target_Plan": 155,
+    "Live_Delivered": 104,
+    "Pending": 21,
+    "Completion_Rate": "67.1%",
     "Description": "Flagship Brand Ambassadors & Celebrity Tier"
   },
   {
     "Tier": "Content Creators",
-    "Target_Plan": 376,
-    "Live_Delivered": 316,
-    "Pending": 60,
-    "Completion_Rate": "84.0%",
+    "Target_Plan": 444,
+    "Live_Delivered": 323,
+    "Pending": 54,
+    "Completion_Rate": "72.7%",
     "Description": "Lifestyle, Fashion, Comedy, Travel & Culture Creators"
   },
   {
     "Tier": "Galaxy Circle",
-    "Target_Plan": 60,
-    "Live_Delivered": 50,
-    "Pending": 10,
-    "Completion_Rate": "83.3%",
+    "Target_Plan": 86,
+    "Live_Delivered": 46,
+    "Pending": 16,
+    "Completion_Rate": "53.5%",
     "Description": "Advocacy Community & Micro-Ambassador Tier"
   }
 ];

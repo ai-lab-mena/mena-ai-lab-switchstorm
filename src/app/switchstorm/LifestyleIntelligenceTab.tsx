@@ -139,6 +139,10 @@ export default function LifestyleIntelligenceTab({
     });
   }, [resolvedTargets, selectedSubsidiary]);
 
+  const totalLive = resolvedTiers.reduce((acc, t) => acc + (t.Live_Delivered || 0), 0);
+  const totalPlan = resolvedTiers.reduce((acc, t) => acc + (t.Target_Plan || 0), 0);
+  const totalRate = totalPlan > 0 ? `${((totalLive / totalPlan) * 100).toFixed(1)}%` : "0%";
+
   return (
     <div className="space-y-8 animate-fadeIn">
       {/* 1. TIER ALLOCATION SCORECARD */}
@@ -160,7 +164,7 @@ export default function LifestyleIntelligenceTab({
 
           <div className="flex items-center gap-2 text-xs font-semibold text-slate-600 bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200">
             <span>Overall Delivery:</span>
-            <span className="font-extrabold text-emerald-700">474 / 560 Live (84.6%)</span>
+            <span className="font-extrabold text-emerald-700">{totalLive} / {totalPlan} Live ({totalRate})</span>
           </div>
         </div>
 
@@ -227,7 +231,7 @@ export default function LifestyleIntelligenceTab({
         </div>
       </div>
 
-      {/* 2. WEEKLY PACING TIMELINE (WEEKS 1 - 4) */}
+      {/* 2. WEEKLY PACING TIMELINE (WEEKS 1 - 5) */}
       <div className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm">
         <h4 className="text-sm font-bold text-slate-900 mb-1 flex items-center gap-2">
           <span className="flex h-5 w-5 items-center justify-center rounded bg-slate-100 text-slate-700 text-xs">
@@ -235,20 +239,23 @@ export default function LifestyleIntelligenceTab({
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
           </span>
-          <span>Weekly Flighting & Rollout Schedule (Weeks 1 – 4)</span>
+          <span>Weekly Flighting & Rollout Schedule (Weeks 1 – 5)</span>
         </h4>
         <p className="text-xs text-slate-500 mb-4">
-          Weekly planned vs. live deliverables pacing across the 4 flight phases of the campaign.
+          Weekly planned vs. live deliverables pacing across the 5 flight weeks of the campaign.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
           {weeklyPacing.map((w) => {
             const isW4 = w.Week.includes("4");
+            const isW5 = w.Week.includes("5");
             return (
               <div
                 key={w.Week}
                 className={`p-3.5 rounded-xl border ${
-                  isW4
+                  isW5
+                    ? "bg-slate-50/70 border-slate-200"
+                    : isW4
                     ? "bg-amber-50/50 border-amber-200"
                     : "bg-slate-50 border-slate-200"
                 }`}
@@ -263,14 +270,18 @@ export default function LifestyleIntelligenceTab({
                         ? "Sep 14 – Sep 20"
                         : w.Week.includes("3")
                         ? "Sep 21 – Sep 27"
-                        : "Sep 28 – Oct 4"}
+                        : w.Week.includes("4")
+                        ? "Sep 28 – Oct 4"
+                        : "Oct 5 – Oct 11"}
                     </span>
                   </div>
                   <span
                     className={`text-[10px] font-extrabold px-2 py-0.5 rounded-full ${
                       parseFloat(w.Completion_Rate) >= 90
                         ? "bg-emerald-100 text-emerald-800"
-                        : "bg-amber-100 text-amber-800"
+                        : parseFloat(w.Completion_Rate) > 0
+                        ? "bg-amber-100 text-amber-800"
+                        : "bg-slate-100 text-slate-600"
                     }`}
                   >
                     {w.Completion_Rate}
