@@ -2087,22 +2087,22 @@ export const STATIC_TECHIES_TARGETS_SUMMARY = [
     "Post_1": {
       "Plan": 12,
       "Live": 12,
-      "Completion": "100%"
+      "Completion": "100.0%"
     },
     "Post_2": {
       "Plan": 12,
       "Live": 12,
       "WIP": 0,
-      "Completion": "100%"
+      "Completion": "100.0%"
     },
     "Post_3": {
       "Plan": 12,
-      "Live": 10,
-      "WIP": 2,
-      "Completion": "83.3%"
+      "Live": 9,
+      "WIP": 3,
+      "Completion": "75.0%"
     },
     "Status": "On Track",
-    "Notes": "Post 3 shifted to W40"
+    "Notes": "W40"
   },
   {
     "Subsidiary": "SESAR",
@@ -2111,22 +2111,22 @@ export const STATIC_TECHIES_TARGETS_SUMMARY = [
     "Post_1": {
       "Plan": 12,
       "Live": 12,
-      "Completion": "100%"
+      "Completion": "100.0%"
     },
     "Post_2": {
       "Plan": 12,
       "Live": 12,
       "WIP": 0,
-      "Completion": "100%"
+      "Completion": "100.0%"
     },
     "Post_3": {
       "Plan": 12,
       "Live": 12,
       "WIP": 0,
-      "Completion": "100%"
+      "Completion": "100.0%"
     },
     "Status": "Completed",
-    "Notes": "All 3 post phases 100% delivered"
+    "Notes": ""
   },
   {
     "Subsidiary": "SETK",
@@ -2134,119 +2134,23 @@ export const STATIC_TECHIES_TARGETS_SUMMARY = [
     "Profiles_Planned": 13,
     "Post_1": {
       "Plan": 13,
-      "Live": 13,
-      "Completion": "100%"
+      "Live": 12,
+      "Completion": "92.3%"
     },
     "Post_2": {
       "Plan": 13,
-      "Live": 13,
-      "WIP": 0,
-      "Completion": "100%"
+      "Live": 12,
+      "WIP": 1,
+      "Completion": "92.3%"
     },
     "Post_3": {
       "Plan": 13,
-      "Live": 11,
-      "WIP": 2,
-      "Completion": "84.6%"
-    },
-    "Status": "On Track",
-    "Notes": "Post 3 ongoing in W40"
-  },
-  {
-    "Subsidiary": "SEPAK",
-    "Market": "Pakistan",
-    "Profiles_Planned": 8,
-    "Post_1": {
-      "Plan": 8,
-      "Live": 8,
-      "Completion": "100%"
-    },
-    "Post_2": {
-      "Plan": 8,
-      "Live": 8,
-      "WIP": 0,
-      "Completion": "100%"
-    },
-    "Post_3": {
-      "Plan": 8,
-      "Live": 8,
-      "WIP": 0,
-      "Completion": "100%"
-    },
-    "Status": "Completed",
-    "Notes": "Highest view volume in MENA (92M+ views)"
-  },
-  {
-    "Subsidiary": "SEEG",
-    "Market": "Egypt",
-    "Profiles_Planned": 8,
-    "Post_1": {
-      "Plan": 8,
-      "Live": 8,
-      "Completion": "100%"
-    },
-    "Post_2": {
-      "Plan": 8,
-      "Live": 8,
-      "WIP": 0,
-      "Completion": "100%"
-    },
-    "Post_3": {
-      "Plan": 8,
-      "Live": 8,
-      "WIP": 0,
-      "Completion": "100%"
-    },
-    "Status": "Completed",
-    "Notes": "All 3 posts completed on schedule"
-  },
-  {
-    "Subsidiary": "SEMAG",
-    "Market": "Maghreb (Morocco, Algeria, Tunisia)",
-    "Profiles_Planned": 8,
-    "Post_1": {
-      "Plan": 8,
-      "Live": 8,
-      "Completion": "100%"
-    },
-    "Post_2": {
-      "Plan": 8,
-      "Live": 8,
-      "WIP": 0,
-      "Completion": "100%"
-    },
-    "Post_3": {
-      "Plan": 8,
-      "Live": 5,
-      "WIP": 3,
-      "Completion": "62.5%"
+      "Live": 4,
+      "WIP": 9,
+      "Completion": "30.8%"
     },
     "Status": "Action Required",
-    "Notes": "3 posts pending confirmation"
-  },
-  {
-    "Subsidiary": "SELV",
-    "Market": "Levant (Jordan, Lebanon, Iraq)",
-    "Profiles_Planned": 8,
-    "Post_1": {
-      "Plan": 8,
-      "Live": 8,
-      "Completion": "100%"
-    },
-    "Post_2": {
-      "Plan": 8,
-      "Live": 5,
-      "WIP": 3,
-      "Completion": "62.5%"
-    },
-    "Post_3": {
-      "Plan": 8,
-      "Live": 2,
-      "WIP": 6,
-      "Completion": "25.0%"
-    },
-    "Status": "Action Required",
-    "Notes": "Post 2 & 3 ETA pending agency confirmation"
+    "Notes": "W40"
   },
   {
     "Subsidiary": "SEIL",
@@ -2254,8 +2158,8 @@ export const STATIC_TECHIES_TARGETS_SUMMARY = [
     "Profiles_Planned": 7,
     "Post_1": {
       "Plan": 7,
-      "Live": 3,
-      "Completion": "42.9%"
+      "Live": 2,
+      "Completion": "28.6%"
     },
     "Post_2": {
       "Plan": 7,
@@ -2270,6 +2174,126 @@ export const STATIC_TECHIES_TARGETS_SUMMARY = [
       "Completion": "0.0%"
     },
     "Status": "Delayed",
-    "Notes": "Delayed due to regional holiday period"
+    "Notes": "*Delayed due to holiday period"
+  },
+  {
+    "Subsidiary": "SEMAG",
+    "Market": "Maghreb (Morocco, Algeria, Tunisia)",
+    "Profiles_Planned": 8,
+    "Post_1": {
+      "Plan": 8,
+      "Live": 8,
+      "Completion": "100.0%"
+    },
+    "Post_2": {
+      "Plan": 8,
+      "Live": 8,
+      "WIP": 0,
+      "Completion": "100.0%"
+    },
+    "Post_3": {
+      "Plan": 8,
+      "Live": 4,
+      "WIP": 4,
+      "Completion": "50.0%"
+    },
+    "Status": "Action Required",
+    "Notes": "W40"
+  },
+  {
+    "Subsidiary": "SELV",
+    "Market": "Levant (Jordan, Lebanon, Iraq)",
+    "Profiles_Planned": 8,
+    "Post_1": {
+      "Plan": 8,
+      "Live": 8,
+      "Completion": "100.0%"
+    },
+    "Post_2": {
+      "Plan": 8,
+      "Live": 6,
+      "WIP": 2,
+      "Completion": "75.0%"
+    },
+    "Post_3": {
+      "Plan": 8,
+      "Live": 2,
+      "WIP": 6,
+      "Completion": "25.0%"
+    },
+    "Status": "Action Required",
+    "Notes": "Please confirm ETA"
+  },
+  {
+    "Subsidiary": "SEPAK",
+    "Market": "Pakistan",
+    "Profiles_Planned": 8,
+    "Post_1": {
+      "Plan": 8,
+      "Live": 8,
+      "Completion": "100.0%"
+    },
+    "Post_2": {
+      "Plan": 8,
+      "Live": 8,
+      "WIP": 0,
+      "Completion": "100.0%"
+    },
+    "Post_3": {
+      "Plan": 8,
+      "Live": 8,
+      "WIP": 0,
+      "Completion": "100.0%"
+    },
+    "Status": "Completed",
+    "Notes": ""
+  },
+  {
+    "Subsidiary": "SEEG",
+    "Market": "Egypt",
+    "Profiles_Planned": 8,
+    "Post_1": {
+      "Plan": 8,
+      "Live": 8,
+      "Completion": "100.0%"
+    },
+    "Post_2": {
+      "Plan": 8,
+      "Live": 8,
+      "WIP": 0,
+      "Completion": "100.0%"
+    },
+    "Post_3": {
+      "Plan": 8,
+      "Live": 8,
+      "WIP": 0,
+      "Completion": "100.0%"
+    },
+    "Status": "Completed",
+    "Notes": "c"
+  },
+  {
+    "Subsidiary": "Algeria",
+    "Market": "Algeria (SEMAG)",
+    "Profiles_Planned": 2,
+    "Post_1": {
+      "Plan": 2,
+      "Live": 2,
+      "Completion": "100.0%"
+    },
+    "Post_2": {
+      "Plan": 2,
+      "Live": 2,
+      "WIP": 0,
+      "Completion": "100.0%"
+    },
+    "Post_3": {
+      "Plan": 2,
+      "Live": 2,
+      "WIP": 0,
+      "Completion": "100.0%"
+    },
+    "Status": "Completed",
+    "Notes": "c"
   }
 ];
