@@ -63,28 +63,28 @@ export default function GroupKPIsTab({ kpis, selectedSubsidiary }: GroupKPIsTabP
                 <th className="px-3 py-3 text-center font-semibold">Influencers</th>
                 <th className="px-3 py-3 text-center font-semibold">Deliverables</th>
                 <th className="px-3 py-3 text-right font-semibold">
-                  <span className="cursor-help" title="Cumulative follower reach across unique creators">
-                    Potential Reach ⓘ
+                  <span title="Cumulative follower reach across unique creators">
+                    Potential Reach
                   </span>
                 </th>
                 <th className="px-3 py-3 text-right font-semibold">
-                  <span className="cursor-help" title="Cross-platform video plays across TikTok, Instagram, and YouTube">
-                    Unified Views ⓘ
+                  <span title="Cross-platform video plays across TikTok, Instagram, and YouTube">
+                    Unified Views
                   </span>
                 </th>
                 <th className="px-3 py-3 text-right font-semibold">
-                  <span className="cursor-help" title="Sum of Likes, Comments, Shares, and Saves">
-                    Engagements ⓘ
+                  <span title="Sum of Likes, Comments, Shares, and Saves">
+                    Engagements
                   </span>
                 </th>
                 <th className="px-3 py-3 text-center font-semibold">
-                  <span className="cursor-help" title="Total Engagements ÷ Potential Reach">
-                    ER (Reach) ⓘ
+                  <span title="Total Engagements ÷ Potential Reach">
+                    ER (Reach)
                   </span>
                 </th>
                 <th className="px-3 py-3 text-center font-semibold">
-                  <span className="cursor-help" title="Total Engagements ÷ Total Views">
-                    ER (Views) ⓘ
+                  <span title="Total Engagements ÷ Total Views">
+                    ER (Views)
                   </span>
                 </th>
               </tr>
