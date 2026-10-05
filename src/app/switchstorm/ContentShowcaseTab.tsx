@@ -469,6 +469,35 @@ export default function ContentShowcaseTab({
             <option value="Instagram">Instagram</option>
             <option value="YouTube">YouTube</option>
           </select>
+
+          {/* Subsidiary / Market Selector */}
+          <select
+            value={selectedSubsidiary}
+            onChange={(e) => onSelectSubsidiary && onSelectSubsidiary(e.target.value)}
+            className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 font-semibold focus:outline-hidden focus:border-blue-500 shadow-2xs"
+          >
+            <option value="All">All Subsidiaries (MENA)</option>
+            <option value="SGE">SGE • Gulf (UAE, QA, KW, OM, BH)</option>
+            <option value="SESAR">SESAR • Saudi Arabia</option>
+            <option value="SETK">SETK • Turkey</option>
+            <option value="SEPAK">SEPAK • Pakistan</option>
+            <option value="SEEG">SEEG • Egypt</option>
+            <option value="SELV">SELV • Levant (JO, LB, IQ)</option>
+            <option value="SEMAG">SEMAG • Maghreb</option>
+            <option value="SEIL">SEIL • Israel</option>
+          </select>
+
+          {/* Active Subsidiary Reset Chip */}
+          {selectedSubsidiary !== "All" && (
+            <button
+              onClick={() => onSelectSubsidiary && onSelectSubsidiary("All")}
+              className="inline-flex items-center gap-1.5 text-xs text-[#034EA2] hover:text-white hover:bg-[#034EA2] bg-blue-50 px-2.5 py-1.5 rounded-lg border border-blue-200 font-bold transition-all cursor-pointer shadow-2xs"
+              title="Reset to All Subsidiaries"
+            >
+              <span>Sub: {selectedSubsidiary}</span>
+              <span className="text-[10px] font-black">✕</span>
+            </button>
+          )}
         </div>
 
         {/* Search */}
