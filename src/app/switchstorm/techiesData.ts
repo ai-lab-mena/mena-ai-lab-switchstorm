@@ -636,7 +636,13 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Views": 0,
       "Engagements": 312
     },
-    "Phase_3": null
+    "Phase_3": {
+      "URL": "http://instagram.com/p/Dd6XbhDtRBc",
+      "Platform": "Instagram",
+      "Date": "2026-09-30",
+      "Views": 0,
+      "Engagements": 208
+    }
   },
   {
     "Name": "Ali Abdelwahab",
@@ -676,7 +682,13 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Tier": "Macro ",
     "Total_Posts": 4,
     "Total_Views": 88531,
-    "Phase_1": null,
+    "Phase_1": {
+      "URL": "http://instagram.com/p/DcNs6YLABZF",
+      "Platform": "Instagram",
+      "Date": "2026-08-19",
+      "Views": 0,
+      "Engagements": 78
+    },
     "Phase_2": {
       "URL": "http://tiktok.com/@sagishmaryahu/video/7684161183041064199",
       "Platform": "TikTok",
@@ -708,7 +720,13 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Views": 5301,
       "Engagements": 239
     },
-    "Phase_3": null
+    "Phase_3": {
+      "URL": "http://twitter.com/xk_sal7/statuses/2105181680650563777",
+      "Platform": "Twitter",
+      "Date": "2026-09-30",
+      "Views": 0,
+      "Engagements": 43
+    }
   },
   {
     "Name": "Khalid Jutt",
@@ -773,11 +791,11 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Total_Posts": 5,
     "Total_Views": 79100,
     "Phase_1": {
-      "URL": "http://tiktok.com/@yahav_trosman/video/7682731766825733394",
-      "Platform": "TikTok",
-      "Date": "2026-09-07",
-      "Views": 15600,
-      "Engagements": 501
+      "URL": "http://instagram.com/p/Dbsbw4VnWGm",
+      "Platform": "Instagram",
+      "Date": "2026-08-06",
+      "Views": 0,
+      "Engagements": 32
     },
     "Phase_2": {
       "URL": "http://tiktok.com/@yahav_trosman/video/7685713570750909703",
@@ -1032,7 +1050,13 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Views": 2153,
       "Engagements": 68
     },
-    "Phase_3": null
+    "Phase_3": {
+      "URL": "http://instagram.com/p/Dd6gLttsqLv",
+      "Platform": "Instagram",
+      "Date": "2026-09-30",
+      "Views": 0,
+      "Engagements": 26
+    }
   },
   {
     "Name": "Erdi Ozuag",
@@ -1309,11 +1333,11 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Engagements": 157
     },
     "Phase_3": {
-      "URL": "http://instagram.com/p/Ddy71g4pQgY",
+      "URL": "http://instagram.com/p/Dd8e6fyiNsC",
       "Platform": "Instagram",
-      "Date": "2026-09-27",
+      "Date": "2026-10-01",
       "Views": 0,
-      "Engagements": 103
+      "Engagements": 0
     }
   },
   {
@@ -1356,7 +1380,13 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Views": 0,
       "Engagements": 506
     },
-    "Phase_3": null
+    "Phase_3": {
+      "URL": "http://instagram.com/p/Dd7NMPPok_D",
+      "Platform": "Instagram",
+      "Date": "2026-09-30",
+      "Views": 0,
+      "Engagements": 191
+    }
   },
   {
     "Name": "Deyaa Omar | \u0636\u064a\u0627\u0621 \u0639\u0645\u0631",
@@ -1453,11 +1483,11 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Engagements": 32
     },
     "Phase_3": {
-      "URL": "http://instagram.com/p/DdyYGmEiqjQ",
+      "URL": "http://instagram.com/p/Dd6jm9SIeao",
       "Platform": "Instagram",
-      "Date": "2026-09-27",
+      "Date": "2026-09-30",
       "Views": 0,
-      "Engagements": 30
+      "Engagements": 80
     }
   },
   {
@@ -1522,7 +1552,13 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Tier": "Macro",
     "Total_Posts": 4,
     "Total_Views": 0,
-    "Phase_1": null,
+    "Phase_1": {
+      "URL": "http://instagram.com/p/Dc3cUwcMA45",
+      "Platform": "Instagram",
+      "Date": "2026-09-04",
+      "Views": 0,
+      "Engagements": 180
+    },
     "Phase_2": {
       "URL": "http://instagram.com/p/DdQfd7iMRaT",
       "Platform": "Instagram",
@@ -1554,7 +1590,13 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Engagements": 280
     },
     "Phase_2": null,
-    "Phase_3": null
+    "Phase_3": {
+      "URL": "http://facebook.com/442035919330498/posts/1599620001614238",
+      "Platform": "Facebook",
+      "Date": "2026-09-29",
+      "Views": 0,
+      "Engagements": 14
+    }
   },
   {
     "Name": "Mert Bayantemur",
@@ -1627,11 +1669,11 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Engagements": 768
     },
     "Phase_3": {
-      "URL": "http://instagram.com/p/DdqWG-5NoLW",
+      "URL": "http://instagram.com/p/Dd7PaX5Damh",
       "Platform": "Instagram",
-      "Date": "2026-09-24",
+      "Date": "2026-09-30",
       "Views": 0,
-      "Engagements": 181
+      "Engagements": 0
     }
   },
   {
@@ -1830,7 +1872,13 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Engagements": 253
     },
     "Phase_2": null,
-    "Phase_3": null
+    "Phase_3": {
+      "URL": "http://instagram.com/p/Dd6sabbjSgn",
+      "Platform": "Instagram",
+      "Date": "2026-09-30",
+      "Views": 0,
+      "Engagements": 0
+    }
   },
   {
     "Name": "almountacir_",
@@ -1872,7 +1920,13 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Views": 0,
       "Engagements": 1543
     },
-    "Phase_3": null
+    "Phase_3": {
+      "URL": "http://instagram.com/p/Dd9xoEfITNM",
+      "Platform": "Instagram",
+      "Date": "2026-10-01",
+      "Views": 0,
+      "Engagements": 436
+    }
   },
   {
     "Name": "\u05e6\u05d1\u05d9 \u05e9\u05d7\u05e8",
@@ -1882,7 +1936,13 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Tier": "Macro",
     "Total_Posts": 8,
     "Total_Views": 0,
-    "Phase_1": null,
+    "Phase_1": {
+      "URL": "http://instagram.com/p/DbsYo3EDNX7",
+      "Platform": "Instagram",
+      "Date": "2026-08-06",
+      "Views": 0,
+      "Engagements": 46
+    },
     "Phase_2": null,
     "Phase_3": null
   },
@@ -1908,7 +1968,13 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Views": 0,
       "Engagements": 123
     },
-    "Phase_3": null
+    "Phase_3": {
+      "URL": "http://instagram.com/p/Dd6U0GNoYCz",
+      "Platform": "Instagram",
+      "Date": "2026-09-30",
+      "Views": 0,
+      "Engagements": 434
+    }
   },
   {
     "Name": "\u062c\u0640\u0648\u0627\u0644\u0640\u0643\u0640\u0645",
@@ -1932,7 +1998,13 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
       "Views": 0,
       "Engagements": 162
     },
-    "Phase_3": null
+    "Phase_3": {
+      "URL": "http://instagram.com/p/Dd5lJyuKq9X",
+      "Platform": "Instagram",
+      "Date": "2026-09-30",
+      "Views": 0,
+      "Engagements": 83
+    }
   },
   {
     "Name": "\u0639\u0628\u064a\u062f\u0629 \u0623\u0628\u0648 \u0642\u0648\u064a\u062f\u0631 (Obayda G Abu Kweder)",
@@ -1942,7 +2014,13 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Tier": "Macro",
     "Total_Posts": 3,
     "Total_Views": 0,
-    "Phase_1": null,
+    "Phase_1": {
+      "URL": "http://instagram.com/p/DclPeuFjW00",
+      "Platform": "Instagram",
+      "Date": "2026-08-28",
+      "Views": 0,
+      "Engagements": 0
+    },
     "Phase_2": null,
     "Phase_3": {
       "URL": "http://instagram.com/p/Ddn_YtMqZl3",
@@ -1960,7 +2038,13 @@ export const STATIC_TECHIES_INFLUENCER_MATRIX = [
     "Tier": "Macro",
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Phase_1": null,
+    "Phase_1": {
+      "URL": "http://instagram.com/p/DcLTEQWsH6H",
+      "Platform": "Instagram",
+      "Date": "2026-08-18",
+      "Views": 0,
+      "Engagements": 975
+    },
     "Phase_2": null,
     "Phase_3": null
   },

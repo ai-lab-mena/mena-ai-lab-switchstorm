@@ -56,9 +56,13 @@ export interface LifestyleCreator {
   Total_Posts: number;
   Total_Views: number;
   Total_Engagements: number;
-  Phase_1: PhasePost | null;
-  Phase_2: PhasePost | null;
-  Phase_3: PhasePost | null;
+  Week_1?: PhasePost | null;
+  Week_2?: PhasePost | null;
+  Week_3?: PhasePost | null;
+  Week_4?: PhasePost | null;
+  Phase_1?: PhasePost | null;
+  Phase_2?: PhasePost | null;
+  Phase_3?: PhasePost | null;
 }
 
 interface LifestyleIntelligenceTabProps {
@@ -424,7 +428,7 @@ export default function LifestyleIntelligenceTab({
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs text-slate-700 min-w-[850px]">
+          <table className="w-full text-left text-xs text-slate-700 min-w-[950px]">
             <thead className="bg-[#034EA2] text-white uppercase text-[10px] tracking-wider">
               <tr>
                 <th className="px-3 sm:px-4 py-3 font-semibold">Creator & Handle</th>
@@ -432,16 +436,20 @@ export default function LifestyleIntelligenceTab({
                 <th className="px-3 py-3 text-center font-semibold">Deliverables</th>
                 <th className="px-3 py-3 text-right font-semibold">Total Views</th>
                 <th className="px-3 py-2.5 text-center font-semibold">
-                  <div>Phase 1 Post</div>
-                  <div className="text-[9px] font-normal text-blue-100 opacity-90 mt-0.5 normal-case">Sep 7 – Sep 10</div>
+                  <div>Week 1 Post</div>
+                  <div className="text-[9px] font-normal text-blue-100 opacity-90 mt-0.5 normal-case">Sep 7 – Sep 13</div>
                 </th>
                 <th className="px-3 py-2.5 text-center font-semibold">
-                  <div>Phase 2 Post</div>
-                  <div className="text-[9px] font-normal text-blue-100 opacity-90 mt-0.5 normal-case">Sep 11 – Sep 20</div>
+                  <div>Week 2 Post</div>
+                  <div className="text-[9px] font-normal text-blue-100 opacity-90 mt-0.5 normal-case">Sep 14 – Sep 20</div>
                 </th>
                 <th className="px-3 py-2.5 text-center font-semibold">
-                  <div>Phase 3 Post</div>
-                  <div className="text-[9px] font-normal text-blue-100 opacity-90 mt-0.5 normal-case">Sep 21 – Sep 28</div>
+                  <div>Week 3 Post</div>
+                  <div className="text-[9px] font-normal text-blue-100 opacity-90 mt-0.5 normal-case">Sep 21 – Sep 27</div>
+                </th>
+                <th className="px-3 py-2.5 text-center font-semibold">
+                  <div>Week 4 Post</div>
+                  <div className="text-[9px] font-normal text-blue-100 opacity-90 mt-0.5 normal-case">Sep 28 – Oct 4+</div>
                 </th>
               </tr>
             </thead>
@@ -473,18 +481,18 @@ export default function LifestyleIntelligenceTab({
                     {c.Total_Views.toLocaleString()}
                   </td>
 
-                  {/* Phase 1 Deliverable Link */}
+                  {/* Week 1 Deliverable Link */}
                   <td className="px-3 py-3 text-center">
-                    {c.Phase_1 ? (
+                    {c.Week_1 ? (
                       <a
-                        href={c.Phase_1.URL}
+                        href={c.Week_1.URL}
                         target="_blank"
                         rel="noreferrer"
                         className="inline-flex items-center gap-1 rounded-md bg-blue-50 hover:bg-blue-100 text-[#034EA2] px-2.5 py-1 text-[11px] font-semibold border border-blue-200/80 transition-colors shadow-2xs group/p"
-                        title={`${c.Phase_1.Platform} • ${c.Phase_1.Views.toLocaleString()} views`}
+                        title={`${c.Week_1.Platform} • ${c.Week_1.Views.toLocaleString()} views`}
                       >
-                        <span>Phase 1</span>
-                        <span className="text-[10px] text-blue-600 font-normal">({formatShort(c.Phase_1.Views)})</span>
+                        <span>Week 1</span>
+                        <span className="text-[10px] text-blue-600 font-normal">({formatShort(c.Week_1.Views)})</span>
                         <span className="text-[9px] transform group-hover/p:translate-x-0.5 transition-transform">↗</span>
                       </a>
                     ) : (
@@ -492,18 +500,18 @@ export default function LifestyleIntelligenceTab({
                     )}
                   </td>
 
-                  {/* Phase 2 Deliverable Link */}
+                  {/* Week 2 Deliverable Link */}
                   <td className="px-3 py-3 text-center">
-                    {c.Phase_2 ? (
+                    {c.Week_2 ? (
                       <a
-                        href={c.Phase_2.URL}
+                        href={c.Week_2.URL}
                         target="_blank"
                         rel="noreferrer"
                         className="inline-flex items-center gap-1 rounded-md bg-purple-50 hover:bg-purple-100 text-purple-700 px-2.5 py-1 text-[11px] font-semibold border border-purple-200/80 transition-colors shadow-2xs group/p"
-                        title={`${c.Phase_2.Platform} • ${c.Phase_2.Views.toLocaleString()} views`}
+                        title={`${c.Week_2.Platform} • ${c.Week_2.Views.toLocaleString()} views`}
                       >
-                        <span>Phase 2</span>
-                        <span className="text-[10px] text-purple-600 font-normal">({formatShort(c.Phase_2.Views)})</span>
+                        <span>Week 2</span>
+                        <span className="text-[10px] text-purple-600 font-normal">({formatShort(c.Week_2.Views)})</span>
                         <span className="text-[9px] transform group-hover/p:translate-x-0.5 transition-transform">↗</span>
                       </a>
                     ) : (
@@ -511,18 +519,37 @@ export default function LifestyleIntelligenceTab({
                     )}
                   </td>
 
-                  {/* Phase 3 Deliverable Link */}
+                  {/* Week 3 Deliverable Link */}
                   <td className="px-3 py-3 text-center">
-                    {c.Phase_3 ? (
+                    {c.Week_3 ? (
                       <a
-                        href={c.Phase_3.URL}
+                        href={c.Week_3.URL}
                         target="_blank"
                         rel="noreferrer"
                         className="inline-flex items-center gap-1 rounded-md bg-pink-50 hover:bg-pink-100 text-pink-700 px-2.5 py-1 text-[11px] font-semibold border border-pink-200/80 transition-colors shadow-2xs group/p"
-                        title={`${c.Phase_3.Platform} • ${c.Phase_3.Views.toLocaleString()} views`}
+                        title={`${c.Week_3.Platform} • ${c.Week_3.Views.toLocaleString()} views`}
                       >
-                        <span>Phase 3</span>
-                        <span className="text-[10px] text-pink-600 font-normal">({formatShort(c.Phase_3.Views)})</span>
+                        <span>Week 3</span>
+                        <span className="text-[10px] text-pink-600 font-normal">({formatShort(c.Week_3.Views)})</span>
+                        <span className="text-[9px] transform group-hover/p:translate-x-0.5 transition-transform">↗</span>
+                      </a>
+                    ) : (
+                      <span className="text-slate-300 font-mono">—</span>
+                    )}
+                  </td>
+
+                  {/* Week 4 Deliverable Link */}
+                  <td className="px-3 py-3 text-center">
+                    {c.Week_4 ? (
+                      <a
+                        href={c.Week_4.URL}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1 rounded-md bg-amber-50 hover:bg-amber-100 text-amber-800 px-2.5 py-1 text-[11px] font-semibold border border-amber-200/80 transition-colors shadow-2xs group/p"
+                        title={`${c.Week_4.Platform} • ${c.Week_4.Views.toLocaleString()} views (Flight W4 & ongoing)`}
+                      >
+                        <span>Week 4</span>
+                        <span className="text-[10px] text-amber-700 font-normal">({formatShort(c.Week_4.Views)})</span>
                         <span className="text-[9px] transform group-hover/p:translate-x-0.5 transition-transform">↗</span>
                       </a>
                     ) : (
