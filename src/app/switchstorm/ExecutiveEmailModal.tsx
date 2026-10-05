@@ -1,0 +1,559 @@
+"use client";
+
+import React, { useState } from "react";
+
+export interface ActionItemRecord {
+  id: string;
+  subsidiary: string;
+  market: string;
+  stream: "Tech Reviewers" | "Lifestyle Creators";
+  phaseOrWeek: string;
+  status: "Action Required" | "Delayed" | "Under Review";
+  bottleneck: string;
+  actionItem: string;
+  ownerName: string;
+  ownerRole: string;
+  ownerEmail: string;
+  ownerInitials: string;
+  priority: "High" | "Critical" | "Medium";
+}
+
+export const DEFAULT_ACTION_ITEMS: ActionItemRecord[] = [
+  {
+    id: "act-setk-1",
+    subsidiary: "SETK",
+    market: "Turkey",
+    stream: "Tech Reviewers",
+    phaseOrWeek: "Phase 3 (Post 3)",
+    status: "Action Required",
+    bottleneck: "9 WIP deliverables shifted to W40; Phase 3 delivery currently at 30.8% (4/13 live).",
+    actionItem: "Escalate to Istanbul agency lead to secure hard publishing cutoffs for all 9 remaining reviews by Oct 8.",
+    ownerName: "Emre Demir",
+    ownerRole: "SETK Brand & Marcom Lead",
+    ownerEmail: "e.demir@samsung.com",
+    ownerInitials: "ED",
+    priority: "Critical",
+  },
+  {
+    id: "act-semag-1",
+    subsidiary: "SEMAG",
+    market: "Maghreb (Morocco, DZ, TN)",
+    stream: "Tech Reviewers",
+    phaseOrWeek: "Phase 3 (Post 3)",
+    status: "Action Required",
+    bottleneck: "4 WIP deliverables shifted to W40; Phase 3 delivery currently at 50.0% (4/8 live).",
+    actionItem: "Require North Africa agency partner to submit live permalinks and verify remaining 4 influencer deliverables.",
+    ownerName: "Yasmine Benali",
+    ownerRole: "SEMAG Regional Marcom Lead",
+    ownerEmail: "y.benali@samsung.com",
+    ownerInitials: "YB",
+    priority: "High",
+  },
+  {
+    id: "act-selv-1",
+    subsidiary: "SELV",
+    market: "Levant (Jordan, Lebanon, Iraq)",
+    stream: "Tech Reviewers",
+    phaseOrWeek: "Phase 2 & 3",
+    status: "Action Required",
+    bottleneck: "6 WIP deliverables in Phase 3 (25% live) and 2 WIP in Phase 2; agency delivery ETA pending.",
+    actionItem: "Direct Levant operations head to enforce publishing schedule or initiate substitute creator activation.",
+    ownerName: "Karim Haddad",
+    ownerRole: "SELV Campaign Operations PIC",
+    ownerEmail: "k.haddad@samsung.com",
+    ownerInitials: "KH",
+    priority: "Critical",
+  },
+  {
+    id: "act-seil-1",
+    subsidiary: "SEIL",
+    market: "Israel",
+    stream: "Tech Reviewers",
+    phaseOrWeek: "Phase 1 - 3",
+    status: "Delayed",
+    bottleneck: "Extended delivery hiatus due to regional holiday period (0/7 Phase 3 live, 6 WIP in Phase 2).",
+    actionItem: "Authorize expedited post-holiday flighting schedule starting Oct 12 with mandatory video pacing check-ins.",
+    ownerName: "Roni Levi",
+    ownerRole: "SEIL Digital & Campaign Lead",
+    ownerEmail: "r.levi@samsung.com",
+    ownerInitials: "RL",
+    priority: "High",
+  },
+  {
+    id: "act-sesar-1",
+    subsidiary: "SESAR",
+    market: "Saudi Arabia",
+    stream: "Lifestyle Creators",
+    phaseOrWeek: "Week 4 & 5 Flight",
+    status: "Action Required",
+    bottleneck: "41 deliverables pending in Week 4 (5/46 live) plus 22 planned deliverables queued for Week 5.",
+    actionItem: "Coordinate with Riyadh agency hub to batch-approve creator drafts and accelerate publishing cadence.",
+    ownerName: "Saud Al-Otaibi",
+    ownerRole: "SESAR Marcom Director",
+    ownerEmail: "s.alotaibi@samsung.com",
+    ownerInitials: "SO",
+    priority: "High",
+  },
+  {
+    id: "act-sepak-1",
+    subsidiary: "SEPAK",
+    market: "Pakistan",
+    stream: "Lifestyle Creators",
+    phaseOrWeek: "Week 4 Flight",
+    status: "Action Required",
+    bottleneck: "10 deliverables pending in Week 4 (22/32 live); high-view market with 75M+ aggregate campaign exposure.",
+    actionItem: "Follow up with talent managers to secure live delivery links for remaining 10 creator videos before W4 close.",
+    ownerName: "Hamza Malik",
+    ownerRole: "SEPAK Marcom PIC",
+    ownerEmail: "h.malik@samsung.com",
+    ownerInitials: "HM",
+    priority: "Medium",
+  },
+];
+
+interface ExecutiveEmailModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  streamFilter?: "All" | "Tech Reviewers" | "Lifestyle Creators";
+}
+
+export default function ExecutiveEmailModal({
+  isOpen,
+  onClose,
+  streamFilter = "All",
+}: ExecutiveEmailModalProps) {
+  const [selectedItems, setSelectedItems] = useState<string[]>(
+    DEFAULT_ACTION_ITEMS.map((item) => item.id)
+  );
+  const [copied, setCopied] = useState<boolean>(false);
+  const [isSending, setIsSending] = useState<boolean>(false);
+  const [dispatchStatus, setDispatchStatus] = useState<string | null>(null);
+
+  if (!isOpen) return null;
+
+  const filteredItems = DEFAULT_ACTION_ITEMS.filter((item) => {
+    if (streamFilter === "All") return true;
+    return item.stream === streamFilter;
+  });
+
+  const toggleSelect = (id: string) => {
+    setSelectedItems((prev) =>
+      prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]
+    );
+  };
+
+  const selectAll = () => {
+    setSelectedItems(filteredItems.map((i) => i.id));
+  };
+
+  const deselectAll = () => {
+    setSelectedItems([]);
+  };
+
+  const activeItems = filteredItems.filter((i) => selectedItems.includes(i.id));
+
+  // Generate plain text for mailto
+  const generatePlainText = () => {
+    let text = `SAMSUNG ELECTRONICS MENA - CAMPAIGN ESCALATION BRIEFING\n`;
+    text += `Target: SwitchStorm Integrated Campaign Delivery\n`;
+    text += `Date: ${new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}\n\n`;
+    text += `EXECUTIVE ACTION ITEMS REQUIRING LEADERSHIP INTERVENTION:\n`;
+    text += `------------------------------------------------------------\n\n`;
+
+    activeItems.forEach((item, idx) => {
+      text += `${idx + 1}. [${item.priority.toUpperCase()}] ${item.subsidiary} (${item.market}) - ${item.stream}\n`;
+      text += `   Flight: ${item.phaseOrWeek}\n`;
+      text += `   Bottleneck: ${item.bottleneck}\n`;
+      text += `   Action Item: ${item.actionItem}\n`;
+      text += `   Owner PIC: ${item.ownerName} (${item.ownerRole}) <${item.ownerEmail}>\n\n`;
+    });
+
+    text += `------------------------------------------------------------\n`;
+    text += `Generated automatically from Marketing Intelligence Hub (AI MENA Lab).\n`;
+    return text;
+  };
+
+  // Generate HTML for clipboard rich-text paste into Outlook
+  const generateHTMLTable = () => {
+    let rowsHtml = activeItems
+      .map(
+        (item) => `
+      <tr style="border-bottom: 1px solid #E2E8F0;">
+        <td style="padding: 10px; font-weight: bold; color: #0F172A; font-family: Arial, sans-serif; font-size: 12px;">
+          ${item.subsidiary} <br/><span style="font-size: 11px; font-weight: normal; color: #64748B;">${item.market}</span>
+        </td>
+        <td style="padding: 10px; font-family: Arial, sans-serif; font-size: 12px; color: #334155;">
+          <strong>${item.stream}</strong><br/><span style="font-size: 11px; color: #64748B;">${item.phaseOrWeek}</span>
+        </td>
+        <td style="padding: 10px; font-family: Arial, sans-serif; font-size: 11px; color: #DC2626; font-weight: bold;">
+          <span style="background-color: ${
+            item.priority === "Critical" ? "#FEE2E2" : "#FEF3C7"
+          }; color: ${
+          item.priority === "Critical" ? "#991B1B" : "#92400E"
+        }; padding: 3px 8px; border-radius: 4px; display: inline-block;">
+            ${item.priority}
+          </span>
+        </td>
+        <td style="padding: 10px; font-family: Arial, sans-serif; font-size: 12px; color: #1E293B; max-width: 280px;">
+          ${item.bottleneck}
+        </td>
+        <td style="padding: 10px; font-family: Arial, sans-serif; font-size: 12px; color: #034EA2; font-weight: bold; max-width: 320px;">
+          ${item.actionItem}
+        </td>
+        <td style="padding: 10px; font-family: Arial, sans-serif; font-size: 12px; color: #0F172A;">
+          <strong>${item.ownerName}</strong><br/>
+          <span style="font-size: 11px; color: #64748B;">${item.ownerRole}</span><br/>
+          <span style="font-size: 11px; color: #2563EB;">${item.ownerEmail}</span>
+        </td>
+      </tr>
+    `
+      )
+      .join("");
+
+    return `
+      <div style="font-family: Arial, sans-serif; font-size: 12px; color: #0F172A;">
+        <h3 style="color: #034EA2; margin-bottom: 4px; font-size: 16px;">Samsung Electronics MENA | Executive Campaign Action Briefing</h3>
+        <p style="color: #64748B; font-size: 12px; margin-top: 0; margin-bottom: 12px;">The following deliverables require senior leadership coordination and agency escalation to ensure target completion.</p>
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid #CBD5E1; text-align: left;">
+          <thead>
+            <tr style="background-color: #034EA2; color: #FFFFFF;">
+              <th style="padding: 10px; font-size: 11px; text-transform: uppercase;">Subsidiary</th>
+              <th style="padding: 10px; font-size: 11px; text-transform: uppercase;">Stream</th>
+              <th style="padding: 10px; font-size: 11px; text-transform: uppercase;">Priority</th>
+              <th style="padding: 10px; font-size: 11px; text-transform: uppercase;">Operational Bottleneck</th>
+              <th style="padding: 10px; font-size: 11px; text-transform: uppercase;">Required Action Item</th>
+              <th style="padding: 10px; font-size: 11px; text-transform: uppercase;">Owner PIC</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rowsHtml}
+          </tbody>
+        </table>
+        <p style="color: #94A3B8; font-size: 10px; margin-top: 10px;">Generated automatically via Samsung Marketing Intelligence Platform (AI MENA Lab).</p>
+      </div>
+    `;
+  };
+
+  const handleCopyToClipboard = async () => {
+    try {
+      const htmlText = generateHTMLTable();
+      const plainText = generatePlainText();
+
+      if (typeof ClipboardItem !== "undefined" && navigator.clipboard?.write) {
+        const blobHtml = new Blob([htmlText], { type: "text/html" });
+        const blobPlain = new Blob([plainText], { type: "text/plain" });
+        await navigator.clipboard.write([
+          new ClipboardItem({
+            "text/html": blobHtml,
+            "text/plain": blobPlain,
+          }),
+        ]);
+      } else {
+        await navigator.clipboard.writeText(plainText);
+      }
+
+      setCopied(true);
+      setTimeout(() => setCopied(false), 3000);
+    } catch {
+      await navigator.clipboard.writeText(generatePlainText());
+      setCopied(true);
+      setTimeout(() => setCopied(false), 3000);
+    }
+  };
+
+  const handleOpenOutlook = () => {
+    const subject = encodeURIComponent(
+      "[ACTION REQUIRED] Samsung MENA SwitchStorm - Campaign Deliverable Escalation Briefing"
+    );
+    const body = encodeURIComponent(generatePlainText());
+    window.location.href = `mailto:mena.marketing.leadership@samsung.com?subject=${subject}&body=${body}`;
+  };
+
+  const handleSimulateDispatch = () => {
+    setIsSending(true);
+    setDispatchStatus(null);
+    setTimeout(() => {
+      setIsSending(false);
+      setDispatchStatus(
+        `Executive briefing dispatched successfully to ${activeItems.length} Leadership PICs at ${new Date().toLocaleTimeString(
+          [],
+          { hour: "2-digit", minute: "2-digit" }
+        )}`
+      );
+      setTimeout(() => setDispatchStatus(null), 6000);
+    }, 1200);
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/70 backdrop-blur-xs animate-fadeIn">
+      <div className="relative w-full max-w-5xl rounded-2xl bg-white shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[92vh]">
+        {/* 1. MODAL HEADER */}
+        <div className="px-5 py-4 bg-[#034EA2] text-white flex items-center justify-between shrink-0">
+          <div className="flex items-center gap-3">
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/15 text-white border border-white/20">
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </span>
+            <div>
+              <h3 className="text-base font-bold text-white flex items-center gap-2">
+                <span>Executive Campaign Action Briefing</span>
+                <span className="rounded bg-amber-400 text-slate-950 text-[10px] font-black px-2 py-0.5 uppercase tracking-wider">
+                  Management Dispatch
+                </span>
+              </h3>
+              <p className="text-xs text-blue-100">
+                Automated escalation table prepared for Samsung MENA Higher Leadership & Regional PICs
+              </p>
+            </div>
+          </div>
+
+          <button
+            onClick={onClose}
+            className="rounded-lg p-1.5 text-blue-100 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+            title="Close modal"
+          >
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        {/* 2. RECIPIENT & FILTER BAR */}
+        <div className="bg-slate-50 px-5 py-3 border-b border-slate-200 flex flex-wrap items-center justify-between gap-3 text-xs shrink-0">
+          <div className="flex items-center gap-4 text-slate-600">
+            <div>
+              <span className="font-bold text-slate-900">TO: </span>
+              <span className="font-mono text-slate-700 bg-white px-2 py-0.5 rounded border border-slate-200">
+                mena.marketing.leadership@samsung.com
+              </span>
+            </div>
+            <div>
+              <span className="font-bold text-slate-900">CC: </span>
+              <span className="font-mono text-slate-700 bg-white px-2 py-0.5 rounded border border-slate-200">
+                regional.pic.steering@samsung.com
+              </span>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <span className="text-slate-500 font-medium">Select:</span>
+            <button
+              onClick={selectAll}
+              className="text-[#034EA2] hover:underline font-bold cursor-pointer"
+            >
+              All ({filteredItems.length})
+            </button>
+            <span className="text-slate-300">|</span>
+            <button
+              onClick={deselectAll}
+              className="text-slate-500 hover:text-slate-800 cursor-pointer"
+            >
+              None
+            </button>
+          </div>
+        </div>
+
+        {/* Dispatch Notification Banner */}
+        {dispatchStatus && (
+          <div className="bg-emerald-50 border-b border-emerald-200 px-5 py-2.5 flex items-center justify-between text-xs text-emerald-800 font-semibold animate-fadeIn shrink-0">
+            <div className="flex items-center gap-2">
+              <svg className="h-4 w-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+              </svg>
+              <span>{dispatchStatus}</span>
+            </div>
+            <span className="text-[10px] text-emerald-600 font-mono">Knox Relay Verified</span>
+          </div>
+        )}
+
+        {/* 3. EXECUTIVE ESCALATION TABLE (SCROLLABLE BODY) */}
+        <div className="flex-1 overflow-y-auto p-4 sm:p-5">
+          <div className="overflow-x-auto rounded-xl border border-slate-200 shadow-2xs">
+            <table className="w-full text-left text-xs text-slate-700 min-w-[850px]">
+              <thead className="bg-slate-100/90 text-slate-800 uppercase text-[10px] tracking-wider border-b border-slate-200">
+                <tr>
+                  <th className="w-8 px-3 py-3 text-center">
+                    <input
+                      type="checkbox"
+                      checked={
+                        filteredItems.length > 0 &&
+                        selectedItems.length === filteredItems.length
+                      }
+                      onChange={(e) =>
+                        e.target.checked ? selectAll() : deselectAll()
+                      }
+                      className="rounded border-slate-300 text-[#034EA2] focus:ring-blue-500"
+                    />
+                  </th>
+                  <th className="px-3 py-3 font-bold">Subsidiary</th>
+                  <th className="px-3 py-3 font-bold">Campaign Stream</th>
+                  <th className="px-2 py-3 text-center font-bold">Priority</th>
+                  <th className="px-3 py-3 font-bold">Operational Bottleneck</th>
+                  <th className="px-3 py-3 font-bold">Recommended Action Item</th>
+                  <th className="px-3 py-3 font-bold">Owner PIC</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100 bg-white">
+                {filteredItems.map((item) => {
+                  const isChecked = selectedItems.includes(item.id);
+                  return (
+                    <tr
+                      key={item.id}
+                      onClick={() => toggleSelect(item.id)}
+                      className={`cursor-pointer transition-colors ${
+                        isChecked ? "bg-blue-50/40 hover:bg-blue-50/70" : "hover:bg-slate-50 opacity-60"
+                      }`}
+                    >
+                      <td
+                        className="px-3 py-3.5 text-center"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <input
+                          type="checkbox"
+                          checked={isChecked}
+                          onChange={() => toggleSelect(item.id)}
+                          className="rounded border-slate-300 text-[#034EA2] focus:ring-blue-500 cursor-pointer"
+                        />
+                      </td>
+
+                      {/* Subsidiary */}
+                      <td className="px-3 py-3.5">
+                        <div className="flex flex-col">
+                          <span className="font-extrabold text-slate-900 text-sm">
+                            {item.subsidiary}
+                          </span>
+                          <span className="text-[11px] text-slate-400 font-medium">
+                            {item.market}
+                          </span>
+                        </div>
+                      </td>
+
+                      {/* Stream */}
+                      <td className="px-3 py-3.5">
+                        <div className="flex flex-col">
+                          <span className="font-bold text-slate-800 text-xs">
+                            {item.stream}
+                          </span>
+                          <span className="text-[10px] text-slate-500 font-medium">
+                            {item.phaseOrWeek}
+                          </span>
+                        </div>
+                      </td>
+
+                      {/* Priority */}
+                      <td className="px-2 py-3.5 text-center">
+                        <span
+                          className={`rounded px-2 py-0.5 text-[10px] font-black uppercase tracking-wider ${
+                            item.priority === "Critical"
+                              ? "bg-rose-100 text-rose-800 border border-rose-200"
+                              : item.priority === "High"
+                              ? "bg-amber-100 text-amber-800 border border-amber-200"
+                              : "bg-slate-100 text-slate-700 border border-slate-200"
+                          }`}
+                        >
+                          {item.priority}
+                        </span>
+                      </td>
+
+                      {/* Bottleneck */}
+                      <td className="px-3 py-3.5 max-w-[240px]">
+                        <p className="text-xs text-slate-700 leading-snug">
+                          {item.bottleneck}
+                        </p>
+                      </td>
+
+                      {/* Action Item */}
+                      <td className="px-3 py-3.5 max-w-[280px]">
+                        <p className="text-xs font-semibold text-[#034EA2] leading-snug bg-blue-50/70 p-2 rounded-lg border border-blue-100">
+                          {item.actionItem}
+                        </p>
+                      </td>
+
+                      {/* Owner PIC with Professional Avatar Placeholder */}
+                      <td className="px-3 py-3.5 whitespace-nowrap">
+                        <div className="flex items-center gap-2.5">
+                          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-white font-extrabold text-xs shadow-xs border border-white shrink-0">
+                            {item.ownerInitials}
+                          </div>
+                          <div className="flex flex-col">
+                            <span className="font-bold text-slate-900 text-xs leading-none">
+                              {item.ownerName}
+                            </span>
+                            <span className="text-[10px] text-slate-400 mt-0.5 leading-none">
+                              {item.ownerRole}
+                            </span>
+                            <span className="text-[10px] text-blue-600 font-mono mt-0.5 leading-none">
+                              {item.ownerEmail}
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* 4. MODAL FOOTER & ACTION BUTTONS */}
+        <div className="bg-slate-50 px-5 py-3.5 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shrink-0">
+          <div className="text-xs text-slate-500">
+            <span>Selected for briefing: </span>
+            <span className="font-bold text-slate-900">{activeItems.length} of {filteredItems.length} items</span>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-2">
+            {/* Copy Outlook Formatted Table Button */}
+            <button
+              onClick={handleCopyToClipboard}
+              disabled={activeItems.length === 0}
+              className="inline-flex items-center gap-1.5 rounded-xl bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 px-3.5 py-2 text-xs font-bold transition-all shadow-2xs cursor-pointer disabled:opacity-40"
+              title="Copies rich HTML table ready to paste directly into Microsoft Outlook or Knox Mail"
+            >
+              <svg className="h-4 w-4 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+              </svg>
+              <span>{copied ? "✓ Copied for Outlook!" : "Copy Formatted Table"}</span>
+            </button>
+
+            {/* Open Mail Client Button */}
+            <button
+              onClick={handleOpenOutlook}
+              disabled={activeItems.length === 0}
+              className="inline-flex items-center gap-1.5 rounded-xl bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 px-3.5 py-2 text-xs font-bold transition-all shadow-2xs cursor-pointer disabled:opacity-40"
+              title="Opens your default email client with pre-filled subject and body"
+            >
+              <svg className="h-4 w-4 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+              <span>Open in Outlook</span>
+            </button>
+
+            {/* Send Dispatch (Demo Simulation) */}
+            <button
+              onClick={handleSimulateDispatch}
+              disabled={activeItems.length === 0 || isSending}
+              className="inline-flex items-center gap-1.5 rounded-xl bg-[#034EA2] hover:bg-blue-700 text-white px-4 py-2 text-xs font-bold transition-all shadow-xs cursor-pointer disabled:opacity-40"
+            >
+              {isSending ? (
+                <>
+                  <div className="h-3.5 w-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  <span>Dispatching Briefing...</span>
+                </>
+              ) : (
+                <>
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                  </svg>
+                  <span>Send Leadership Dispatch (Demo)</span>
+                </>
+              )}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

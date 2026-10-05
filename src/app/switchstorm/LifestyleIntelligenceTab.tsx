@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
+import ExecutiveEmailModal from "./ExecutiveEmailModal";
 import {
   STATIC_LIFESTYLE_WEEKLY_PACING,
   STATIC_LIFESTYLE_SUBSIDIARY_TARGETS,
@@ -83,6 +84,7 @@ export default function LifestyleIntelligenceTab({
   onSelectSubsidiary,
 }: LifestyleIntelligenceTabProps) {
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const [isEmailModalOpen, setIsEmailModalOpen] = useState<boolean>(false);
 
   const resolvedTiers =
     tierScorecard && tierScorecard.length > 0
@@ -162,9 +164,25 @@ export default function LifestyleIntelligenceTab({
             </p>
           </div>
 
-          <div className="flex items-center gap-2 text-xs font-semibold text-slate-600 bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200">
-            <span>Overall Delivery:</span>
-            <span className="font-extrabold text-emerald-700">{totalLive} / {totalPlan} Live ({totalRate})</span>
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setIsEmailModalOpen(true)}
+              className="inline-flex items-center gap-1.5 rounded-xl bg-[#034EA2] hover:bg-blue-700 text-white px-3 py-1.5 text-xs font-bold transition-all shadow-xs cursor-pointer shrink-0"
+              title="Open Executive Escalation Email Briefing for Senior Management"
+            >
+              <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <span>Email Executive Briefing</span>
+              <span className="rounded bg-amber-400 text-slate-950 font-black px-1.5 py-0.2 text-[10px]">
+                Escalations
+              </span>
+            </button>
+
+            <div className="flex items-center gap-2 text-xs font-semibold text-slate-600 bg-slate-100 px-3 py-1.5 rounded-lg border border-slate-200">
+              <span>Overall Delivery:</span>
+              <span className="font-extrabold text-emerald-700">{totalLive} / {totalPlan} Live ({totalRate})</span>
+            </div>
           </div>
         </div>
 
@@ -573,6 +591,13 @@ export default function LifestyleIntelligenceTab({
           </table>
         </div>
       </div>
+
+      {/* Executive Email Escalation Dispatch Modal */}
+      <ExecutiveEmailModal
+        isOpen={isEmailModalOpen}
+        onClose={() => setIsEmailModalOpen(false)}
+        streamFilter="Lifestyle Creators"
+      />
     </div>
   );
 }
