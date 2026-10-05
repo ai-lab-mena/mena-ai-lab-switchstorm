@@ -60,6 +60,14 @@ export default function ContentShowcaseTab({
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [visibleCount, setVisibleCount] = useState<number>(24);
   const [brokenImages, setBrokenImages] = useState<Record<string, boolean>>({});
+  const [collapsedSections, setCollapsedSections] = useState<Record<string, boolean>>({});
+
+  const toggleSection = (key: string) => {
+    setCollapsedSections((prev) => ({
+      ...prev,
+      [key]: !prev[key],
+    }));
+  };
 
   const handleImageError = (key: string) => {
     setBrokenImages((prev) => ({ ...prev, [key]: true }));
@@ -518,61 +526,124 @@ export default function ContentShowcaseTab({
       {/* 3. Content Display */}
       {viewMode === "top10" ? (
         <div className="space-y-8">
+          {/* Section 1: Top Content Across All Channels */}
           <div>
             <div className="flex items-center justify-between mb-3.5 pb-2 border-b border-slate-200">
-              <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
+              <button
+                onClick={() => toggleSection("overall")}
+                className="flex items-center gap-2 hover:opacity-85 transition-opacity cursor-pointer group text-left"
+                title={collapsedSections["overall"] ? "Click to expand" : "Click to collapse"}
+              >
                 <span className="flex h-5 w-5 items-center justify-center rounded bg-amber-100 text-amber-800 text-xs">
                   <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                   </svg>
                 </span>
-                <span>Top Content Across All Channels</span>
-              </h3>
+                <span className="text-base font-bold text-slate-900 group-hover:text-[#034EA2] transition-colors">
+                  Top Content Across All Channels
+                </span>
+                <span className="p-0.5 rounded text-slate-400 group-hover:text-[#034EA2] transition-colors">
+                  <svg
+                    className={`h-4 w-4 transform transition-transform duration-200 ${
+                      collapsedSections["overall"] ? "-rotate-90" : "rotate-0"
+                    }`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </span>
+              </button>
               <span className="text-xs text-[#034EA2] font-semibold">
                 Ranked by {activeSortLabel}
               </span>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-              {top10Overall.map((video, idx) => renderVideoCard(video, idx + 1, "ov"))}
-            </div>
+            {!collapsedSections["overall"] && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 animate-fadeIn">
+                {top10Overall.map((video, idx) => renderVideoCard(video, idx + 1, "ov"))}
+              </div>
+            )}
           </div>
 
+          {/* Section 2: Top Lifestyle Deliverables */}
           <div>
             <div className="flex items-center justify-between mb-3.5 pb-2 border-b border-slate-200">
-              <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
+              <button
+                onClick={() => toggleSection("lifestyle")}
+                className="flex items-center gap-2 hover:opacity-85 transition-opacity cursor-pointer group text-left"
+                title={collapsedSections["lifestyle"] ? "Click to expand" : "Click to collapse"}
+              >
                 <span className="flex h-5 w-5 items-center justify-center rounded bg-purple-100 text-purple-800 text-xs">
                   <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
                 </span>
-                <span>Top Lifestyle Deliverables (Team Galaxy, CC, Galaxy Circle)</span>
-              </h3>
+                <span className="text-base font-bold text-slate-900 group-hover:text-purple-700 transition-colors">
+                  Top Lifestyle Deliverables (Team Galaxy, CC, Galaxy Circle)
+                </span>
+                <span className="p-0.5 rounded text-slate-400 group-hover:text-purple-700 transition-colors">
+                  <svg
+                    className={`h-4 w-4 transform transition-transform duration-200 ${
+                      collapsedSections["lifestyle"] ? "-rotate-90" : "rotate-0"
+                    }`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </span>
+              </button>
               <span className="text-xs text-[#034EA2] font-semibold">
                 Ranked by {activeSortLabel}
               </span>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-              {top10Lifestyle.map((video, idx) => renderVideoCard(video, idx + 1, "ls"))}
-            </div>
+            {!collapsedSections["lifestyle"] && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 animate-fadeIn">
+                {top10Lifestyle.map((video, idx) => renderVideoCard(video, idx + 1, "ls"))}
+              </div>
+            )}
           </div>
 
+          {/* Section 3: Top Tech & Crossover Reviewers */}
           <div>
             <div className="flex items-center justify-between mb-3.5 pb-2 border-b border-slate-200">
-              <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
+              <button
+                onClick={() => toggleSection("tech")}
+                className="flex items-center gap-2 hover:opacity-85 transition-opacity cursor-pointer group text-left"
+                title={collapsedSections["tech"] ? "Click to expand" : "Click to collapse"}
+              >
                 <span className="flex h-5 w-5 items-center justify-center rounded bg-cyan-100 text-cyan-800 text-xs">
                   <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                   </svg>
                 </span>
-                <span>Top Tech & Crossover Reviewers</span>
-              </h3>
+                <span className="text-base font-bold text-slate-900 group-hover:text-cyan-800 transition-colors">
+                  Top Tech & Crossover Reviewers
+                </span>
+                <span className="p-0.5 rounded text-slate-400 group-hover:text-cyan-800 transition-colors">
+                  <svg
+                    className={`h-4 w-4 transform transition-transform duration-200 ${
+                      collapsedSections["tech"] ? "-rotate-90" : "rotate-0"
+                    }`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </span>
+              </button>
               <span className="text-xs text-[#034EA2] font-semibold">
                 Ranked by {activeSortLabel}
               </span>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-              {top10Techies.map((video, idx) => renderVideoCard(video, idx + 1, "tc"))}
-            </div>
+            {!collapsedSections["tech"] && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 animate-fadeIn">
+                {top10Techies.map((video, idx) => renderVideoCard(video, idx + 1, "tc"))}
+              </div>
+            )}
           </div>
         </div>
       ) : (
