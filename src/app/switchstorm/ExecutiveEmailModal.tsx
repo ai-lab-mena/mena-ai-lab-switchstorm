@@ -18,95 +18,125 @@ export interface ActionItemRecord {
   priority: "High" | "Critical" | "Medium";
 }
 
-export const DEFAULT_ACTION_ITEMS: ActionItemRecord[] = [
+export const SOURCED_ACTION_ITEMS: ActionItemRecord[] = [
   {
-    id: "act-setk-1",
+    id: "act-setk-tech",
     subsidiary: "SETK",
     market: "Turkey",
     stream: "Tech Reviewers",
     phaseOrWeek: "Phase 3 (Post 3)",
     status: "Action Required",
-    bottleneck: "9 WIP deliverables shifted to W40; Phase 3 delivery currently at 30.8% (4/13 live).",
-    actionItem: "Escalate to Istanbul agency lead to secure hard publishing cutoffs for all 9 remaining reviews by Oct 8.",
-    ownerName: "Emre Demir",
-    ownerRole: "SETK Brand & Marcom Lead",
-    ownerEmail: "e.demir@samsung.com",
-    ownerInitials: "ED",
+    bottleneck: "Agency Tracker Note: 'W40'. Phase 3 delivery at 30.8% (4 live of 13 planned, 9 WIP).",
+    actionItem: "Follow up on 9 WIP deliverables shifted to W40 in agency tracker.",
+    ownerName: "[PIC Name Placeholder]",
+    ownerRole: "[SETK Marketing PIC Placeholder]",
+    ownerEmail: "[setk.pic.placeholder@samsung.com]",
+    ownerInitials: "PIC",
     priority: "Critical",
   },
   {
-    id: "act-semag-1",
+    id: "act-semag-tech",
     subsidiary: "SEMAG",
-    market: "Maghreb (Morocco, DZ, TN)",
+    market: "Maghreb (Morocco, Algeria, Tunisia)",
     stream: "Tech Reviewers",
     phaseOrWeek: "Phase 3 (Post 3)",
     status: "Action Required",
-    bottleneck: "4 WIP deliverables shifted to W40; Phase 3 delivery currently at 50.0% (4/8 live).",
-    actionItem: "Require North Africa agency partner to submit live permalinks and verify remaining 4 influencer deliverables.",
-    ownerName: "Yasmine Benali",
-    ownerRole: "SEMAG Regional Marcom Lead",
-    ownerEmail: "y.benali@samsung.com",
-    ownerInitials: "YB",
+    bottleneck: "Agency Tracker Note: 'W40'. Phase 3 delivery at 50.0% (4 live of 8 planned, 4 WIP).",
+    actionItem: "Follow up on 4 WIP deliverables shifted to W40 in agency tracker.",
+    ownerName: "[PIC Name Placeholder]",
+    ownerRole: "[SEMAG Marketing PIC Placeholder]",
+    ownerEmail: "[semag.pic.placeholder@samsung.com]",
+    ownerInitials: "PIC",
     priority: "High",
   },
   {
-    id: "act-selv-1",
+    id: "act-selv-tech",
     subsidiary: "SELV",
     market: "Levant (Jordan, Lebanon, Iraq)",
     stream: "Tech Reviewers",
     phaseOrWeek: "Phase 2 & 3",
     status: "Action Required",
-    bottleneck: "6 WIP deliverables in Phase 3 (25% live) and 2 WIP in Phase 2; agency delivery ETA pending.",
-    actionItem: "Direct Levant operations head to enforce publishing schedule or initiate substitute creator activation.",
-    ownerName: "Karim Haddad",
-    ownerRole: "SELV Campaign Operations PIC",
-    ownerEmail: "k.haddad@samsung.com",
-    ownerInitials: "KH",
+    bottleneck: "Agency Tracker Note: 'Please confirm ETA'. Post 2: 6/8 live (2 WIP), Post 3: 2/8 live (6 WIP).",
+    actionItem: "Confirm delivery ETA with agency for 8 pending deliverables.",
+    ownerName: "[PIC Name Placeholder]",
+    ownerRole: "[SELV Operations PIC Placeholder]",
+    ownerEmail: "[selv.pic.placeholder@samsung.com]",
+    ownerInitials: "PIC",
     priority: "Critical",
   },
   {
-    id: "act-seil-1",
+    id: "act-seil-tech",
     subsidiary: "SEIL",
     market: "Israel",
     stream: "Tech Reviewers",
     phaseOrWeek: "Phase 1 - 3",
     status: "Delayed",
-    bottleneck: "Extended delivery hiatus due to regional holiday period (0/7 Phase 3 live, 6 WIP in Phase 2).",
-    actionItem: "Authorize expedited post-holiday flighting schedule starting Oct 12 with mandatory video pacing check-ins.",
-    ownerName: "Roni Levi",
-    ownerRole: "SEIL Digital & Campaign Lead",
-    ownerEmail: "r.levi@samsung.com",
-    ownerInitials: "RL",
+    bottleneck: "Agency Tracker Note: '*Delayed due to holiday period'. Post 1: 3/7, Post 2: 1/7, Post 3: 0/7 (7 WIP).",
+    actionItem: "Review and confirm revised post-holiday delivery timeline.",
+    ownerName: "[PIC Name Placeholder]",
+    ownerRole: "[SEIL Marketing PIC Placeholder]",
+    ownerEmail: "[seil.pic.placeholder@samsung.com]",
+    ownerInitials: "PIC",
     priority: "High",
   },
   {
-    id: "act-sesar-1",
+    id: "act-sge-tech",
+    subsidiary: "SGE",
+    market: "Gulf (UAE, QA, KW, OM, BH)",
+    stream: "Tech Reviewers",
+    phaseOrWeek: "Phase 3 (Post 3)",
+    status: "Under Review",
+    bottleneck: "Agency Tracker Note: 'W40'. Phase 3 delivery at 75.0% (9 live of 12 planned, 3 WIP).",
+    actionItem: "Follow up on 3 WIP deliverables shifted to W40 in agency tracker.",
+    ownerName: "[PIC Name Placeholder]",
+    ownerRole: "[SGE Marcom PIC Placeholder]",
+    ownerEmail: "[sge.pic.placeholder@samsung.com]",
+    ownerInitials: "PIC",
+    priority: "Medium",
+  },
+  {
+    id: "act-sesar-life",
     subsidiary: "SESAR",
     market: "Saudi Arabia",
     stream: "Lifestyle Creators",
-    phaseOrWeek: "Week 4 & 5 Flight",
+    phaseOrWeek: "Week 4 & 5",
     status: "Action Required",
-    bottleneck: "41 deliverables pending in Week 4 (5/46 live) plus 22 planned deliverables queued for Week 5.",
-    actionItem: "Coordinate with Riyadh agency hub to batch-approve creator drafts and accelerate publishing cadence.",
-    ownerName: "Saud Al-Otaibi",
-    ownerRole: "SESAR Marcom Director",
-    ownerEmail: "s.alotaibi@samsung.com",
-    ownerInitials: "SO",
+    bottleneck: "Tracker Pacing: 41 deliverables pending in Week 4 (5 live of 46 planned) + 22 queued in Week 5.",
+    actionItem: "Track upcoming Week 4 pending and Week 5 planned deliveries with local agency hub.",
+    ownerName: "[PIC Name Placeholder]",
+    ownerRole: "[SESAR Marcom PIC Placeholder]",
+    ownerEmail: "[sesar.pic.placeholder@samsung.com]",
+    ownerInitials: "PIC",
     priority: "High",
   },
   {
-    id: "act-sepak-1",
+    id: "act-sepak-life",
     subsidiary: "SEPAK",
     market: "Pakistan",
     stream: "Lifestyle Creators",
-    phaseOrWeek: "Week 4 Flight",
+    phaseOrWeek: "Week 4 & 5",
     status: "Action Required",
-    bottleneck: "10 deliverables pending in Week 4 (22/32 live); high-view market with 75M+ aggregate campaign exposure.",
-    actionItem: "Follow up with talent managers to secure live delivery links for remaining 10 creator videos before W4 close.",
-    ownerName: "Hamza Malik",
-    ownerRole: "SEPAK Marcom PIC",
-    ownerEmail: "h.malik@samsung.com",
-    ownerInitials: "HM",
+    bottleneck: "Tracker Pacing: 10 deliverables pending in Week 4 (22 live of 32 planned) + 32 queued in Week 5.",
+    actionItem: "Track upcoming Week 4 pending and Week 5 planned deliveries with local agency hub.",
+    ownerName: "[PIC Name Placeholder]",
+    ownerRole: "[SEPAK Marcom PIC Placeholder]",
+    ownerEmail: "[sepak.pic.placeholder@samsung.com]",
+    ownerInitials: "PIC",
+    priority: "Medium",
+  },
+  {
+    id: "act-sge-life",
+    subsidiary: "SGE",
+    market: "Gulf (UAE, QA, KW, OM, BH)",
+    stream: "Lifestyle Creators",
+    phaseOrWeek: "Week 4 & 5",
+    status: "Action Required",
+    bottleneck: "Tracker Pacing: 7 deliverables pending in Week 4 (6 live of 13 planned) + 13 queued in Week 5.",
+    actionItem: "Track upcoming Week 4 pending and Week 5 planned deliveries with local agency hub.",
+    ownerName: "[PIC Name Placeholder]",
+    ownerRole: "[SGE Marcom PIC Placeholder]",
+    ownerEmail: "[sge.pic.placeholder@samsung.com]",
+    ownerInitials: "PIC",
     priority: "Medium",
   },
 ];
@@ -123,7 +153,7 @@ export default function ExecutiveEmailModal({
   streamFilter = "All",
 }: ExecutiveEmailModalProps) {
   const [selectedItems, setSelectedItems] = useState<string[]>(
-    DEFAULT_ACTION_ITEMS.map((item) => item.id)
+    SOURCED_ACTION_ITEMS.map((item) => item.id)
   );
   const [copied, setCopied] = useState<boolean>(false);
   const [isSending, setIsSending] = useState<boolean>(false);
@@ -131,7 +161,7 @@ export default function ExecutiveEmailModal({
 
   if (!isOpen) return null;
 
-  const filteredItems = DEFAULT_ACTION_ITEMS.filter((item) => {
+  const filteredItems = SOURCED_ACTION_ITEMS.filter((item) => {
     if (streamFilter === "All") return true;
     return item.stream === streamFilter;
   });
@@ -152,28 +182,29 @@ export default function ExecutiveEmailModal({
 
   const activeItems = filteredItems.filter((i) => selectedItems.includes(i.id));
 
-  // Generate plain text for mailto
+  // Generate plain text for email body
   const generatePlainText = () => {
     let text = `SAMSUNG ELECTRONICS MENA - CAMPAIGN ESCALATION BRIEFING\n`;
-    text += `Target: SwitchStorm Integrated Campaign Delivery\n`;
+    text += `Target: SwitchStorm Integrated Campaign Deliverables\n`;
     text += `Date: ${new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}\n\n`;
-    text += `EXECUTIVE ACTION ITEMS REQUIRING LEADERSHIP INTERVENTION:\n`;
+    text += `EXECUTIVE DELIVERABLES REQUIRING LEADERSHIP FOLLOW-UP:\n`;
     text += `------------------------------------------------------------\n\n`;
 
     activeItems.forEach((item, idx) => {
       text += `${idx + 1}. [${item.priority.toUpperCase()}] ${item.subsidiary} (${item.market}) - ${item.stream}\n`;
       text += `   Flight: ${item.phaseOrWeek}\n`;
-      text += `   Bottleneck: ${item.bottleneck}\n`;
-      text += `   Action Item: ${item.actionItem}\n`;
+      text += `   Tracker Sourced Note: ${item.bottleneck}\n`;
+      text += `   Recommended Action: ${item.actionItem}\n`;
       text += `   Owner PIC: ${item.ownerName} (${item.ownerRole}) <${item.ownerEmail}>\n\n`;
     });
 
     text += `------------------------------------------------------------\n`;
-    text += `Generated automatically from Marketing Intelligence Hub (AI MENA Lab).\n`;
+    text += `Data Sourced Directly from Master Tracker (TragetvsActual_Techies.xlsx & TargetvsActual_Lifestyle_updated.xlsx).\n`;
+    text += `Generated automatically via Samsung Marketing Intelligence Platform (Marketing AI Lab).\n`;
     return text;
   };
 
-  // Generate HTML for clipboard rich-text paste into Outlook
+  // Generate HTML for clipboard rich-text paste into Knox Webmail / Outlook
   const generateHTMLTable = () => {
     let rowsHtml = activeItems
       .map(
@@ -213,15 +244,15 @@ export default function ExecutiveEmailModal({
     return `
       <div style="font-family: Arial, sans-serif; font-size: 12px; color: #0F172A;">
         <h3 style="color: #034EA2; margin-bottom: 4px; font-size: 16px;">Samsung Electronics MENA | Executive Campaign Action Briefing</h3>
-        <p style="color: #64748B; font-size: 12px; margin-top: 0; margin-bottom: 12px;">The following deliverables require senior leadership coordination and agency escalation to ensure target completion.</p>
+        <p style="color: #64748B; font-size: 12px; margin-top: 0; margin-bottom: 12px;">Sourced directly from campaign tracking spreadsheets. Prepared for Samsung MENA Leadership & Subsidiary PICs.</p>
         <table style="width: 100%; border-collapse: collapse; border: 1px solid #CBD5E1; text-align: left;">
           <thead>
             <tr style="background-color: #034EA2; color: #FFFFFF;">
               <th style="padding: 10px; font-size: 11px; text-transform: uppercase;">Subsidiary</th>
               <th style="padding: 10px; font-size: 11px; text-transform: uppercase;">Stream</th>
               <th style="padding: 10px; font-size: 11px; text-transform: uppercase;">Priority</th>
-              <th style="padding: 10px; font-size: 11px; text-transform: uppercase;">Operational Bottleneck</th>
-              <th style="padding: 10px; font-size: 11px; text-transform: uppercase;">Required Action Item</th>
+              <th style="padding: 10px; font-size: 11px; text-transform: uppercase;">Tracker Sourced Note</th>
+              <th style="padding: 10px; font-size: 11px; text-transform: uppercase;">Recommended Action</th>
               <th style="padding: 10px; font-size: 11px; text-transform: uppercase;">Owner PIC</th>
             </tr>
           </thead>
@@ -229,12 +260,12 @@ export default function ExecutiveEmailModal({
             ${rowsHtml}
           </tbody>
         </table>
-        <p style="color: #94A3B8; font-size: 10px; margin-top: 10px;">Generated automatically via Samsung Marketing Intelligence Platform (AI MENA Lab).</p>
+        <p style="color: #94A3B8; font-size: 10px; margin-top: 10px;">Generated automatically via Samsung Marketing Intelligence Hub (AI MENA Lab).</p>
       </div>
     `;
   };
 
-  const handleCopyToClipboard = async () => {
+  const copyTableToClipboard = async () => {
     try {
       const htmlText = generateHTMLTable();
       const plainText = generatePlainText();
@@ -254,19 +285,30 @@ export default function ExecutiveEmailModal({
 
       setCopied(true);
       setTimeout(() => setCopied(false), 3000);
+      return true;
     } catch {
       await navigator.clipboard.writeText(generatePlainText());
       setCopied(true);
       setTimeout(() => setCopied(false), 3000);
+      return true;
     }
   };
 
-  const handleOpenOutlook = () => {
+  // Open in Knox: Copies rich table and launches Knox mailto protocol / webmail
+  const handleOpenInKnox = async () => {
+    await copyTableToClipboard();
     const subject = encodeURIComponent(
       "[ACTION REQUIRED] Samsung MENA SwitchStorm - Campaign Deliverable Escalation Briefing"
     );
     const body = encodeURIComponent(generatePlainText());
-    window.location.href = `mailto:mena.marketing.leadership@samsung.com?subject=${subject}&body=${body}`;
+
+    // Launch default Knox mail client / mailto protocol handler
+    window.location.href = `mailto:[leadership.recipient.placeholder@samsung.com]?subject=${subject}&body=${body}`;
+
+    setDispatchStatus(
+      "✓ Formatted executive table copied to clipboard! Ready to paste (Ctrl+V) into your Knox Mail message."
+    );
+    setTimeout(() => setDispatchStatus(null), 8000);
   };
 
   const handleSimulateDispatch = () => {
@@ -275,13 +317,13 @@ export default function ExecutiveEmailModal({
     setTimeout(() => {
       setIsSending(false);
       setDispatchStatus(
-        `Executive briefing dispatched successfully to ${activeItems.length} Leadership PICs at ${new Date().toLocaleTimeString(
+        `✓ Executive briefing prepared for ${activeItems.length} Sourced Action Items at ${new Date().toLocaleTimeString(
           [],
           { hour: "2-digit", minute: "2-digit" }
-        )}`
+        )} (Samsung Knox Portal format).`
       );
-      setTimeout(() => setDispatchStatus(null), 6000);
-    }, 1200);
+      setTimeout(() => setDispatchStatus(null), 7000);
+    }, 1000);
   };
 
   return (
@@ -299,11 +341,11 @@ export default function ExecutiveEmailModal({
               <h3 className="text-base font-bold text-white flex items-center gap-2">
                 <span>Executive Campaign Action Briefing</span>
                 <span className="rounded bg-amber-400 text-slate-950 text-[10px] font-black px-2 py-0.5 uppercase tracking-wider">
-                  Management Dispatch
+                  Knox Ready
                 </span>
               </h3>
               <p className="text-xs text-blue-100">
-                Automated escalation table prepared for Samsung MENA Higher Leadership & Regional PICs
+                Sourced directly from campaign tracking spreadsheets for Samsung MENA Leadership & Regional PICs
               </p>
             </div>
           </div>
@@ -325,13 +367,13 @@ export default function ExecutiveEmailModal({
             <div>
               <span className="font-bold text-slate-900">TO: </span>
               <span className="font-mono text-slate-700 bg-white px-2 py-0.5 rounded border border-slate-200">
-                mena.marketing.leadership@samsung.com
+                [leadership.email.placeholder@samsung.com]
               </span>
             </div>
             <div>
               <span className="font-bold text-slate-900">CC: </span>
               <span className="font-mono text-slate-700 bg-white px-2 py-0.5 rounded border border-slate-200">
-                regional.pic.steering@samsung.com
+                [steering.committee.placeholder@samsung.com]
               </span>
             </div>
           </div>
@@ -363,7 +405,7 @@ export default function ExecutiveEmailModal({
               </svg>
               <span>{dispatchStatus}</span>
             </div>
-            <span className="text-[10px] text-emerald-600 font-mono">Knox Relay Verified</span>
+            <span className="text-[10px] text-emerald-600 font-mono">Knox Desktop Mail</span>
           </div>
         )}
 
@@ -389,8 +431,8 @@ export default function ExecutiveEmailModal({
                   <th className="px-3 py-3 font-bold">Subsidiary</th>
                   <th className="px-3 py-3 font-bold">Campaign Stream</th>
                   <th className="px-2 py-3 text-center font-bold">Priority</th>
-                  <th className="px-3 py-3 font-bold">Operational Bottleneck</th>
-                  <th className="px-3 py-3 font-bold">Recommended Action Item</th>
+                  <th className="px-3 py-3 font-bold">Tracker Sourced Note</th>
+                  <th className="px-3 py-3 font-bold">Recommended Action</th>
                   <th className="px-3 py-3 font-bold">Owner PIC</th>
                 </tr>
               </thead>
@@ -456,7 +498,7 @@ export default function ExecutiveEmailModal({
                         </span>
                       </td>
 
-                      {/* Bottleneck */}
+                      {/* Bottleneck (Sourced Note) */}
                       <td className="px-3 py-3.5 max-w-[240px]">
                         <p className="text-xs text-slate-700 leading-snug">
                           {item.bottleneck}
@@ -470,14 +512,14 @@ export default function ExecutiveEmailModal({
                         </p>
                       </td>
 
-                      {/* Owner PIC with Professional Avatar Placeholder */}
+                      {/* Owner PIC Placeholder */}
                       <td className="px-3 py-3.5 whitespace-nowrap">
                         <div className="flex items-center gap-2.5">
-                          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-900 text-white font-extrabold text-xs shadow-xs border border-white shrink-0">
-                            {item.ownerInitials}
+                          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-200 text-slate-700 font-extrabold text-[10px] shadow-xs border border-slate-300 shrink-0">
+                            PIC
                           </div>
                           <div className="flex flex-col">
-                            <span className="font-bold text-slate-900 text-xs leading-none">
+                            <span className="font-bold text-slate-700 text-xs leading-none">
                               {item.ownerName}
                             </span>
                             <span className="text-[10px] text-slate-400 mt-0.5 leading-none">
@@ -505,49 +547,49 @@ export default function ExecutiveEmailModal({
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
-            {/* Copy Outlook Formatted Table Button */}
+            {/* Copy Knox Formatted Table Button */}
             <button
-              onClick={handleCopyToClipboard}
+              onClick={copyTableToClipboard}
               disabled={activeItems.length === 0}
               className="inline-flex items-center gap-1.5 rounded-xl bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 px-3.5 py-2 text-xs font-bold transition-all shadow-2xs cursor-pointer disabled:opacity-40"
-              title="Copies rich HTML table ready to paste directly into Microsoft Outlook or Knox Mail"
+              title="Copies rich HTML table ready to paste directly into Samsung Knox Webmail"
             >
               <svg className="h-4 w-4 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
               </svg>
-              <span>{copied ? "✓ Copied for Outlook!" : "Copy Formatted Table"}</span>
+              <span>{copied ? "✓ Copied for Knox!" : "Copy Table for Knox"}</span>
             </button>
 
-            {/* Open Mail Client Button */}
+            {/* Open in Knox Button */}
             <button
-              onClick={handleOpenOutlook}
+              onClick={handleOpenInKnox}
               disabled={activeItems.length === 0}
-              className="inline-flex items-center gap-1.5 rounded-xl bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 px-3.5 py-2 text-xs font-bold transition-all shadow-2xs cursor-pointer disabled:opacity-40"
-              title="Opens your default email client with pre-filled subject and body"
+              className="inline-flex items-center gap-1.5 rounded-xl bg-[#034EA2] hover:bg-blue-700 text-white px-4 py-2 text-xs font-bold transition-all shadow-xs cursor-pointer disabled:opacity-40"
+              title="Copies formatted table and opens Samsung Knox Mail client"
             >
-              <svg className="h-4 w-4 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              <svg className="h-4 w-4 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              <span>Open in Outlook</span>
+              <span>Open in Knox Mail</span>
             </button>
 
-            {/* Send Dispatch (Demo Simulation) */}
+            {/* Knox Dispatch Simulation */}
             <button
               onClick={handleSimulateDispatch}
               disabled={activeItems.length === 0 || isSending}
-              className="inline-flex items-center gap-1.5 rounded-xl bg-[#034EA2] hover:bg-blue-700 text-white px-4 py-2 text-xs font-bold transition-all shadow-xs cursor-pointer disabled:opacity-40"
+              className="inline-flex items-center gap-1.5 rounded-xl bg-slate-800 hover:bg-slate-900 text-slate-200 px-3.5 py-2 text-xs font-bold transition-all shadow-2xs cursor-pointer disabled:opacity-40"
             >
               {isSending ? (
                 <>
                   <div className="h-3.5 w-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  <span>Dispatching Briefing...</span>
+                  <span>Preparing Knox Dispatch...</span>
                 </>
               ) : (
                 <>
-                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="h-4 w-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                   </svg>
-                  <span>Send Leadership Dispatch (Demo)</span>
+                  <span>Knox Relay Dispatch (Demo)</span>
                 </>
               )}
             </button>

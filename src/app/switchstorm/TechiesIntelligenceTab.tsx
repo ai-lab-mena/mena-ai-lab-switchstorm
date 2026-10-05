@@ -266,7 +266,44 @@ export default function TechiesIntelligenceTab({
         </div>
       </div>
 
-      {/* 2. TARGET VS ACTUAL DELIVERABLES TABLE (FROM TragetvsActual_Techies.xlsx) */}
+      {/* 2. EXECUTIVE ESCALATION COMMAND BAR */}
+      <div className="rounded-2xl bg-gradient-to-r from-slate-900 via-[#034EA2]/95 to-slate-900 p-4 sm:p-5 text-white shadow-md border border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="flex items-center gap-3.5">
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-cyan-300 border border-white/15 shadow-inner shrink-0">
+            <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="font-extrabold text-sm sm:text-base text-white tracking-tight">
+                Executive Action Dispatch Center
+              </span>
+              <span className="rounded bg-cyan-400/20 text-cyan-300 border border-cyan-400/30 text-[9px] font-black px-2 py-0.5 uppercase tracking-wider">
+                Samsung Knox Mail
+              </span>
+            </div>
+            <p className="text-xs text-slate-300 mt-0.5">
+              Automated escalation brief summarizing delayed and WIP deliverables across SETK, SEMAG, SELV, and SEIL for leadership review.
+            </p>
+          </div>
+        </div>
+
+        <button
+          onClick={() => setIsEmailModalOpen(true)}
+          className="inline-flex items-center justify-center gap-2 rounded-xl bg-white hover:bg-slate-100 text-slate-900 px-4 py-2.5 text-xs font-extrabold transition-all shadow-md hover:shadow-lg cursor-pointer shrink-0 border border-white/20 active:scale-98 group"
+        >
+          <svg className="h-4 w-4 text-[#034EA2]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <span>Open Knox Mail Briefing</span>
+          <span className="rounded-md bg-amber-400 text-slate-950 font-black px-1.5 py-0.5 text-[10px]">
+            4 Escalations
+          </span>
+        </button>
+      </div>
+
+      {/* 3. TARGET VS ACTUAL DELIVERABLES TABLE (FROM TragetvsActual_Techies.xlsx) */}
       <div className="rounded-2xl bg-white border border-slate-200 shadow-sm overflow-hidden">
         <div className="p-4 sm:p-5 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-50/50">
           <div>
@@ -283,30 +320,14 @@ export default function TechiesIntelligenceTab({
             </p>
           </div>
 
-          <div className="flex items-center gap-2">
+          {selectedSubsidiary !== "All" && (
             <button
-              onClick={() => setIsEmailModalOpen(true)}
-              className="inline-flex items-center gap-1.5 rounded-xl bg-[#034EA2] hover:bg-blue-700 text-white px-3 py-1.5 text-xs font-bold transition-all shadow-xs cursor-pointer shrink-0"
-              title="Open Executive Escalation Email Briefing for Senior Management"
+              onClick={() => onSelectSubsidiary("All")}
+              className="text-xs text-[#034EA2] hover:underline font-semibold cursor-pointer"
             >
-              <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              <span>Email Executive Briefing</span>
-              <span className="rounded bg-amber-400 text-slate-950 font-black px-1.5 py-0.2 text-[10px]">
-                Escalations
-              </span>
+              Clear Territory Filter ({selectedSubsidiary})
             </button>
-
-            {selectedSubsidiary !== "All" && (
-              <button
-                onClick={() => onSelectSubsidiary("All")}
-                className="text-xs text-[#034EA2] hover:underline font-semibold"
-              >
-                Clear Territory Filter ({selectedSubsidiary})
-              </button>
-            )}
-          </div>
+          )}
         </div>
 
         <div className="overflow-x-auto">
