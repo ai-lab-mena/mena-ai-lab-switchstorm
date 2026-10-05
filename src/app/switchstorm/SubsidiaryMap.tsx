@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { REAL_MENA_PINS, REAL_WORLD_COUNTRIES, PinInfo } from "./menaGeoData";
 
 interface SubsidiaryMapProps {
@@ -29,6 +29,15 @@ export default function SubsidiaryMap({
     if (val >= 1_000) return `${(val / 1_000).toFixed(0)}K`;
     return val.toString();
   };
+
+  // Sort subsidiaries dynamically from most viewed to least viewed
+  const sortedSubsidiaries = useMemo(() => {
+    return Object.entries(REAL_MENA_PINS).sort(([codeA], [codeB]) => {
+      const viewsA = subsidiaryStats[codeA]?.views || 0;
+      const viewsB = subsidiaryStats[codeB]?.views || 0;
+      return viewsB - viewsA;
+    });
+  }, [subsidiaryStats]);
 
   const activeInfo: PinInfo | null =
     selectedSubsidiary !== "All" ? REAL_MENA_PINS[selectedSubsidiary] || null : null;
@@ -350,8 +359,8 @@ export default function SubsidiaryMap({
           <span className="text-[10px] opacity-80">({formatViews(totalViews)})</span>
         </button>
 
-        {/* Individual Subsidiary Tags */}
-        {Object.entries(REAL_MENA_PINS).map(([code, pin]) => {
+        {/* Individual Subsidiary Tags Ranked by Most Views to Least */}
+        {sortedSubsidiaries.map(([code, pin]) => {
           const isSelected = selectedSubsidiary === code;
           const stats = subsidiaryStats[code];
           const viewText = stats ? formatViews(stats.views) : "0";
@@ -360,7 +369,7 @@ export default function SubsidiaryMap({
             <button
               key={code}
               onClick={() => onSelectSubsidiary(isSelected ? "All" : code)}
-              className={`flex items-center gap-1.5 rounded-lg px-2.5 sm:px-3 py-1.5 text-xs font-semibold transition-all ${
+              className={`flex items-center gap-1.5 rounded-lg px-2.5 sm:px-3 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
                 isSelected
                   ? "bg-amber-400 text-slate-950 font-extrabold shadow-md ring-2 ring-amber-300"
                   : "bg-slate-800/80 text-slate-300 hover:bg-slate-700 hover:text-white border border-slate-700/80"
@@ -369,8 +378,8 @@ export default function SubsidiaryMap({
               <span>{pin.flag}</span>
               <span>{code}</span>
               <span
-                className={`text-[10px] ${
-                  isSelected ? "text-slate-900 font-bold" : "text-amber-400/90"
+                className={`text-[10px] tabular-nums ${
+                  isSelected ? "text-slate-900 font-bold" : "text-amber-400/90 font-mono"
                 }`}
               >
                 {viewText}
