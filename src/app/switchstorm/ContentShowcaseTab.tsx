@@ -30,6 +30,15 @@ export interface RankedVideo {
 
 export type SortMetric = "views" | "engagements" | "likes" | "comments" | "shares" | "saves";
 
+const WEEK_OPTIONS = [
+  { id: "All", label: "All Weeks (Campaign Duration)" },
+  { id: "Week 1", label: "Week 1 • Sep 7 – Sep 13", start: "2026-09-07", end: "2026-09-13" },
+  { id: "Week 2", label: "Week 2 • Sep 14 – Sep 20", start: "2026-09-14", end: "2026-09-20" },
+  { id: "Week 3", label: "Week 3 • Sep 21 – Sep 27", start: "2026-09-21", end: "2026-09-27" },
+  { id: "Week 4", label: "Week 4 • Sep 28 – Oct 4", start: "2026-09-28", end: "2026-10-04" },
+  { id: "Week 5", label: "Week 5 • Oct 5 – Oct 11", start: "2026-10-05", end: "2026-10-11" },
+];
+
 const SORT_OPTIONS: { id: SortMetric; label: string; shortLabel: string; description: string }[] = [
   { id: "views", label: "Most Video Views", shortLabel: "Views", description: "Highest unified video plays across all platforms" },
   { id: "engagements", label: "Most Engaging", shortLabel: "Engagements", description: "Highest total engagements (Likes + Comments + Shares + Saves)" },
@@ -53,6 +62,7 @@ export default function ContentShowcaseTab({
   onSelectSubsidiary,
 }: ContentShowcaseTabProps) {
   const [selectedPhase, setSelectedPhase] = useState<string>("Overall");
+  const [selectedWeek, setSelectedWeek] = useState<string>("All");
   const [selectedCategory, setSelectedCategory] = useState<string>("Overall");
   const [selectedPlatform, setSelectedPlatform] = useState<string>("All");
   const [viewMode, setViewMode] = useState<"top10" | "all">("top10");
@@ -112,7 +122,15 @@ export default function ContentShowcaseTab({
         const matchSubsidiary =
           selectedSubsidiary === "All" ||
           (v.Subsidiary && v.Subsidiary.toUpperCase() === selectedSubsidiary.toUpperCase());
-        return matchPhase && matchCat && matchPlatform && matchSubsidiary;
+        const matchWeek = (() => {
+          if (selectedWeek === "All") return true;
+          const postDate = v["Post Date"];
+          if (!postDate) return false;
+          const opt = WEEK_OPTIONS.find((w) => w.id === selectedWeek);
+          if (!opt || !opt.start || !opt.end) return true;
+          return postDate >= opt.start && postDate <= opt.end;
+        })();
+        return matchPhase && matchWeek && matchCat && matchPlatform && matchSubsidiary;
       })
       .sort((a, b) => getMetricValue(b, sortBy) - getMetricValue(a, sortBy))
       .slice(0, 10);
@@ -120,15 +138,15 @@ export default function ContentShowcaseTab({
 
   const top10Overall = useMemo(
     () => getTop10ForCategory("Overall"),
-    [allRankedVideos, selectedPhase, selectedPlatform, selectedSubsidiary, sortBy]
+    [allRankedVideos, selectedPhase, selectedWeek, selectedPlatform, selectedSubsidiary, sortBy]
   );
   const top10Lifestyle = useMemo(
     () => getTop10ForCategory("Lifestyle"),
-    [allRankedVideos, selectedPhase, selectedPlatform, selectedSubsidiary, sortBy]
+    [allRankedVideos, selectedPhase, selectedWeek, selectedPlatform, selectedSubsidiary, sortBy]
   );
   const top10Techies = useMemo(
     () => getTop10ForCategory("Tech / Crossover"),
-    [allRankedVideos, selectedPhase, selectedPlatform, selectedSubsidiary, sortBy]
+    [allRankedVideos, selectedPhase, selectedWeek, selectedPlatform, selectedSubsidiary, sortBy]
   );
 
   // Filtered All Ranked Videos sorted by active metric
@@ -144,6 +162,14 @@ export default function ContentShowcaseTab({
         const matchSubsidiary =
           selectedSubsidiary === "All" ||
           (v.Subsidiary && v.Subsidiary.toUpperCase() === selectedSubsidiary.toUpperCase());
+        const matchWeek = (() => {
+          if (selectedWeek === "All") return true;
+          const postDate = v["Post Date"];
+          if (!postDate) return false;
+          const opt = WEEK_OPTIONS.find((w) => w.id === selectedWeek);
+          if (!opt || !opt.start || !opt.end) return true;
+          return postDate >= opt.start && postDate <= opt.end;
+        })();
 
         const q = searchQuery.toLowerCase().trim();
         const matchQuery =
@@ -153,10 +179,10 @@ export default function ContentShowcaseTab({
           (v.Subsidiary && v.Subsidiary.toLowerCase().includes(q)) ||
           (v["Post Title"] && v["Post Title"].toLowerCase().includes(q));
 
-        return matchPhase && matchCat && matchPlatform && matchSubsidiary && matchQuery;
+        return matchPhase && matchWeek && matchCat && matchPlatform && matchSubsidiary && matchQuery;
       })
       .sort((a, b) => getMetricValue(b, sortBy) - getMetricValue(a, sortBy));
-  }, [allRankedVideos, selectedPhase, selectedCategory, selectedPlatform, selectedSubsidiary, searchQuery, sortBy]);
+  }, [allRankedVideos, selectedPhase, selectedWeek, selectedCategory, selectedPlatform, selectedSubsidiary, searchQuery, sortBy]);
 
   const activeSortLabel = SORT_OPTIONS.find((s) => s.id === sortBy)?.label || "Most Video Views";
 
@@ -494,6 +520,31 @@ export default function ContentShowcaseTab({
             <option value="SEMAG">SEMAG • Maghreb</option>
             <option value="SEIL">SEIL • Israel</option>
           </select>
+
+          {/* Week Filter Selector (Week 1 to Week 5) */}
+          <select
+            value={selectedWeek}
+            onChange={(e) => setSelectedWeek(e.target.value)}
+            className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 font-semibold focus:outline-hidden focus:border-blue-500 shadow-2xs"
+          >
+            {WEEK_OPTIONS.map((w) => (
+              <option key={w.id} value={w.id}>
+                {w.label}
+              </option>
+            ))}
+          </select>
+
+          {/* Active Week Reset Chip */}
+          {selectedWeek !== "All" && (
+            <button
+              onClick={() => setSelectedWeek("All")}
+              className="inline-flex items-center gap-1.5 text-xs text-purple-700 hover:text-white hover:bg-purple-700 bg-purple-50 px-2.5 py-1.5 rounded-lg border border-purple-200 font-bold transition-all cursor-pointer shadow-2xs"
+              title="Reset to All Weeks"
+            >
+              <span>{selectedWeek}</span>
+              <span className="text-[10px] font-black">✕</span>
+            </button>
+          )}
 
           {/* Active Subsidiary Reset Chip */}
           {selectedSubsidiary !== "All" && (
