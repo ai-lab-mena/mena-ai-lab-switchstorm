@@ -39,6 +39,7 @@ interface CampaignData {
   campaign_kpis_by_group: GroupKPI[];
   top_performing_videos: RankedVideo[];
   all_ranked_videos?: RankedVideo[];
+  subsidiary_stats?: Record<string, { views: number; posts: number; influencers: number; name: string }>;
 }
 
 export default function SwitchStormExecutiveHub() {
@@ -86,8 +87,12 @@ export default function SwitchStormExecutiveHub() {
     return num.toLocaleString();
   };
 
-  // Subsidiary statistics for the map
+  // Subsidiary statistics for the map (directly from verified data model across ALL 1,605 posts)
   const subsidiaryStats = useMemo(() => {
+    if (data?.subsidiary_stats && Object.keys(data.subsidiary_stats).length > 0) {
+      return data.subsidiary_stats;
+    }
+
     const list = data?.all_ranked_videos || [];
     const stats: Record<
       string,
@@ -229,8 +234,8 @@ export default function SwitchStormExecutiveHub() {
           selectedSubsidiary={selectedSubsidiary}
           onSelectSubsidiary={setSelectedSubsidiary}
           subsidiaryStats={subsidiaryStats}
-          totalViews={overallKPI ? overallKPI["Total Views"] : 201800000}
-          totalPosts={overallKPI ? overallKPI["Total Posts"] : 1340}
+          totalViews={overallKPI ? overallKPI["Total Views"] : 236730380}
+          totalPosts={overallKPI ? overallKPI["Total Posts"] : 1605}
         />
       </div>
 
