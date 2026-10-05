@@ -250,7 +250,18 @@ export default function LifestyleIntelligenceTab({
                 }`}
               >
                 <div className="flex items-center justify-between mb-2">
-                  <span className="font-bold text-slate-900 text-xs">{w.Week}</span>
+                  <div className="flex flex-col">
+                    <span className="font-bold text-slate-900 text-xs">{w.Week}</span>
+                    <span className="text-[10px] text-slate-400 font-medium">
+                      {w.Week.includes("1")
+                        ? "Sep 7 – Sep 13"
+                        : w.Week.includes("2")
+                        ? "Sep 14 – Sep 20"
+                        : w.Week.includes("3")
+                        ? "Sep 21 – Sep 27"
+                        : "Sep 28 – Oct 4"}
+                    </span>
+                  </div>
                   <span
                     className={`text-[10px] font-extrabold px-2 py-0.5 rounded-full ${
                       parseFloat(w.Completion_Rate) >= 90
@@ -420,9 +431,18 @@ export default function LifestyleIntelligenceTab({
                 <th className="px-2 py-3 text-center font-semibold">Sub</th>
                 <th className="px-3 py-3 text-center font-semibold">Deliverables</th>
                 <th className="px-3 py-3 text-right font-semibold">Total Views</th>
-                <th className="px-3 py-3 text-center font-semibold">Phase 1 Post</th>
-                <th className="px-3 py-3 text-center font-semibold">Phase 2 Post</th>
-                <th className="px-3 py-3 text-center font-semibold">Phase 3 Post</th>
+                <th className="px-3 py-2.5 text-center font-semibold">
+                  <div>Phase 1 Post</div>
+                  <div className="text-[9px] font-normal text-blue-100 opacity-90 mt-0.5 normal-case">Sep 7 – Sep 10</div>
+                </th>
+                <th className="px-3 py-2.5 text-center font-semibold">
+                  <div>Phase 2 Post</div>
+                  <div className="text-[9px] font-normal text-blue-100 opacity-90 mt-0.5 normal-case">Sep 11 – Sep 20</div>
+                </th>
+                <th className="px-3 py-2.5 text-center font-semibold">
+                  <div>Phase 3 Post</div>
+                  <div className="text-[9px] font-normal text-blue-100 opacity-90 mt-0.5 normal-case">Sep 21 – Sep 28</div>
+                </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">

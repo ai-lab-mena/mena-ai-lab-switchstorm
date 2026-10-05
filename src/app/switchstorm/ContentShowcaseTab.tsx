@@ -453,9 +453,9 @@ export default function ContentShowcaseTab({
             className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 font-semibold focus:outline-hidden focus:border-blue-500 shadow-2xs"
           >
             <option value="Overall">All Campaign Flights</option>
-            <option value="Phase 1">Phase 1</option>
-            <option value="Phase 2">Phase 2</option>
-            <option value="Phase 3">Phase 3</option>
+            <option value="Phase 1">Phase 1 • Sep 7 – Sep 10</option>
+            <option value="Phase 2">Phase 2 • Sep 11 – Sep 20</option>
+            <option value="Phase 3">Phase 3 • Sep 21 – Sep 28</option>
           </select>
 
           {/* Platform Selector */}

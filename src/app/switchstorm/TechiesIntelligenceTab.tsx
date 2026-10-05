@@ -262,9 +262,18 @@ export default function TechiesIntelligenceTab({
               <tr>
                 <th className="px-3 sm:px-4 py-3 font-semibold">Subsidiary / Market</th>
                 <th className="px-3 py-3 text-center font-semibold">Planned Profiles</th>
-                <th className="px-3 py-3 text-center font-semibold">Post #1 Status</th>
-                <th className="px-3 py-3 text-center font-semibold">Post #2 Status</th>
-                <th className="px-3 py-3 text-center font-semibold">Post #3 Status</th>
+                <th className="px-3 py-2.5 text-center font-semibold">
+                  <div>Post #1 Status</div>
+                  <div className="text-[9px] font-normal text-blue-100 opacity-90 mt-0.5 normal-case">Sep 7 – Sep 10</div>
+                </th>
+                <th className="px-3 py-2.5 text-center font-semibold">
+                  <div>Post #2 Status</div>
+                  <div className="text-[9px] font-normal text-blue-100 opacity-90 mt-0.5 normal-case">Sep 11 – Sep 20</div>
+                </th>
+                <th className="px-3 py-2.5 text-center font-semibold">
+                  <div>Post #3 Status</div>
+                  <div className="text-[9px] font-normal text-blue-100 opacity-90 mt-0.5 normal-case">Sep 21 – Sep 28</div>
+                </th>
                 <th className="px-3 py-3 text-center font-semibold">Pacing</th>
                 <th className="px-4 py-3 font-semibold">Agency Action Notes</th>
               </tr>
@@ -392,9 +401,18 @@ export default function TechiesIntelligenceTab({
                 <th className="px-2 py-3 text-center font-semibold">Sub</th>
                 <th className="px-3 py-3 font-semibold">Assigned Device</th>
                 <th className="px-3 py-3 text-right font-semibold">Total Views</th>
-                <th className="px-3 py-3 text-center font-semibold">Phase 1 Post</th>
-                <th className="px-3 py-3 text-center font-semibold">Phase 2 Post</th>
-                <th className="px-3 py-3 text-center font-semibold">Phase 3 Post</th>
+                <th className="px-3 py-2.5 text-center font-semibold">
+                  <div>Phase 1 Post</div>
+                  <div className="text-[9px] font-normal text-blue-100 opacity-90 mt-0.5 normal-case">Sep 7 – Sep 10</div>
+                </th>
+                <th className="px-3 py-2.5 text-center font-semibold">
+                  <div>Phase 2 Post</div>
+                  <div className="text-[9px] font-normal text-blue-100 opacity-90 mt-0.5 normal-case">Sep 11 – Sep 20</div>
+                </th>
+                <th className="px-3 py-2.5 text-center font-semibold">
+                  <div>Phase 3 Post</div>
+                  <div className="text-[9px] font-normal text-blue-100 opacity-90 mt-0.5 normal-case">Sep 21 – Sep 28</div>
+                </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
