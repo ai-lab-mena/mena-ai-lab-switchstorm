@@ -92,16 +92,14 @@ The platform provides a comprehensive suite of executive intelligence tools:
    - Exact bottleneck notes sourced directly from master agency spreadsheets.
    - Native "Open in Knox Mail" integration for immediate team follow-up.
 
-7. Enterprise Security & Dual Deployment
+7. Enterprise Cloud Security
    - Live Production Cloud: https://www.ai-lab-mena.com (McAfee proxy-safe).
-   - 100% Offline Standalone LAN: Runs locally inside Samsung SVPN (http://liana-s01:3000).
    - Secure role-based authentication gate.
 
 --------------------------------------------------------------------------------
 3. THE HOW • How to Access & Next Steps
 --------------------------------------------------------------------------------
 - Live Production URL: https://www.ai-lab-mena.com
-- Internal LAN URL:   http://liana-s01:3000 (Local SVPN network)
 - Access Gate:        Role-based executive sign-in
 
 Recommended Leadership Actions:
@@ -307,10 +305,10 @@ Marketing AI Lab • Samsung Electronics MENA
                 <td style="width: 50%; padding: 8px; vertical-align: top;">
                   <div style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 14px; height: 100%;">
                     <strong style="color: #0284C7; font-size: 13px; display: block; margin-bottom: 4px;">
-                      🔒 Dual Cloud & Samsung LAN Deployment
+                      🔒 Enterprise Cloud Deployment
                     </strong>
                     <span style="font-size: 12px; color: #475569; line-height: 1.5; display: block;">
-                      Accessible anywhere via public cloud (ai-lab-mena.com) or offline on internal Samsung SVPN LAN (http://liana-s01:3000) with McAfee proxy compliance.
+                      High-availability production cloud portal (ai-lab-mena.com) with role-based authentication and full Samsung corporate proxy compliance.
                     </span>
                   </div>
                 </td>
@@ -340,10 +338,6 @@ Marketing AI Lab • Samsung Electronics MENA
                     <tr>
                       <td style="width: 140px; font-weight: bold; padding: 4px 0;">Live Production URL:</td>
                       <td style="padding: 4px 0;"><a href="https://www.ai-lab-mena.com" style="color: #034EA2; font-weight: bold; text-decoration: underline;">https://www.ai-lab-mena.com</a></td>
-                    </tr>
-                    <tr>
-                      <td style="font-weight: bold; padding: 4px 0;">Internal LAN URL:</td>
-                      <td style="padding: 4px 0; font-family: monospace; color: #0F172A;">http://liana-s01:3000 (Internal SVPN)</td>
                     </tr>
                     <tr>
                       <td style="font-weight: bold; padding: 4px 0;">Authentication Gate:</td>
@@ -591,9 +585,9 @@ Marketing AI Lab • Samsung Electronics MENA
                   </p>
                 </div>
                 <div className="p-3.5 rounded-xl border border-slate-200 bg-slate-50/50">
-                  <strong className="text-cyan-700 block mb-1">🔒 Dual Cloud & Samsung LAN Deployment</strong>
+                  <strong className="text-cyan-700 block mb-1">🔒 Enterprise Cloud Security</strong>
                   <p className="text-slate-600 leading-relaxed">
-                    Accessible anywhere via public cloud (ai-lab-mena.com) or offline on internal Samsung SVPN LAN (http://liana-s01:3000) with McAfee proxy compliance.
+                    High-availability production cloud portal (ai-lab-mena.com) with role-based authentication and full Samsung corporate proxy compliance.
                   </p>
                 </div>
               </div>
@@ -612,7 +606,6 @@ Marketing AI Lab • Samsung Electronics MENA
 
               <div className="p-3 rounded-lg bg-white border border-slate-200 mb-3 text-xs space-y-1">
                 <div><span className="font-bold text-slate-900">Live Production Portal: </span><a href="https://www.ai-lab-mena.com" target="_blank" rel="noreferrer" className="text-[#034EA2] font-bold underline">https://www.ai-lab-mena.com</a></div>
-                <div><span className="font-bold text-slate-900">Internal Samsung LAN: </span><span className="font-mono text-slate-600">http://liana-s01:3000</span></div>
                 <div><span className="font-bold text-slate-900">Authentication: </span><span className="text-slate-600">Enterprise role-based credentials enabled</span></div>
               </div>
 
