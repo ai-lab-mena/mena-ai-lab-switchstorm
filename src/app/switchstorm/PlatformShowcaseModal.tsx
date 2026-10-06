@@ -24,7 +24,9 @@ INTRODUCING: ai-lab-mena.com - REGIONAL MARKETING INTELLIGENCE PLATFORM
 
 Dear Leadership & Marketing Team,
 
-We are excited to announce the launch of our unified digital intelligence platform:
+Thank you for taking the time to attend yesterday's introduction walkthrough of our new marketing intelligence platform. 
+
+Following our session, we are pleased to share the platform overview and live access details for:
 >> https://www.ai-lab-mena.com <<
 
 --------------------------------------------------------------------------------
