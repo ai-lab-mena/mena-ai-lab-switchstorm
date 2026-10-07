@@ -2037,12 +2037,12 @@ export const STATIC_TECHIES_TARGETS_SUMMARY = [
     },
     "Post_3": {
       "Plan": 12,
-      "Live": 9,
-      "WIP": 3,
-      "Completion": "75.0%"
+      "Live": 12,
+      "WIP": 0,
+      "Completion": "100.0%"
     },
-    "Status": "On Track",
-    "Notes": "W40"
+    "Status": "Completed",
+    "Notes": "0"
   },
   {
     "Subsidiary": "SESAR",
@@ -2066,7 +2066,7 @@ export const STATIC_TECHIES_TARGETS_SUMMARY = [
       "Completion": "100.0%"
     },
     "Status": "Completed",
-    "Notes": ""
+    "Notes": "0"
   },
   {
     "Subsidiary": "SETK",
@@ -2085,36 +2085,12 @@ export const STATIC_TECHIES_TARGETS_SUMMARY = [
     },
     "Post_3": {
       "Plan": 13,
-      "Live": 4,
-      "WIP": 9,
-      "Completion": "30.8%"
+      "Live": 8,
+      "WIP": 5,
+      "Completion": "61.5%"
     },
     "Status": "Action Required",
-    "Notes": "W40"
-  },
-  {
-    "Subsidiary": "SEIL",
-    "Market": "Israel",
-    "Profiles_Planned": 7,
-    "Post_1": {
-      "Plan": 7,
-      "Live": 2,
-      "Completion": "28.6%"
-    },
-    "Post_2": {
-      "Plan": 7,
-      "Live": 1,
-      "WIP": 6,
-      "Completion": "14.3%"
-    },
-    "Post_3": {
-      "Plan": 7,
-      "Live": 0,
-      "WIP": 7,
-      "Completion": "0.0%"
-    },
-    "Status": "Delayed",
-    "Notes": "*Delayed due to holiday period"
+    "Notes": "0"
   },
   {
     "Subsidiary": "SEMAG",
@@ -2133,36 +2109,36 @@ export const STATIC_TECHIES_TARGETS_SUMMARY = [
     },
     "Post_3": {
       "Plan": 8,
-      "Live": 4,
-      "WIP": 4,
-      "Completion": "50.0%"
+      "Live": 8,
+      "WIP": 0,
+      "Completion": "100.0%"
     },
-    "Status": "Action Required",
-    "Notes": "W40"
+    "Status": "Completed",
+    "Notes": "0"
   },
   {
     "Subsidiary": "SELV",
     "Market": "Levant (Jordan, Lebanon, Iraq)",
-    "Profiles_Planned": 8,
+    "Profiles_Planned": 7,
     "Post_1": {
-      "Plan": 8,
-      "Live": 8,
+      "Plan": 7,
+      "Live": 7,
       "Completion": "100.0%"
     },
     "Post_2": {
-      "Plan": 8,
-      "Live": 6,
-      "WIP": 2,
-      "Completion": "75.0%"
+      "Plan": 7,
+      "Live": 7,
+      "WIP": 0,
+      "Completion": "100.0%"
     },
     "Post_3": {
-      "Plan": 8,
+      "Plan": 7,
       "Live": 2,
-      "WIP": 6,
-      "Completion": "25.0%"
+      "WIP": 2,
+      "Completion": "28.6%"
     },
     "Status": "Action Required",
-    "Notes": "Please confirm ETA"
+    "Notes": "4"
   },
   {
     "Subsidiary": "SEPAK",
@@ -2186,7 +2162,7 @@ export const STATIC_TECHIES_TARGETS_SUMMARY = [
       "Completion": "100.0%"
     },
     "Status": "Completed",
-    "Notes": ""
+    "Notes": "0"
   },
   {
     "Subsidiary": "SEEG",
@@ -2210,7 +2186,7 @@ export const STATIC_TECHIES_TARGETS_SUMMARY = [
       "Completion": "100.0%"
     },
     "Status": "Completed",
-    "Notes": "c"
+    "Notes": "0"
   },
   {
     "Subsidiary": "Algeria",
@@ -2234,6 +2210,6 @@ export const STATIC_TECHIES_TARGETS_SUMMARY = [
       "Completion": "100.0%"
     },
     "Status": "Completed",
-    "Notes": "c"
+    "Notes": "0"
   }
 ];
