@@ -153,7 +153,16 @@ export default function ContentShowcaseTab({
     const list = allRankedVideos || [];
     return list
       .filter((v) => {
-        const matchPhase = selectedPhase === "Overall" || v.Phase === selectedPhase;
+        const matchPhase = (() => {
+          if (selectedPhase === "Overall") return true;
+          if (v.Phase === selectedPhase) return true;
+          const postDate = v["Post Date"];
+          if (!postDate) return false;
+          if (selectedPhase === "Phase 1") return postDate >= "2026-09-07" && postDate <= "2026-09-10";
+          if (selectedPhase === "Phase 2") return postDate >= "2026-09-11" && postDate <= "2026-09-20";
+          if (selectedPhase === "Phase 3") return postDate >= "2026-09-21";
+          return false;
+        })();
         const matchCat = cat === "Overall" ? true : v.Category === cat;
         const matchPlatform =
           selectedPlatform === "All" ||
@@ -195,7 +204,16 @@ export default function ContentShowcaseTab({
     const list = allRankedVideos || [];
     return list
       .filter((v) => {
-        const matchPhase = selectedPhase === "Overall" || v.Phase === selectedPhase;
+        const matchPhase = (() => {
+          if (selectedPhase === "Overall") return true;
+          if (v.Phase === selectedPhase) return true;
+          const postDate = v["Post Date"];
+          if (!postDate) return false;
+          if (selectedPhase === "Phase 1") return postDate >= "2026-09-07" && postDate <= "2026-09-10";
+          if (selectedPhase === "Phase 2") return postDate >= "2026-09-11" && postDate <= "2026-09-20";
+          if (selectedPhase === "Phase 3") return postDate >= "2026-09-21";
+          return false;
+        })();
         const matchCat = selectedCategory === "Overall" || v.Category === selectedCategory;
         const matchPlatform =
           selectedPlatform === "All" ||
@@ -720,7 +738,7 @@ export default function ContentShowcaseTab({
             <option value="Overall">All Campaign Flights</option>
             <option value="Phase 1">Phase 1 • Sep 7 – Sep 10</option>
             <option value="Phase 2">Phase 2 • Sep 11 – Sep 20</option>
-            <option value="Phase 3">Phase 3 • Sep 21 – Sep 28</option>
+            <option value="Phase 3">Phase 3 • Sep 21 – Ongoing</option>
           </select>
 
           {/* Platform Selector */}
