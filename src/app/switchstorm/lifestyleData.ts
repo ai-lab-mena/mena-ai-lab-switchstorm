@@ -307,95 +307,101 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Name": "Amtul Baweja",
     "Handle": "patangeer",
     "Subsidiary": "SEPAK",
-    "Total_Posts": 12,
-    "Total_Views": 25926782,
-    "Total_Engagements": 363449,
+    "Total_Posts": 15,
+    "Total_Views": 25980454,
+    "Total_Engagements": 373966,
     "Week_1": {
       "URL": "http://tiktok.com/@patangeer/video/7683099008537087239",
       "Platform": "TikTok",
       "Date": "2026-09-08",
-      "Views": 3383518,
-      "Engagements": 23155
+      "Views": 3400000,
+      "Engagements": 23113
     },
     "Week_2": {
       "URL": "http://tiktok.com/@patangeer/video/7685773809588260104",
       "Platform": "TikTok",
       "Date": "2026-09-15",
-      "Views": 8663091,
-      "Engagements": 153562
+      "Views": 8700000,
+      "Engagements": 153606
     },
     "Week_3": {
       "URL": "http://tiktok.com/@patangeer/video/7688703647659724050",
       "Platform": "TikTok",
       "Date": "2026-09-23",
-      "Views": 5080173,
-      "Engagements": 124454
+      "Views": 5080265,
+      "Engagements": 124449
     },
     "Week_4": {
       "URL": "http://tiktok.com/@patangeer/video/7691625978791038226",
       "Platform": "TikTok",
       "Date": "2026-10-01",
       "Views": 8800000,
-      "Engagements": 35019
+      "Engagements": 35006
     }
   },
   {
     "Name": "Sunny Jafry",
     "Handle": "itssunnyjafry",
     "Subsidiary": "SEPAK",
-    "Total_Posts": 8,
-    "Total_Views": 12572610,
-    "Total_Engagements": 345579,
+    "Total_Posts": 11,
+    "Total_Views": 12572608,
+    "Total_Engagements": 360358,
     "Week_1": {
       "URL": "http://tiktok.com/@itssunnyjafry/video/7683209118068378894",
       "Platform": "TikTok",
       "Date": "2026-09-08",
-      "Views": 4840992,
-      "Engagements": 32917
+      "Views": 4800000,
+      "Engagements": 32953
     },
     "Week_2": {
       "URL": "http://tiktok.com/@itssunnyjafry/video/7685421890185252109",
       "Platform": "TikTok",
       "Date": "2026-09-14",
-      "Views": 7574605,
-      "Engagements": 46714
+      "Views": 7574945,
+      "Engagements": 46725
     },
     "Week_3": {
       "URL": "http://tiktok.com/@itssunnyjafry/video/7688388014229245197",
       "Platform": "TikTok",
       "Date": "2026-09-22",
-      "Views": 127765,
-      "Engagements": 15034
+      "Views": 135700,
+      "Engagements": 15919
     },
-    "Week_4": null
+    "Week_4": {
+      "URL": "http://tiktok.com/@itssunnyjafry/video/7693091830384119053",
+      "Platform": "TikTok",
+      "Date": "2026-10-05",
+      "Views": 29200,
+      "Engagements": 2487
+    }
   },
   {
     "Name": "Mahnoor Sheikh",
     "Handle": "mahnoorsheikhofficial",
     "Subsidiary": "SEPAK",
     "Total_Posts": 10,
-    "Total_Views": 10286305,
-    "Total_Engagements": 253406,
+    "Total_Views": 10309761,
+    "Total_Engagements": 348054,
     "Week_1": {
       "URL": "http://tiktok.com/@mahnoorsheikh_18/video/7683054540123344135",
       "Platform": "TikTok",
       "Date": "2026-09-08",
       "Views": 3600000,
-      "Engagements": 23957
+      "Engagements": 24067
     },
     "Week_2": {
       "URL": "http://tiktok.com/@mahnoorsheikh_18/video/7686055320312909063",
       "Platform": "TikTok",
       "Date": "2026-09-16",
-      "Views": 3800236,
-      "Engagements": 60322
+      "Views": 3800747,
+      "Engagements": 60349
     },
     "Week_3": {
       "URL": "http://tiktok.com/@mahnoorsheikh_18/video/7688337122222148882",
       "Platform": "TikTok",
       "Date": "2026-09-22",
-      "Views": 2877055,
-      "Engagements": 137040
+      "Views": 2900000,
+      "Engagements": 137102
     },
     "Week_4": {
       "URL": "http://tiktok.com/@mahnoorsheikh_18/video/7690563131814268178",
@@ -410,35 +416,35 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "alghalyab",
     "Subsidiary": "SGE",
     "Total_Posts": 4,
-    "Total_Views": 7854167,
-    "Total_Engagements": 55684,
+    "Total_Views": 7860186,
+    "Total_Engagements": 56074,
     "Week_1": {
       "URL": "http://tiktok.com/@alghalyab/video/7684729829526097173",
       "Platform": "TikTok",
       "Date": "2026-09-12",
-      "Views": 4500000,
-      "Engagements": 19775
+      "Views": 4495468,
+      "Engagements": 19836
     },
     "Week_2": {
       "URL": "http://tiktok.com/@alghalyab/video/7686182993093725460",
       "Platform": "TikTok",
       "Date": "2026-09-16",
-      "Views": 141340,
-      "Engagements": 4969
+      "Views": 142996,
+      "Engagements": 4992
     },
     "Week_3": {
       "URL": "http://tiktok.com/@alghalyab/video/7688011753782840596",
       "Platform": "TikTok",
       "Date": "2026-09-21",
-      "Views": 2988627,
-      "Engagements": 20033
+      "Views": 2990922,
+      "Engagements": 20082
     },
     "Week_4": {
       "URL": "http://tiktok.com/@alghalyab/video/7691372920525819156",
       "Platform": "TikTok",
       "Date": "2026-09-30",
-      "Views": 224200,
-      "Engagements": 10907
+      "Views": 230800,
+      "Engagements": 11164
     }
   },
   {
@@ -446,44 +452,80 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "abbasbukhari",
     "Subsidiary": "SEPAK",
     "Total_Posts": 9,
-    "Total_Views": 7012446,
-    "Total_Engagements": 98166,
+    "Total_Views": 6960600,
+    "Total_Engagements": 98658,
     "Week_1": {
       "URL": "http://tiktok.com/@abbasbukhari/video/7682787170003864840",
       "Platform": "TikTok",
       "Date": "2026-09-07",
-      "Views": 4408262,
-      "Engagements": 46615
+      "Views": 4400000,
+      "Engagements": 46621
     },
     "Week_2": {
       "URL": "http://tiktok.com/@abbasbukhari/video/7686543532508581127",
       "Platform": "TikTok",
       "Date": "2026-09-17",
-      "Views": 54899,
-      "Engagements": 2439
+      "Views": 60600,
+      "Engagements": 2679
     },
     "Week_3": {
       "URL": "http://tiktok.com/@abbasbukhari/video/7688757257890303250",
       "Platform": "TikTok",
       "Date": "2026-09-23",
-      "Views": 2549285,
-      "Engagements": 22326
+      "Views": 2500000,
+      "Engagements": 22314
     },
     "Week_4": null
+  },
+  {
+    "Name": "Shahveer Jafry",
+    "Handle": "shahveerjaytiktok",
+    "Subsidiary": "SEPAK",
+    "Total_Posts": 10,
+    "Total_Views": 6779312,
+    "Total_Engagements": 688486,
+    "Week_1": {
+      "URL": "http://tiktok.com/@shahveerjaytiktok/video/7682779426865679637",
+      "Platform": "TikTok",
+      "Date": "2026-09-07",
+      "Views": 6061433,
+      "Engagements": 82163
+    },
+    "Week_2": {
+      "URL": "http://tiktok.com/@shahveerjaytiktok/video/7685346810226920724",
+      "Platform": "TikTok",
+      "Date": "2026-09-14",
+      "Views": 24300,
+      "Engagements": 1850
+    },
+    "Week_3": {
+      "URL": "http://tiktok.com/@shahveerjaytiktok/video/7687947342032719112",
+      "Platform": "TikTok",
+      "Date": "2026-09-21",
+      "Views": 38177,
+      "Engagements": 3220
+    },
+    "Week_4": {
+      "URL": "http://instagram.com/p/Dd10izGMPk2",
+      "Platform": "Instagram",
+      "Date": "2026-09-28",
+      "Views": 327000,
+      "Engagements": 41760
+    }
   },
   {
     "Name": "\u0646\u0648\u0631\u0627\u0646",
     "Handle": "missnouran",
     "Subsidiary": "SESAR",
     "Total_Posts": 2,
-    "Total_Views": 6434362,
-    "Total_Engagements": 43559,
+    "Total_Views": 6452722,
+    "Total_Engagements": 43890,
     "Week_1": {
       "URL": "http://tiktok.com/@missnouran/video/7683071117384453384",
       "Platform": "TikTok",
       "Date": "2026-09-08",
-      "Views": 6398862,
-      "Engagements": 42062
+      "Views": 6401594,
+      "Engagements": 42073
     },
     "Week_2": null,
     "Week_3": null,
@@ -491,44 +533,8 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@missnouran/video/7692119666730290450",
       "Platform": "TikTok",
       "Date": "2026-10-02",
-      "Views": 35500,
-      "Engagements": 1497
-    }
-  },
-  {
-    "Name": "Shahveer Jafry",
-    "Handle": "shahveerjay",
-    "Subsidiary": "SEPAK",
-    "Total_Posts": 9,
-    "Total_Views": 6387601,
-    "Total_Engagements": 222971,
-    "Week_1": {
-      "URL": "http://tiktok.com/@shahveerjaytiktok/video/7682779426865679637",
-      "Platform": "TikTok",
-      "Date": "2026-09-07",
-      "Views": 6058776,
-      "Engagements": 82033
-    },
-    "Week_2": {
-      "URL": "http://tiktok.com/@shahveerjaytiktok/video/7685346810226920724",
-      "Platform": "TikTok",
-      "Date": "2026-09-14",
-      "Views": 23501,
-      "Engagements": 1888
-    },
-    "Week_3": {
-      "URL": "http://tiktok.com/@shahveerjaytiktok/video/7687947342032719112",
-      "Platform": "TikTok",
-      "Date": "2026-09-21",
-      "Views": 35224,
-      "Engagements": 3056
-    },
-    "Week_4": {
-      "URL": "http://tiktok.com/@shahveerjaytiktok/video/7690579158778318100",
-      "Platform": "TikTok",
-      "Date": "2026-09-28",
-      "Views": 270100,
-      "Engagements": 15615
+      "Views": 51128,
+      "Engagements": 1817
     }
   },
   {
@@ -536,35 +542,35 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "laibakhurramm_",
     "Subsidiary": "SEPAK",
     "Total_Posts": 11,
-    "Total_Views": 5564800,
-    "Total_Engagements": 239601,
+    "Total_Views": 5918300,
+    "Total_Engagements": 407130,
     "Week_1": {
       "URL": "http://tiktok.com/@laibakhurramm_/video/7682768053838728468",
       "Platform": "TikTok",
       "Date": "2026-09-07",
-      "Views": 217200,
-      "Engagements": 11118
+      "Views": 225400,
+      "Engagements": 11742
     },
     "Week_2": {
       "URL": "http://tiktok.com/@laibakhurramm_/video/7685367841343671572",
       "Platform": "TikTok",
       "Date": "2026-09-14",
-      "Views": 159100,
-      "Engagements": 8518
+      "Views": 168600,
+      "Engagements": 8907
     },
     "Week_3": {
       "URL": "http://tiktok.com/@laibakhurramm_/video/7687951226356436245",
       "Platform": "TikTok",
       "Date": "2026-09-21",
-      "Views": 4800000,
-      "Engagements": 103029
+      "Views": 4900000,
+      "Engagements": 103757
     },
     "Week_4": {
       "URL": "http://tiktok.com/@laibakhurramm_/video/7690545125570923796",
       "Platform": "TikTok",
       "Date": "2026-09-28",
-      "Views": 240000,
-      "Engagements": 17974
+      "Views": 244200,
+      "Engagements": 18185
     }
   },
   {
@@ -572,14 +578,14 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "mouathag",
     "Subsidiary": "SESAR",
     "Total_Posts": 8,
-    "Total_Views": 4518284,
-    "Total_Engagements": 18863,
+    "Total_Views": 4521397,
+    "Total_Engagements": 18969,
     "Week_1": {
       "URL": "http://tiktok.com/@mouathag/video/7682828276431195412",
       "Platform": "TikTok",
       "Date": "2026-09-07",
-      "Views": 4492384,
-      "Engagements": 16963
+      "Views": 4492997,
+      "Engagements": 16949
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdRgSyTjCQm",
@@ -593,8 +599,8 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@mouathag/video/7692028369944284436",
       "Platform": "TikTok",
       "Date": "2026-10-02",
-      "Views": 25900,
-      "Engagements": 1900
+      "Views": 28400,
+      "Engagements": 2020
     }
   },
   {
@@ -602,13 +608,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "your.unnies",
     "Subsidiary": "SESAR",
     "Total_Posts": 2,
-    "Total_Views": 3899153,
-    "Total_Engagements": 74186,
+    "Total_Views": 3901498,
+    "Total_Engagements": 74245,
     "Week_1": {
       "URL": "http://tiktok.com/@your.unnies/video/7682815848301595922",
       "Platform": "TikTok",
       "Date": "2026-09-07",
-      "Views": 3890596,
+      "Views": 3891298,
       "Engagements": 73918
     },
     "Week_2": null,
@@ -617,8 +623,8 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@your.unnies/video/7692113888099306760",
       "Platform": "TikTok",
       "Date": "2026-10-02",
-      "Views": 8557,
-      "Engagements": 268
+      "Views": 10200,
+      "Engagements": 327
     }
   },
   {
@@ -626,21 +632,21 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "murat soner",
     "Subsidiary": "SETK",
     "Total_Posts": 2,
-    "Total_Views": 3446101,
-    "Total_Engagements": 61466,
+    "Total_Views": 3486109,
+    "Total_Engagements": 61816,
     "Week_1": {
       "URL": "http://youtube.com/watch?v=tYLTZBinSZY",
       "Platform": "YouTube",
       "Date": "2026-09-07",
-      "Views": 3369958,
-      "Engagements": 58372
+      "Views": 3406238,
+      "Engagements": 58660
     },
     "Week_2": {
       "URL": "http://youtube.com/watch?v=aP8h7bPSUmA",
       "Platform": "YouTube",
       "Date": "2026-09-14",
-      "Views": 76143,
-      "Engagements": 3094
+      "Views": 79871,
+      "Engagements": 3156
     },
     "Week_3": null,
     "Week_4": null
@@ -650,14 +656,14 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "farahjefry",
     "Subsidiary": "SESAR",
     "Total_Posts": 4,
-    "Total_Views": 2969648,
-    "Total_Engagements": 36768,
+    "Total_Views": 2934500,
+    "Total_Engagements": 36813,
     "Week_1": {
       "URL": "http://tiktok.com/@farahjefry/video/7683108928753847570",
       "Platform": "TikTok",
       "Date": "2026-09-08",
-      "Views": 2936148,
-      "Engagements": 29722
+      "Views": 2900000,
+      "Engagements": 29731
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdRVFGegsGV",
@@ -671,47 +677,23 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@farahjefry/video/7692007832979328263",
       "Platform": "TikTok",
       "Date": "2026-10-02",
-      "Views": 33500,
-      "Engagements": 7046
+      "Views": 34500,
+      "Engagements": 7082
     }
-  },
-  {
-    "Name": "Shir Ben Hamo",
-    "Handle": "shir.benh",
-    "Subsidiary": "SEIL",
-    "Total_Posts": 2,
-    "Total_Views": 1898600,
-    "Total_Engagements": 28226,
-    "Week_1": {
-      "URL": "http://tiktok.com/@shir.benh/video/7683850854859885831",
-      "Platform": "TikTok",
-      "Date": "2026-09-10",
-      "Views": 798600,
-      "Engagements": 9413
-    },
-    "Week_2": null,
-    "Week_3": {
-      "URL": "http://tiktok.com/@shir.benh/video/7688260887144058119",
-      "Platform": "TikTok",
-      "Date": "2026-09-22",
-      "Views": 1100000,
-      "Engagements": 18813
-    },
-    "Week_4": null
   },
   {
     "Name": "Klooode25",
     "Handle": "anaklo25",
     "Subsidiary": "SESAR",
     "Total_Posts": 6,
-    "Total_Views": 1898180,
-    "Total_Engagements": 21563,
+    "Total_Views": 1909224,
+    "Total_Engagements": 22135,
     "Week_1": {
       "URL": "http://tiktok.com/@anaklo25/video/7682808606026124565",
       "Platform": "TikTok",
       "Date": "2026-09-07",
-      "Views": 1803080,
-      "Engagements": 15226
+      "Views": 1804925,
+      "Engagements": 15268
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdT8s5bjcX0",
@@ -725,44 +707,68 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@anaklo25/video/7692053835640065301",
       "Platform": "TikTok",
       "Date": "2026-10-02",
-      "Views": 95100,
-      "Engagements": 6337
+      "Views": 104299,
+      "Engagements": 6867
     }
+  },
+  {
+    "Name": "Shir Ben Hamo",
+    "Handle": "shir.benh",
+    "Subsidiary": "SEIL",
+    "Total_Posts": 2,
+    "Total_Views": 1898600,
+    "Total_Engagements": 28326,
+    "Week_1": {
+      "URL": "http://tiktok.com/@shir.benh/video/7683850854859885831",
+      "Platform": "TikTok",
+      "Date": "2026-09-10",
+      "Views": 798600,
+      "Engagements": 9413
+    },
+    "Week_2": null,
+    "Week_3": {
+      "URL": "http://tiktok.com/@shir.benh/video/7688260887144058119",
+      "Platform": "TikTok",
+      "Date": "2026-09-22",
+      "Views": 1100000,
+      "Engagements": 18913
+    },
+    "Week_4": null
   },
   {
     "Name": "Ahmed El Wakil",
     "Handle": "awakil911",
     "Subsidiary": "SEEG",
     "Total_Posts": 9,
-    "Total_Views": 1807174,
-    "Total_Engagements": 138029,
+    "Total_Views": 1821580,
+    "Total_Engagements": 139463,
     "Week_1": {
       "URL": "http://tiktok.com/@awakil911/video/7682799047836454165",
       "Platform": "TikTok",
       "Date": "2026-09-07",
-      "Views": 635000,
-      "Engagements": 30297
+      "Views": 638900,
+      "Engagements": 30416
     },
     "Week_2": {
       "URL": "http://tiktok.com/@awakil911/video/7686548661412564244",
       "Platform": "TikTok",
       "Date": "2026-09-17",
-      "Views": 598902,
-      "Engagements": 34661
+      "Views": 601764,
+      "Engagements": 34868
     },
     "Week_3": {
       "URL": "http://tiktok.com/@awakil911/video/7688002894192233749",
       "Platform": "TikTok",
       "Date": "2026-09-21",
-      "Views": 275493,
-      "Engagements": 13806
+      "Views": 276634,
+      "Engagements": 13877
     },
     "Week_4": {
       "URL": "http://tiktok.com/@awakil911/video/7690582060561419541",
       "Platform": "TikTok",
       "Date": "2026-09-28",
-      "Views": 238700,
-      "Engagements": 17746
+      "Views": 243313,
+      "Engagements": 18108
     }
   },
   {
@@ -770,29 +776,59 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "amirr.adel_",
     "Subsidiary": "SEEG",
     "Total_Posts": 7,
-    "Total_Views": 1753080,
-    "Total_Engagements": 11663,
+    "Total_Views": 1754000,
+    "Total_Engagements": 11672,
     "Week_1": {
       "URL": "http://tiktok.com/@amirr.adel_/video/7682795931435142418",
       "Platform": "TikTok",
       "Date": "2026-09-07",
-      "Views": 307400,
-      "Engagements": 2904
+      "Views": 307600,
+      "Engagements": 2907
     },
     "Week_2": null,
     "Week_3": {
       "URL": "http://tiktok.com/@amirr.adel_/video/7687972648327908616",
       "Platform": "TikTok",
       "Date": "2026-09-21",
-      "Views": 434294,
-      "Engagements": 3546
+      "Views": 434400,
+      "Engagements": 3547
     },
     "Week_4": {
       "URL": "http://tiktok.com/@amirr.adel_/video/7692046290770726151",
       "Platform": "TikTok",
       "Date": "2026-10-02",
-      "Views": 556100,
-      "Engagements": 1901
+      "Views": 556400,
+      "Engagements": 1903
+    }
+  },
+  {
+    "Name": "\u0647\u064f\u0646\u0627 \u0623\u062d\u0644\u0627\u0645 \ud83d\udc06",
+    "Handle": "halimaworld",
+    "Subsidiary": "SESAR",
+    "Total_Posts": 3,
+    "Total_Views": 1734924,
+    "Total_Engagements": 21355,
+    "Week_1": {
+      "URL": "http://tiktok.com/@halimaworld/video/7682705317452320008",
+      "Platform": "TikTok",
+      "Date": "2026-09-07",
+      "Views": 1700000,
+      "Engagements": 11202
+    },
+    "Week_2": {
+      "URL": "http://tiktok.com/@halimaworld/video/7685749787395673351",
+      "Platform": "TikTok",
+      "Date": "2026-09-15",
+      "Views": 23700,
+      "Engagements": 5337
+    },
+    "Week_3": null,
+    "Week_4": {
+      "URL": "http://tiktok.com/@halimaworld/video/7690498041874500872",
+      "Platform": "TikTok",
+      "Date": "2026-09-28",
+      "Views": 11224,
+      "Engagements": 4816
     }
   },
   {
@@ -800,14 +836,14 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "qvlpo1",
     "Subsidiary": "SESAR",
     "Total_Posts": 8,
-    "Total_Views": 1279927,
-    "Total_Engagements": 25617,
+    "Total_Views": 1261319,
+    "Total_Engagements": 25649,
     "Week_1": {
       "URL": "http://tiktok.com/@qvlpo1/video/7682821889869384981",
       "Platform": "TikTok",
       "Date": "2026-09-07",
-      "Views": 1220008,
-      "Engagements": 24833
+      "Views": 1200000,
+      "Engagements": 24835
     },
     "Week_2": {
       "URL": "http://snapchat.com/story/SfgINOTWQbSfluUtp9ZOnAAAgem12cGFoYWZrAaCwdopIAaCwdRdJAAAAAA",
@@ -821,38 +857,8 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@qvlpo1/video/7692099491503131924",
       "Platform": "TikTok",
       "Date": "2026-10-02",
-      "Views": 10100,
-      "Engagements": 784
-    }
-  },
-  {
-    "Name": "\u0647\u064f\u0646\u0627 \u0623\u062d\u0644\u0627\u0645 \ud83d\udc06",
-    "Handle": "halimaworld",
-    "Subsidiary": "SESAR",
-    "Total_Posts": 3,
-    "Total_Views": 1238435,
-    "Total_Engagements": 20429,
-    "Week_1": {
-      "URL": "http://tiktok.com/@halimaworld/video/7682705317452320008",
-      "Platform": "TikTok",
-      "Date": "2026-09-07",
-      "Views": 1203985,
-      "Engagements": 10290
-    },
-    "Week_2": {
-      "URL": "http://tiktok.com/@halimaworld/video/7685749787395673351",
-      "Platform": "TikTok",
-      "Date": "2026-09-15",
-      "Views": 23350,
-      "Engagements": 5327
-    },
-    "Week_3": null,
-    "Week_4": {
-      "URL": "http://tiktok.com/@halimaworld/video/7690498041874500872",
-      "Platform": "TikTok",
-      "Date": "2026-09-28",
-      "Views": 11100,
-      "Engagements": 4812
+      "Views": 11500,
+      "Engagements": 814
     }
   },
   {
@@ -860,14 +866,14 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "shiralevi1",
     "Subsidiary": "SEIL",
     "Total_Posts": 3,
-    "Total_Views": 1096234,
-    "Total_Engagements": 12032,
+    "Total_Views": 1096463,
+    "Total_Engagements": 12037,
     "Week_1": {
       "URL": "http://tiktok.com/@shiralevy1/video/7683940618594176273",
       "Platform": "TikTok",
       "Date": "2026-09-10",
-      "Views": 469732,
-      "Engagements": 7071
+      "Views": 469823,
+      "Engagements": 7078
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdTTEyWjden",
@@ -880,8 +886,8 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@shiralevy1/video/7688301950743416081",
       "Platform": "TikTok",
       "Date": "2026-09-22",
-      "Views": 626502,
-      "Engagements": 4961
+      "Views": 626640,
+      "Engagements": 4959
     },
     "Week_4": null
   },
@@ -890,14 +896,14 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "roseheustw",
     "Subsidiary": "SETK",
     "Total_Posts": 2,
-    "Total_Views": 858092,
-    "Total_Engagements": 24608,
+    "Total_Views": 872571,
+    "Total_Engagements": 24935,
     "Week_1": {
       "URL": "http://youtube.com/watch?v=Qi-chcFyh74",
       "Platform": "YouTube",
       "Date": "2026-09-09",
-      "Views": 655092,
-      "Engagements": 15982
+      "Views": 668071,
+      "Engagements": 16238
     },
     "Week_2": null,
     "Week_3": null,
@@ -908,14 +914,14 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "basit_nation",
     "Subsidiary": "SELV",
     "Total_Posts": 5,
-    "Total_Views": 583328,
-    "Total_Engagements": 73765,
+    "Total_Views": 599600,
+    "Total_Engagements": 78612,
     "Week_1": {
       "URL": "http://tiktok.com/@basit.nation/video/7683200609947979026",
       "Platform": "TikTok",
       "Date": "2026-09-08",
-      "Views": 583328,
-      "Engagements": 31947
+      "Views": 599600,
+      "Engagements": 32679
     },
     "Week_2": null,
     "Week_3": null,
@@ -932,62 +938,32 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "49w",
     "Subsidiary": "SETK",
     "Total_Posts": 1,
-    "Total_Views": 559311,
-    "Total_Engagements": 6800,
+    "Total_Views": 580407,
+    "Total_Engagements": 6987,
     "Week_1": null,
     "Week_2": null,
     "Week_3": {
       "URL": "http://youtube.com/watch?v=b7CBXhs-Vxk",
       "Platform": "YouTube",
       "Date": "2026-09-21",
-      "Views": 559311,
-      "Engagements": 6800
+      "Views": 580407,
+      "Engagements": 6987
     },
     "Week_4": null
-  },
-  {
-    "Name": "\u0639\u0645\u0631\u0648 \u0628\u0634\u0631",
-    "Handle": "b3shr_",
-    "Subsidiary": "SEEG",
-    "Total_Posts": 17,
-    "Total_Views": 485822,
-    "Total_Engagements": 37043,
-    "Week_1": {
-      "URL": "http://tiktok.com/@b3shr_/video/7682747301747526932",
-      "Platform": "TikTok",
-      "Date": "2026-09-07",
-      "Views": 99000,
-      "Engagements": 9236
-    },
-    "Week_2": null,
-    "Week_3": {
-      "URL": "http://tiktok.com/@b3shr_/video/7687949939376377109",
-      "Platform": "TikTok",
-      "Date": "2026-09-21",
-      "Views": 137322,
-      "Engagements": 6627
-    },
-    "Week_4": {
-      "URL": "http://tiktok.com/@b3shr_/video/7690542760092257537",
-      "Platform": "TikTok",
-      "Date": "2026-09-28",
-      "Views": 130100,
-      "Engagements": 5766
-    }
   },
   {
     "Name": "\u0631\u0628\u064a\u0639\u0629 \u062c\u0648\u0646\u064a\u0631 (Abdulaziz Alrabiah)",
     "Handle": "junior_rabiah",
     "Subsidiary": "SESAR",
     "Total_Posts": 9,
-    "Total_Views": 450723,
-    "Total_Engagements": 3282,
+    "Total_Views": 528863,
+    "Total_Engagements": 3966,
     "Week_1": {
       "URL": "http://tiktok.com/@junior_rabiah/video/7682827732211780871",
       "Platform": "TikTok",
       "Date": "2026-09-07",
-      "Views": 446700,
-      "Engagements": 3146
+      "Views": 523900,
+      "Engagements": 3821
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdXByp3itkq",
@@ -1001,8 +977,68 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@junior_rabiah/video/7692051723694656776",
       "Platform": "TikTok",
       "Date": "2026-10-02",
-      "Views": 4023,
-      "Engagements": 136
+      "Views": 4963,
+      "Engagements": 145
+    }
+  },
+  {
+    "Name": "Aena Khan",
+    "Handle": "aenaakhan",
+    "Subsidiary": "SEPAK",
+    "Total_Posts": 9,
+    "Total_Views": 527645,
+    "Total_Engagements": 105580,
+    "Week_1": {
+      "URL": "http://tiktok.com/@aenaak/video/7682748402949491988",
+      "Platform": "TikTok",
+      "Date": "2026-09-07",
+      "Views": 162089,
+      "Engagements": 5318
+    },
+    "Week_2": {
+      "URL": "http://tiktok.com/@aenaak/video/7685411916130307349",
+      "Platform": "TikTok",
+      "Date": "2026-09-14",
+      "Views": 104028,
+      "Engagements": 2798
+    },
+    "Week_3": null,
+    "Week_4": {
+      "URL": "http://tiktok.com/@aenaak/video/7692810650891848981",
+      "Platform": "TikTok",
+      "Date": "2026-10-04",
+      "Views": 247528,
+      "Engagements": 15552
+    }
+  },
+  {
+    "Name": "\u0639\u0645\u0631\u0648 \u0628\u0634\u0631",
+    "Handle": "b3shr_",
+    "Subsidiary": "SEEG",
+    "Total_Posts": 17,
+    "Total_Views": 488800,
+    "Total_Engagements": 37537,
+    "Week_1": {
+      "URL": "http://tiktok.com/@b3shr_/video/7682747301747526932",
+      "Platform": "TikTok",
+      "Date": "2026-09-07",
+      "Views": 100200,
+      "Engagements": 9378
+    },
+    "Week_2": null,
+    "Week_3": {
+      "URL": "http://tiktok.com/@b3shr_/video/7687949939376377109",
+      "Platform": "TikTok",
+      "Date": "2026-09-21",
+      "Views": 137500,
+      "Engagements": 6651
+    },
+    "Week_4": {
+      "URL": "http://tiktok.com/@b3shr_/video/7690542760092257537",
+      "Platform": "TikTok",
+      "Date": "2026-09-28",
+      "Views": 130400,
+      "Engagements": 5799
     }
   },
   {
@@ -1011,7 +1047,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SEPAK",
     "Total_Posts": 7,
     "Total_Views": 411300,
-    "Total_Engagements": 21525,
+    "Total_Engagements": 22403,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_PB3xCP7K",
       "Platform": "Instagram",
@@ -1046,14 +1082,14 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "rawaasaad_",
     "Subsidiary": "SESAR",
     "Total_Posts": 2,
-    "Total_Views": 359200,
-    "Total_Engagements": 13576,
+    "Total_Views": 365100,
+    "Total_Engagements": 13813,
     "Week_1": {
       "URL": "http://tiktok.com/@rawaasaad_/video/7682803511708470549",
       "Platform": "TikTok",
       "Date": "2026-09-07",
-      "Views": 329800,
-      "Engagements": 12193
+      "Views": 333200,
+      "Engagements": 12307
     },
     "Week_2": null,
     "Week_3": null,
@@ -1061,38 +1097,38 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@rawaasaad_/video/7691331337008991509",
       "Platform": "TikTok",
       "Date": "2026-09-30",
-      "Views": 29400,
-      "Engagements": 1383
+      "Views": 31900,
+      "Engagements": 1506
     }
   },
   {
-    "Name": "Aena Khan",
-    "Handle": "aenaakhan",
-    "Subsidiary": "SEPAK",
-    "Total_Posts": 7,
-    "Total_Views": 358065,
-    "Total_Engagements": 66104,
+    "Name": "Maram Khodary",
+    "Handle": "maramkhodary",
+    "Subsidiary": "SEEG",
+    "Total_Posts": 4,
+    "Total_Views": 313572,
+    "Total_Engagements": 8781,
     "Week_1": {
-      "URL": "http://tiktok.com/@aenaak/video/7682748402949491988",
+      "URL": "http://tiktok.com/@maramkhodary/video/7682856408597024021",
       "Platform": "TikTok",
       "Date": "2026-09-07",
-      "Views": 143553,
-      "Engagements": 4729
+      "Views": 32491,
+      "Engagements": 1699
     },
-    "Week_2": {
-      "URL": "http://tiktok.com/@aenaak/video/7685411916130307349",
+    "Week_2": null,
+    "Week_3": {
+      "URL": "http://tiktok.com/@maramkhodary/video/7687989266139385108",
       "Platform": "TikTok",
-      "Date": "2026-09-14",
-      "Views": 90312,
-      "Engagements": 2497
+      "Date": "2026-09-21",
+      "Views": 268587,
+      "Engagements": 6507
     },
-    "Week_3": null,
     "Week_4": {
-      "URL": "http://tiktok.com/@aenaak/video/7692810650891848981",
+      "URL": "http://tiktok.com/@maramkhodary/video/7690599095387376948",
       "Platform": "TikTok",
-      "Date": "2026-10-04",
-      "Views": 124200,
-      "Engagements": 7916
+      "Date": "2026-09-28",
+      "Views": 10318,
+      "Engagements": 486
     }
   },
   {
@@ -1101,7 +1137,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SGE",
     "Total_Posts": 12,
     "Total_Views": 309518,
-    "Total_Engagements": 155946,
+    "Total_Engagements": 161193,
     "Week_1": {
       "URL": "http://snapchat.com/story/EJU67JhESaql2KWxTI6kggAAgeWdjd3VwdXBuAaCAX4X4AaCAX3FTAAAAAg",
       "Platform": "Snapchat",
@@ -1114,76 +1150,52 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 49092
+      "Engagements": 49039
     },
     "Week_3": {
       "URL": "http://instagram.com/p/Ddi5pZQObk9",
       "Platform": "Instagram",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 13036
+      "Engagements": 14538
     },
     "Week_4": null
-  },
-  {
-    "Name": "Maram Khodary",
-    "Handle": "maramkhodary",
-    "Subsidiary": "SEEG",
-    "Total_Posts": 4,
-    "Total_Views": 308272,
-    "Total_Engagements": 8670,
-    "Week_1": {
-      "URL": "http://tiktok.com/@maramkhodary/video/7682856408597024021",
-      "Platform": "TikTok",
-      "Date": "2026-09-07",
-      "Views": 31602,
-      "Engagements": 1657
-    },
-    "Week_2": null,
-    "Week_3": {
-      "URL": "http://tiktok.com/@maramkhodary/video/7687989266139385108",
-      "Platform": "TikTok",
-      "Date": "2026-09-21",
-      "Views": 264557,
-      "Engagements": 6452
-    },
-    "Week_4": {
-      "URL": "http://tiktok.com/@maramkhodary/video/7690599095387376948",
-      "Platform": "TikTok",
-      "Date": "2026-09-28",
-      "Views": 10100,
-      "Engagements": 478
-    }
   },
   {
     "Name": "Nida Rehman",
     "Handle": "nidaa.1",
     "Subsidiary": "SEPAK",
-    "Total_Posts": 6,
-    "Total_Views": 191415,
-    "Total_Engagements": 27724,
+    "Total_Posts": 8,
+    "Total_Views": 284500,
+    "Total_Engagements": 173128,
     "Week_1": {
       "URL": "http://tiktok.com/@nidaa.1/video/7683153818728631572",
       "Platform": "TikTok",
       "Date": "2026-09-08",
-      "Views": 32000,
-      "Engagements": 1327
+      "Views": 33600,
+      "Engagements": 1348
     },
     "Week_2": {
       "URL": "http://tiktok.com/@nidaa.1/video/7685473848183033108",
       "Platform": "TikTok",
       "Date": "2026-09-14",
-      "Views": 54000,
-      "Engagements": 2687
+      "Views": 56900,
+      "Engagements": 2780
     },
     "Week_3": {
       "URL": "http://tiktok.com/@nidaa.1/video/7687981850438159637",
       "Platform": "TikTok",
       "Date": "2026-09-21",
-      "Views": 105415,
-      "Engagements": 3048
+      "Views": 114800,
+      "Engagements": 3311
     },
-    "Week_4": null
+    "Week_4": {
+      "URL": "http://tiktok.com/@nidaa.1/video/7693228466250157333",
+      "Platform": "TikTok",
+      "Date": "2026-10-05",
+      "Views": 79200,
+      "Engagements": 4428
+    }
   },
   {
     "Name": "Mesele Ekonomi",
@@ -1208,28 +1220,28 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "abdulla",
     "Subsidiary": "SGE",
     "Total_Posts": 3,
-    "Total_Views": 181712,
-    "Total_Engagements": 15372,
+    "Total_Views": 182071,
+    "Total_Engagements": 15377,
     "Week_1": {
       "URL": "http://tiktok.com/@abdulla/video/7683889390342425889",
       "Platform": "TikTok",
       "Date": "2026-09-10",
-      "Views": 57117,
-      "Engagements": 2463
+      "Views": 57203,
+      "Engagements": 2466
     },
     "Week_2": {
       "URL": "http://tiktok.com/@abdulla/video/7685424052218907937",
       "Platform": "TikTok",
       "Date": "2026-09-14",
-      "Views": 73586,
-      "Engagements": 8085
+      "Views": 73668,
+      "Engagements": 8086
     },
     "Week_3": {
       "URL": "http://tiktok.com/@abdulla/video/7688012659064704288",
       "Platform": "TikTok",
       "Date": "2026-09-21",
-      "Views": 51009,
-      "Engagements": 4824
+      "Views": 51200,
+      "Engagements": 4825
     },
     "Week_4": null
   },
@@ -1238,14 +1250,14 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "marwan_rehan",
     "Subsidiary": "SEEG",
     "Total_Posts": 6,
-    "Total_Views": 160600,
-    "Total_Engagements": 16584,
+    "Total_Views": 164547,
+    "Total_Engagements": 17498,
     "Week_1": {
       "URL": "http://tiktok.com/@marwan_rehan/video/7682775234193280264",
       "Platform": "TikTok",
       "Date": "2026-09-07",
-      "Views": 115600,
-      "Engagements": 7789
+      "Views": 116147,
+      "Engagements": 7852
     },
     "Week_2": null,
     "Week_3": null,
@@ -1253,44 +1265,8 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@marwan_rehan/video/7692065822625238280",
       "Platform": "TikTok",
       "Date": "2026-10-02",
-      "Views": 45000,
-      "Engagements": 3444
-    }
-  },
-  {
-    "Name": "Rubab Rashid",
-    "Handle": "rubabrashid",
-    "Subsidiary": "SEPAK",
-    "Total_Posts": 10,
-    "Total_Views": 134935,
-    "Total_Engagements": 20201,
-    "Week_1": {
-      "URL": "http://tiktok.com/@rubabrashid/video/7683108890195528981",
-      "Platform": "TikTok",
-      "Date": "2026-09-08",
-      "Views": 23632,
-      "Engagements": 1472
-    },
-    "Week_2": {
-      "URL": "http://tiktok.com/@rubabrashid/video/7685345414186306836",
-      "Platform": "TikTok",
-      "Date": "2026-09-14",
-      "Views": 32061,
-      "Engagements": 2237
-    },
-    "Week_3": {
-      "URL": "http://tiktok.com/@rubabrashid/video/7687961464597925140",
-      "Platform": "TikTok",
-      "Date": "2026-09-21",
-      "Views": 51515,
-      "Engagements": 3198
-    },
-    "Week_4": {
-      "URL": "http://tiktok.com/@rubabrashid/video/7690585172424527125",
-      "Platform": "TikTok",
-      "Date": "2026-09-28",
-      "Views": 20600,
-      "Engagements": 1605
+      "Views": 48400,
+      "Engagements": 3817
     }
   },
   {
@@ -1298,8 +1274,8 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "dsh_90",
     "Subsidiary": NaN,
     "Total_Posts": 1,
-    "Total_Views": 132800,
-    "Total_Engagements": 9137,
+    "Total_Views": 151300,
+    "Total_Engagements": 10125,
     "Week_1": null,
     "Week_2": null,
     "Week_3": null,
@@ -1307,8 +1283,98 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@dsh_90/video/7692142826255027463",
       "Platform": "TikTok",
       "Date": "2026-10-02",
-      "Views": 132800,
-      "Engagements": 9137
+      "Views": 151300,
+      "Engagements": 10125
+    }
+  },
+  {
+    "Name": "Muhammad Saim Rehman",
+    "Handle": "saimrehmann",
+    "Subsidiary": "SEPAK",
+    "Total_Posts": 12,
+    "Total_Views": 143962,
+    "Total_Engagements": 294367,
+    "Week_1": {
+      "URL": "http://tiktok.com/@saimrehmann/video/7683963082015870216",
+      "Platform": "TikTok",
+      "Date": "2026-09-10",
+      "Views": 9830,
+      "Engagements": 556
+    },
+    "Week_2": {
+      "URL": "http://tiktok.com/@saimrehmann/video/7685401356017962247",
+      "Platform": "TikTok",
+      "Date": "2026-09-14",
+      "Views": 71000,
+      "Engagements": 2765
+    },
+    "Week_3": {
+      "URL": "http://tiktok.com/@saimrehmann/video/7687957308843855112",
+      "Platform": "TikTok",
+      "Date": "2026-09-21",
+      "Views": 9241,
+      "Engagements": 374
+    },
+    "Week_4": {
+      "URL": "http://tiktok.com/@saimrehmann/video/7690871201979288840",
+      "Platform": "TikTok",
+      "Date": "2026-09-29",
+      "Views": 36300,
+      "Engagements": 1371
+    }
+  },
+  {
+    "Name": "Rubab Rashid",
+    "Handle": "rubabrashid",
+    "Subsidiary": "SEPAK",
+    "Total_Posts": 10,
+    "Total_Views": 137717,
+    "Total_Engagements": 63515,
+    "Week_1": {
+      "URL": "http://tiktok.com/@rubabrashid/video/7683108890195528981",
+      "Platform": "TikTok",
+      "Date": "2026-09-08",
+      "Views": 23900,
+      "Engagements": 1477
+    },
+    "Week_2": {
+      "URL": "http://tiktok.com/@rubabrashid/video/7685345414186306836",
+      "Platform": "TikTok",
+      "Date": "2026-09-14",
+      "Views": 32422,
+      "Engagements": 2258
+    },
+    "Week_3": {
+      "URL": "http://tiktok.com/@rubabrashid/video/7687961464597925140",
+      "Platform": "TikTok",
+      "Date": "2026-09-21",
+      "Views": 52069,
+      "Engagements": 3213
+    },
+    "Week_4": {
+      "URL": "http://tiktok.com/@rubabrashid/video/7690585172424527125",
+      "Platform": "TikTok",
+      "Date": "2026-09-28",
+      "Views": 21398,
+      "Engagements": 1657
+    }
+  },
+  {
+    "Name": "Dur Bali",
+    "Handle": "dur8bali",
+    "Subsidiary": NaN,
+    "Total_Posts": 1,
+    "Total_Views": 132200,
+    "Total_Engagements": 5667,
+    "Week_1": null,
+    "Week_2": null,
+    "Week_3": null,
+    "Week_4": {
+      "URL": "http://tiktok.com/@dur8bali/video/7693254615164275986",
+      "Platform": "TikTok",
+      "Date": "2026-10-05",
+      "Views": 132200,
+      "Engagements": 5667
     }
   },
   {
@@ -1316,74 +1382,38 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "rz88d",
     "Subsidiary": "SESAR",
     "Total_Posts": 4,
-    "Total_Views": 127200,
-    "Total_Engagements": 816,
+    "Total_Views": 128000,
+    "Total_Engagements": 837,
     "Week_1": null,
     "Week_2": {
       "URL": "http://instagram.com/p/DdRuodUs2JV",
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 244
+      "Engagements": 247
     },
     "Week_3": null,
     "Week_4": {
       "URL": "http://tiktok.com/@rz8d/video/7692447936029969671",
       "Platform": "TikTok",
       "Date": "2026-10-03",
-      "Views": 80500,
-      "Engagements": 256
-    }
-  },
-  {
-    "Name": "Muhammad Saim Rehman",
-    "Handle": "saimrehmann",
-    "Subsidiary": "SEPAK",
-    "Total_Posts": 10,
-    "Total_Views": 121712,
-    "Total_Engagements": 57264,
-    "Week_1": {
-      "URL": "http://tiktok.com/@saimrehmann/video/7683963082015870216",
-      "Platform": "TikTok",
-      "Date": "2026-09-10",
-      "Views": 9738,
-      "Engagements": 549
-    },
-    "Week_2": {
-      "URL": "http://tiktok.com/@saimrehmann/video/7685401356017962247",
-      "Platform": "TikTok",
-      "Date": "2026-09-14",
-      "Views": 67900,
-      "Engagements": 2659
-    },
-    "Week_3": {
-      "URL": "http://tiktok.com/@saimrehmann/video/7687957308843855112",
-      "Platform": "TikTok",
-      "Date": "2026-09-21",
-      "Views": 8529,
-      "Engagements": 345
-    },
-    "Week_4": {
-      "URL": "http://tiktok.com/@saimrehmann/video/7690871201979288840",
-      "Platform": "TikTok",
-      "Date": "2026-09-29",
-      "Views": 34300,
-      "Engagements": 1212
+      "Views": 81000,
+      "Engagements": 267
     }
   },
   {
     "Name": "\u0623\u062d\u0645\u062f \u0627\u0644\u0643\u0639\u0628\u064a",
     "Handle": "ahmedkaabi_",
     "Subsidiary": "SESAR",
-    "Total_Posts": 4,
-    "Total_Views": 112700,
-    "Total_Engagements": 6367,
+    "Total_Posts": 5,
+    "Total_Views": 113050,
+    "Total_Engagements": 6375,
     "Week_1": {
       "URL": "http://tiktok.com/@ahmedkaabi_/video/7682813552133999890",
       "Platform": "TikTok",
       "Date": "2026-09-07",
-      "Views": 112700,
-      "Engagements": 6367
+      "Views": 113050,
+      "Engagements": 6375
     },
     "Week_2": {
       "URL": "http://instagram.com/p/Ddbi8AlCDJ0",
@@ -1393,36 +1423,42 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Engagements": 0
     },
     "Week_3": null,
-    "Week_4": null
+    "Week_4": {
+      "URL": "http://instagram.com/p/DeFMe9pCC-T",
+      "Platform": "Instagram",
+      "Date": "2026-10-04",
+      "Views": 0,
+      "Engagements": 0
+    }
   },
   {
     "Name": "Reem Hossam || Yoga teacher",
     "Handle": "reem__hossam",
     "Subsidiary": "SEEG",
     "Total_Posts": 4,
-    "Total_Views": 103784,
-    "Total_Engagements": 5408,
+    "Total_Views": 108339,
+    "Total_Engagements": 5578,
     "Week_1": {
       "URL": "http://tiktok.com/@reem__hossam/video/7683121323303849237",
       "Platform": "TikTok",
       "Date": "2026-09-08",
-      "Views": 71600,
-      "Engagements": 4017
+      "Views": 73700,
+      "Engagements": 4135
     },
     "Week_2": null,
     "Week_3": {
       "URL": "http://tiktok.com/@reem__hossam/video/7688036178137976072",
       "Platform": "TikTok",
       "Date": "2026-09-21",
-      "Views": 21519,
-      "Engagements": 1057
+      "Views": 22700,
+      "Engagements": 1082
     },
     "Week_4": {
       "URL": "http://tiktok.com/@reem__hossam/video/7690631870890921222",
       "Platform": "TikTok",
       "Date": "2026-09-28",
-      "Views": 6505,
-      "Engagements": 199
+      "Views": 6892,
+      "Engagements": 203
     }
   },
   {
@@ -1448,14 +1484,14 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "mjeedkj",
     "Subsidiary": "SESAR",
     "Total_Posts": 6,
-    "Total_Views": 91615,
-    "Total_Engagements": 1330,
+    "Total_Views": 91923,
+    "Total_Engagements": 1332,
     "Week_1": {
       "URL": "http://tiktok.com/@mjeedkj/video/7682841002528345352",
       "Platform": "TikTok",
       "Date": "2026-09-07",
-      "Views": 90834,
-      "Engagements": 1295
+      "Views": 90922,
+      "Engagements": 1294
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdRUeZdMtxq",
@@ -1469,8 +1505,8 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@mjeedkj/video/7692059139337456903",
       "Platform": "TikTok",
       "Date": "2026-10-02",
-      "Views": 781,
-      "Engagements": 35
+      "Views": 1001,
+      "Engagements": 38
     }
   },
   {
@@ -1478,65 +1514,65 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "mariaxcisco",
     "Subsidiary": "SGE",
     "Total_Posts": 6,
-    "Total_Views": 88846,
-    "Total_Engagements": 3010,
+    "Total_Views": 89119,
+    "Total_Engagements": 3013,
     "Week_1": {
       "URL": "http://tiktok.com/@mariaxcisco/video/7682747219279121685",
       "Platform": "TikTok",
       "Date": "2026-09-07",
-      "Views": 1694,
+      "Views": 1720,
       "Engagements": 71
     },
     "Week_2": {
       "URL": "http://tiktok.com/@mariaxcisco/video/7685420821174635796",
       "Platform": "TikTok",
       "Date": "2026-09-14",
-      "Views": 52000,
-      "Engagements": 1539
+      "Views": 52200,
+      "Engagements": 1543
     },
     "Week_3": {
       "URL": "http://tiktok.com/@mariaxcisco/video/7688019236568042773",
       "Platform": "TikTok",
       "Date": "2026-09-21",
-      "Views": 34653,
-      "Engagements": 1376
+      "Views": 34700,
+      "Engagements": 1375
     },
     "Week_4": null
   },
   {
     "Name": "Arslan Ash",
-    "Handle": "arslan ash",
+    "Handle": "arslanash1",
     "Subsidiary": "SEPAK",
-    "Total_Posts": 14,
-    "Total_Views": 73816,
-    "Total_Engagements": 18509,
+    "Total_Posts": 15,
+    "Total_Views": 77773,
+    "Total_Engagements": 18962,
     "Week_1": {
       "URL": "http://tiktok.com/@arslanash1/video/7682868416818056455",
       "Platform": "TikTok",
       "Date": "2026-09-07",
-      "Views": 26730,
-      "Engagements": 1588
+      "Views": 26955,
+      "Engagements": 1593
     },
     "Week_2": {
       "URL": "http://tiktok.com/@arslanash1/video/7685740555384507669",
       "Platform": "TikTok",
       "Date": "2026-09-15",
-      "Views": 36003,
-      "Engagements": 2222
+      "Views": 36610,
+      "Engagements": 2250
     },
     "Week_3": {
       "URL": "http://tiktok.com/@arslanash1/video/7688616447626677524",
       "Platform": "TikTok",
       "Date": "2026-09-23",
-      "Views": 4296,
-      "Engagements": 259
+      "Views": 4422,
+      "Engagements": 264
     },
     "Week_4": {
       "URL": "http://tiktok.com/@arslanash1/video/7690987346690395410",
       "Platform": "TikTok",
       "Date": "2026-09-29",
-      "Views": 6787,
-      "Engagements": 488
+      "Views": 6985,
+      "Engagements": 503
     }
   },
   {
@@ -1544,8 +1580,8 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "themozain",
     "Subsidiary": NaN,
     "Total_Posts": 1,
-    "Total_Views": 62400,
-    "Total_Engagements": 3504,
+    "Total_Views": 66200,
+    "Total_Engagements": 3737,
     "Week_1": null,
     "Week_2": null,
     "Week_3": null,
@@ -1553,8 +1589,8 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@themozain/video/7692063449504812308",
       "Platform": "TikTok",
       "Date": "2026-10-02",
-      "Views": 62400,
-      "Engagements": 3504
+      "Views": 66200,
+      "Engagements": 3737
     }
   },
   {
@@ -1562,26 +1598,44 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "flutivi",
     "Subsidiary": "SETK",
     "Total_Posts": 3,
-    "Total_Views": 60537,
-    "Total_Engagements": 1417,
+    "Total_Views": 60696,
+    "Total_Engagements": 1419,
     "Week_1": {
       "URL": "http://youtube.com/watch?v=0r2IHbSmJ0Y",
       "Platform": "YouTube",
       "Date": "2026-09-07",
-      "Views": 60537,
-      "Engagements": 1385
+      "Views": 60696,
+      "Engagements": 1387
     },
     "Week_2": null,
     "Week_3": null,
     "Week_4": null
   },
   {
+    "Name": "Shahad M",
+    "Handle": "shahad.d44",
+    "Subsidiary": NaN,
+    "Total_Posts": 1,
+    "Total_Views": 59200,
+    "Total_Engagements": 5555,
+    "Week_1": null,
+    "Week_2": null,
+    "Week_3": null,
+    "Week_4": {
+      "URL": "http://tiktok.com/@shahad.d44/video/7693572277798980871",
+      "Platform": "TikTok",
+      "Date": "2026-10-06",
+      "Views": 59200,
+      "Engagements": 5555
+    }
+  },
+  {
     "Name": "\u0628\u0627\u0633\u0644 \u0627\u0644\u0635\u0644\u064a",
     "Handle": "bes.990",
     "Subsidiary": NaN,
     "Total_Posts": 1,
-    "Total_Views": 52100,
-    "Total_Engagements": 3602,
+    "Total_Views": 55100,
+    "Total_Engagements": 3756,
     "Week_1": null,
     "Week_2": null,
     "Week_3": null,
@@ -1589,26 +1643,8 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@bes.990/video/7691725756661107986",
       "Platform": "TikTok",
       "Date": "2026-10-01",
-      "Views": 52100,
-      "Engagements": 3602
-    }
-  },
-  {
-    "Name": "\u064a\u0648\u0633\u0641 \u0627\u0644\u0628\u064a\u0627\u0631\u064a",
-    "Handle": "iiyb10",
-    "Subsidiary": NaN,
-    "Total_Posts": 1,
-    "Total_Views": 44100,
-    "Total_Engagements": 8802,
-    "Week_1": null,
-    "Week_2": null,
-    "Week_3": null,
-    "Week_4": {
-      "URL": "http://tiktok.com/@iiyb10/video/7692515342937017618",
-      "Platform": "TikTok",
-      "Date": "2026-10-03",
-      "Views": 44100,
-      "Engagements": 8802
+      "Views": 55100,
+      "Engagements": 3756
     }
   },
   {
@@ -1616,50 +1652,86 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "itzme.leen",
     "Subsidiary": "SELV",
     "Total_Posts": 12,
-    "Total_Views": 39068,
-    "Total_Engagements": 2906,
+    "Total_Views": 53790,
+    "Total_Engagements": 3629,
     "Week_1": {
       "URL": "http://tiktok.com/@itzme.leen/video/7682818560820890898",
       "Platform": "TikTok",
       "Date": "2026-09-07",
-      "Views": 25600,
-      "Engagements": 1919
+      "Views": 26800,
+      "Engagements": 2003
     },
     "Week_2": {
       "URL": "http://tiktok.com/@itzme.leen/video/7685420376624549138",
       "Platform": "TikTok",
       "Date": "2026-09-14",
-      "Views": 3685,
-      "Engagements": 242
+      "Views": 3836,
+      "Engagements": 252
     },
     "Week_3": {
       "URL": "http://tiktok.com/@itzme.leen/video/7688010229883145490",
       "Platform": "TikTok",
       "Date": "2026-09-21",
-      "Views": 3500,
-      "Engagements": 278
+      "Views": 3598,
+      "Engagements": 280
     },
     "Week_4": {
       "URL": "http://tiktok.com/@itzme.leen/video/7692071030629715208",
       "Platform": "TikTok",
       "Date": "2026-10-02",
-      "Views": 4039,
-      "Engagements": 274
+      "Views": 17200,
+      "Engagements": 897
+    }
+  },
+  {
+    "Name": "Azam Alawaidhi",
+    "Handle": "azamsenpa1",
+    "Subsidiary": NaN,
+    "Total_Posts": 1,
+    "Total_Views": 53100,
+    "Total_Engagements": 3417,
+    "Week_1": null,
+    "Week_2": null,
+    "Week_3": null,
+    "Week_4": {
+      "URL": "http://tiktok.com/@azamsenpa1/video/7693197323840654600",
+      "Platform": "TikTok",
+      "Date": "2026-10-05",
+      "Views": 53100,
+      "Engagements": 3417
+    }
+  },
+  {
+    "Name": "\u064a\u0648\u0633\u0641 \u0627\u0644\u0628\u064a\u0627\u0631\u064a",
+    "Handle": "iiyb10",
+    "Subsidiary": NaN,
+    "Total_Posts": 1,
+    "Total_Views": 46000,
+    "Total_Engagements": 8923,
+    "Week_1": null,
+    "Week_2": null,
+    "Week_3": null,
+    "Week_4": {
+      "URL": "http://tiktok.com/@iiyb10/video/7692515342937017618",
+      "Platform": "TikTok",
+      "Date": "2026-10-03",
+      "Views": 46000,
+      "Engagements": 8923
     }
   },
   {
     "Name": "Leila Hadioui",
     "Handle": "leilahadioui",
     "Subsidiary": "SEMAG",
-    "Total_Posts": 10,
-    "Total_Views": 24277,
-    "Total_Engagements": 68670,
+    "Total_Posts": 11,
+    "Total_Views": 27638,
+    "Total_Engagements": 105033,
     "Week_1": {
       "URL": "http://tiktok.com/@leilahadioui.lh/video/7682917573750492437",
       "Platform": "TikTok",
       "Date": "2026-09-07",
-      "Views": 22773,
-      "Engagements": 766
+      "Views": 23098,
+      "Engagements": 779
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdWT3aqonsB",
@@ -1679,8 +1751,38 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@leilahadioui.lh/video/7692946378766470421",
       "Platform": "TikTok",
       "Date": "2026-10-04",
-      "Views": 1504,
-      "Engagements": 53
+      "Views": 4540,
+      "Engagements": 152
+    }
+  },
+  {
+    "Name": "Alaa El Sheikh",
+    "Handle": "alaaelsheikh",
+    "Subsidiary": "SEEG",
+    "Total_Posts": 9,
+    "Total_Views": 23354,
+    "Total_Engagements": 2855,
+    "Week_1": {
+      "URL": "http://tiktok.com/@alaaelsheikh47/video/7682872681233943828",
+      "Platform": "TikTok",
+      "Date": "2026-09-07",
+      "Views": 14300,
+      "Engagements": 439
+    },
+    "Week_2": null,
+    "Week_3": {
+      "URL": "http://tiktok.com/@alaaelsheikh47/video/7688003230663527701",
+      "Platform": "TikTok",
+      "Date": "2026-09-21",
+      "Views": 5383,
+      "Engagements": 205
+    },
+    "Week_4": {
+      "URL": "http://tiktok.com/@alaaelsheikh47/video/7690601930330017045",
+      "Platform": "TikTok",
+      "Date": "2026-09-28",
+      "Views": 2068,
+      "Engagements": 86
     }
   },
   {
@@ -1688,8 +1790,8 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "iremcankurtarans",
     "Subsidiary": "SETK",
     "Total_Posts": 4,
-    "Total_Views": 21699,
-    "Total_Engagements": 857,
+    "Total_Views": 22174,
+    "Total_Engagements": 866,
     "Week_1": null,
     "Week_2": {
       "URL": "http://instagram.com/p/Ddg-7PntOaf",
@@ -1702,75 +1804,27 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://youtube.com/watch?v=Z6hzy6UyOZE",
       "Platform": "YouTube",
       "Date": "2026-09-27",
-      "Views": 21699,
-      "Engagements": 472
+      "Views": 22174,
+      "Engagements": 481
     },
     "Week_4": null
   },
   {
-    "Name": "Alaa El Sheikh",
-    "Handle": "alaaelsheikh",
-    "Subsidiary": "SEEG",
-    "Total_Posts": 9,
-    "Total_Views": 21578,
-    "Total_Engagements": 2750,
-    "Week_1": {
-      "URL": "http://tiktok.com/@alaaelsheikh47/video/7682872681233943828",
-      "Platform": "TikTok",
-      "Date": "2026-09-07",
-      "Views": 13600,
-      "Engagements": 421
-    },
+    "Name": "\u0647\u0627\u062f\u064a \u062e\u0627\u0644\u062f",
+    "Handle": "ie.hadi",
+    "Subsidiary": NaN,
+    "Total_Posts": 1,
+    "Total_Views": 21200,
+    "Total_Engagements": 2912,
+    "Week_1": null,
     "Week_2": null,
-    "Week_3": {
-      "URL": "http://tiktok.com/@alaaelsheikh47/video/7688003230663527701",
-      "Platform": "TikTok",
-      "Date": "2026-09-21",
-      "Views": 4725,
-      "Engagements": 186
-    },
+    "Week_3": null,
     "Week_4": {
-      "URL": "http://tiktok.com/@alaaelsheikh47/video/7690601930330017045",
+      "URL": "http://tiktok.com/@ie.hadi/video/7693289410065976597",
       "Platform": "TikTok",
-      "Date": "2026-09-28",
-      "Views": 2009,
-      "Engagements": 85
-    }
-  },
-  {
-    "Name": "Marwa Hashemi",
-    "Handle": "marwaalhash",
-    "Subsidiary": "SGE",
-    "Total_Posts": 8,
-    "Total_Views": 18268,
-    "Total_Engagements": 2345,
-    "Week_1": {
-      "URL": "http://tiktok.com/@marwaalhash/video/7682819093765917973",
-      "Platform": "TikTok",
-      "Date": "2026-09-07",
-      "Views": 6263,
-      "Engagements": 311
-    },
-    "Week_2": {
-      "URL": "http://tiktok.com/@marwaalhash/video/7685408282608995605",
-      "Platform": "TikTok",
-      "Date": "2026-09-14",
-      "Views": 4734,
-      "Engagements": 213
-    },
-    "Week_3": {
-      "URL": "http://tiktok.com/@marwaalhash/video/7688331987219664149",
-      "Platform": "TikTok",
-      "Date": "2026-09-22",
-      "Views": 1236,
-      "Engagements": 55
-    },
-    "Week_4": {
-      "URL": "http://tiktok.com/@marwaalhash/video/7690982305833192725",
-      "Platform": "TikTok",
-      "Date": "2026-09-29",
-      "Views": 5126,
-      "Engagements": 321
+      "Date": "2026-10-05",
+      "Views": 21200,
+      "Engagements": 2912
     }
   },
   {
@@ -1778,8 +1832,8 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "fa.xk",
     "Subsidiary": NaN,
     "Total_Posts": 1,
-    "Total_Views": 18000,
-    "Total_Engagements": 1656,
+    "Total_Views": 19700,
+    "Total_Engagements": 1717,
     "Week_1": null,
     "Week_2": null,
     "Week_3": null,
@@ -1787,8 +1841,44 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@fa.xk/video/7691422279531547911",
       "Platform": "TikTok",
       "Date": "2026-09-30",
-      "Views": 18000,
-      "Engagements": 1656
+      "Views": 19700,
+      "Engagements": 1717
+    }
+  },
+  {
+    "Name": "Marwa Hashemi",
+    "Handle": "marwaalhash",
+    "Subsidiary": "SGE",
+    "Total_Posts": 8,
+    "Total_Views": 19066,
+    "Total_Engagements": 2379,
+    "Week_1": {
+      "URL": "http://tiktok.com/@marwaalhash/video/7682819093765917973",
+      "Platform": "TikTok",
+      "Date": "2026-09-07",
+      "Views": 6555,
+      "Engagements": 324
+    },
+    "Week_2": {
+      "URL": "http://tiktok.com/@marwaalhash/video/7685408282608995605",
+      "Platform": "TikTok",
+      "Date": "2026-09-14",
+      "Views": 4790,
+      "Engagements": 214
+    },
+    "Week_3": {
+      "URL": "http://tiktok.com/@marwaalhash/video/7688331987219664149",
+      "Platform": "TikTok",
+      "Date": "2026-09-22",
+      "Views": 1284,
+      "Engagements": 55
+    },
+    "Week_4": {
+      "URL": "http://tiktok.com/@marwaalhash/video/7690982305833192725",
+      "Platform": "TikTok",
+      "Date": "2026-09-29",
+      "Views": 5410,
+      "Engagements": 334
     }
   },
   {
@@ -1796,8 +1886,8 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "abu_dkh",
     "Subsidiary": NaN,
     "Total_Posts": 1,
-    "Total_Views": 17600,
-    "Total_Engagements": 1248,
+    "Total_Views": 18900,
+    "Total_Engagements": 1282,
     "Week_1": null,
     "Week_2": null,
     "Week_3": null,
@@ -1805,8 +1895,8 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@abu_dkh/video/7691703231256333620",
       "Platform": "TikTok",
       "Date": "2026-10-01",
-      "Views": 17600,
-      "Engagements": 1248
+      "Views": 18900,
+      "Engagements": 1282
     }
   },
   {
@@ -1814,23 +1904,23 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "zinebrchid",
     "Subsidiary": "SEMAG",
     "Total_Posts": 4,
-    "Total_Views": 16348,
-    "Total_Engagements": 1804,
+    "Total_Views": 17418,
+    "Total_Engagements": 1856,
     "Week_1": null,
     "Week_2": {
       "URL": "http://tiktok.com/@zinebrchid/video/7685480148979813640",
       "Platform": "TikTok",
       "Date": "2026-09-14",
-      "Views": 9569,
-      "Engagements": 364
+      "Views": 10300,
+      "Engagements": 386
     },
     "Week_3": null,
     "Week_4": {
       "URL": "http://tiktok.com/@zinebrchid/video/7692196599937731858",
       "Platform": "TikTok",
       "Date": "2026-10-02",
-      "Views": 6779,
-      "Engagements": 343
+      "Views": 7118,
+      "Engagements": 357
     }
   },
   {
@@ -1838,8 +1928,8 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "squalochlifestyle",
     "Subsidiary": "SEMAG",
     "Total_Posts": 3,
-    "Total_Views": 16166,
-    "Total_Engagements": 5238,
+    "Total_Views": 16562,
+    "Total_Engagements": 5252,
     "Week_1": {
       "URL": "http://instagram.com/p/DdPRG29IY_V",
       "Platform": "Instagram",
@@ -1852,8 +1942,8 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@squalochlifestyle/video/7689207928338861333",
       "Platform": "TikTok",
       "Date": "2026-09-24",
-      "Views": 16166,
-      "Engagements": 716
+      "Views": 16562,
+      "Engagements": 730
     },
     "Week_4": null
   },
@@ -1862,14 +1952,14 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "ele3lamwsnino",
     "Subsidiary": "SEEG",
     "Total_Posts": 2,
-    "Total_Views": 15217,
-    "Total_Engagements": 677,
+    "Total_Views": 16309,
+    "Total_Engagements": 733,
     "Week_1": {
       "URL": "http://tiktok.com/@ele3lamwsnino/video/7682839424450858270",
       "Platform": "TikTok",
       "Date": "2026-09-07",
-      "Views": 4217,
-      "Engagements": 195
+      "Views": 4709,
+      "Engagements": 216
     },
     "Week_2": null,
     "Week_3": null,
@@ -1877,8 +1967,44 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@ele3lamwsnino/video/7692111591046778143",
       "Platform": "TikTok",
       "Date": "2026-10-02",
-      "Views": 11000,
-      "Engagements": 482
+      "Views": 11600,
+      "Engagements": 517
+    }
+  },
+  {
+    "Name": "Bisma Alam Khan Yousafzai",
+    "Handle": "bismakhann_",
+    "Subsidiary": "SEPAK",
+    "Total_Posts": 11,
+    "Total_Views": 14210,
+    "Total_Engagements": 465,
+    "Week_1": {
+      "URL": "http://tiktok.com/@bismakhann_/video/7682800961592626450",
+      "Platform": "TikTok",
+      "Date": "2026-09-07",
+      "Views": 1577,
+      "Engagements": 24
+    },
+    "Week_2": {
+      "URL": "http://tiktok.com/@bismakhann_/video/7685347753228029192",
+      "Platform": "TikTok",
+      "Date": "2026-09-14",
+      "Views": 2009,
+      "Engagements": 13
+    },
+    "Week_3": {
+      "URL": "http://tiktok.com/@bismakhann_/video/7687973807084014856",
+      "Platform": "TikTok",
+      "Date": "2026-09-21",
+      "Views": 2083,
+      "Engagements": 31
+    },
+    "Week_4": {
+      "URL": "http://tiktok.com/@bismakhann_/video/7692770274239843602",
+      "Platform": "TikTok",
+      "Date": "2026-10-04",
+      "Views": 5751,
+      "Engagements": 35
     }
   },
   {
@@ -1886,13 +2012,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "ouda20",
     "Subsidiary": "SEEG",
     "Total_Posts": 4,
-    "Total_Views": 13943,
-    "Total_Engagements": 1001,
+    "Total_Views": 14114,
+    "Total_Engagements": 1010,
     "Week_1": {
       "URL": "http://tiktok.com/@ouda20/video/7682871035695287559",
       "Platform": "TikTok",
       "Date": "2026-09-07",
-      "Views": 13539,
+      "Views": 13642,
       "Engagements": 330
     },
     "Week_2": null,
@@ -1901,8 +2027,8 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@ouda20/video/7692100579409153332",
       "Platform": "TikTok",
       "Date": "2026-10-02",
-      "Views": 404,
-      "Engagements": 31
+      "Views": 472,
+      "Engagements": 32
     }
   },
   {
@@ -1911,7 +2037,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SGE",
     "Total_Posts": 6,
     "Total_Views": 12396,
-    "Total_Engagements": 1165,
+    "Total_Engagements": 1168,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc-04CwCK_o",
       "Platform": "Instagram",
@@ -1940,8 +2066,8 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "abdullatif.90",
     "Subsidiary": NaN,
     "Total_Posts": 1,
-    "Total_Views": 11500,
-    "Total_Engagements": 409,
+    "Total_Views": 11800,
+    "Total_Engagements": 417,
     "Week_1": null,
     "Week_2": null,
     "Week_3": null,
@@ -1949,8 +2075,8 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@abdullatif.90/video/7691396443436846356",
       "Platform": "TikTok",
       "Date": "2026-09-30",
-      "Views": 11500,
-      "Engagements": 409
+      "Views": 11800,
+      "Engagements": 417
     }
   },
   {
@@ -1958,13 +2084,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "waleedmostafa00",
     "Subsidiary": "SEEG",
     "Total_Posts": 13,
-    "Total_Views": 10815,
-    "Total_Engagements": 10522,
+    "Total_Views": 10836,
+    "Total_Engagements": 10876,
     "Week_1": {
       "URL": "http://youtube.com/watch?v=kHrwaf8JknY",
       "Platform": "YouTube",
       "Date": "2026-09-07",
-      "Views": 10815,
+      "Views": 10836,
       "Engagements": 226
     },
     "Week_2": null,
@@ -1988,15 +2114,15 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "ilayda1ozdemir",
     "Subsidiary": "SETK",
     "Total_Posts": 1,
-    "Total_Views": 9061,
-    "Total_Engagements": 167,
+    "Total_Views": 9090,
+    "Total_Engagements": 169,
     "Week_1": null,
     "Week_2": {
       "URL": "http://tiktok.com/@ilayda1ozdemir/video/7687639596389174535",
       "Platform": "TikTok",
       "Date": "2026-09-20",
-      "Views": 9061,
-      "Engagements": 167
+      "Views": 9090,
+      "Engagements": 169
     },
     "Week_3": null,
     "Week_4": null
@@ -2006,29 +2132,65 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "dimarafikk",
     "Subsidiary": "SEEG",
     "Total_Posts": 5,
-    "Total_Views": 7322,
-    "Total_Engagements": 252,
+    "Total_Views": 7964,
+    "Total_Engagements": 261,
     "Week_1": {
       "URL": "http://tiktok.com/@dimarafikk/video/7682777566108732679",
       "Platform": "TikTok",
       "Date": "2026-09-07",
-      "Views": 2138,
-      "Engagements": 75
+      "Views": 2193,
+      "Engagements": 76
     },
     "Week_2": null,
     "Week_3": {
       "URL": "http://tiktok.com/@dimarafikk/video/7687973210364595464",
       "Platform": "TikTok",
       "Date": "2026-09-21",
-      "Views": 3045,
-      "Engagements": 76
+      "Views": 3233,
+      "Engagements": 80
     },
     "Week_4": {
       "URL": "http://tiktok.com/@dimarafikk/video/7690581741295373576",
       "Platform": "TikTok",
       "Date": "2026-09-28",
-      "Views": 1604,
-      "Engagements": 48
+      "Views": 1747,
+      "Engagements": 49
+    }
+  },
+  {
+    "Name": "\u0645.\u0645\u062d\u0645\u062f \u0627\u0644\u062f\u0647\u0627\u0645\u064a",
+    "Handle": "m7md_a_d",
+    "Subsidiary": NaN,
+    "Total_Posts": 1,
+    "Total_Views": 5655,
+    "Total_Engagements": 286,
+    "Week_1": null,
+    "Week_2": null,
+    "Week_3": null,
+    "Week_4": {
+      "URL": "http://tiktok.com/@m7md_a_d/video/7693254513108536583",
+      "Platform": "TikTok",
+      "Date": "2026-10-05",
+      "Views": 5655,
+      "Engagements": 286
+    }
+  },
+  {
+    "Name": "\u0631\u062a\u0648\u0646 \u0633\u0644\u0637\u0627\u0646",
+    "Handle": "xxreetanxx",
+    "Subsidiary": NaN,
+    "Total_Posts": 1,
+    "Total_Views": 4666,
+    "Total_Engagements": 325,
+    "Week_1": null,
+    "Week_2": null,
+    "Week_3": null,
+    "Week_4": {
+      "URL": "http://tiktok.com/@xxreetanxx/video/7691708607125114120",
+      "Platform": "TikTok",
+      "Date": "2026-10-01",
+      "Views": 4666,
+      "Engagements": 325
     }
   },
   {
@@ -2036,8 +2198,8 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "shanzaaysheikh",
     "Subsidiary": "SEPAK",
     "Total_Posts": 9,
-    "Total_Views": 4480,
-    "Total_Engagements": 1560,
+    "Total_Views": 4549,
+    "Total_Engagements": 1582,
     "Week_1": {
       "URL": "http://tiktok.com/@shanzaaysheikh/video/7683550221351062806",
       "Platform": "TikTok",
@@ -2049,45 +2211,15 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@shanzaaysheikh/video/7686228228918250774",
       "Platform": "TikTok",
       "Date": "2026-09-16",
-      "Views": 850,
-      "Engagements": 19
+      "Views": 883,
+      "Engagements": 20
     },
     "Week_3": {
       "URL": "http://tiktok.com/@shanzaaysheikh/video/7688321852116192515",
       "Platform": "TikTok",
       "Date": "2026-09-22",
-      "Views": 880,
+      "Views": 916,
       "Engagements": 18
-    },
-    "Week_4": null
-  },
-  {
-    "Name": "Muhammad Wasif",
-    "Handle": "artbywasif",
-    "Subsidiary": "SEPAK",
-    "Total_Posts": 5,
-    "Total_Views": 4135,
-    "Total_Engagements": 4118,
-    "Week_1": {
-      "URL": "http://youtube.com/watch?v=jY8WECpVUCE",
-      "Platform": "YouTube",
-      "Date": "2026-09-10",
-      "Views": 2719,
-      "Engagements": 70
-    },
-    "Week_2": {
-      "URL": "http://youtube.com/watch?v=7h1kx5cNovY",
-      "Platform": "YouTube",
-      "Date": "2026-09-15",
-      "Views": 1416,
-      "Engagements": 37
-    },
-    "Week_3": {
-      "URL": "http://instagram.com/p/DdjCE3RMlDK",
-      "Platform": "Instagram",
-      "Date": "2026-09-21",
-      "Views": 0,
-      "Engagements": 1180
     },
     "Week_4": null
   },
@@ -2096,8 +2228,8 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "bode_gamer",
     "Subsidiary": NaN,
     "Total_Posts": 1,
-    "Total_Views": 3965,
-    "Total_Engagements": 410,
+    "Total_Views": 4439,
+    "Total_Engagements": 437,
     "Week_1": null,
     "Week_2": null,
     "Week_3": null,
@@ -2105,48 +2237,60 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@bode_gamer/video/7691416426682273046",
       "Platform": "TikTok",
       "Date": "2026-09-30",
-      "Views": 3965,
-      "Engagements": 410
+      "Views": 4439,
+      "Engagements": 437
     }
   },
   {
-    "Name": "\u0631\u062a\u0648\u0646 \u0633\u0644\u0637\u0627\u0646",
-    "Handle": "xxreetanxx",
-    "Subsidiary": NaN,
-    "Total_Posts": 1,
-    "Total_Views": 3706,
-    "Total_Engagements": 315,
-    "Week_1": null,
-    "Week_2": null,
-    "Week_3": null,
-    "Week_4": {
-      "URL": "http://tiktok.com/@xxreetanxx/video/7691708607125114120",
-      "Platform": "TikTok",
-      "Date": "2026-10-01",
-      "Views": 3706,
-      "Engagements": 315
-    }
+    "Name": "Muhammad Wasif",
+    "Handle": "artbywasif",
+    "Subsidiary": "SEPAK",
+    "Total_Posts": 5,
+    "Total_Views": 4169,
+    "Total_Engagements": 4163,
+    "Week_1": {
+      "URL": "http://youtube.com/watch?v=jY8WECpVUCE",
+      "Platform": "YouTube",
+      "Date": "2026-09-10",
+      "Views": 2737,
+      "Engagements": 70
+    },
+    "Week_2": {
+      "URL": "http://youtube.com/watch?v=7h1kx5cNovY",
+      "Platform": "YouTube",
+      "Date": "2026-09-15",
+      "Views": 1432,
+      "Engagements": 37
+    },
+    "Week_3": {
+      "URL": "http://instagram.com/p/DdjCE3RMlDK",
+      "Platform": "Instagram",
+      "Date": "2026-09-21",
+      "Views": 0,
+      "Engagements": 1216
+    },
+    "Week_4": null
   },
   {
     "Name": "Mahum Yaqub",
     "Handle": "dearwalletpk",
     "Subsidiary": "SEPAK",
     "Total_Posts": 9,
-    "Total_Views": 3077,
-    "Total_Engagements": 19399,
+    "Total_Views": 3202,
+    "Total_Engagements": 19368,
     "Week_1": {
       "URL": "http://tiktok.com/@dearwalletpk/video/7683100491680582932",
       "Platform": "TikTok",
       "Date": "2026-09-08",
-      "Views": 489,
-      "Engagements": 26
+      "Views": 530,
+      "Engagements": 29
     },
     "Week_2": {
       "URL": "http://tiktok.com/@dearwalletpk/video/7685347559358860565",
       "Platform": "TikTok",
       "Date": "2026-09-14",
-      "Views": 1915,
-      "Engagements": 79
+      "Views": 1959,
+      "Engagements": 83
     },
     "Week_3": {
       "URL": "http://tiktok.com/@dearwalletpk/video/7687958864041430293",
@@ -2159,44 +2303,26 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@dearwalletpk/video/7690625927750962453",
       "Platform": "TikTok",
       "Date": "2026-09-28",
-      "Views": 638,
-      "Engagements": 37
+      "Views": 678,
+      "Engagements": 39
     }
   },
   {
-    "Name": "Bisma Alam Khan Yousafzai",
-    "Handle": "bismakhann_",
-    "Subsidiary": "SEPAK",
-    "Total_Posts": 11,
-    "Total_Views": 2975,
-    "Total_Engagements": 451,
-    "Week_1": {
-      "URL": "http://tiktok.com/@bismakhann_/video/7682800961592626450",
-      "Platform": "TikTok",
-      "Date": "2026-09-07",
-      "Views": 540,
-      "Engagements": 21
-    },
-    "Week_2": {
-      "URL": "http://tiktok.com/@bismakhann_/video/7685347753228029192",
-      "Platform": "TikTok",
-      "Date": "2026-09-14",
-      "Views": 533,
-      "Engagements": 13
-    },
-    "Week_3": {
-      "URL": "http://tiktok.com/@bismakhann_/video/7687973807084014856",
-      "Platform": "TikTok",
-      "Date": "2026-09-21",
-      "Views": 570,
-      "Engagements": 28
-    },
+    "Name": "Abdullah Tale",
+    "Handle": "1idlb",
+    "Subsidiary": NaN,
+    "Total_Posts": 1,
+    "Total_Views": 3120,
+    "Total_Engagements": 146,
+    "Week_1": null,
+    "Week_2": null,
+    "Week_3": null,
     "Week_4": {
-      "URL": "http://tiktok.com/@bismakhann_/video/7690560754633805063",
+      "URL": "http://tiktok.com/@1idlb/video/7692842982415879445",
       "Platform": "TikTok",
-      "Date": "2026-09-28",
-      "Views": 526,
-      "Engagements": 26
+      "Date": "2026-10-04",
+      "Views": 3120,
+      "Engagements": 146
     }
   },
   {
@@ -2204,29 +2330,29 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "hbibaamekawy",
     "Subsidiary": "SEEG",
     "Total_Posts": 10,
-    "Total_Views": 2722,
-    "Total_Engagements": 139,
+    "Total_Views": 2979,
+    "Total_Engagements": 144,
     "Week_1": {
       "URL": "http://tiktok.com/@hbibaamekawy/video/7682861505003425044",
       "Platform": "TikTok",
       "Date": "2026-09-07",
-      "Views": 776,
-      "Engagements": 28
+      "Views": 806,
+      "Engagements": 29
     },
     "Week_2": null,
     "Week_3": {
       "URL": "http://tiktok.com/@hbibaamekawy/video/7688013805728681234",
       "Platform": "TikTok",
       "Date": "2026-09-21",
-      "Views": 1164,
+      "Views": 1256,
       "Engagements": 36
     },
     "Week_4": {
       "URL": "http://tiktok.com/@hbibaamekawy/video/7690633613817187605",
       "Platform": "TikTok",
       "Date": "2026-09-28",
-      "Views": 418,
-      "Engagements": 30
+      "Views": 463,
+      "Engagements": 32
     }
   },
   {
@@ -2234,14 +2360,14 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "losh_55",
     "Subsidiary": "SESAR",
     "Total_Posts": 3,
-    "Total_Views": 1756,
-    "Total_Engagements": 243,
+    "Total_Views": 2189,
+    "Total_Engagements": 257,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_rVY3Jge5",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 132
+      "Engagements": 134
     },
     "Week_2": null,
     "Week_3": null,
@@ -2249,8 +2375,8 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@losh_55/video/7692150251490233620",
       "Platform": "TikTok",
       "Date": "2026-10-02",
-      "Views": 1756,
-      "Engagements": 77
+      "Views": 2189,
+      "Engagements": 84
     }
   },
   {
@@ -2258,8 +2384,8 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "duaasaeed__",
     "Subsidiary": NaN,
     "Total_Posts": 1,
-    "Total_Views": 1681,
-    "Total_Engagements": 93,
+    "Total_Views": 1937,
+    "Total_Engagements": 94,
     "Week_1": null,
     "Week_2": null,
     "Week_3": null,
@@ -2267,8 +2393,8 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@duaasaeed__/video/7691417117509356820",
       "Platform": "TikTok",
       "Date": "2026-09-30",
-      "Views": 1681,
-      "Engagements": 93
+      "Views": 1937,
+      "Engagements": 94
     }
   },
   {
@@ -2276,13 +2402,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "rehamcare",
     "Subsidiary": "SESAR",
     "Total_Posts": 6,
-    "Total_Views": 1414,
-    "Total_Engagements": 205,
+    "Total_Views": 1449,
+    "Total_Engagements": 207,
     "Week_1": {
       "URL": "http://tiktok.com/@rehamcare/video/7682841884405943569",
       "Platform": "TikTok",
       "Date": "2026-09-07",
-      "Views": 871,
+      "Views": 880,
       "Engagements": 32
     },
     "Week_2": null,
@@ -2290,14 +2416,14 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@rehamcare/video/7688416753646423313",
       "Platform": "TikTok",
       "Date": "2026-09-22",
-      "Views": 261,
+      "Views": 272,
       "Engagements": 6
     },
     "Week_4": {
       "URL": "http://tiktok.com/@rehamcare/video/7690692029239561478",
       "Platform": "TikTok",
       "Date": "2026-09-28",
-      "Views": 282,
+      "Views": 297,
       "Engagements": 8
     }
   },
@@ -2306,8 +2432,8 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "ssimgemy",
     "Subsidiary": "SETK",
     "Total_Posts": 4,
-    "Total_Views": 882,
-    "Total_Engagements": 143,
+    "Total_Views": 952,
+    "Total_Engagements": 145,
     "Week_1": null,
     "Week_2": null,
     "Week_3": {
@@ -2321,8 +2447,8 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@ssimgemy/video/7690667758308117793",
       "Platform": "TikTok",
       "Date": "2026-09-28",
-      "Views": 882,
-      "Engagements": 19
+      "Views": 952,
+      "Engagements": 21
     }
   },
   {
@@ -2330,13 +2456,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Handle": "inbar_mizrahi_",
     "Subsidiary": "SEIL",
     "Total_Posts": 2,
-    "Total_Views": 715,
+    "Total_Views": 731,
     "Total_Engagements": 20,
     "Week_1": {
       "URL": "http://tiktok.com/@inbar_mizrahi_/video/7682703790046285064",
       "Platform": "TikTok",
       "Date": "2026-09-07",
-      "Views": 418,
+      "Views": 423,
       "Engagements": 12
     },
     "Week_2": null,
@@ -2344,7 +2470,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "URL": "http://tiktok.com/@inbar_mizrahi_/video/7688674534160895238",
       "Platform": "TikTok",
       "Date": "2026-09-23",
-      "Views": 297,
+      "Views": 308,
       "Engagements": 8
     },
     "Week_4": null
@@ -2373,7 +2499,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SGE",
     "Total_Posts": 13,
     "Total_Views": 0,
-    "Total_Engagements": 1207,
+    "Total_Engagements": 1216,
     "Week_1": {
       "URL": "http://instagram.com/p/DdHUL3eCPBI",
       "Platform": "Instagram",
@@ -2400,7 +2526,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-10-02",
       "Views": 0,
-      "Engagements": 313
+      "Engagements": 318
     }
   },
   {
@@ -2409,7 +2535,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SELV",
     "Total_Posts": 6,
     "Total_Views": 0,
-    "Total_Engagements": 1182,
+    "Total_Engagements": 1197,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_b4pFMaIv",
       "Platform": "Instagram",
@@ -2422,7 +2548,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 222
+      "Engagements": 226
     },
     "Week_3": {
       "URL": "http://instagram.com/p/DdqQk1-BWH7",
@@ -2436,7 +2562,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-10-02",
       "Views": 0,
-      "Engagements": 82
+      "Engagements": 83
     }
   },
   {
@@ -2445,13 +2571,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SESAR",
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 1513,
+    "Total_Engagements": 1548,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_mRLYKO4u",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 1129
+      "Engagements": 1136
     },
     "Week_2": null,
     "Week_3": null,
@@ -2460,7 +2586,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-10-02",
       "Views": 0,
-      "Engagements": 384
+      "Engagements": 412
     }
   },
   {
@@ -2485,9 +2611,9 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Name": "Adnan Zafar",
     "Handle": "ken_",
     "Subsidiary": "SEPAK",
-    "Total_Posts": 8,
+    "Total_Posts": 10,
     "Total_Views": 0,
-    "Total_Engagements": 107498,
+    "Total_Engagements": 289718,
     "Week_1": {
       "URL": "http://instagram.com/p/DdJtl2Zz9yq",
       "Platform": "Instagram",
@@ -2500,7 +2626,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 22572
+      "Engagements": 98720
     },
     "Week_3": {
       "URL": "http://instagram.com/p/DdlpTm2E66O",
@@ -2510,9 +2636,9 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Engagements": 0
     },
     "Week_4": {
-      "URL": "http://instagram.com/p/Dd6Ph1BDZGT",
+      "URL": "http://instagram.com/p/DeHvVqAEeuO",
       "Platform": "Instagram",
-      "Date": "2026-09-30",
+      "Date": "2026-10-05",
       "Views": 0,
       "Engagements": 0
     }
@@ -2523,13 +2649,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SELV",
     "Total_Posts": 1,
     "Total_Views": 0,
-    "Total_Engagements": 2554,
+    "Total_Engagements": 3344,
     "Week_1": {
       "URL": "http://instagram.com/p/DdByl4Qs5PV",
       "Platform": "Instagram",
       "Date": "2026-09-08",
       "Views": 0,
-      "Engagements": 2554
+      "Engagements": 3344
     },
     "Week_2": null,
     "Week_3": null,
@@ -2541,17 +2667,35 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SETK",
     "Total_Posts": 1,
     "Total_Views": 0,
-    "Total_Engagements": 5119,
+    "Total_Engagements": 5199,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_ZpnkKe_I",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 5119
+      "Engagements": 5199
     },
     "Week_2": null,
     "Week_3": null,
     "Week_4": null
+  },
+  {
+    "Name": "Aleyna Kavak",
+    "Handle": "sadeceleynaofficial",
+    "Subsidiary": NaN,
+    "Total_Posts": 1,
+    "Total_Views": 0,
+    "Total_Engagements": 191,
+    "Week_1": null,
+    "Week_2": null,
+    "Week_3": null,
+    "Week_4": {
+      "URL": "http://instagram.com/p/DeHjclBt6KH",
+      "Platform": "Instagram",
+      "Date": "2026-10-05",
+      "Views": 0,
+      "Engagements": 191
+    }
   },
   {
     "Name": "Aleyna yavas",
@@ -2577,7 +2721,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": NaN,
     "Total_Posts": 1,
     "Total_Views": 0,
-    "Total_Engagements": 3054,
+    "Total_Engagements": 3140,
     "Week_1": null,
     "Week_2": null,
     "Week_3": null,
@@ -2586,7 +2730,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-29",
       "Views": 0,
-      "Engagements": 3054
+      "Engagements": 3140
     }
   },
   {
@@ -2595,7 +2739,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SEPAK",
     "Total_Posts": 7,
     "Total_Views": 0,
-    "Total_Engagements": 7051,
+    "Total_Engagements": 20387,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_OFgMgFrO",
       "Platform": "Instagram",
@@ -2631,7 +2775,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": NaN,
     "Total_Posts": 1,
     "Total_Views": 0,
-    "Total_Engagements": 299,
+    "Total_Engagements": 304,
     "Week_1": null,
     "Week_2": null,
     "Week_3": null,
@@ -2640,7 +2784,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-10-02",
       "Views": 0,
-      "Engagements": 299
+      "Engagements": 304
     }
   },
   {
@@ -2649,34 +2793,34 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SEPAK",
     "Total_Posts": 7,
     "Total_Views": 0,
-    "Total_Engagements": 5073,
+    "Total_Engagements": 15780,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc-n4V_sN68",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 420
+      "Engagements": 11089
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdRM5dxs29y",
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 3539
+      "Engagements": 3544
     },
     "Week_3": {
       "URL": "http://instagram.com/p/DdjAKynxNhn",
       "Platform": "Instagram",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 248
+      "Engagements": 250
     },
     "Week_4": {
       "URL": "http://instagram.com/p/Dd_652LsC4_",
       "Platform": "Instagram",
       "Date": "2026-10-02",
       "Views": 0,
-      "Engagements": 206
+      "Engagements": 236
     }
   },
   {
@@ -2685,13 +2829,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SGE",
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 1364,
+    "Total_Engagements": 1381,
     "Week_1": {
       "URL": "http://instagram.com/p/DdCREFdgEuA",
       "Platform": "Instagram",
       "Date": "2026-09-08",
       "Views": 0,
-      "Engagements": 1364
+      "Engagements": 1381
     },
     "Week_2": null,
     "Week_3": {
@@ -2709,20 +2853,20 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SGE",
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 653,
+    "Total_Engagements": 656,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc-8ztiiAwY",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 415
+      "Engagements": 416
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdRVY8Ui44Y",
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 238
+      "Engagements": 240
     },
     "Week_3": null,
     "Week_4": null
@@ -2733,14 +2877,14 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SGE",
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 783,
+    "Total_Engagements": 789,
     "Week_1": null,
     "Week_2": {
       "URL": "http://instagram.com/p/DdRJ26UE6FI",
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 783
+      "Engagements": 789
     },
     "Week_3": null,
     "Week_4": null
@@ -2769,7 +2913,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SESAR",
     "Total_Posts": 4,
     "Total_Views": 0,
-    "Total_Engagements": 1023,
+    "Total_Engagements": 1043,
     "Week_1": {
       "URL": "http://instagram.com/p/DdHEErQiBiB",
       "Platform": "Instagram",
@@ -2783,14 +2927,14 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-22",
       "Views": 0,
-      "Engagements": 286
+      "Engagements": 304
     },
     "Week_4": {
       "URL": "http://instagram.com/p/Dd1djDxo1sx",
       "Platform": "Instagram",
       "Date": "2026-09-28",
       "Views": 0,
-      "Engagements": 214
+      "Engagements": 215
     }
   },
   {
@@ -2841,7 +2985,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": NaN,
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 570,
+    "Total_Engagements": 586,
     "Week_1": null,
     "Week_2": null,
     "Week_3": null,
@@ -2850,7 +2994,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-10-01",
       "Views": 0,
-      "Engagements": 570
+      "Engagements": 586
     }
   },
   {
@@ -2877,13 +3021,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SETK",
     "Total_Posts": 1,
     "Total_Views": 0,
-    "Total_Engagements": 369960,
+    "Total_Engagements": 380733,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_MmCsDk3V",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 369960
+      "Engagements": 380733
     },
     "Week_2": null,
     "Week_3": null,
@@ -2895,13 +3039,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SEEG",
     "Total_Posts": 8,
     "Total_Views": 0,
-    "Total_Engagements": 2612,
+    "Total_Engagements": 2824,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_wkkeIEh8",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 927
+      "Engagements": 962
     },
     "Week_2": null,
     "Week_3": {
@@ -2909,7 +3053,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 1182
+      "Engagements": 1342
     },
     "Week_4": {
       "URL": "http://instagram.com/p/DeAQ1tCgbi3",
@@ -2967,13 +3111,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SETK",
     "Total_Posts": 1,
     "Total_Views": 0,
-    "Total_Engagements": 108905,
+    "Total_Engagements": 113214,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_l3b5CvZM",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 108905
+      "Engagements": 113214
     },
     "Week_2": null,
     "Week_3": null,
@@ -2985,13 +3129,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": NaN,
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 329,
+    "Total_Engagements": 331,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_ZMivo6zI",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 180
+      "Engagements": 182
     },
     "Week_2": null,
     "Week_3": {
@@ -3103,18 +3247,18 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Name": "Ber\u00e7em Aksu",
     "Handle": "bercemaksuu",
     "Subsidiary": NaN,
-    "Total_Posts": 1,
+    "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 0,
+    "Total_Engagements": 214,
     "Week_1": null,
     "Week_2": null,
     "Week_3": null,
     "Week_4": {
-      "URL": "http://instagram.com/p/Dd6PHKNAb0L",
+      "URL": "http://instagram.com/p/DeHSijzAtMt",
       "Platform": "Instagram",
-      "Date": "2026-09-30",
+      "Date": "2026-10-05",
       "Views": 0,
-      "Engagements": 0
+      "Engagements": 214
     }
   },
   {
@@ -3159,7 +3303,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": NaN,
     "Total_Posts": 1,
     "Total_Views": 0,
-    "Total_Engagements": 17,
+    "Total_Engagements": 18,
     "Week_1": null,
     "Week_2": null,
     "Week_3": null,
@@ -3168,7 +3312,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-30",
       "Views": 0,
-      "Engagements": 17
+      "Engagements": 18
     }
   },
   {
@@ -3213,20 +3357,20 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SELV",
     "Total_Posts": 6,
     "Total_Views": 0,
-    "Total_Engagements": 744,
+    "Total_Engagements": 762,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_aFJIBABl",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 209
+      "Engagements": 211
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdRYKvvNatg",
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 166
+      "Engagements": 167
     },
     "Week_3": {
       "URL": "http://instagram.com/p/Ddqlnh5NTbY",
@@ -3249,13 +3393,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SESAR",
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 648,
+    "Total_Engagements": 682,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_y_dWsnKt",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 279
+      "Engagements": 285
     },
     "Week_2": null,
     "Week_3": null,
@@ -3264,7 +3408,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-10-02",
       "Views": 0,
-      "Engagements": 369
+      "Engagements": 397
     }
   },
   {
@@ -3273,20 +3417,20 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SETK",
     "Total_Posts": 4,
     "Total_Views": 0,
-    "Total_Engagements": 8768,
+    "Total_Engagements": 8745,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_Ymd8s_Rn",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 3233
+      "Engagements": 3239
     },
     "Week_2": {
       "URL": "http://twitter.com/zgocbrayt/statuses/2101302317626581082",
       "Platform": "Twitter",
       "Date": "2026-09-19",
       "Views": 0,
-      "Engagements": 5535
+      "Engagements": 5506
     },
     "Week_3": {
       "URL": "http://instagram.com/p/Ddh3sYfCE_5",
@@ -3301,15 +3445,15 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Name": "Chadidi-Ayman",
     "Handle": "chadidi.yt",
     "Subsidiary": "SEMAG",
-    "Total_Posts": 3,
+    "Total_Posts": 4,
     "Total_Views": 0,
-    "Total_Engagements": 14750,
+    "Total_Engagements": 16498,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_Aa4NopWF",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 13483
+      "Engagements": 13707
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdUUO8aiE7q",
@@ -3319,7 +3463,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Engagements": 0
     },
     "Week_3": null,
-    "Week_4": null
+    "Week_4": {
+      "URL": "http://instagram.com/p/DeHv6lPoSl7",
+      "Platform": "Instagram",
+      "Date": "2026-10-05",
+      "Views": 0,
+      "Engagements": 1481
+    }
   },
   {
     "Name": "Daily Sip Scenes | Nayera Onsi",
@@ -3327,7 +3477,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SEEG",
     "Total_Posts": 4,
     "Total_Views": 0,
-    "Total_Engagements": 532,
+    "Total_Engagements": 537,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc-iZPzsU4T",
       "Platform": "Instagram",
@@ -3341,14 +3491,14 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 114
+      "Engagements": 116
     },
     "Week_4": {
       "URL": "http://instagram.com/p/Dd--uwrsoCl",
       "Platform": "Instagram",
       "Date": "2026-10-02",
       "Views": 0,
-      "Engagements": 102
+      "Engagements": 104
     }
   },
   {
@@ -3357,13 +3507,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SELV",
     "Total_Posts": 1,
     "Total_Views": 0,
-    "Total_Engagements": 1157,
+    "Total_Engagements": 1115,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_ZpqUMmQw",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 1157
+      "Engagements": 1115
     },
     "Week_2": null,
     "Week_3": null,
@@ -3399,13 +3549,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SETK",
     "Total_Posts": 1,
     "Total_Views": 0,
-    "Total_Engagements": 49,
+    "Total_Engagements": 52,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_oQkXtvad",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 49
+      "Engagements": 52
     },
     "Week_2": null,
     "Week_3": null,
@@ -3417,7 +3567,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SETK",
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 1149,
+    "Total_Engagements": 1154,
     "Week_1": {
       "URL": "http://instagram.com/p/DdE48SjkdUm",
       "Platform": "Instagram",
@@ -3435,7 +3585,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": NaN,
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 174,
+    "Total_Engagements": 175,
     "Week_1": null,
     "Week_2": null,
     "Week_3": null,
@@ -3453,13 +3603,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SETK",
     "Total_Posts": 1,
     "Total_Views": 0,
-    "Total_Engagements": 11709,
+    "Total_Engagements": 11834,
     "Week_1": {
       "URL": "http://instagram.com/p/DdJmnXitRcu",
       "Platform": "Instagram",
       "Date": "2026-09-11",
       "Views": 0,
-      "Engagements": 11709
+      "Engagements": 11834
     },
     "Week_2": null,
     "Week_3": null,
@@ -3489,7 +3639,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SEIL",
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 386,
+    "Total_Engagements": 387,
     "Week_1": null,
     "Week_2": {
       "URL": "http://instagram.com/p/DdYYKw1NT7w",
@@ -3504,7 +3654,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-29",
       "Views": 0,
-      "Engagements": 107
+      "Engagements": 108
     }
   },
   {
@@ -3513,13 +3663,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SETK",
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 41682,
+    "Total_Engagements": 42883,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_XaHmMNB2",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 31108
+      "Engagements": 31906
     },
     "Week_2": null,
     "Week_3": {
@@ -3527,7 +3677,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-26",
       "Views": 0,
-      "Engagements": 10574
+      "Engagements": 10977
     },
     "Week_4": null
   },
@@ -3537,7 +3687,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SEMAG",
     "Total_Posts": 3,
     "Total_Views": 0,
-    "Total_Engagements": 2706,
+    "Total_Engagements": 2815,
     "Week_1": null,
     "Week_2": {
       "URL": "http://instagram.com/p/DdTsJnZClgb",
@@ -3555,13 +3705,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SETK",
     "Total_Posts": 4,
     "Total_Views": 0,
-    "Total_Engagements": 1657,
+    "Total_Engagements": 1686,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_XpfbO2Dj",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 1657
+      "Engagements": 1686
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdRjiE_DpHO",
@@ -3579,21 +3729,21 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SEPAK",
     "Total_Posts": 3,
     "Total_Views": 0,
-    "Total_Engagements": 349,
+    "Total_Engagements": 353,
     "Week_1": null,
     "Week_2": {
       "URL": "http://instagram.com/p/DdQ_qZlosKj",
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 201
+      "Engagements": 204
     },
     "Week_3": {
       "URL": "http://instagram.com/p/Ddl0wAdouVR",
       "Platform": "Instagram",
       "Date": "2026-09-22",
       "Views": 0,
-      "Engagements": 148
+      "Engagements": 149
     },
     "Week_4": null
   },
@@ -3676,18 +3826,36 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Week_4": null
   },
   {
+    "Name": "Ezgi Narog\u0306lu",
+    "Handle": "ezginaroglu",
+    "Subsidiary": NaN,
+    "Total_Posts": 1,
+    "Total_Views": 0,
+    "Total_Engagements": 268,
+    "Week_1": null,
+    "Week_2": null,
+    "Week_3": null,
+    "Week_4": {
+      "URL": "http://instagram.com/p/DeHrxfeIp_e",
+      "Platform": "Instagram",
+      "Date": "2026-10-05",
+      "Views": 0,
+      "Engagements": 268
+    }
+  },
+  {
     "Name": "Ezgii \u2665\ufe0e | gaming, tech & desk setup",
     "Handle": "ezgiland",
     "Subsidiary": "SETK",
     "Total_Posts": 6,
     "Total_Views": 0,
-    "Total_Engagements": 777,
+    "Total_Engagements": 783,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_V4Z8Mt7N",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 418
+      "Engagements": 424
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdazktnDPrh",
@@ -3717,7 +3885,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SETK",
     "Total_Posts": 5,
     "Total_Views": 0,
-    "Total_Engagements": 270,
+    "Total_Engagements": 271,
     "Week_1": null,
     "Week_2": {
       "URL": "http://instagram.com/p/Ddg3w_VDYen",
@@ -3732,7 +3900,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-10-03",
       "Views": 0,
-      "Engagements": 3
+      "Engagements": 4
     }
   },
   {
@@ -3741,7 +3909,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SETK",
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 184,
+    "Total_Engagements": 185,
     "Week_1": {
       "URL": "http://instagram.com/p/DdCBfRjjOey",
       "Platform": "Instagram",
@@ -3801,7 +3969,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SETK",
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 872,
+    "Total_Engagements": 3635,
     "Week_1": {
       "URL": "http://instagram.com/p/DdCE9qBirH3",
       "Platform": "Instagram",
@@ -3817,18 +3985,18 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Name": "Gulce Canturk",
     "Handle": "gulcecantuurk",
     "Subsidiary": NaN,
-    "Total_Posts": 1,
+    "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 0,
+    "Total_Engagements": 135,
     "Week_1": null,
     "Week_2": null,
     "Week_3": null,
     "Week_4": {
-      "URL": "http://instagram.com/p/Dd6p93_NS3T",
+      "URL": "http://instagram.com/p/DeHj3CENnKK",
       "Platform": "Instagram",
-      "Date": "2026-09-30",
+      "Date": "2026-10-05",
       "Views": 0,
-      "Engagements": 0
+      "Engagements": 135
     }
   },
   {
@@ -3837,7 +4005,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SETK",
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 1898,
+    "Total_Engagements": 9058,
     "Week_1": {
       "URL": "http://instagram.com/p/DdB5xHnjbub",
       "Platform": "Instagram",
@@ -3879,7 +4047,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 723
+      "Engagements": 727
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdUGhNjuCDk",
@@ -3893,14 +4061,14 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 550
+      "Engagements": 537
     },
     "Week_4": {
       "URL": "http://instagram.com/p/DeCvZGJubeB",
       "Platform": "Instagram",
       "Date": "2026-10-03",
       "Views": 0,
-      "Engagements": 111
+      "Engagements": 120
     }
   },
   {
@@ -3927,13 +4095,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SGE",
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 1679,
+    "Total_Engagements": 1678,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_YhRDBA_s",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 1679
+      "Engagements": 1678
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdgaZ6UCuj_",
@@ -3951,13 +4119,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SETK",
     "Total_Posts": 1,
     "Total_Views": 0,
-    "Total_Engagements": 84833,
+    "Total_Engagements": 90824,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_Xe6yo6N2",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 84833
+      "Engagements": 90824
     },
     "Week_2": null,
     "Week_3": null,
@@ -3969,14 +4137,14 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SGE",
     "Total_Posts": 4,
     "Total_Views": 0,
-    "Total_Engagements": 749,
+    "Total_Engagements": 753,
     "Week_1": null,
     "Week_2": {
       "URL": "http://instagram.com/p/DdTuuOQqYXg",
       "Platform": "Instagram",
       "Date": "2026-09-15",
       "Views": 0,
-      "Engagements": 428
+      "Engagements": 431
     },
     "Week_3": {
       "URL": "http://instagram.com/p/DdqY6KxjlIR",
@@ -3990,7 +4158,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-28",
       "Views": 0,
-      "Engagements": 82
+      "Engagements": 83
     }
   },
   {
@@ -3999,13 +4167,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SEMAG",
     "Total_Posts": 5,
     "Total_Views": 0,
-    "Total_Engagements": 5473,
+    "Total_Engagements": 5568,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_or5lqOr2",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 4417
+      "Engagements": 4512
     },
     "Week_2": {
       "URL": "http://instagram.com/p/Ddb7r46q8Vc",
@@ -4047,13 +4215,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SELV",
     "Total_Posts": 1,
     "Total_Views": 0,
-    "Total_Engagements": 9338,
+    "Total_Engagements": 9477,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_SRC3MeS9",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 9338
+      "Engagements": 9477
     },
     "Week_2": null,
     "Week_3": null,
@@ -4117,15 +4285,15 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Name": "Jazna Ibrahim",
     "Handle": "jeznah_ebrahem",
     "Subsidiary": "SGE",
-    "Total_Posts": 3,
+    "Total_Posts": 4,
     "Total_Views": 0,
-    "Total_Engagements": 1844,
+    "Total_Engagements": 2044,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_b5lSKR5a",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 692
+      "Engagements": 698
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdeJ5IiqSdO",
@@ -4135,7 +4303,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Engagements": 1152
     },
     "Week_3": null,
-    "Week_4": null
+    "Week_4": {
+      "URL": "http://instagram.com/p/DeHbnFmqcZW",
+      "Platform": "Instagram",
+      "Date": "2026-10-05",
+      "Views": 0,
+      "Engagements": 194
+    }
   },
   {
     "Name": "Jbril",
@@ -4185,13 +4359,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SELV",
     "Total_Posts": 1,
     "Total_Views": 0,
-    "Total_Engagements": 1737,
+    "Total_Engagements": 1705,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_Y4X4Nuxy",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 1737
+      "Engagements": 1705
     },
     "Week_2": null,
     "Week_3": null,
@@ -4219,36 +4393,36 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Name": "Korea Walay\ud83c\uddf0\ud83c\uddf7",
     "Handle": "koreawalay",
     "Subsidiary": "SEPAK",
-    "Total_Posts": 4,
+    "Total_Posts": 5,
     "Total_Views": 0,
-    "Total_Engagements": 33551,
+    "Total_Engagements": 97847,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_BYjTANqo",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 2700
+      "Engagements": 21225
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdQ_ZJjAbp5",
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 10977
+      "Engagements": 54308
     },
     "Week_3": {
       "URL": "http://instagram.com/p/DdjBUaNNs1c",
       "Platform": "Instagram",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 13957
+      "Engagements": 14431
     },
     "Week_4": {
-      "URL": "http://instagram.com/p/Dd1EujFtSik",
+      "URL": "http://instagram.com/p/DeJiUWkNs9i",
       "Platform": "Instagram",
-      "Date": "2026-09-28",
+      "Date": "2026-10-06",
       "Views": 0,
-      "Engagements": 5917
+      "Engagements": 1834
     }
   },
   {
@@ -4257,13 +4431,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SGE",
     "Total_Posts": 12,
     "Total_Views": 0,
-    "Total_Engagements": 786,
+    "Total_Engagements": 793,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_SMMfqZFc",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 270
+      "Engagements": 272
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdetDyoPO6a",
@@ -4293,20 +4467,20 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SEPAK",
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 17859,
+    "Total_Engagements": 17917,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc-_oxMNgOf",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 10973
+      "Engagements": 11014
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdRDOXINt5z",
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 6886
+      "Engagements": 6903
     },
     "Week_3": null,
     "Week_4": null
@@ -4317,27 +4491,27 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SGE",
     "Total_Posts": 3,
     "Total_Views": 0,
-    "Total_Engagements": 452,
+    "Total_Engagements": 461,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_QZlVMS3w",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 153
+      "Engagements": 154
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdT616XsFS4",
       "Platform": "Instagram",
       "Date": "2026-09-15",
       "Views": 0,
-      "Engagements": 130
+      "Engagements": 131
     },
     "Week_3": {
       "URL": "http://instagram.com/p/DdjX8SZsi4j",
       "Platform": "Instagram",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 169
+      "Engagements": 176
     },
     "Week_4": null
   },
@@ -4347,7 +4521,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SEEG",
     "Total_Posts": 7,
     "Total_Views": 0,
-    "Total_Engagements": 155,
+    "Total_Engagements": 156,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc-2Q3Oif87",
       "Platform": "Instagram",
@@ -4368,7 +4542,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-10-02",
       "Views": 0,
-      "Engagements": 30
+      "Engagements": 29
     }
   },
   {
@@ -4377,34 +4551,34 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SEPAK",
     "Total_Posts": 7,
     "Total_Views": 0,
-    "Total_Engagements": 530,
+    "Total_Engagements": 544,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_C7gXsJHL",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 157
+      "Engagements": 161
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdRC2ynMnLu",
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 96
+      "Engagements": 98
     },
     "Week_3": {
       "URL": "http://instagram.com/p/DdjXVdYMaG1",
       "Platform": "Instagram",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 169
+      "Engagements": 175
     },
     "Week_4": {
       "URL": "http://instagram.com/p/Dd_nBbXMb7X",
       "Platform": "Instagram",
       "Date": "2026-10-02",
       "Views": 0,
-      "Engagements": 108
+      "Engagements": 110
     }
   },
   {
@@ -4431,7 +4605,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SESAR",
     "Total_Posts": 10,
     "Total_Views": 0,
-    "Total_Engagements": 11091,
+    "Total_Engagements": 11105,
     "Week_1": {
       "URL": "http://instagram.com/p/DdMCpLiCPpt",
       "Platform": "Instagram",
@@ -4458,16 +4632,16 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-10-04",
       "Views": 0,
-      "Engagements": 116
+      "Engagements": 138
     }
   },
   {
     "Name": "Maryam Alfarsi OLY",
     "Handle": "maryamalfarsi1",
     "Subsidiary": "SGE",
-    "Total_Posts": 4,
+    "Total_Posts": 5,
     "Total_Views": 0,
-    "Total_Engagements": 871,
+    "Total_Engagements": 1007,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_RgbviYtC",
       "Platform": "Instagram",
@@ -4480,7 +4654,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 270
+      "Engagements": 275
     },
     "Week_3": {
       "URL": "http://instagram.com/p/Ddov4Apifoj",
@@ -4490,39 +4664,39 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Engagements": 111
     },
     "Week_4": {
-      "URL": "http://instagram.com/p/Dd1rDZtqMlq",
+      "URL": "http://instagram.com/p/DeHi-aGiPOx",
       "Platform": "Instagram",
-      "Date": "2026-09-28",
+      "Date": "2026-10-05",
       "Views": 0,
-      "Engagements": 233
+      "Engagements": 129
     }
   },
   {
     "Name": "Mehdi Qassoud",
     "Handle": "qass_mehdi",
     "Subsidiary": "SEMAG",
-    "Total_Posts": 6,
+    "Total_Posts": 7,
     "Total_Views": 0,
-    "Total_Engagements": 1836,
+    "Total_Engagements": 1848,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc-9noSNr7w",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 915
+      "Engagements": 918
     },
     "Week_2": {
       "URL": "http://instagram.com/p/Ddeej8ytN_h",
       "Platform": "Instagram",
       "Date": "2026-09-19",
       "Views": 0,
-      "Engagements": 921
+      "Engagements": 930
     },
     "Week_3": null,
     "Week_4": {
-      "URL": "http://instagram.com/p/Dd6y_8CjUNz",
+      "URL": "http://instagram.com/p/DeH-aHWDWaM",
       "Platform": "Instagram",
-      "Date": "2026-09-30",
+      "Date": "2026-10-05",
       "Views": 0,
       "Engagements": 0
     }
@@ -4549,18 +4723,18 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Name": "Mehr ul wafa",
     "Handle": "_mehruuuu_",
     "Subsidiary": "SEPAK",
-    "Total_Posts": 1,
+    "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 142,
+    "Total_Engagements": 244,
     "Week_1": null,
     "Week_2": null,
     "Week_3": null,
     "Week_4": {
-      "URL": "http://instagram.com/p/Dd1Pj9Tu1tN",
+      "URL": "http://instagram.com/p/DeJTc_AOodB",
       "Platform": "Instagram",
-      "Date": "2026-09-28",
+      "Date": "2026-10-06",
       "Views": 0,
-      "Engagements": 142
+      "Engagements": 101
     }
   },
   {
@@ -4569,7 +4743,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SETK",
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 1740,
+    "Total_Engagements": 5379,
     "Week_1": {
       "URL": "http://instagram.com/p/DdB-PzPCNtd",
       "Platform": "Instagram",
@@ -4587,13 +4761,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SETK",
     "Total_Posts": 1,
     "Total_Views": 0,
-    "Total_Engagements": 23253,
+    "Total_Engagements": 24225,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_Y4m9NcGW",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 23253
+      "Engagements": 24225
     },
     "Week_2": null,
     "Week_3": null,
@@ -4605,7 +4779,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SGE",
     "Total_Posts": 5,
     "Total_Views": 0,
-    "Total_Engagements": 62869,
+    "Total_Engagements": 63501,
     "Week_1": {
       "URL": "http://instagram.com/p/DdOOum_kbvt",
       "Platform": "Instagram",
@@ -4623,27 +4797,27 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SGE",
     "Total_Posts": 4,
     "Total_Views": 0,
-    "Total_Engagements": 644,
+    "Total_Engagements": 671,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_UWzzsZcJ",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 314
+      "Engagements": 320
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdRLhrlsKQV",
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 214
+      "Engagements": 227
     },
     "Week_3": {
       "URL": "http://instagram.com/p/DdjjWu8MtqV",
       "Platform": "Instagram",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 116
+      "Engagements": 124
     },
     "Week_4": null
   },
@@ -4653,7 +4827,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SGE",
     "Total_Posts": 7,
     "Total_Views": 0,
-    "Total_Engagements": 36871,
+    "Total_Engagements": 36868,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_KSMmjvNg",
       "Platform": "Instagram",
@@ -4719,21 +4893,21 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SGE",
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 7478,
+    "Total_Engagements": 9366,
     "Week_1": null,
     "Week_2": {
       "URL": "http://instagram.com/p/DdTsXl2NmyL",
       "Platform": "Instagram",
       "Date": "2026-09-15",
       "Views": 0,
-      "Engagements": 6265
+      "Engagements": 8104
     },
     "Week_3": {
       "URL": "http://instagram.com/p/DdjPI3Mty4V",
       "Platform": "Instagram",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 1213
+      "Engagements": 1262
     },
     "Week_4": null
   },
@@ -4743,13 +4917,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SGE",
     "Total_Posts": 7,
     "Total_Views": 0,
-    "Total_Engagements": 3535,
+    "Total_Engagements": 3619,
     "Week_1": {
       "URL": "http://instagram.com/p/DdCTltMqY56",
       "Platform": "Instagram",
       "Date": "2026-09-08",
       "Views": 0,
-      "Engagements": 900
+      "Engagements": 901
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdRfBsHKDq6",
@@ -4770,7 +4944,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-10-02",
       "Views": 0,
-      "Engagements": 158
+      "Engagements": 159
     }
   },
   {
@@ -4875,14 +5049,14 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SELV",
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 6072,
+    "Total_Engagements": 12256,
     "Week_1": null,
     "Week_2": {
       "URL": "http://instagram.com/p/DdRXlAZMc0f",
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 5891
+      "Engagements": 12075
     },
     "Week_3": null,
     "Week_4": null
@@ -4891,36 +5065,36 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Name": "Pierre-Jos\u00e9 Charro | Lebanon |",
     "Handle": "architectonthemove",
     "Subsidiary": "SELV",
-    "Total_Posts": 5,
+    "Total_Posts": 6,
     "Total_Views": 0,
-    "Total_Engagements": 1757,
+    "Total_Engagements": 2399,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_SjsPtcnY",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 626
+      "Engagements": 627
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdRajkrthx9",
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 178
+      "Engagements": 181
     },
     "Week_3": {
       "URL": "http://instagram.com/p/DdjlADvNuI2",
       "Platform": "Instagram",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 433
+      "Engagements": 437
     },
     "Week_4": {
-      "URL": "http://instagram.com/p/Dd5wVcKDWXn",
+      "URL": "http://instagram.com/p/DeEhZfPtXfj",
       "Platform": "Instagram",
-      "Date": "2026-09-30",
+      "Date": "2026-10-04",
       "Views": 0,
-      "Engagements": 0
+      "Engagements": 631
     }
   },
   {
@@ -4929,7 +5103,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SELV",
     "Total_Posts": 16,
     "Total_Views": 0,
-    "Total_Engagements": 777,
+    "Total_Engagements": 785,
     "Week_1": {
       "URL": "http://instagram.com/p/DdOMrHcMNVR",
       "Platform": "Instagram",
@@ -4950,7 +5124,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-10-02",
       "Views": 0,
-      "Engagements": 139
+      "Engagements": 147
     }
   },
   {
@@ -4959,13 +5133,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SEEG",
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 3676,
+    "Total_Engagements": 3793,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_p-zYNHvS",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 1806
+      "Engagements": 1817
     },
     "Week_2": null,
     "Week_3": null,
@@ -4974,7 +5148,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-10-02",
       "Views": 0,
-      "Engagements": 1870
+      "Engagements": 1976
     }
   },
   {
@@ -4983,34 +5157,34 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SGE",
     "Total_Posts": 5,
     "Total_Views": 0,
-    "Total_Engagements": 2489,
+    "Total_Engagements": 2511,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc-8AD0RgJY",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 888
+      "Engagements": 891
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdREmdxtim1",
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 625
+      "Engagements": 633
     },
     "Week_3": {
       "URL": "http://instagram.com/p/DdjNRTuNBDG",
       "Platform": "Instagram",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 488
+      "Engagements": 493
     },
     "Week_4": {
       "URL": "http://instagram.com/p/Dd_xJWmtot-",
       "Platform": "Instagram",
       "Date": "2026-10-02",
       "Views": 0,
-      "Engagements": 238
+      "Engagements": 244
     }
   },
   {
@@ -5037,7 +5211,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SETK",
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 4504,
+    "Total_Engagements": 14007,
     "Week_1": {
       "URL": "http://instagram.com/p/DdCMAG2iE-3",
       "Platform": "Instagram",
@@ -5079,34 +5253,34 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SEPAK",
     "Total_Posts": 5,
     "Total_Views": 0,
-    "Total_Engagements": 26509,
+    "Total_Engagements": 317982,
     "Week_1": {
       "URL": "http://instagram.com/p/DdCIy0qpHKk",
       "Platform": "Instagram",
       "Date": "2026-09-08",
       "Views": 0,
-      "Engagements": 7741
+      "Engagements": 64676
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdQ-qN7B7Oy",
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 5001
+      "Engagements": 62584
     },
     "Week_3": {
       "URL": "http://instagram.com/p/Ddi5UpWh_2L",
       "Platform": "Instagram",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 8645
+      "Engagements": 12325
     },
     "Week_4": {
       "URL": "http://instagram.com/p/DeAIFGgA2Dm",
       "Platform": "Instagram",
       "Date": "2026-10-02",
       "Views": 0,
-      "Engagements": 1783
+      "Engagements": 175009
     }
   },
   {
@@ -5151,13 +5325,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SETK",
     "Total_Posts": 1,
     "Total_Views": 0,
-    "Total_Engagements": 8193,
+    "Total_Engagements": 8204,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_YBKCoIO3",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 8193
+      "Engagements": 8204
     },
     "Week_2": null,
     "Week_3": null,
@@ -5253,7 +5427,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": NaN,
     "Total_Posts": 1,
     "Total_Views": 0,
-    "Total_Engagements": 261,
+    "Total_Engagements": 276,
     "Week_1": null,
     "Week_2": null,
     "Week_3": null,
@@ -5262,7 +5436,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-10-02",
       "Views": 0,
-      "Engagements": 261
+      "Engagements": 276
     }
   },
   {
@@ -5271,7 +5445,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": NaN,
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 1497,
+    "Total_Engagements": 1567,
     "Week_1": null,
     "Week_2": null,
     "Week_3": null,
@@ -5280,7 +5454,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-10-01",
       "Views": 0,
-      "Engagements": 1476
+      "Engagements": 1546
     }
   },
   {
@@ -5307,7 +5481,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SETK",
     "Total_Posts": 1,
     "Total_Views": 0,
-    "Total_Engagements": 7155,
+    "Total_Engagements": 7303,
     "Week_1": null,
     "Week_2": null,
     "Week_3": null,
@@ -5316,7 +5490,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-29",
       "Views": 0,
-      "Engagements": 7155
+      "Engagements": 7303
     }
   },
   {
@@ -5325,13 +5499,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SETK",
     "Total_Posts": 1,
     "Total_Views": 0,
-    "Total_Engagements": 236672,
+    "Total_Engagements": 239513,
     "Week_1": {
       "URL": "http://instagram.com/p/DdCEM8qN1ut",
       "Platform": "Instagram",
       "Date": "2026-09-08",
       "Views": 0,
-      "Engagements": 236672
+      "Engagements": 239513
     },
     "Week_2": null,
     "Week_3": null,
@@ -5343,34 +5517,34 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SEPAK",
     "Total_Posts": 4,
     "Total_Views": 0,
-    "Total_Engagements": 6448,
+    "Total_Engagements": 6484,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_IJUnob22",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 5149
+      "Engagements": 5151
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdT3yoyIon8",
       "Platform": "Instagram",
       "Date": "2026-09-15",
       "Views": 0,
-      "Engagements": 445
+      "Engagements": 446
     },
     "Week_3": {
       "URL": "http://instagram.com/p/DdjLnUOoz36",
       "Platform": "Instagram",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 544
+      "Engagements": 567
     },
     "Week_4": {
       "URL": "http://instagram.com/p/Dd1XrlPoPni",
       "Platform": "Instagram",
       "Date": "2026-09-28",
       "Views": 0,
-      "Engagements": 310
+      "Engagements": 320
     }
   },
   {
@@ -5428,18 +5602,36 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Week_4": null
   },
   {
+    "Name": "Yasemin Polat",
+    "Handle": "yaseminypolatt",
+    "Subsidiary": NaN,
+    "Total_Posts": 1,
+    "Total_Views": 0,
+    "Total_Engagements": 1000,
+    "Week_1": null,
+    "Week_2": null,
+    "Week_3": null,
+    "Week_4": {
+      "URL": "http://instagram.com/p/DeHRdfUNAvM",
+      "Platform": "Instagram",
+      "Date": "2026-10-05",
+      "Views": 0,
+      "Engagements": 1000
+    }
+  },
+  {
     "Name": "Ya\u011f\u0131z \u015eenol",
     "Handle": "yagizsenol17",
     "Subsidiary": "SETK",
     "Total_Posts": 1,
     "Total_Views": 0,
-    "Total_Engagements": 24426,
+    "Total_Engagements": 25177,
     "Week_1": {
       "URL": "http://instagram.com/p/DdCGisZBSsF",
       "Platform": "Instagram",
       "Date": "2026-09-08",
       "Views": 0,
-      "Engagements": 24426
+      "Engagements": 25177
     },
     "Week_2": null,
     "Week_3": null,
@@ -5529,7 +5721,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SELV",
     "Total_Posts": 6,
     "Total_Views": 0,
-    "Total_Engagements": 5001,
+    "Total_Engagements": 5257,
     "Week_1": {
       "URL": "http://instagram.com/p/DdKLRjItWIi",
       "Platform": "Instagram",
@@ -5542,21 +5734,21 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 563
+      "Engagements": 614
     },
     "Week_3": {
       "URL": "http://instagram.com/p/DdjcK5gtuwI",
       "Platform": "Instagram",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 764
+      "Engagements": 863
     },
     "Week_4": {
       "URL": "http://instagram.com/p/DeCshi3NAc2",
       "Platform": "Instagram",
       "Date": "2026-10-03",
       "Views": 0,
-      "Engagements": 524
+      "Engagements": 567
     }
   },
   {
@@ -5596,18 +5788,36 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     }
   },
   {
+    "Name": "Zeynep",
+    "Handle": "zeynfluense",
+    "Subsidiary": NaN,
+    "Total_Posts": 1,
+    "Total_Views": 0,
+    "Total_Engagements": 15,
+    "Week_1": null,
+    "Week_2": null,
+    "Week_3": null,
+    "Week_4": {
+      "URL": "http://instagram.com/p/DeHi4bjtN3q",
+      "Platform": "Instagram",
+      "Date": "2026-10-05",
+      "Views": 0,
+      "Engagements": 15
+    }
+  },
+  {
     "Name": "abohaeeb",
     "Handle": "abohaeeb",
     "Subsidiary": "SESAR",
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 1323,
+    "Total_Engagements": 1346,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_lXxjMprh",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 917
+      "Engagements": 926
     },
     "Week_2": null,
     "Week_3": null,
@@ -5616,7 +5826,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-10-02",
       "Views": 0,
-      "Engagements": 406
+      "Engagements": 420
     }
   },
   {
@@ -5625,7 +5835,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SETK",
     "Total_Posts": 3,
     "Total_Views": 0,
-    "Total_Engagements": 159460,
+    "Total_Engagements": 159709,
     "Week_1": {
       "URL": "http://instagram.com/p/DdJU5JRuWi7",
       "Platform": "Instagram",
@@ -5644,22 +5854,46 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Week_4": null
   },
   {
+    "Name": "beyzanurbaysann",
+    "Handle": "beyzanurbaysann",
+    "Subsidiary": NaN,
+    "Total_Posts": 1,
+    "Total_Views": 0,
+    "Total_Engagements": 162,
+    "Week_1": null,
+    "Week_2": null,
+    "Week_3": null,
+    "Week_4": {
+      "URL": "http://instagram.com/p/DeHoF21oXaQ",
+      "Platform": "Instagram",
+      "Date": "2026-10-05",
+      "Views": 0,
+      "Engagements": 162
+    }
+  },
+  {
     "Name": "biotonguc",
     "Handle": "biotonguc",
     "Subsidiary": "SETK",
-    "Total_Posts": 1,
+    "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 7387,
+    "Total_Engagements": 10345,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_i5U1smHO",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 7387
+      "Engagements": 7455
     },
     "Week_2": null,
     "Week_3": null,
-    "Week_4": null
+    "Week_4": {
+      "URL": "http://instagram.com/p/DeHwEIOCQeK",
+      "Platform": "Instagram",
+      "Date": "2026-10-05",
+      "Views": 0,
+      "Engagements": 2890
+    }
   },
   {
     "Name": "dina.hashish",
@@ -5667,13 +5901,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SEEG",
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 1788,
+    "Total_Engagements": 1824,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc-ogy9tqy_",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 1456
+      "Engagements": 1467
     },
     "Week_2": null,
     "Week_3": null,
@@ -5682,7 +5916,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-10-02",
       "Views": 0,
-      "Engagements": 332
+      "Engagements": 357
     }
   },
   {
@@ -5691,13 +5925,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SGE",
     "Total_Posts": 4,
     "Total_Views": 0,
-    "Total_Engagements": 353,
+    "Total_Engagements": 1125,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc-79KCoK7U",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 129
+      "Engagements": 901
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdgAopdCLBD",
@@ -5714,6 +5948,24 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Engagements": 90
     },
     "Week_4": null
+  },
+  {
+    "Name": "eylulgumusbas",
+    "Handle": "eylulgumusbas",
+    "Subsidiary": NaN,
+    "Total_Posts": 2,
+    "Total_Views": 0,
+    "Total_Engagements": 0,
+    "Week_1": null,
+    "Week_2": null,
+    "Week_3": null,
+    "Week_4": {
+      "URL": "http://instagram.com/p/DeJbyfTotAb",
+      "Platform": "Instagram",
+      "Date": "2026-10-06",
+      "Views": 0,
+      "Engagements": 0
+    }
   },
   {
     "Name": "fatihfiratbalci",
@@ -5737,36 +5989,36 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Name": "humzach_",
     "Handle": "humzach_",
     "Subsidiary": "SEPAK",
-    "Total_Posts": 4,
+    "Total_Posts": 5,
     "Total_Views": 0,
-    "Total_Engagements": 1269,
+    "Total_Engagements": 1426,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_FoReCgzs",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 462
+      "Engagements": 467
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdRBIbrCU2C",
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 313
+      "Engagements": 318
     },
     "Week_3": {
       "URL": "http://instagram.com/p/DdjQr-qiXud",
       "Platform": "Instagram",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 155
+      "Engagements": 166
     },
     "Week_4": {
-      "URL": "http://instagram.com/p/Dd1EHWnqM2l",
+      "URL": "http://instagram.com/p/DeJJvIJgWlg",
       "Platform": "Instagram",
-      "Date": "2026-09-28",
+      "Date": "2026-10-06",
       "Views": 0,
-      "Engagements": 339
+      "Engagements": 124
     }
   },
   {
@@ -5853,34 +6105,34 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SEPAK",
     "Total_Posts": 7,
     "Total_Views": 0,
-    "Total_Engagements": 1717,
+    "Total_Engagements": 1801,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_Fwl-MD1k",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 248
+      "Engagements": 253
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdQ_pGgMPqj",
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 290
+      "Engagements": 294
     },
     "Week_3": {
       "URL": "http://instagram.com/p/DdjB6LsMwkM",
       "Platform": "Instagram",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 899
+      "Engagements": 946
     },
     "Week_4": {
       "URL": "http://instagram.com/p/Dd_3wmBM7V_",
       "Platform": "Instagram",
       "Date": "2026-10-02",
       "Views": 0,
-      "Engagements": 280
+      "Engagements": 308
     }
   },
   {
@@ -5902,18 +6154,36 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Week_4": null
   },
   {
+    "Name": "mugesivill",
+    "Handle": "mugesivill",
+    "Subsidiary": NaN,
+    "Total_Posts": 1,
+    "Total_Views": 0,
+    "Total_Engagements": 143,
+    "Week_1": null,
+    "Week_2": null,
+    "Week_3": null,
+    "Week_4": {
+      "URL": "http://instagram.com/p/DeHSQV5I8dI",
+      "Platform": "Instagram",
+      "Date": "2026-10-05",
+      "Views": 0,
+      "Engagements": 143
+    }
+  },
+  {
     "Name": "okanyontar",
     "Handle": "okanyontar",
     "Subsidiary": "SETK",
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 240794,
+    "Total_Engagements": 241347,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_lrIOgvt5",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 19552
+      "Engagements": 20105
     },
     "Week_2": null,
     "Week_3": {
@@ -5968,12 +6238,30 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     }
   },
   {
+    "Name": "selencansu5",
+    "Handle": "selencansu5",
+    "Subsidiary": NaN,
+    "Total_Posts": 1,
+    "Total_Views": 0,
+    "Total_Engagements": 374,
+    "Week_1": null,
+    "Week_2": null,
+    "Week_3": null,
+    "Week_4": {
+      "URL": "http://instagram.com/p/DeHUdlWsFf0",
+      "Platform": "Instagram",
+      "Date": "2026-10-05",
+      "Views": 0,
+      "Engagements": 374
+    }
+  },
+  {
     "Name": "tunagezz",
     "Handle": "tunagezz",
     "Subsidiary": "SETK",
     "Total_Posts": 1,
     "Total_Views": 0,
-    "Total_Engagements": 1720,
+    "Total_Engagements": 1787,
     "Week_1": null,
     "Week_2": null,
     "Week_3": null,
@@ -5982,16 +6270,16 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-30",
       "Views": 0,
-      "Engagements": 1720
+      "Engagements": 1787
     }
   },
   {
     "Name": "yaren",
     "Handle": "yarennatayy",
     "Subsidiary": "SETK",
-    "Total_Posts": 3,
+    "Total_Posts": 4,
     "Total_Views": 0,
-    "Total_Engagements": 16448,
+    "Total_Engagements": 17348,
     "Week_1": {
       "URL": "http://instagram.com/p/DdBWR_UknwC",
       "Platform": "Instagram",
@@ -6001,7 +6289,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     },
     "Week_2": null,
     "Week_3": null,
-    "Week_4": null
+    "Week_4": {
+      "URL": "http://instagram.com/p/DeHlpL1oMxy",
+      "Platform": "Instagram",
+      "Date": "2026-10-05",
+      "Views": 0,
+      "Engagements": 438
+    }
   },
   {
     "Name": "yazxan",
@@ -6009,13 +6303,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SGE",
     "Total_Posts": 1,
     "Total_Views": 0,
-    "Total_Engagements": 11480,
+    "Total_Engagements": 14392,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_v9RmNO3g",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 11480
+      "Engagements": 14392
     },
     "Week_2": null,
     "Week_3": null,
@@ -6027,13 +6321,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SETK",
     "Total_Posts": 1,
     "Total_Views": 0,
-    "Total_Engagements": 13133,
+    "Total_Engagements": 13466,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_uICOOulf",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 13133
+      "Engagements": 13466
     },
     "Week_2": null,
     "Week_3": null,
@@ -6045,13 +6339,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SETK",
     "Total_Posts": 1,
     "Total_Views": 0,
-    "Total_Engagements": 9328,
+    "Total_Engagements": 9834,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_uB76QpJ7",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 9328
+      "Engagements": 9834
     },
     "Week_2": null,
     "Week_3": null,
@@ -6099,13 +6393,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SEIL",
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 295,
+    "Total_Engagements": 297,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc-oatro6N4",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 258
+      "Engagements": 260
     },
     "Week_2": null,
     "Week_3": {
@@ -6123,7 +6417,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SEIL",
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 1099,
+    "Total_Engagements": 1112,
     "Week_1": null,
     "Week_2": {
       "URL": "http://instagram.com/p/DdYw710oIUi",
@@ -6138,7 +6432,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-29",
       "Views": 0,
-      "Engagements": 316
+      "Engagements": 329
     }
   },
   {
@@ -6147,7 +6441,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SESAR",
     "Total_Posts": 7,
     "Total_Views": 0,
-    "Total_Engagements": 1749,
+    "Total_Engagements": 1761,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_BrkVIJq5",
       "Platform": "Instagram",
@@ -6168,7 +6462,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-10-02",
       "Views": 0,
-      "Engagements": 223
+      "Engagements": 235
     }
   },
   {
@@ -6177,7 +6471,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": NaN,
     "Total_Posts": 1,
     "Total_Views": 0,
-    "Total_Engagements": 116,
+    "Total_Engagements": 119,
     "Week_1": null,
     "Week_2": null,
     "Week_3": null,
@@ -6186,23 +6480,23 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-10-01",
       "Views": 0,
-      "Engagements": 116
+      "Engagements": 119
     }
   },
   {
     "Name": "\u0633\u0631\u0627\u062c",
     "Handle": "serajhk",
     "Subsidiary": NaN,
-    "Total_Posts": 1,
+    "Total_Posts": 2,
     "Total_Views": 0,
     "Total_Engagements": 0,
     "Week_1": null,
     "Week_2": null,
     "Week_3": null,
     "Week_4": {
-      "URL": "http://snapchat.com/story/LffW-096T8ieCzuKEBtG0gAAgY3Fkd3pzeWh4AaEIAcDVAaEIAbusAAAAAA",
-      "Platform": "Snapchat",
-      "Date": "2026-10-03",
+      "URL": "http://instagram.com/p/DeHalzjs289",
+      "Platform": "Instagram",
+      "Date": "2026-10-05",
       "Views": 0,
       "Engagements": 0
     }
@@ -6237,7 +6531,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": NaN,
     "Total_Posts": 1,
     "Total_Views": 0,
-    "Total_Engagements": 198,
+    "Total_Engagements": 220,
     "Week_1": null,
     "Week_2": null,
     "Week_3": null,
@@ -6246,7 +6540,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-10-03",
       "Views": 0,
-      "Engagements": 198
+      "Engagements": 220
     }
   },
   {
@@ -6255,13 +6549,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SGE",
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 56009,
+    "Total_Engagements": 57419,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_Qpt4I94C",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 27408
+      "Engagements": 27511
     },
     "Week_2": null,
     "Week_3": {
@@ -6269,7 +6563,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 28601
+      "Engagements": 29908
     },
     "Week_4": null
   },
@@ -6277,15 +6571,15 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Name": "\u0639\u064f\u0645\u0631 \u0627\u0644\u0635\u0631\u0627\u064a\u0631\u0647|omar alsarayreh",
     "Handle": "itsomar30",
     "Subsidiary": "SELV",
-    "Total_Posts": 11,
+    "Total_Posts": 12,
     "Total_Views": 0,
-    "Total_Engagements": 6363,
+    "Total_Engagements": 6448,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_UWBjqqbk",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 92
+      "Engagements": 94
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdWuT0ezUTN",
@@ -6306,7 +6600,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-10-02",
       "Views": 0,
-      "Engagements": 106
+      "Engagements": 111
     }
   },
   {
@@ -6315,7 +6609,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SELV",
     "Total_Posts": 8,
     "Total_Views": 0,
-    "Total_Engagements": 1763,
+    "Total_Engagements": 1786,
     "Week_1": {
       "URL": "http://instagram.com/p/DdEAtgUNPnF",
       "Platform": "Instagram",
@@ -6328,14 +6622,14 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 340
+      "Engagements": 342
     },
     "Week_3": {
       "URL": "http://instagram.com/p/Ddja1kEt8ot",
       "Platform": "Instagram",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 272
+      "Engagements": 277
     },
     "Week_4": {
       "URL": "http://instagram.com/p/DeEVQ4oDXgE",
@@ -6351,7 +6645,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SGE",
     "Total_Posts": 6,
     "Total_Views": 0,
-    "Total_Engagements": 813,
+    "Total_Engagements": 825,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_I8Daqf7P",
       "Platform": "Instagram",
@@ -6364,14 +6658,14 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 347
+      "Engagements": 355
     },
     "Week_3": {
       "URL": "http://instagram.com/p/DdjObJvqohO",
       "Platform": "Instagram",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 195
+      "Engagements": 199
     },
     "Week_4": null
   },
@@ -6399,20 +6693,20 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SELV",
     "Total_Posts": 17,
     "Total_Views": 0,
-    "Total_Engagements": 1851,
+    "Total_Engagements": 1984,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_YimEIK6f",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 153
+      "Engagements": 155
     },
     "Week_2": {
       "URL": "http://instagram.com/p/DdRZyovii3B",
       "Platform": "Instagram",
       "Date": "2026-09-14",
       "Views": 0,
-      "Engagements": 197
+      "Engagements": 199
     },
     "Week_3": {
       "URL": "http://instagram.com/p/Ddrq_Iegk_b",
@@ -6426,7 +6720,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-10-02",
       "Views": 0,
-      "Engagements": 188
+      "Engagements": 204
     }
   },
   {
@@ -6435,13 +6729,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SELV",
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 11747,
+    "Total_Engagements": 11907,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc_n4rMovoN",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 10059
+      "Engagements": 10209
     },
     "Week_2": null,
     "Week_3": null,
@@ -6453,7 +6747,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": NaN,
     "Total_Posts": 1,
     "Total_Views": 0,
-    "Total_Engagements": 164,
+    "Total_Engagements": 167,
     "Week_1": null,
     "Week_2": null,
     "Week_3": null,
@@ -6462,7 +6756,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-10-01",
       "Views": 0,
-      "Engagements": 164
+      "Engagements": 167
     }
   },
   {
@@ -6471,7 +6765,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SEIL",
     "Total_Posts": 2,
     "Total_Views": 0,
-    "Total_Engagements": 86,
+    "Total_Engagements": 87,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc-oR1Is730",
       "Platform": "Instagram",
@@ -6485,7 +6779,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-23",
       "Views": 0,
-      "Engagements": 22
+      "Engagements": 23
     },
     "Week_4": null
   },
@@ -6495,13 +6789,13 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
     "Subsidiary": "SEEG",
     "Total_Posts": 8,
     "Total_Views": 0,
-    "Total_Engagements": 1071,
+    "Total_Engagements": 1296,
     "Week_1": {
       "URL": "http://instagram.com/p/Dc-wCljMVL6",
       "Platform": "Instagram",
       "Date": "2026-09-07",
       "Views": 0,
-      "Engagements": 175
+      "Engagements": 179
     },
     "Week_2": null,
     "Week_3": {
@@ -6509,7 +6803,7 @@ export const STATIC_LIFESTYLE_CREATOR_MATRIX = [
       "Platform": "Instagram",
       "Date": "2026-09-21",
       "Views": 0,
-      "Engagements": 749
+      "Engagements": 840
     },
     "Week_4": {
       "URL": "http://instagram.com/p/DeAUpnIDHCo",
