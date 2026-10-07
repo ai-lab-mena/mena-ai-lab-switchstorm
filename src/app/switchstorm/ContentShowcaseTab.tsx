@@ -37,6 +37,8 @@ const WEEK_OPTIONS = [
   { id: "Week 3", label: "Week 3 • Sep 21 – Sep 27", start: "2026-09-21", end: "2026-09-27" },
   { id: "Week 4", label: "Week 4 • Sep 28 – Oct 4", start: "2026-09-28", end: "2026-10-04" },
   { id: "Week 5", label: "Week 5 • Oct 5 – Oct 11", start: "2026-10-05", end: "2026-10-11" },
+  { id: "Week 6", label: "Week 6 • Oct 12 – Oct 18", start: "2026-10-12", end: "2026-10-18" },
+  { id: "Week 7", label: "Week 7 • Oct 19 – Oct 25", start: "2026-10-19", end: "2026-10-25" },
 ];
 
 const SORT_OPTIONS: { id: SortMetric; label: string; shortLabel: string; description: string }[] = [
@@ -62,7 +64,7 @@ export default function ContentShowcaseTab({
   onSelectSubsidiary,
 }: ContentShowcaseTabProps) {
   const [selectedPhase, setSelectedPhase] = useState<string>("Overall");
-  const [selectedWeek, setSelectedWeek] = useState<string>("All");
+  const [selectedWeeks, setSelectedWeeks] = useState<string[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>("Overall");
   const [selectedPlatform, setSelectedPlatform] = useState<string>("All");
   const [viewMode, setViewMode] = useState<"top10" | "all">("top10");
@@ -77,6 +79,28 @@ export default function ContentShowcaseTab({
       ...prev,
       [key]: !prev[key],
     }));
+  };
+
+  const isWeekActive = (weekId: string) => {
+    if (weekId === "All") {
+      return selectedWeeks.length === 0 || selectedWeeks.includes("All");
+    }
+    return selectedWeeks.includes(weekId);
+  };
+
+  const toggleWeek = (weekId: string) => {
+    if (weekId === "All") {
+      setSelectedWeeks([]);
+      return;
+    }
+    setSelectedWeeks((prev) => {
+      const cleaned = prev.filter((w) => w !== "All");
+      if (cleaned.includes(weekId)) {
+        return cleaned.filter((w) => w !== weekId);
+      } else {
+        return [...cleaned, weekId];
+      }
+    });
   };
 
   const handleImageError = (key: string) => {
@@ -123,12 +147,14 @@ export default function ContentShowcaseTab({
           selectedSubsidiary === "All" ||
           (v.Subsidiary && v.Subsidiary.toUpperCase() === selectedSubsidiary.toUpperCase());
         const matchWeek = (() => {
-          if (selectedWeek === "All") return true;
+          if (selectedWeeks.length === 0 || selectedWeeks.includes("All")) return true;
           const postDate = v["Post Date"];
           if (!postDate) return false;
-          const opt = WEEK_OPTIONS.find((w) => w.id === selectedWeek);
-          if (!opt || !opt.start || !opt.end) return true;
-          return postDate >= opt.start && postDate <= opt.end;
+          return selectedWeeks.some((wId) => {
+            const opt = WEEK_OPTIONS.find((w) => w.id === wId);
+            if (!opt || !opt.start || !opt.end) return false;
+            return postDate >= opt.start && postDate <= opt.end;
+          });
         })();
         return matchPhase && matchWeek && matchCat && matchPlatform && matchSubsidiary;
       })
@@ -138,15 +164,15 @@ export default function ContentShowcaseTab({
 
   const top10Overall = useMemo(
     () => getTop10ForCategory("Overall"),
-    [allRankedVideos, selectedPhase, selectedWeek, selectedPlatform, selectedSubsidiary, sortBy]
+    [allRankedVideos, selectedPhase, selectedWeeks, selectedPlatform, selectedSubsidiary, sortBy]
   );
   const top10Lifestyle = useMemo(
     () => getTop10ForCategory("Lifestyle"),
-    [allRankedVideos, selectedPhase, selectedWeek, selectedPlatform, selectedSubsidiary, sortBy]
+    [allRankedVideos, selectedPhase, selectedWeeks, selectedPlatform, selectedSubsidiary, sortBy]
   );
   const top10Techies = useMemo(
     () => getTop10ForCategory("Tech / Crossover"),
-    [allRankedVideos, selectedPhase, selectedWeek, selectedPlatform, selectedSubsidiary, sortBy]
+    [allRankedVideos, selectedPhase, selectedWeeks, selectedPlatform, selectedSubsidiary, sortBy]
   );
 
   // Filtered All Ranked Videos sorted by active metric
@@ -163,12 +189,14 @@ export default function ContentShowcaseTab({
           selectedSubsidiary === "All" ||
           (v.Subsidiary && v.Subsidiary.toUpperCase() === selectedSubsidiary.toUpperCase());
         const matchWeek = (() => {
-          if (selectedWeek === "All") return true;
+          if (selectedWeeks.length === 0 || selectedWeeks.includes("All")) return true;
           const postDate = v["Post Date"];
           if (!postDate) return false;
-          const opt = WEEK_OPTIONS.find((w) => w.id === selectedWeek);
-          if (!opt || !opt.start || !opt.end) return true;
-          return postDate >= opt.start && postDate <= opt.end;
+          return selectedWeeks.some((wId) => {
+            const opt = WEEK_OPTIONS.find((w) => w.id === wId);
+            if (!opt || !opt.start || !opt.end) return false;
+            return postDate >= opt.start && postDate <= opt.end;
+          });
         })();
 
         const q = searchQuery.toLowerCase().trim();
@@ -182,7 +210,7 @@ export default function ContentShowcaseTab({
         return matchPhase && matchWeek && matchCat && matchPlatform && matchSubsidiary && matchQuery;
       })
       .sort((a, b) => getMetricValue(b, sortBy) - getMetricValue(a, sortBy));
-  }, [allRankedVideos, selectedPhase, selectedWeek, selectedCategory, selectedPlatform, selectedSubsidiary, searchQuery, sortBy]);
+  }, [allRankedVideos, selectedPhase, selectedWeeks, selectedCategory, selectedPlatform, selectedSubsidiary, searchQuery, sortBy]);
 
   const activeSortLabel = SORT_OPTIONS.find((s) => s.id === sortBy)?.label || "Most Video Views";
 
@@ -521,29 +549,64 @@ export default function ContentShowcaseTab({
             <option value="SEIL">SEIL • Israel</option>
           </select>
 
-          {/* Week Filter Selector (Week 1 to Week 5) */}
-          <select
-            value={selectedWeek}
-            onChange={(e) => setSelectedWeek(e.target.value)}
-            className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-700 font-semibold focus:outline-hidden focus:border-blue-500 shadow-2xs"
-          >
-            {WEEK_OPTIONS.map((w) => (
-              <option key={w.id} value={w.id}>
-                {w.label}
-              </option>
-            ))}
-          </select>
-
-          {/* Active Week Reset Chip */}
-          {selectedWeek !== "All" && (
+          {/* Multi-Week Filter Selector (Interactive toggle buttons) */}
+          <div className="flex items-center gap-1 bg-slate-100 p-0.5 rounded-lg border border-slate-200 shadow-2xs">
             <button
-              onClick={() => setSelectedWeek("All")}
-              className="inline-flex items-center gap-1.5 text-xs text-purple-700 hover:text-white hover:bg-purple-700 bg-purple-50 px-2.5 py-1.5 rounded-lg border border-purple-200 font-bold transition-all cursor-pointer shadow-2xs"
-              title="Reset to All Weeks"
+              type="button"
+              onClick={() => setSelectedWeeks([])}
+              className={`px-2 py-1 text-xs font-bold rounded-md transition-all cursor-pointer ${
+                isWeekActive("All")
+                  ? "bg-[#034EA2] text-white shadow-xs"
+                  : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/60"
+              }`}
+              title="View all campaign weeks"
             >
-              <span>{selectedWeek}</span>
-              <span className="text-[10px] font-black">✕</span>
+              All Weeks
             </button>
+            {WEEK_OPTIONS.filter((w) => w.id !== "All").map((w, idx) => {
+              const active = selectedWeeks.includes(w.id);
+              return (
+                <button
+                  key={w.id}
+                  type="button"
+                  onClick={() => toggleWeek(w.id)}
+                  className={`px-2 py-1 text-xs font-bold rounded-md transition-all cursor-pointer ${
+                    active
+                      ? "bg-purple-600 text-white shadow-xs font-extrabold"
+                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/60"
+                  }`}
+                  title={`${w.label} (Click to toggle)`}
+                >
+                  W{idx + 1}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Active Multi-Week Badges with Dismiss */}
+          {selectedWeeks.length > 0 && !selectedWeeks.includes("All") && (
+            <div className="flex items-center gap-1.5 flex-wrap">
+              {selectedWeeks.map((wId) => (
+                <button
+                  key={wId}
+                  onClick={() => toggleWeek(wId)}
+                  className="inline-flex items-center gap-1 text-xs text-purple-700 hover:text-white hover:bg-purple-700 bg-purple-50 px-2 py-1 rounded-lg border border-purple-200 font-bold transition-all cursor-pointer shadow-2xs"
+                  title={`Remove ${wId}`}
+                >
+                  <span>{wId}</span>
+                  <span className="text-[10px] font-black">✕</span>
+                </button>
+              ))}
+              {selectedWeeks.length > 1 && (
+                <button
+                  onClick={() => setSelectedWeeks([])}
+                  className="text-[11px] text-purple-700 hover:underline font-bold px-1 cursor-pointer"
+                  title="Clear all week filters"
+                >
+                  Clear ({selectedWeeks.length})
+                </button>
+              )}
+            </div>
           )}
 
           {/* Active Subsidiary Reset Chip */}

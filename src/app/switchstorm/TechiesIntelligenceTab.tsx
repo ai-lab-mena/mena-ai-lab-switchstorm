@@ -65,6 +65,8 @@ export default function TechiesIntelligenceTab({
   onSelectSubsidiary,
 }: TechiesIntelligenceTabProps) {
   const [selectedDevice, setSelectedDevice] = useState<string>("All");
+  const [selectedPhase, setSelectedPhase] = useState<"All" | "Phase 1" | "Phase 2" | "Phase 3">("All");
+  const [phaseFilterStatus, setPhaseFilterStatus] = useState<"all" | "live" | "pending">("all");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isEmailModalOpen, setIsEmailModalOpen] = useState<boolean>(false);
 
@@ -95,6 +97,54 @@ export default function TechiesIntelligenceTab({
     return val.toString();
   };
 
+  // MENA Regional Rollup Summary
+  const menaSummary = useMemo(() => {
+    let profilesPlanned = 0;
+    let p1Plan = 0, p1Live = 0;
+    let p2Plan = 0, p2Live = 0, p2Wip = 0;
+    let p3Plan = 0, p3Live = 0, p3Wip = 0;
+
+    resolvedTargets.forEach((t) => {
+      profilesPlanned += t.Profiles_Planned || 0;
+      p1Plan += t.Post_1?.Plan || 0;
+      p1Live += t.Post_1?.Live || 0;
+      p2Plan += t.Post_2?.Plan || 0;
+      p2Live += t.Post_2?.Live || 0;
+      p2Wip += t.Post_2?.WIP || 0;
+      p3Plan += t.Post_3?.Plan || 0;
+      p3Live += t.Post_3?.Live || 0;
+      p3Wip += t.Post_3?.WIP || 0;
+    });
+
+    const totalPlannedPosts = p1Plan + p2Plan + p3Plan;
+    const totalLivePosts = p1Live + p2Live + p3Live;
+    const overallCompletion = totalPlannedPosts > 0 ? (totalLivePosts / totalPlannedPosts) * 100 : 0;
+
+    return {
+      profilesPlanned,
+      p1: {
+        plan: p1Plan,
+        live: p1Live,
+        completion: p1Plan > 0 ? ((p1Live / p1Plan) * 100).toFixed(1) + "%" : "100%",
+      },
+      p2: {
+        plan: p2Plan,
+        live: p2Live,
+        wip: p2Wip,
+        completion: p2Plan > 0 ? ((p2Live / p2Plan) * 100).toFixed(1) + "%" : "100%",
+      },
+      p3: {
+        plan: p3Plan,
+        live: p3Live,
+        wip: p3Wip,
+        completion: p3Plan > 0 ? ((p3Live / p3Plan) * 100).toFixed(1) + "%" : "100%",
+      },
+      totalPlannedPosts,
+      totalLivePosts,
+      overallCompletion: overallCompletion.toFixed(1) + "%",
+    };
+  }, [resolvedTargets]);
+
   // Filtered Creators Matrix
   const filteredCreators = useMemo(() => {
     return resolvedCreators.filter((c) => {
@@ -106,6 +156,21 @@ export default function TechiesIntelligenceTab({
         selectedDevice === "All" ||
         String(c.Device).toLowerCase() === selectedDevice.toLowerCase();
 
+      const matchPhase = (() => {
+        if (selectedPhase === "All") return true;
+        const phasePost =
+          selectedPhase === "Phase 1"
+            ? c.Phase_1
+            : selectedPhase === "Phase 2"
+            ? c.Phase_2
+            : c.Phase_3;
+
+        if (phaseFilterStatus === "all") return true;
+        if (phaseFilterStatus === "live") return phasePost !== null;
+        if (phaseFilterStatus === "pending") return phasePost === null;
+        return true;
+      })();
+
       const q = searchQuery.toLowerCase().trim();
       const matchQuery =
         !q ||
@@ -113,9 +178,9 @@ export default function TechiesIntelligenceTab({
         String(c.Handle).toLowerCase().includes(q) ||
         String(c.Subsidiary).toLowerCase().includes(q);
 
-      return matchSub && matchDev && matchQuery;
+      return matchSub && matchDev && matchPhase && matchQuery;
     });
-  }, [resolvedCreators, selectedSubsidiary, selectedDevice, searchQuery]);
+  }, [resolvedCreators, selectedSubsidiary, selectedDevice, selectedPhase, phaseFilterStatus, searchQuery]);
 
   // Filtered Targets
   const filteredTargets = useMemo(() => {
@@ -304,142 +369,311 @@ export default function TechiesIntelligenceTab({
       </div>
 
       {/* 3. TARGET VS ACTUAL DELIVERABLES TABLE (FROM TragetvsActual_Techies.xlsx) */}
-      <div className="rounded-2xl bg-white border border-slate-200 shadow-sm overflow-hidden">
-        <div className="p-4 sm:p-5 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-50/50">
-          <div>
-            <h3 className="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-2">
-              <span className="flex h-5 w-5 items-center justify-center rounded bg-emerald-100 text-emerald-800 text-xs">
-                <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </span>
-              <span>Techies Target vs. Actual Campaign Progress</span>
-            </h3>
-            <p className="text-xs text-slate-500">
-              Audit status by subsidiary across Post 1 (Teasing), Post 2 (Momentum), and Post 3 (Ongoing).
-            </p>
+      <div className="space-y-4">
+        {/* MENA Regional Delivery Scorecard */}
+        <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-900 via-[#034EA2]/90 to-slate-900 p-5 text-white shadow-md">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-white/10">
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="rounded bg-cyan-400 text-slate-950 px-2 py-0.5 text-xs font-black uppercase">
+                  MENA Regional Summary
+                </span>
+                <span className="text-xs text-cyan-200 font-semibold">
+                  Source: Master Tech Reviewers Target vs. Actual Tracker
+                </span>
+              </div>
+              <h4 className="text-base sm:text-lg font-extrabold text-white mt-1">
+                Tech Reviewers Campaign Deliverables Completion
+              </h4>
+            </div>
+
+            {/* Phase Filter Button Group */}
+            <div className="flex items-center gap-1.5 flex-wrap">
+              <span className="text-xs font-bold text-slate-300 mr-1">Filter Phase:</span>
+              {(["All", "Phase 1", "Phase 2", "Phase 3"] as const).map((ph) => {
+                const isActive = selectedPhase === ph;
+                return (
+                  <button
+                    key={ph}
+                    type="button"
+                    onClick={() => setSelectedPhase(ph)}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer shadow-xs ${
+                      isActive
+                        ? "bg-cyan-400 text-slate-950 ring-2 ring-white/60 font-black"
+                        : "bg-white/10 hover:bg-white/20 text-white border border-white/15"
+                    }`}
+                  >
+                    {ph === "All" ? "All Phases" : ph}
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
-          {selectedSubsidiary !== "All" && (
-            <button
-              onClick={() => onSelectSubsidiary("All")}
-              className="text-xs text-[#034EA2] hover:underline font-semibold cursor-pointer"
-            >
-              Clear Territory Filter ({selectedSubsidiary})
-            </button>
-          )}
+          {/* MENA Scorecard Metric Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 pt-4">
+            <div className="rounded-xl bg-white/10 p-3 border border-white/10">
+              <span className="text-[10px] uppercase font-bold text-slate-300 block">
+                Total Planned Profiles
+              </span>
+              <span className="text-xl sm:text-2xl font-black text-white">
+                {menaSummary.profilesPlanned}
+              </span>
+              <span className="text-[11px] text-cyan-300 block mt-0.5 font-semibold">
+                Across 8 MENA Markets
+              </span>
+            </div>
+
+            <div className={`rounded-xl p-3 border transition-all ${
+              selectedPhase === "Phase 1" ? "bg-cyan-500/30 border-cyan-400 ring-2 ring-cyan-400/50" : "bg-white/10 border-white/10"
+            }`}>
+              <span className="text-[10px] uppercase font-bold text-slate-300 block">
+                Post 1 (Teasing)
+              </span>
+              <span className="text-xl sm:text-2xl font-black text-emerald-400">
+                {menaSummary.p1.completion}
+              </span>
+              <span className="text-[11px] text-slate-300 block mt-0.5 font-semibold">
+                {menaSummary.p1.live}/{menaSummary.p1.plan} Live
+              </span>
+            </div>
+
+            <div className={`rounded-xl p-3 border transition-all ${
+              selectedPhase === "Phase 2" ? "bg-indigo-500/30 border-indigo-400 ring-2 ring-indigo-400/50" : "bg-white/10 border-white/10"
+            }`}>
+              <span className="text-[10px] uppercase font-bold text-slate-300 block">
+                Post 2 (Momentum)
+              </span>
+              <span className="text-xl sm:text-2xl font-black text-emerald-400">
+                {menaSummary.p2.completion}
+              </span>
+              <span className="text-[11px] text-slate-300 block mt-0.5 font-semibold">
+                {menaSummary.p2.live}/{menaSummary.p2.plan} Live
+              </span>
+            </div>
+
+            <div className={`rounded-xl p-3 border transition-all ${
+              selectedPhase === "Phase 3" ? "bg-amber-500/30 border-amber-400 ring-2 ring-amber-400/50" : "bg-white/10 border-white/10"
+            }`}>
+              <span className="text-[10px] uppercase font-bold text-slate-300 block">
+                Post 3 (Switch Storm)
+              </span>
+              <span className="text-xl sm:text-2xl font-black text-amber-300">
+                {menaSummary.p3.completion}
+              </span>
+              <span className="text-[11px] text-slate-300 block mt-0.5 font-semibold">
+                {menaSummary.p3.live}/{menaSummary.p3.plan} Live ({menaSummary.p3.plan - menaSummary.p3.live} WIP)
+              </span>
+            </div>
+
+            <div className="rounded-xl bg-white/15 p-3 border border-white/20 col-span-2 sm:col-span-1">
+              <span className="text-[10px] uppercase font-bold text-cyan-200 block">
+                Overall Delivery Rate
+              </span>
+              <span className="text-xl sm:text-2xl font-black text-white">
+                {menaSummary.overallCompletion}
+              </span>
+              <span className="text-[11px] text-emerald-300 block mt-0.5 font-bold">
+                {menaSummary.totalLivePosts}/{menaSummary.totalPlannedPosts} Delivered
+              </span>
+            </div>
+          </div>
         </div>
 
-        <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs text-slate-700 min-w-[800px]">
-            <thead className="bg-[#034EA2] text-white uppercase text-[10px] tracking-wider">
-              <tr>
-                <th className="px-3 sm:px-4 py-3 font-semibold">Subsidiary / Market</th>
-                <th className="px-3 py-3 text-center font-semibold">Planned Profiles</th>
-                <th className="px-3 py-2.5 text-center font-semibold">
-                  <div>Post #1 Status</div>
-                  <div className="text-[9px] font-normal text-blue-100 opacity-90 mt-0.5 normal-case">Sep 7 – Sep 10</div>
-                </th>
-                <th className="px-3 py-2.5 text-center font-semibold">
-                  <div>Post #2 Status</div>
-                  <div className="text-[9px] font-normal text-blue-100 opacity-90 mt-0.5 normal-case">Sep 11 – Sep 20</div>
-                </th>
-                <th className="px-3 py-2.5 text-center font-semibold">
-                  <div>Post #3 Status</div>
-                  <div className="text-[9px] font-normal text-blue-100 opacity-90 mt-0.5 normal-case">Sep 21 – Sep 28</div>
-                </th>
-                <th className="px-3 py-3 text-center font-semibold">Pacing</th>
-                <th className="px-4 py-3 font-semibold">Agency Action Notes</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-100">
-              {filteredTargets.map((row) => {
-                const isCompleted = row.Status === "Completed";
-                const isActionReq = row.Status === "Action Required";
-                const isDelayed = row.Status === "Delayed";
+        {/* Deliverables Table */}
+        <div className="rounded-2xl bg-white border border-slate-200 shadow-sm overflow-hidden">
+          <div className="p-4 sm:p-5 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-50/50">
+            <div>
+              <h3 className="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-2">
+                <span className="flex h-5 w-5 items-center justify-center rounded bg-emerald-100 text-emerald-800 text-xs">
+                  <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </span>
+                <span>Techies Target vs. Actual Campaign Progress by Subsidiary</span>
+              </h3>
+              <p className="text-xs text-slate-500">
+                Breakdown across Post 1 (Teasing), Post 2 (Momentum), and Post 3 (Switch Storm).
+              </p>
+            </div>
 
-                return (
-                  <tr key={row.Subsidiary} className="hover:bg-slate-50/80 transition-colors">
-                    <td className="px-3 sm:px-4 py-3 font-bold text-slate-900">
+            {selectedSubsidiary !== "All" && (
+              <button
+                onClick={() => onSelectSubsidiary("All")}
+                className="text-xs text-[#034EA2] hover:underline font-semibold cursor-pointer"
+              >
+                Clear Territory Filter ({selectedSubsidiary})
+              </button>
+            )}
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-left text-xs text-slate-700 min-w-[800px]">
+              <thead className="bg-[#034EA2] text-white uppercase text-[10px] tracking-wider">
+                <tr>
+                  <th className="px-3 sm:px-4 py-3 font-semibold">Subsidiary / Market</th>
+                  <th className="px-3 py-3 text-center font-semibold">Planned Profiles</th>
+                  <th className={`px-3 py-2.5 text-center font-semibold transition-all ${
+                    selectedPhase === "Phase 1" ? "bg-cyan-600 text-white font-extrabold ring-2 ring-cyan-400" : ""
+                  }`}>
+                    <div>Post #1 Status</div>
+                    <div className="text-[9px] font-normal text-blue-100 opacity-90 mt-0.5 normal-case">Sep 7 – Sep 10</div>
+                  </th>
+                  <th className={`px-3 py-2.5 text-center font-semibold transition-all ${
+                    selectedPhase === "Phase 2" ? "bg-indigo-600 text-white font-extrabold ring-2 ring-indigo-400" : ""
+                  }`}>
+                    <div>Post #2 Status</div>
+                    <div className="text-[9px] font-normal text-blue-100 opacity-90 mt-0.5 normal-case">Sep 11 – Sep 20</div>
+                  </th>
+                  <th className={`px-3 py-2.5 text-center font-semibold transition-all ${
+                    selectedPhase === "Phase 3" ? "bg-amber-600 text-white font-extrabold ring-2 ring-amber-400" : ""
+                  }`}>
+                    <div>Post #3 Status</div>
+                    <div className="text-[9px] font-normal text-blue-100 opacity-90 mt-0.5 normal-case">Sep 21 – Sep 28</div>
+                  </th>
+                  <th className="px-3 py-3 text-center font-semibold">Pacing</th>
+                  <th className="px-4 py-3 font-semibold">Agency Action Notes</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100">
+                {/* Pinned MENA Regional Rollup Row */}
+                {selectedSubsidiary === "All" && (
+                  <tr className="bg-slate-900 text-white font-bold border-b-2 border-slate-700 shadow-inner">
+                    <td className="px-3 sm:px-4 py-3.5 font-extrabold">
                       <div className="flex items-center gap-2">
-                        <span className="rounded bg-blue-100 text-[#034EA2] px-2 py-0.5 text-xs font-extrabold">
-                          {row.Subsidiary}
+                        <span className="rounded bg-cyan-400 text-slate-950 px-2 py-0.5 text-xs font-black">
+                          MENA
                         </span>
-                        <span className="text-slate-600 font-medium">{row.Market}</span>
+                        <span className="text-white font-bold">Regional Rollup Summary</span>
                       </div>
                     </td>
-                    <td className="px-3 py-3 text-center font-bold text-slate-800">
-                      {row.Profiles_Planned}
+                    <td className="px-3 py-3.5 text-center font-extrabold text-cyan-300">
+                      {menaSummary.profilesPlanned}
                     </td>
 
-                    {/* Post 1 */}
-                    <td className="px-3 py-3 text-center">
-                      <div className="inline-flex items-center gap-1 font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                        <span>✓ {row.Post_1.Live}/{row.Post_1.Plan}</span>
-                        <span className="text-[10px] opacity-75">({row.Post_1.Completion})</span>
-                      </div>
-                    </td>
-
-                    {/* Post 2 */}
-                    <td className="px-3 py-3 text-center">
-                      <div
-                        className={`inline-flex items-center gap-1 font-bold px-2 py-0.5 rounded border ${
-                          row.Post_2.Completion === "100%"
-                            ? "text-emerald-700 bg-emerald-50 border-emerald-200"
-                            : "text-amber-700 bg-amber-50 border-amber-200"
-                        }`}
-                      >
-                        <span>{row.Post_2.Live}/{row.Post_2.Plan}</span>
-                        <span className="text-[10px] opacity-75">({row.Post_2.Completion})</span>
-                      </div>
-                    </td>
-
-                    {/* Post 3 */}
-                    <td className="px-3 py-3 text-center">
-                      <div
-                        className={`inline-flex items-center gap-1 font-bold px-2 py-0.5 rounded border ${
-                          row.Post_3.Completion === "100%"
-                            ? "text-emerald-700 bg-emerald-50 border-emerald-200"
-                            : isDelayed
-                            ? "text-slate-500 bg-slate-100 border-slate-200"
-                            : "text-amber-700 bg-amber-50 border-amber-200"
-                        }`}
-                      >
-                        <span>{row.Post_3.Live}/{row.Post_3.Plan}</span>
-                        <span className="text-[10px] opacity-75">({row.Post_3.Completion})</span>
-                      </div>
-                    </td>
-
-                    {/* Status Badge */}
-                    <td className="px-3 py-3 text-center">
-                      <span
-                        className={`inline-block rounded-full px-2.5 py-0.5 text-[10px] font-extrabold uppercase ${
-                          isCompleted
-                            ? "bg-emerald-100 text-emerald-800"
-                            : isActionReq
-                            ? "bg-rose-100 text-rose-800"
-                            : isDelayed
-                            ? "bg-slate-200 text-slate-800"
-                            : "bg-amber-100 text-amber-800"
-                        }`}
-                      >
-                        {row.Status}
+                    {/* MENA Post 1 */}
+                    <td className={`px-3 py-3.5 text-center ${selectedPhase === "Phase 1" ? "bg-slate-800" : ""}`}>
+                      <span className="inline-flex items-center gap-1 font-bold text-emerald-400 bg-emerald-950/70 border border-emerald-500/40 px-2.5 py-0.5 rounded">
+                        ✓ {menaSummary.p1.live}/{menaSummary.p1.plan} ({menaSummary.p1.completion})
                       </span>
                     </td>
 
-                    {/* Notes */}
-                    <td className="px-4 py-3 text-slate-500 font-medium text-[11px]">
-                      {row.Notes || "—"}
+                    {/* MENA Post 2 */}
+                    <td className={`px-3 py-3.5 text-center ${selectedPhase === "Phase 2" ? "bg-slate-800" : ""}`}>
+                      <span className="inline-flex items-center gap-1 font-bold text-emerald-400 bg-emerald-950/70 border border-emerald-500/40 px-2.5 py-0.5 rounded">
+                        ✓ {menaSummary.p2.live}/{menaSummary.p2.plan} ({menaSummary.p2.completion})
+                      </span>
+                    </td>
+
+                    {/* MENA Post 3 */}
+                    <td className={`px-3 py-3.5 text-center ${selectedPhase === "Phase 3" ? "bg-slate-800" : ""}`}>
+                      <span className="inline-flex items-center gap-1 font-bold text-amber-300 bg-amber-950/70 border border-amber-500/40 px-2.5 py-0.5 rounded">
+                        {menaSummary.p3.live}/{menaSummary.p3.plan} ({menaSummary.p3.completion})
+                      </span>
+                    </td>
+
+                    {/* MENA Pacing */}
+                    <td className="px-3 py-3.5 text-center">
+                      <span className="inline-block rounded-full px-2.5 py-0.5 text-[10px] font-black uppercase bg-emerald-400 text-slate-950">
+                        {menaSummary.overallCompletion}
+                      </span>
+                    </td>
+
+                    {/* MENA Action Notes */}
+                    <td className="px-4 py-3.5 text-slate-300 font-medium text-[11px]">
+                      7 pending Post 3 deliverables (5 in SETK, 2 in SELV). Post 1 & 2 fully delivered.
                     </td>
                   </tr>
-                );
-              })}
-            </tbody>
-          </table>
+                )}
+
+                {filteredTargets.map((row) => {
+                  const isCompleted = row.Status === "Completed";
+                  const isActionReq = row.Status === "Action Required";
+                  const isDelayed = row.Status === "Delayed";
+
+                  return (
+                    <tr key={row.Subsidiary} className="hover:bg-slate-50/80 transition-colors">
+                      <td className="px-3 sm:px-4 py-3 font-bold text-slate-900">
+                        <div className="flex items-center gap-2">
+                          <span className="rounded bg-blue-100 text-[#034EA2] px-2 py-0.5 text-xs font-extrabold">
+                            {row.Subsidiary}
+                          </span>
+                          <span className="text-slate-600 font-medium">{row.Market}</span>
+                        </div>
+                      </td>
+                      <td className="px-3 py-3 text-center font-bold text-slate-800">
+                        {row.Profiles_Planned}
+                      </td>
+
+                      {/* Post 1 */}
+                      <td className={`px-3 py-3 text-center ${selectedPhase === "Phase 1" ? "bg-cyan-50/70 font-bold" : ""}`}>
+                        <div className="inline-flex items-center gap-1 font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                          <span>✓ {row.Post_1.Live}/{row.Post_1.Plan}</span>
+                          <span className="text-[10px] opacity-75">({row.Post_1.Completion})</span>
+                        </div>
+                      </td>
+
+                      {/* Post 2 */}
+                      <td className={`px-3 py-3 text-center ${selectedPhase === "Phase 2" ? "bg-indigo-50/70 font-bold" : ""}`}>
+                        <div
+                          className={`inline-flex items-center gap-1 font-bold px-2 py-0.5 rounded border ${
+                            row.Post_2.Completion === "100%"
+                              ? "text-emerald-700 bg-emerald-50 border-emerald-200"
+                              : "text-amber-700 bg-amber-50 border-amber-200"
+                          }`}
+                        >
+                          <span>{row.Post_2.Live}/{row.Post_2.Plan}</span>
+                          <span className="text-[10px] opacity-75">({row.Post_2.Completion})</span>
+                        </div>
+                      </td>
+
+                      {/* Post 3 */}
+                      <td className={`px-3 py-3 text-center ${selectedPhase === "Phase 3" ? "bg-amber-50/70 font-bold" : ""}`}>
+                        <div
+                          className={`inline-flex items-center gap-1 font-bold px-2 py-0.5 rounded border ${
+                            row.Post_3.Completion === "100%"
+                              ? "text-emerald-700 bg-emerald-50 border-emerald-200"
+                              : isDelayed
+                              ? "text-slate-500 bg-slate-100 border-slate-200"
+                              : "text-amber-700 bg-amber-50 border-amber-200"
+                          }`}
+                        >
+                          <span>{row.Post_3.Live}/{row.Post_3.Plan}</span>
+                          <span className="text-[10px] opacity-75">({row.Post_3.Completion})</span>
+                        </div>
+                      </td>
+
+                      {/* Status Badge */}
+                      <td className="px-3 py-3 text-center">
+                        <span
+                          className={`inline-block rounded-full px-2.5 py-0.5 text-[10px] font-extrabold uppercase ${
+                            isCompleted
+                              ? "bg-emerald-100 text-emerald-800"
+                              : isActionReq
+                              ? "bg-rose-100 text-rose-800"
+                              : isDelayed
+                              ? "bg-slate-200 text-slate-800"
+                              : "bg-amber-100 text-amber-800"
+                          }`}
+                        >
+                          {row.Status}
+                        </span>
+                      </td>
+
+                      {/* Notes */}
+                      <td className="px-4 py-3 text-slate-500 font-medium text-[11px]">
+                        {row.Notes || "—"}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
 
-      {/* 3. INFLUENCER DETAIL MATRIX WITH PHASE POST URLS */}
+      {/* 4. INFLUENCER DETAIL MATRIX WITH PHASE POST URLS */}
       <div className="rounded-2xl bg-white border border-slate-200 shadow-sm overflow-hidden">
         <div className="p-4 sm:p-5 border-b border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-3 bg-slate-50/50">
           <div>
@@ -452,17 +686,50 @@ export default function TechiesIntelligenceTab({
               <span>Tech Creators Deliverable Matrix & Phase Post Links</span>
             </h3>
             <p className="text-xs text-slate-500">
-              Complete catalog of all 77 tech reviewers with mapped hardware and direct clickable permalinks for each phase.
+              Showing {filteredCreators.length} of {resolvedCreators.length} reviewers across phases and devices.
             </p>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-wrap">
+            {/* Phase Status Filter */}
+            {selectedPhase !== "All" && (
+              <div className="flex rounded-lg bg-slate-200/80 p-0.5 text-xs font-bold shadow-inner">
+                <button
+                  type="button"
+                  onClick={() => setPhaseFilterStatus("all")}
+                  className={`rounded-md px-2.5 py-1 transition-all ${
+                    phaseFilterStatus === "all" ? "bg-white text-slate-900 shadow-xs" : "text-slate-600 hover:text-slate-900"
+                  }`}
+                >
+                  All ({selectedPhase})
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setPhaseFilterStatus("live")}
+                  className={`rounded-md px-2.5 py-1 transition-all ${
+                    phaseFilterStatus === "live" ? "bg-emerald-600 text-white shadow-xs" : "text-slate-600 hover:text-slate-900"
+                  }`}
+                >
+                  Live
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setPhaseFilterStatus("pending")}
+                  className={`rounded-md px-2.5 py-1 transition-all ${
+                    phaseFilterStatus === "pending" ? "bg-amber-600 text-white shadow-xs" : "text-slate-600 hover:text-slate-900"
+                  }`}
+                >
+                  Pending
+                </button>
+              </div>
+            )}
+
             <input
               type="text"
               placeholder="Search creator, handle, subsidiary..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-hidden focus:border-blue-500 w-64 shadow-2xs"
+              className="rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-hidden focus:border-blue-500 w-56 shadow-2xs"
             />
           </div>
         </div>
@@ -475,15 +742,21 @@ export default function TechiesIntelligenceTab({
                 <th className="px-2 py-3 text-center font-semibold">Sub</th>
                 <th className="px-3 py-3 font-semibold">Assigned Device</th>
                 <th className="px-3 py-3 text-right font-semibold">Total Views</th>
-                <th className="px-3 py-2.5 text-center font-semibold">
+                <th className={`px-3 py-2.5 text-center font-semibold transition-all ${
+                  selectedPhase === "Phase 1" ? "bg-cyan-600 text-white font-extrabold ring-2 ring-cyan-400" : ""
+                }`}>
                   <div>Phase 1 Post</div>
                   <div className="text-[9px] font-normal text-blue-100 opacity-90 mt-0.5 normal-case">Sep 7 – Sep 10</div>
                 </th>
-                <th className="px-3 py-2.5 text-center font-semibold">
+                <th className={`px-3 py-2.5 text-center font-semibold transition-all ${
+                  selectedPhase === "Phase 2" ? "bg-indigo-600 text-white font-extrabold ring-2 ring-indigo-400" : ""
+                }`}>
                   <div>Phase 2 Post</div>
                   <div className="text-[9px] font-normal text-blue-100 opacity-90 mt-0.5 normal-case">Sep 11 – Sep 20</div>
                 </th>
-                <th className="px-3 py-2.5 text-center font-semibold">
+                <th className={`px-3 py-2.5 text-center font-semibold transition-all ${
+                  selectedPhase === "Phase 3" ? "bg-amber-600 text-white font-extrabold ring-2 ring-amber-400" : ""
+                }`}>
                   <div>Phase 3 Post</div>
                   <div className="text-[9px] font-normal text-blue-100 opacity-90 mt-0.5 normal-case">Sep 21 – Sep 28</div>
                 </th>

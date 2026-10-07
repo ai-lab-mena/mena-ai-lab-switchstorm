@@ -2211,5 +2211,77 @@ export const STATIC_TECHIES_TARGETS_SUMMARY = [
     },
     "Status": "Completed",
     "Notes": "0"
+  },
+  {
+    "Subsidiary": "*SEIL Profiles updated on Oct 6th, excluded for now until we adjust new list + W41 no local posting.",
+    "Market": "*SEIL Profiles updated on Oct 6th, excluded for now until we adjust new list + W41 no local posting.",
+    "Profiles_Planned": 0,
+    "Post_1": {
+      "Plan": 0,
+      "Live": 0,
+      "Completion": "100%"
+    },
+    "Post_2": {
+      "Plan": 0,
+      "Live": 0,
+      "WIP": 0,
+      "Completion": "100%"
+    },
+    "Post_3": {
+      "Plan": 0,
+      "Live": 0,
+      "WIP": 0,
+      "Completion": "100%"
+    },
+    "Status": "Completed",
+    "Notes": ""
+  },
+  {
+    "Subsidiary": "Legend",
+    "Market": "Legend",
+    "Profiles_Planned": 0,
+    "Post_1": {
+      "Plan": 0,
+      "Live": 0,
+      "Completion": "100%"
+    },
+    "Post_2": {
+      "Plan": 0,
+      "Live": 0,
+      "WIP": 0,
+      "Completion": "100%"
+    },
+    "Post_3": {
+      "Plan": 0,
+      "Live": 0,
+      "WIP": 0,
+      "Completion": "100%"
+    },
+    "Status": "Completed",
+    "Notes": ""
+  },
+  {
+    "Subsidiary": "SEIL",
+    "Market": "Israel",
+    "Profiles_Planned": 6,
+    "Post_1": {
+      "Plan": 6,
+      "Live": 2,
+      "Completion": "33.3%"
+    },
+    "Post_2": {
+      "Plan": 6,
+      "Live": 1,
+      "WIP": 5,
+      "Completion": "16.7%"
+    },
+    "Post_3": {
+      "Plan": 6,
+      "Live": 0,
+      "WIP": 0,
+      "Completion": "0.0%"
+    },
+    "Status": "Action Required",
+    "Notes": "0"
   }
 ];

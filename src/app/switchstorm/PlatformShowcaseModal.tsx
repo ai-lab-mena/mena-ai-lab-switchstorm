@@ -393,21 +393,6 @@ Marketing AI Lab • Samsung Electronics MENA
     }
   };
 
-  const handleOpenInKnox = async () => {
-    await copyRichHTMLToClipboard();
-    const subject = encodeURIComponent(
-      "[EXECUTIVE ANNOUNCEMENT] Introducing ai-lab-mena.com - Samsung MENA Marketing Intelligence Hub"
-    );
-    const body = encodeURIComponent(generatePlainText());
-
-    window.location.href = `mailto:[leadership.recipient.placeholder@samsung.com]?subject=${subject}&body=${body}`;
-
-    setDispatchStatus(
-      "✓ Visual platform briefing copied to clipboard! Paste (Ctrl+V) directly into your Knox Mail message."
-    );
-    setTimeout(() => setDispatchStatus(null), 8000);
-  };
-
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-xs animate-fadeIn">
       <div className="relative w-full max-w-5xl rounded-2xl bg-white shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[94vh]">
@@ -628,25 +613,13 @@ Marketing AI Lab • Samsung Electronics MENA
             {/* Copy Rich HTML Button */}
             <button
               onClick={copyRichHTMLToClipboard}
-              className="inline-flex items-center gap-1.5 rounded-xl bg-white hover:bg-slate-100 text-slate-800 border border-slate-300 px-4 py-2 text-xs font-bold transition-all shadow-2xs cursor-pointer"
-              title="Copies the entire visual platform email to paste directly into Samsung Knox Mail"
+              className="inline-flex items-center gap-1.5 rounded-xl bg-[#034EA2] hover:bg-blue-700 text-white px-4 py-2 text-xs font-bold transition-all shadow-xs cursor-pointer"
+              title="Copies the entire visual platform email to paste directly into Samsung Knox Mail or Outlook"
             >
-              <svg className="h-4 w-4 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
               </svg>
               <span>{copied ? "✓ Copied Visual Email!" : "Copy Visual Email for Knox"}</span>
-            </button>
-
-            {/* Open in Knox Mail Button */}
-            <button
-              onClick={handleOpenInKnox}
-              className="inline-flex items-center gap-1.5 rounded-xl bg-[#034EA2] hover:bg-blue-700 text-white px-4 py-2 text-xs font-bold transition-all shadow-xs cursor-pointer"
-              title="Copies formatted email and launches Samsung Knox Mail"
-            >
-              <svg className="h-4 w-4 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              <span>Open in Knox Mail</span>
             </button>
           </div>
         </div>
